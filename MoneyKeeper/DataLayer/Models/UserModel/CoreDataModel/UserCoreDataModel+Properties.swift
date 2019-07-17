@@ -16,7 +16,7 @@ extension UserCoreDataModel {
     }
     
     /// Device identifier
-    @NSManaged public var deviceId: String?
+    @NSManaged public var deviceId: String
     
     /// User name
     @NSManaged public var userName: String?
@@ -24,6 +24,12 @@ extension UserCoreDataModel {
     /// Cash transactions for user
     @NSManaged public var cashFlows: NSSet?
     
-    /// Services for user
-    @NSManaged public var services: NSSet?
+    /// Categories for user
+    @NSManaged public var categories: NSSet?
+    
+    /// Cards for user
+    @NSManaged public var cards: NSSet?
+    
+    /// Settings for user
+    @NSManaged public var settings: SettingsCoreDataModel?
 }

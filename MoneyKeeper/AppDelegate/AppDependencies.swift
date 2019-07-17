@@ -8,17 +8,26 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 // MAKR: - AppDependencies
 class AppDependencies {
 
-    //Properties
+    /// Resolver
     var resolver: DIResolver
 
     //Init
     init() {
-        self.resolver = DIResolver()
-        self.resolver.dao.createUserAccount()
+        let mapper = ModelMapper()
+        let dao = DAO(mapper: mapper)
+        
+        let localPushManager = LocalPushManager.sharedInstance
+        localPushManager.notificationCenter.delegate = localPushManager
+        
+        let settingsManager = SettingsManager.sharedInstance
+        settingsManager.dao = dao
+        
+        self.resolver = DIResolver(dao: dao)
     }
 }
 
@@ -26,6 +35,6 @@ class AppDependencies {
 extension AppDependencies {
     
     public func rootViewController() -> UIViewController {
-        return self.resolver.createTabBarViewCotnroller()
+        return self.resolver.createLaunchViewCotnroller()
     }
 }

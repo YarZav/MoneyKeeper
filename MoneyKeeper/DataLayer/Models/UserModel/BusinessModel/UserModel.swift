@@ -17,10 +17,6 @@ class UserModel {
     /// User name
     public var userName: String?
     
-    //FIXME: Mb this is do not need here OR add service models
-    /// Cash transactions
-    public var cashFlows: [CashFlowModel]?
-    
     // Init
     init(deviceId: String) {
         self.deviceId = deviceId

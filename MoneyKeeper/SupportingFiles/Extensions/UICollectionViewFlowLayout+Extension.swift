@@ -11,6 +11,11 @@ import UIKit
 extension UICollectionViewFlowLayout {
     
     /// Plain init for UICollactionFlowLayout
+    ///
+    /// - Parameters:
+    ///     - itemSize: size of cell
+    ///     - scrollDirection: scroll for collection view
+    ///     - edgeInsets: sitem insets
     convenience init(itemSize: CGSize, scrollDirection: UICollectionView.ScrollDirection = .horizontal, edgeInsets: UIEdgeInsets = .zero) {
         self.init()
         self.scrollDirection = scrollDirection

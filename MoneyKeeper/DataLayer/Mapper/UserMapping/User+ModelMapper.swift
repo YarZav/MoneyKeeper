@@ -8,45 +8,27 @@
 
 import UIKit
 
-// MARK: - UserMapperProtocol
-protocol UserMapperProtocol {
-    func userMapping(_ model: UserModel?) -> UserCoreDataModel?
-    func userMapping(_ model: UserCoreDataModel?) -> UserModel?
-}
-
-// MARK: - UserMapperProtocol
-extension ModelMapper: UserMapperProtocol {
+// MARK: - UserModelMapper
+extension ModelMapper {
     
     //Model -> CoreData
     func userMapping(_ model: UserModel?) -> UserCoreDataModel? {
-        if let model = model {
-            let userCoreDataModel = UserCoreDataModel()
-            userCoreDataModel.deviceId = model.deviceId
-            userCoreDataModel.userName = model.userName
-            userCoreDataModel.cashFlows = NSSet(array: model.cashFlows?.compactMap({ self.cashFlowMapping($0) }) ?? [] )
-            
-            return userCoreDataModel
-        }
+        guard let model = model else { return nil }
         
-        return nil
+        let userCoreDataModel = UserCoreDataModel()
+        userCoreDataModel.deviceId = model.deviceId
+        userCoreDataModel.userName = model.userName
+        
+        return userCoreDataModel
     }
     
     //CoreData -> Model
     func userMapping(_ model: UserCoreDataModel?) -> UserModel? {
-        if let model = model, let deviceId = model.deviceId {
-            let userModel = UserModel(deviceId: deviceId)
-            userModel.userName = model.userName
-            userModel.cashFlows = model.cashFlows?.compactMap({ (cashFlow) -> CashFlowModel? in
-                if let cashFlowModel = cashFlow as? CashFlowCoreDataModel {
-                    return self.cashFlowMapping(cashFlowModel)
-                } else {
-                    return nil
-                }
-            })
-            
-            return userModel
-        }
+        guard let model = model else { return nil }
         
-        return nil
+        let userModel = UserModel(deviceId: model.deviceId)
+        userModel.userName = model.userName
+        
+        return userModel
     }
 }

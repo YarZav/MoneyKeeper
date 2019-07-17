@@ -7,24 +7,31 @@
 //
 
 import Foundation
+import YZBarChart
 
 //Presenter -> View
-protocol CashFlowDetailViewControllerProtocol: class {
+protocol CashFlowDetailViewControllerProtocol: BaseViewControllerProtocol {
+    func updateStringLocalization()
     func createNoContentView()
     func createContentView()
-    func displayContent(models: [CashFlowModel], barModels: [BarViewModel])
+    func displayGraphic(models: [CashFlowModel], barModels: [YZBarViewModel])
+    func insertTable(models: [CashFlowModel])
+    func deleteTable(models: [CashFlowModel])
 }
 
 //View -> Presenter
 protocol CashFlowDetailPresenterProtocol {
-    func updateModels(by period: PeriodType)
-    func deleteModel(_ model: CashFlowModel)
+    func viewDidLoad(by period: PeriodType, type: CashFlowType)
+    func updateModels(by period: PeriodType, type: CashFlowType)
+    func insertModel(_ model: CashFlowModel, periodType: PeriodType, type: CashFlowType)
+    func deleteModel(_ model: CashFlowModel, period: PeriodType, type: CashFlowType)
 }
 
 //Presenter - Interactor
 protocol CashFlowDetailInteractorProtocol {
-    func getCashFlowDetails() -> [CashFlowModel]
-    func deleteModel(_ model: CashFlowModel)
+    func addObserver(_ observer: CashFlowManagerDelegate)
+    func getCashFlowDetails(type: CashFlowType) -> [CashFlowModel]
+    func deleteModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void)
 }
 
 //Presenter - WireFrame

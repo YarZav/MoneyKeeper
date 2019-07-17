@@ -1,0 +1,96 @@
+/// Categories
+"Products"   = "Продукты";
+"Transit"    = "Проезд";
+"Сlothes"    = "Одежда";
+"Sport"      = "Спорт";
+"Automobile" = "Авто";
+"Home"       = "Дом";
+"Relax"      = "Отдых";
+"Mobile"     = "Мобильная связь";
+"Internet"   = "Интернет";
+"Medicine"   = "Медицина";
+"Education"  = "Образование";
+"Business"   = "Бизнес";
+"Devices"    = "Электроника";
+"Books"      = "Книги";
+
+/// Launch
+"LaunchWarning" = "Внимание";
+
+/// Signle Table
+"SingleWarining" = "Внимание";
+
+/// Base controller
+"BaseControllerOk" = "Ок";
+
+/// CashFlow
+"CashFlowNext" = "Далее";
+"Consumption"   = "Расходы";
+"Income"   = "Доходы";
+
+/// CashFlowCategory
+"CashFlowCategoryWarning" = "Внимание";
+"CashFlowCategoryTitle" = "Категории";
+"CashFlowCategoryTotal" = "Всего";
+
+/// Cash flow category add
+"CashFlowCategoryAddWarning" = "Внимание";
+"CashFlowCategoryAddEnterName" = "Введите название";
+"CashFlowCategoryAddChooseImage" = "Выберите картинку";
+"CashFlowCategoryAddAddCategory" = "Добавить категорию";
+"CashFlowCategoryAddCategory" = "Категория";
+
+/// Cash flow category detail
+"CashFlowCategoryDetailDeleteCategory" = "Удалить категорию";
+"CashFlowCategoryDetailWeek"    = "Неделя";
+"CashFlowCategoryDetailMonth"   = "Месяц";
+"CashFlowCategoryDetailYear"    = "Год";
+"CashFlowCategoryDetailAllTime" = "Все время";
+"CashFlowCategoryDetailWarning" = "Внимание";
+"CashFlowCategoryDetailCanDisplayCashFlow" = "Здесь Вы можете увидеть свои расходы или доходы";
+
+/// Card detail
+"CardDetailWarning" = "Внимение";
+"CardDetailDeleteCard" = "Удалить карту";
+
+/// Card scan
+"CardScanScanHelp" = "Поместите код в центр видоискателя";
+"CardScanScanFailedTitle"   = "Сканер недоступен";
+"CardScanScanFailedMessage" = "Ваше устройство не поддерживает сканирование. Убедитесь, что Ваша камера не повреждена.";
+"CardScanOk" = "Ок";
+
+/// Cards
+"CardsWarning" = "Внимение";
+"CardsTitle" = "Карты";
+"CardsCanDisplayCard" = "Здесь Вы можете увидеть свои карты";
+"CardsEnterName" = "Введите название";
+"CardsPlaceHolder" = "Название";
+"CardsOk" = "Ок";
+
+/// Settings
+"SettingsTitle" = "Настройки";
+"SettingsGeneral" = "Основные";
+"SettingsStorage" = "Хранилище";
+"SettingsSecurity" = "Безопасность";
+"SettingsOther" = "остальные";
+"SettingsLanguage" = "Язык";
+"SettingsCurrency" = "Валюта";
+"SettingsPush" = "Уведомления";
+"SettingsiCloud" = "iCloud";
+"SettingsClean" = "Очистить";
+"SettingsPinCode" = "Пин код";
+"SettingsTouchID" = "TouchID";
+"SettingsFaceID" = "FaceID";
+"SettingsAbout" = "О программе";
+"SettingsReview" = "Отзыв";
+"SettingsHint" = "Подсказка";
+"SettingsYes" = "Да";
+"SettingsNo" = "Нет";
+"SettingsCoreDataDelete" = "Вы действиельно хотите удлить все данные";
+"SettingsWarning" = "Внимание";
+
+/// Local push manager
+"LocalPushManagerTitle" = "Введите сегодняшние транзакции";
+
+/// About program
+"AboutProgramIconInfo" = "Иконки использовались с ресурса ";

@@ -27,9 +27,12 @@ extension CashFlowCoreDataModel {
     /// Date of transaction
     @NSManaged public var date: Date
     
+    /// Code of curency
+    @NSManaged public var currencyCode: Int64
+    
     /// User who do transaction
     @NSManaged public var user: UserCoreDataModel
     
-    /// Service for transaction
-    @NSManaged public var service: ServiceCoreDataModel
+    /// Category for cash flow
+    @NSManaged public var category: CategoryCoreDataModel
 }

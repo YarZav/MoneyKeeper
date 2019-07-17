@@ -1,0 +1,6 @@
+framework module YZPinCodeViewController {
+  umbrella header "YZPinCodeViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

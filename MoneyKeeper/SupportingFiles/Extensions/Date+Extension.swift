@@ -11,13 +11,23 @@ import UIKit
 extension Date {
     
     /// Get string from date base on formatter, "HH:mm" "dd.MM.yy" etc
+    ///
+    /// - Parameters:
+    ///     - dateFormat: format for date, i.e. "dd.MM.yy"
     func asString(dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
+        if let identifier = Locale.preferredLanguages.first {
+            dateFormatter.locale = Locale(identifier: identifier)
+        }
         return dateFormatter.string(from: self)
     }
     
     /// Is date between two days
+    ///
+    /// - Parameters:
+    ///     - date1: start date
+    ///     - date2: end date
     func isBetween(date date1: Date, andDate date2: Date) -> Bool {
         return date1.compare(self).rawValue * self.compare(date2).rawValue >= 0
     }

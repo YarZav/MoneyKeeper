@@ -10,14 +10,20 @@ import UIKit
 
 // MARK: - CashFlowType
 enum CashFlowType: Int {
-    case consumption = 0        // Расходы
-    case income      = 1        // Доходы
+    case outcome = 0        // Расходы
+    case income  = 1        // Доходы
     
-    //FIXME: Локализация
     var title: String {
         switch self {
-        case .consumption:  return "Расходы"
-        case .income:       return "Доходы"
+        case .outcome: return "Consumption"
+        case .income:  return "Income"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .outcome: return .darkRed
+        case .income:  return .darkGreen
         }
     }
 }
@@ -32,20 +38,26 @@ class CashFlowModel {
     var type: CashFlowType
     
     /// Total price
-    var price: NSNumber
+    var price: Decimal
     
     /// Date of transaction
     var date: Date
     
-    /// Service for transaction
-    var serviceModel: ServiceModel
+    /// Code of curency
+    var currencyCode: CurrencyCode
+    
+    /// Category for cash flow
+    var categoryModel: CategoryModel
 
     // Init
     init(type: CashFlowType) {
         self.type = type
-        self.price = NSNumber(value: 0)
+        self.price = Decimal(0)
         self.date = Date()
-        self.serviceModel = ServiceModel(title: "", imageName: "")
+        self.categoryModel = CategoryModel(title: "", imageName: "")
+        
+        let settingsManager = SettingsManager.sharedInstance
+        self.currencyCode = settingsManager.getSettings()?.curencyModel.code ?? .ruble
     }
 }
 
@@ -54,7 +66,7 @@ extension CashFlowModel {
     
     public func getPriceAsString(numberStyle: NumberFormatter.Style) -> String {
         let numberFormatter = NumberFormatter.numberFormatter(numberStyle: numberStyle)
-        let price = numberFormatter.string(from: self.price) ?? ""
+        let price = numberFormatter.string(from: self.price as NSNumber) ?? ""
         return price
     }
 }

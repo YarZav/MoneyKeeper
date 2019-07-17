@@ -11,42 +11,47 @@ import UIKit
 // MARK: - TabBarWireFrame
 class TabBarWireFrame: BaseWireFrame { }
 
+// MARK: - Prviates
+extension TabBarWireFrame {
+    
+    private func getRootViewController(by type: TabBarButtonType) -> UIViewController {
+        switch type {
+        case .cashFlow:       return self.resolver.cashFlowViewCotnroller()
+        case .cashFlowDetail: return self.resolver.cashFlowDetailViewCotnroller()
+        case .cards:          return self.resolver.cardsViewCotnroller()
+        case .goals:          return BaseViewController()
+        case .settings:       return self.resolver.settingsViewCotnroller()
+        }
+    }
+    
+    private func customizeNavigationController(_ navigationController: UINavigationController, type: TabBarButtonType) {
+        switch type {
+        case .cashFlow, .cards:
+            navigationController.navigationBar.transparentNavigationBar(textColor: .white)
+            
+        case .cashFlowDetail:
+            navigationController.navigationBar.barTintColor = .anthracite
+            navigationController.navigationBar.opaque()
+            navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        case .goals:
+            break
+            
+        case .settings:
+            navigationController.navigationBar.barTintColor = .lightBlue
+            navigationController.navigationBar.opaque()
+            navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
+    }
+}
+
 // MARK: - TabBarWireFrameProtocol
 extension TabBarWireFrame: TabBarWireFrameProtocol {
     
-    func getCashFlowNavigationController() -> UINavigationController {
-        let rootViewController = self.resolver.cashFlowViewCotnroller()
+    func getNavigationController(by type: TabBarButtonType) -> UINavigationController {
+        let rootViewController = self.getRootViewController(by: type)
         let navigationController = BaseNavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.transparentNavigationBar()
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        return navigationController
-    }
-    
-    func getCashFlowDetailNavigationController() -> UINavigationController {
-        let rootViewController = self.resolver.cashFlowDetailViewCotnroller()
-        let navigationController = BaseNavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.barTintColor = .anthracite
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.shadowImage = UIImage.imageWithColor(color: .darkGray)
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        return navigationController
-    }
-    
-    func getCardNavigationController() -> UINavigationController {
-        let rootViewController = BaseViewController()
-        let navigationController = BaseNavigationController(rootViewController: rootViewController)
-        return navigationController
-    }
-    
-    func getGoalNavigationController() -> UINavigationController {
-        let rootViewController = BaseViewController()
-        let navigationController = BaseNavigationController(rootViewController: rootViewController)
-        return navigationController
-    }
-    
-    func getSettingNavigationController() -> UINavigationController {
-        let rootViewController = BaseViewController()
-        let navigationController = BaseNavigationController(rootViewController: rootViewController)
+        self.customizeNavigationController(navigationController, type: type)
         return navigationController
     }
 }

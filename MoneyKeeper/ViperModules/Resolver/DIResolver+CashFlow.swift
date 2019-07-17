@@ -9,24 +9,17 @@
 import UIKit
 
 // MARK: - CashFlowDIResolver
-protocol CashFlowDIResolver {
-    func cashFlowViewCotnroller() -> UIViewController
-    func cashFlowCategoryViewCotnroller(model: CashFlowModel, delegate: CashFlowCategoryDelegate?) -> UIViewController
-    func cashFlowCategoryDetailViewController(model: CashFlowModel) -> UIViewController
-    func cashFlowDetailViewCotnroller() -> UIViewController
-}
-
-// MARK: - DIResolver + CashFlowDIResolver
-extension DIResolver: CashFlowDIResolver {
+extension DIResolver {
     
     // CashFlow
     func cashFlowViewCotnroller() -> UIViewController {
         let view = CashFlowViewController()
-        let interactor = CashFlowInteractor(dao: self.dao, mapper: self.mapper)
+        let interactor = CashFlowInteractor(cashFlowManager: self.cashFlowManager)
         let wireFrame = CashFlowWireFrame(resolver: self)
         let presenter = CashFlowPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
         
         view.presenter = presenter
+        view.type = .outcome
         
         return view
     }
@@ -34,7 +27,7 @@ extension DIResolver: CashFlowDIResolver {
     // CashFlowCategory
     func cashFlowCategoryViewCotnroller(model: CashFlowModel, delegate: CashFlowCategoryDelegate?) -> UIViewController {
         let view = CashFlowCategoryViewController()
-        let interactor = CashFlowCategoryInteractor(dao: self.dao, mapper: self.mapper)
+        let interactor = CashFlowCategoryInteractor(categoryManager: self.categoryManager, cashFlowManager: self.cashFlowManager)
         let wireFrame = CashFlowCategoryWireFrame(resolver: self)
         let presenter = CashFlowCategoryPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
         
@@ -46,14 +39,15 @@ extension DIResolver: CashFlowDIResolver {
     }
     
     // CashFlowCtegoryDetail
-    func cashFlowCategoryDetailViewController(model: CashFlowModel) -> UIViewController {
+    func cashFlowCategoryDetailViewController(model: CategoryModel, delegate: CashFlowCategoryDetailPresenterDelegate?) -> UIViewController {
         let view = CashFlowCategoryDetailViewController()
-        let interactor = CashFlowCategoryDetailInteractor()
+        let interactor = CashFlowCategoryDetailInteractor(categoryManager: self.categoryManager)
         let wireFrame = CashFlowCategoryDetailWireFrame(resolver: self)
         let presenter = CashFlowCategoryDetailPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
         
         view.presenter = presenter
         view.model = model
+        presenter.delegate = delegate
         
         return view
     }
@@ -61,11 +55,24 @@ extension DIResolver: CashFlowDIResolver {
     // CashFlowDetail
     func cashFlowDetailViewCotnroller() -> UIViewController {
         let view = CashFlowDetailViewController()
-        let interactor = CashFlowDetailInteractor(dao: self.dao, mapper: self.mapper)
+        let interactor = CashFlowDetailInteractor(cashFlowManager: self.cashFlowManager)
         let wireFrame = CashFlowDetailWireFrame(resolver: self)
         let presenter = CashFlowDetailPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
         
         view.presenter = presenter
+        
+        return view
+    }
+    
+    // Add new custom cash flow category
+    func cashFlowCategoryAddViewCotnroller(delegate: CashFlowCategoryAddDelegate?) -> UIViewController {
+        let view = CashFlowCategoryAddViewController()
+        let interactor = CashFlowCategoryAddInteractor(categoryManager: self.categoryManager)
+        let wireFrame = CashFlowCategoryAddWireFrame(resolver: self)
+        let presenter = CashFlowCategoryAddPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
+        
+        view.presenter = presenter
+        presenter.delegate = delegate
         
         return view
     }

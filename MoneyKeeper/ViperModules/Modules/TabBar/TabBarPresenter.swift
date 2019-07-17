@@ -24,16 +24,19 @@ class TabBarPresenter: BasePresenter {
     }
 }
 
+// MARK: - Privates
+extension TabBarPresenter {
+    
+    private func getNavigaitonController(for type: TabBarButtonType) -> UINavigationController {
+        return self.wireFrame.getNavigationController(by: type)
+    }
+}
+
 // MARK: - TabBarPresenterProtocol
 extension TabBarPresenter: TabBarPresenterProtocol {
     
-    func createTabBarControlelrs() {
-        let cashFlowNavigationController = self.wireFrame.getCashFlowNavigationController()
-        let cashFlowDetailNavigationController = self.wireFrame.getCashFlowDetailNavigationController()
-        let cardNavigationController = self.wireFrame.getCardNavigationController()
-        let goalNavigationController = self.wireFrame.getGoalNavigationController()
-        let settingNavigationController = self.wireFrame.getSettingNavigationController()
-        let navigationControllers = [cashFlowNavigationController, cashFlowDetailNavigationController, cardNavigationController, goalNavigationController, settingNavigationController]
+    func createTabBarControlelrs(for types: [TabBarButtonType]) {
+        let navigationControllers = types.compactMap { self.getNavigaitonController(for: $0) }
         self.view?.createTabBarControllers(controlelrs: navigationControllers)
     }
 }

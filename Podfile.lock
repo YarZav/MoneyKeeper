@@ -1,16 +1,60 @@
 PODS:
+  - EANBarcodeGenerator (0.1.0)
   - SnapKit (4.2.0)
+  - YZBarChart (1.0.0)
+  - YZNotificationView (1.0.0)
+  - YZNumPad (1.0.0)
+  - YZPinCodeViewController (1.0.0)
 
 DEPENDENCIES:
+  - EANBarcodeGenerator
   - SnapKit
+  - YZBarChart (from `https://github.com/YarZav/YZBarChart.git`, branch `master`)
+  - YZNotificationView (from `https://github.com/YarZav/YZNotificationView.git`, tag `1.0.2`)
+  - YZNumPad (from `https://github.com/YarZav/YZNumPad.git`, tag `1.0.1`)
+  - YZPinCodeViewController (from `https://github.com/YarZav/YZPinCodeViewController.git`, branch `develop`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - EANBarcodeGenerator
     - SnapKit
 
-SPEC CHECKSUMS:
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+EXTERNAL SOURCES:
+  YZBarChart:
+    :branch: master
+    :git: https://github.com/YarZav/YZBarChart.git
+  YZNotificationView:
+    :git: https://github.com/YarZav/YZNotificationView.git
+    :tag: 1.0.2
+  YZNumPad:
+    :git: https://github.com/YarZav/YZNumPad.git
+    :tag: 1.0.1
+  YZPinCodeViewController:
+    :branch: develop
+    :git: https://github.com/YarZav/YZPinCodeViewController.git
 
-PODFILE CHECKSUM: 2e3ba53c50fb1eec0a35694b21015b3d87f3cdc9
+CHECKOUT OPTIONS:
+  YZBarChart:
+    :commit: 1c0f1805cb64e977f9c81b1ea2d30b5fdf3bcec7
+    :git: https://github.com/YarZav/YZBarChart.git
+  YZNotificationView:
+    :git: https://github.com/YarZav/YZNotificationView.git
+    :tag: 1.0.2
+  YZNumPad:
+    :git: https://github.com/YarZav/YZNumPad.git
+    :tag: 1.0.1
+  YZPinCodeViewController:
+    :commit: 0a2a4dceae4cb8d219375e2050ee2ceb554963d9
+    :git: https://github.com/YarZav/YZPinCodeViewController.git
+
+SPEC CHECKSUMS:
+  EANBarcodeGenerator: b19d89506e94e7a1e818d9109fce485d729da6b6
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  YZBarChart: 889c88a7e27db8e32f4db4d8071bf8267fd29708
+  YZNotificationView: 36710b0e293497ab49345ff742838ae3baf99380
+  YZNumPad: 8a024f09eb49f8cddd8bdc0c4fc64f552da7cb5f
+  YZPinCodeViewController: ddb264a97b36ac5651e56b5af4dcd8f8ee7f3ebc
+
+PODFILE CHECKSUM: fe4da6c71cf70941972abf4ccec55aaf243eb1c3
 
 COCOAPODS: 1.5.3

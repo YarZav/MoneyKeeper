@@ -28,7 +28,7 @@ class GradientCollectionView: UICollectionView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override func layoutSubviews() {
@@ -40,6 +40,7 @@ class GradientCollectionView: UICollectionView {
 // MARK: - Publics
 extension GradientCollectionView {
     
+    /// Set gradint to top
     public func setTopGradientPoint(_ scrollView: UIScrollView, defaultOffset: CGFloat = 20.0) {
         var topOffset: CGFloat = 0
         if scrollView.contentOffset.y <= 0 {
@@ -53,6 +54,7 @@ extension GradientCollectionView {
         self.topEndGradientPoint = NSNumber(value: topGradientOffset)
     }
     
+    /// Set gradient to bottom
     public func setBottomGradientPoint(_ scrollView: UIScrollView, defaultOffset: CGFloat = 20.0) {
         var bottomOffset: CGFloat = 0
         if (scrollView.contentOffset.y + scrollView.bounds.size.height) >= scrollView.contentSize.height {
@@ -64,6 +66,17 @@ extension GradientCollectionView {
         }
         let bottomGradientOffset = Float(1 - (bottomOffset / defaultOffset) * 0.1)
         self.bottomStartGradientPoint = NSNumber(value: bottomGradientOffset)
+    }
+    
+    public func reloadDataAndSetGradient() {
+        UIView.animate(withDuration: 0, animations: {
+            self.reloadData()
+        }) { (finished) in
+            if finished {
+                self.setTopGradientPoint(self)
+                self.setBottomGradientPoint(self)
+            }
+        }
     }
 }
 

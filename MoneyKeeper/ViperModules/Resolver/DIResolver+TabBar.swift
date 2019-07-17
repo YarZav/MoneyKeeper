@@ -9,12 +9,7 @@
 import UIKit
 
 // MARK: - TabBarDIResolver
-public protocol TabBarDIResolver {
-    func createTabBarViewCotnroller() -> UIViewController
-}
-
-// MARK: - DIResolver + TabBarDIResolver
-extension DIResolver: TabBarDIResolver {
+extension DIResolver {
 
     // TabBar
     func createTabBarViewCotnroller() -> UIViewController {

@@ -10,7 +10,7 @@ import UIKit
 
 extension Locale {
     
-    /// get current currency symbol base on device language
+    /// Get current currency symbol base on device language
     static func getCurrencySymbol() -> String? {
         return Locale.current.currencySymbol
     }

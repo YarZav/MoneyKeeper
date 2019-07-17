@@ -8,6 +8,13 @@
 
 import UIKit
 import SnapKit
+import YZNotificationView
+
+// MARK: - BaseViewControllerProtocol
+protocol BaseViewControllerProtocol: class {
+    func showOkAlertController(title: String?, message: String?, handler: @escaping () -> Void)
+    func showNotificationView(title: String?, image: UIImage?)
+}
 
 // MARK: - BaseViewController
 class BaseViewController: UIViewController {
@@ -55,6 +62,32 @@ extension BaseViewController {
     
     @objc public func backAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - Alerts
+extension BaseViewController: BaseViewControllerProtocol {
+    
+    func showOkAlertController(title: String?, message: String?, handler: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "BaseControllerOk".localized(), style: .default) { (_) in
+            handler()
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showNotificationView(title: String?, image: UIImage?) {
+        var config = YZNotificationViewConfig()
+        config.imageViewBackgroundColor = .plainGray
+        config.backgroundColor = .darkViolet
+        config.textColor = .white
+        config.textAlignment = .center
+        config.textFont = UIFont.systemFont(ofSize: 21)
+
+        let notificationManager = YZNotificationManager.sharedInstance
+        let notification = YZNotificationView(text: title, image: image, position: .topPosition, configuration: config)
+        notificationManager.showNotifiationView(notification)
     }
 }
 

@@ -11,8 +11,7 @@ import UIKit
 // MARK: - UIView extension
 extension UIView {
     
-    ///
-    /// dropShadow - Бросает тень на вьюшку, необходимые поля - ширина и высота тени
+    /// DropShadow - Бросает тень на вьюшку, необходимые поля - ширина и высота тени
     ///
     /// - Parameters:
     ///     - width: ширина тени
@@ -21,7 +20,6 @@ extension UIView {
     ///     - shadowOffset: отступ тени от родительской вьюшки (по умолчанию width: 0.5, height: 5)
     ///     - shadowOpacity: помутнение тени (по умолчанию 0.5)
     ///     - shadowRadius: радиус тени (по умолчанию 5)
-    ///
     func dropShadow(width: CGFloat,
                     height: CGFloat,
                     shadowColor: UIColor = .black,
@@ -38,5 +36,25 @@ extension UIView {
         self.layer.shadowRadius = shadowRadius
         self.layer.masksToBounds = false
         self.layer.shadowPath = shadowPath.cgPath
+    }
+    
+    /// Make view
+    ///
+    /// - Parameters:
+    ///     - backgroundColor: background color
+    convenience init(backgroundColor: UIColor) {
+        self.init()
+        self.backgroundColor = backgroundColor
+    }
+    
+    /// Make corner radius
+    ///
+    /// - Parameters:
+    ///     - radius: corner radius
+    ///     - color: background color
+    func cornerRadius(_ radius: CGFloat, color: UIColor?) {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = radius
+        self.backgroundColor = color
     }
 }

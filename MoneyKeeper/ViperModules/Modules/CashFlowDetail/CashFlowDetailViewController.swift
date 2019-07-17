@@ -7,77 +7,86 @@
 //
 
 import UIKit
-
+import YZBarChart
 
 // MARK: - CashFlowDetailViewController
 class CashFlowDetailViewController: BaseViewController {
     
     //Properties
     public var presenter: CashFlowDetailPresenterProtocol!
-    private var viewType: CashFlowType = .consumption
+    private var periodType: PeriodType = .week
+    private var viewType: CashFlowType = .outcome
     
-    private var noContentView: CashFlowDetailNoContentView?
+    private var noContentView = LabelView()
     private var contentView: CashFlowDetailContentView?
-    
+        
     //Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.createUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.presenter.updateModels(by: .week)
+        self.presenter.viewDidLoad(by: self.periodType, type: self.viewType)
     }
 }
 
 // MARK: - CashFlowDetailViewControllerProtocol
 extension CashFlowDetailViewController: CashFlowDetailViewControllerProtocol {
     
+    func updateStringLocalization() {
+        self.navigationItem.title = self.viewType.title.localized()
+        self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
+        self.contentView?.updateStringLocalization()
+    }
+    
     func createNoContentView() {
-        if let contentView = self.contentView {
+        if let contentView = self.contentView, self.view.subviews.contains(contentView) {
             contentView.removeFromSuperview()
         }
         
-        if self.noContentView == nil {
-            let noContentView = CashFlowDetailNoContentView()
-            self.noContentView = noContentView
-            self.view.addSubview(noContentView)
-            noContentView.snp.makeConstraints {
-                $0.top.equalToSuperview()
-                $0.left.equalToSuperview()
-                $0.right.equalToSuperview()
+        if !self.view.subviews.contains(self.noContentView) {
+            self.view.addSubview(self.noContentView)
+            self.noContentView.snp.makeConstraints {
+                $0.top.left.right.equalToSuperview()
                 $0.bottom.equalToSuperview().offset(-self.getTabBarHeight())
             }
         }
-    
-        self.view.layoutIfNeeded()
+        self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
     }
     
     func createContentView() {
-        if let noContentView = self.noContentView {
-            noContentView.removeFromSuperview()
+        if self.view.subviews.contains(self.noContentView) {
+            self.noContentView.removeFromSuperview()
         }
         
         if self.contentView == nil {
-            let contentView = CashFlowDetailContentView()
-            contentView.delegate = self
-            self.contentView = contentView
+            self.contentView = CashFlowDetailContentView(periodType: self.periodType)
+            self.contentView?.delegate = self
+        }
+        
+        if let contentView = self.contentView, !self.view.subviews.contains(contentView) {
             self.view.addSubview(contentView)
             contentView.snp.makeConstraints {
-                $0.top.equalToSuperview()
-                $0.left.equalToSuperview()
-                $0.right.equalToSuperview()
+                $0.top.left.right.equalToSuperview()
                 $0.bottom.equalToSuperview().offset(-self.getTabBarHeight())
             }
         }
-        
-        self.view.layoutIfNeeded()
     }
     
-    func displayContent(models: [CashFlowModel], barModels: [BarViewModel]) {
-        self.contentView?.displayBarViewModels(barModels)
-        self.contentView?.displayModels(models)
+    func displayGraphic(models: [CashFlowModel], barModels: [YZBarViewModel]) {
+        self.contentView?.displayGraphic(barModels: barModels, models: models, completion: {
+            //FIXME: USe it
+        })
+    }
+    
+    func insertTable(models: [CashFlowModel]) {
+        self.contentView?.insertTable(models: models, completion: {
+            //FIXME: Use it
+        })
+    }
+    
+    func deleteTable(models: [CashFlowModel]) {
+        self.contentView?.deleteTable(models: models, completion: {
+            //FIXME: Use it
+        })
     }
 }
 
@@ -86,13 +95,17 @@ extension CashFlowDetailViewController {
     
     @objc private func swipeViewTypeAction() {
         switch self.viewType {
-        case .consumption:  self.viewType = .income
-        case .income:       self.viewType = .consumption
+        case .outcome:
+            self.viewType = .income
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGreen]
+
+        case .income:
+            self.viewType = .outcome
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
         }
         
-        self.navigationItem.title = self.viewType.title
-        
-        //FIXME: Get data and update UI
+        self.navigationItem.title = self.viewType.title.localized()
+        self.presenter.updateModels(by: self.periodType, type: self.viewType)
     }
 }
 
@@ -100,7 +113,8 @@ extension CashFlowDetailViewController {
 extension CashFlowDetailViewController {
     
     private func createUI() {
-        self.navigationItem.title = self.viewType.title
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
+        self.navigationItem.title = self.viewType.title.localized()
         self.view.backgroundColor = .darkViolet
         
         let image = UIImage(named: "SwipeType")?.withRenderingMode(.alwaysOriginal)
@@ -114,10 +128,21 @@ extension CashFlowDetailViewController {
 extension CashFlowDetailViewController: CashFlowDetailContentViewDelegate {
     
     func deleteModel(_ model: CashFlowModel) {
-        self.presenter.deleteModel(model)
+        self.presenter.deleteModel(model, period: self.periodType, type: self.viewType)
     }
     
     func updateModels(by period: PeriodType) {
-        self.presenter.updateModels(by: period)
+        self.periodType = period
+        self.presenter.updateModels(by: self.periodType, type: self.viewType)
     }
+}
+
+// MARK: - CashFlowManagerDelegate
+extension CashFlowDetailViewController: CashFlowManagerDelegate {
+    
+    func saveCashFlowModel(_ model: CashFlowModel) {
+        self.presenter.insertModel(model, periodType: self.periodType, type: self.viewType)
+    }
+    
+    func deleteCashFlowModel(_ model: CashFlowModel) { }
 }

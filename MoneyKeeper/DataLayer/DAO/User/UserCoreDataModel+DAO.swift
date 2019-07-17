@@ -9,43 +9,50 @@
 import UIKit
 import CoreData
 
-// MARK: - UserCoreDataProtocol
-protocol UserCoreDataProtocol {
-    func createUserAccount()                            //Create user account in first laubch
-    func getUserCoreDataModel() -> UserCoreDataModel?   //Get current user account
-    func deleteUserCoreDataModel()                      //Delete current user account model
-}
-
-// MARK: - UserCoreDataModel+DAO
-extension DAO: UserCoreDataProtocol {
+// MARK: - UserCoreDataModel + DAO
+extension DAO {
     
-    func createUserAccount() {
+    /// Create use account at app launch if needed
+    public func createUserAccount(callback: @escaping (Error?) -> Void) {
         if self.getUserCoreDataModel() == nil {
             let userCoreDataModel = UserCoreDataModel()
             userCoreDataModel.deviceId = self.getDeviceId()
-            self.save()
+            
+            let categoryCoreDataModels = CategoryModel.defaultModels().compactMap { self.mapper.categoryMapping($0) }
+            userCoreDataModel.categories = NSSet(array: categoryCoreDataModels)
+            
+            let settingsManager = SettingsManager.sharedInstance
+            userCoreDataModel.settings = self.mapper.settingsMapping(settingsManager.getDefaultSettings())
+            
+            self.save(callback: callback)
+        } else {
+            callback(nil)
         }
     }
     
-    func getUserCoreDataModel() -> UserCoreDataModel? {
-        do {
-            let fetchRequest = self.getUserFetchRequest()
-            let results = try self.dataManager.managedObjectContext.fetch(fetchRequest) as? [UserCoreDataModel]
-            let result = results?.first(where: { $0.deviceId == self.getDeviceId() })
-            return result
-        } catch {
-            return nil
-        }
+    /// Get user CoreData model
+    public func getUserCoreDataModel() -> UserCoreDataModel? {
+        let userCoreDataModels: [UserCoreDataModel]? = self.getCoreDataModels(entityName: "User")
+        let userCoreDataModel = userCoreDataModels?.first(where: { $0.deviceId == self.getDeviceId() })
+        
+        let unusedUserCoreDataModels = userCoreDataModels?.filter({  $0.deviceId != self.getDeviceId() })
+        unusedUserCoreDataModels?.forEach({
+            self.dataManager.managedObjectContext.delete($0)
+        })
+        
+        return userCoreDataModel
     }
     
-    func deleteUserCoreDataModel() {
-        if let model = self.getUserCoreDataModel() {
-            self.dataManager.managedObjectContext.delete(model)
-        }
-    }
-    
-    private func getUserFetchRequest() -> NSFetchRequest<NSFetchRequestResult> {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        return fetchRequest
+    /// Delete user info
+    public func deleteUserCoreDataInfo(callback: @escaping (Error?) -> Void) {
+        let userCoreDataModel = self.getUserCoreDataModel()
+        userCoreDataModel?.cashFlows = nil
+
+        let categoryCoreDataModels = CategoryModel.defaultModels().compactMap { self.mapper.categoryMapping($0) }
+        userCoreDataModel?.categories = NSSet(array: categoryCoreDataModels)
+
+        userCoreDataModel?.cards = nil
+
+        self.save(callback: callback)
     }
 }

@@ -12,27 +12,27 @@ import Foundation
 class CashFlowDetailInteractor {
     
     //Properties
-    private var dao: DAO
-    private var mapper: ModelMapper
+    private let cashFlowManager: CashFlowManager
     
     //Init
-    init(dao: DAO, mapper: ModelMapper) {
-        self.dao = dao
-        self.mapper = mapper
+    init(cashFlowManager: CashFlowManager) {
+        self.cashFlowManager = cashFlowManager
     }
 }
 
 // MARK: - CashFlowDetailInteractorProtocol
 extension CashFlowDetailInteractor: CashFlowDetailInteractorProtocol {
     
-    func getCashFlowDetails() -> [CashFlowModel] {
-        let coreDataModels = self.dao.getCashFlowCoreDataModels()
-        let models = coreDataModels.compactMap { self.mapper.cashFlowMapping($0) }
-        return models
+    func addObserver(_ observer: CashFlowManagerDelegate) {
+        self.cashFlowManager.addObserver(observer)
     }
     
-    func deleteModel(_ model: CashFlowModel) {
-        self.dao.deleteCashFlowCoreDataModelBy(id: model.id)
-        self.dao.save()
+    func getCashFlowDetails(type: CashFlowType) -> [CashFlowModel] {
+        let cashFlowModels = self.cashFlowManager.getCashFlowModels(by: type)
+        return cashFlowModels ?? []
+    }
+    
+    func deleteModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void) {
+        self.cashFlowManager.deleteCashFlowModel(model, callback: callback)
     }
 }

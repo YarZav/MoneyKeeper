@@ -11,6 +11,12 @@ import UIKit
 extension UICollectionView {
     
     /// Plain init for UICollectionView
+    ///
+    /// - Parameters:
+    ///     - cells: cells which collecion view will be used
+    ///     - dataSource: dataSource for collection view
+    ///     - delegate: delegate for colelcion view
+    ///     - layout: flowLayout if needed
     convenience init(cells: [AnyClass], dataSource: UICollectionViewDataSource? = nil, delegate: UICollectionViewDelegate? = nil, layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()) {
         self.init(frame: .zero, collectionViewLayout: layout)
         self.dataSource = dataSource
@@ -24,6 +30,9 @@ extension UICollectionView {
     }
     
     /// Get cell for UICollectionView by IndexPath
+    ///
+    /// - Parameters:
+    ///     - indexPath: index path for cell in collection view
     func dequeueCell<T: UICollectionViewCell>(indexPath: IndexPath) -> T {
         let reuseIdentifier = String(describing: T.self)
         return self.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! T
