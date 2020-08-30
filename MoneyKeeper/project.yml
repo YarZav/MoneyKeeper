@@ -1,0 +1,37 @@
+name: MoneyKeeper
+options:
+  indentWidth: 2
+  tabWidth: 2
+settings:
+  base:
+    DEVELOPMENT_TEAM: A758ZQ3GMW
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "iPhone Developer"
+    ENABLE_BITCODE: YES
+    CURRENT_PROJECT_VERSION: 1
+    CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+    ENABLE_TESTABILITY: YES
+targets:
+  MoneyKeeper:
+    type: application
+    platform: iOS
+    deploymentTarget: 11.0
+    sources: [MoneyKeeper]
+    settings:
+      configs:
+        debug:
+          DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+        release:
+          DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ru.ZYG.MoneyKeeperApp
+        TARGETED_DEVICE_FAMILY: 1
+        GCC_TREAT_WARNINGS_AS_ERRORS: YES
+
+schemes:
+  MoneyKeeper:
+    build:
+      targets:
+        MoneyKeeper: all
+    test:
+      gatherCoverageData: true

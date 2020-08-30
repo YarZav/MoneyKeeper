@@ -1,0 +1,96 @@
+/// Categories
+"Products"   = "Products";
+"Transit"    = "Transit";
+"Сlothes"    = "Сlothes";
+"Sport"      = "Sport";
+"Automobile" = "Automobile";
+"Home"       = "Home";
+"Relax"      = "Relax";
+"Mobile"     = "Mobile";
+"Internet"   = "Internet";
+"Medicine"   = "Medicine";
+"Education"  = "Education";
+"Business"   = "Business";
+"Devices"    = "Devices";
+"Books"      = "Books";
+
+/// Launch
+"LaunchWarning" = "Warning";
+
+/// Signle Table
+"SingleWarining" = "Warning";
+
+/// Base controller
+"BaseControllerOk" = "Ok";
+
+/// CashFlow
+"CashFlowNext" = "Next";
+"Consumption"   = "Consumption";
+"Income"   = "Income";
+
+/// CashFlowCategory
+"CashFlowCategoryWarning" = "Warning";
+"CashFlowCategoryTitle" = "Categories";
+"CashFlowCategoryTotal" = "Total";
+
+/// Cash flow category add
+"CashFlowCategoryAddWarning" = "Warning";
+"CashFlowCategoryAddEnterName" = "Enter name";
+"CashFlowCategoryAddChooseImage" = "Choose image";
+"CashFlowCategoryAddAddCategory" = "Add category";
+"CashFlowCategoryAddCategory" = "Category";
+
+/// Cash flow category detail
+"CashFlowCategoryDetailDeleteCategory" = "Delete category";
+"CashFlowCategoryDetailWeek"    = "Week";
+"CashFlowCategoryDetailMonth"   = "Month";
+"CashFlowCategoryDetailYear"    = "Year";
+"CashFlowCategoryDetailAllTime" = "All time";
+"CashFlowCategoryDetailWarning" = "Warning";
+"CashFlowCategoryDetailCanDisplayCashFlow" = "Here you can display cash flow";
+
+/// Card detail
+"CardDetailWarning" = "Warning";
+"CardDetailDeleteCard" = "Deelte card";
+
+/// Card scan
+"CardScanScanHelp"  = "Place the code in the center of the viewfinder";
+"CardScanScanFailedTitle"   = "Scanning not supported";
+"CardScanScanFailedMessage" = "Your device does not support scanning a code from an item. Please use a device with a camera.";
+"CardScanOk" = "Ok";
+
+/// Cards
+"CardsWarning" = "Warning";
+"CardsTitle" = "Cards";
+"CardsCanDisplayCard" = "Here you can display cards";
+"CardsEnterName" = "Enter name";
+"CardsPlaceHolder" = "Name";
+"CardsOk" = "Ok";
+
+/// Settings
+"SettingsTitle" = "Settings";
+"SettingsGeneral" = "General";
+"SettingsStorage" = "Storage";
+"SettingsSecurity" = "Security";
+"SettingsOther" = "Other";
+"SettingsLanguage" = "Language";
+"SettingsCurrency" = "Currency";
+"SettingsPush" = "Push";
+"SettingsiCloud" = "iCloud";
+"SettingsClean" = "Delete";
+"SettingsPinCode" = "PinCode";
+"SettingsTouchID" = "TouchID";
+"SettingsFaceID" = "FaceID";
+"SettingsAbout" = "About";
+"SettingsReview" = "Review";
+"SettingsHint" = "Hint";
+"SettingsYes" = "Yes";
+"SettingsNo" = "No";
+"SettingsCoreDataDelete" = "Are you shure to delete starage data?";
+"SettingsWarning" = "Warning";
+
+/// Local push manager
+"LocalPushManagerTitle" = "Enter today's transactions";
+
+/// About program
+"AboutProgramIconInfo" = "Icon used from webpage ";
