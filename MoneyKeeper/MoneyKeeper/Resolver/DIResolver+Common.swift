@@ -10,15 +10,12 @@ import UIKit
 
 // MARK: - SettingsDIResolver
 extension DIResolver {
-    
-    // Singe selection table view controller
-    func singleSelectionTableViewCotnroller(title: String, interactor: SingleSelectionTableInteractorProtocol) -> UIViewController {
-        let view = SingleSelectionTableViewController()
-        let wireFrame = SingleSelectionTableWireFrame(resolver: self)
-        let presenter = SingleSelectionTablePresenter(view: view, wireFrame: wireFrame, interactor: interactor)
-        
-        view.presenter = presenter
-        
-        return view
-    }
+  // Singe selection table view controller
+  func singleSelectionTableViewCotnroller(title: String, interactor: SingleSelectionTableInteractorProtocol) -> UIViewController {
+    let view = SingleSelectionTableViewController()
+    let wireFrame = SingleSelectionTableWireFrame(resolver: self)
+    let presenter = SingleSelectionTablePresenter(view: view, wireFrame: wireFrame, interactor: interactor)
+    view.presenter = presenter
+    return view
+  }
 }

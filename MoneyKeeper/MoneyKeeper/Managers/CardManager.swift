@@ -20,8 +20,8 @@ class CardManager {
 
 // MARK: - Publics
 extension CardManager {
-    /// Thread safe add card models to CoreData
-    public func saveModel(_ model: CardModel, callback: @escaping (Error?) -> Void) {
+  /// Thread safe add card models to CoreData
+  public func saveModel(_ model: CardModel, callback: @escaping (Error?) -> Void) {
 //      guard let cardCoreDataModel = self.dao.mapper.cardMapping(model) else {
 //        let error = CustomError(title: "Card model map error", description: "Unavailable to map business model to coredata model", code: -1)
 //        callback(error)
@@ -31,20 +31,20 @@ extension CardManager {
 //      self.isolationQueue.async(flags: .barrier) {
 //        self.dao.saveCardCoreDataModel(cardCoreDataModel, callback: callback)
 //      }
-    }
+  }
     
-    /// Thread safe get card models from CoreData
-    public func getModels() -> [CardModel]? {
+  /// Thread safe get card models from CoreData
+  public func getModels() -> [CardModel]? {
 //      var cardCoreDataModels: [CardCoreDataModel]?
 //      self.isolationQueue.sync {
 //        cardCoreDataModels = self.dao.getCardCoreDataModels()
 //      }
 //      return self.dao.mapper.cardMapping(cardCoreDataModels)
-      fatalError()
-    }
+    fatalError()
+  }
     
-    /// Thread safe delete card model from CoreData
-    public func deleteModel(_ model: CardModel, callback: @escaping (Error?) -> Void) {
+  /// Thread safe delete card model from CoreData
+  public func deleteModel(_ model: CardModel, callback: @escaping (Error?) -> Void) {
 //      self.isolationQueue.async(flags: .barrier) {
 //        self.dao.deleteCardCoreDataModelBy(id: model.id, callback: callback)
 //      }

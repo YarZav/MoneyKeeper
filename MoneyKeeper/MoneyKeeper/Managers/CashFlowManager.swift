@@ -10,48 +10,47 @@ import UIKit
 
 /// Thread safe manager to get and set cash flow models
 class CashFlowManager {
-    
-    // Property
-    private let isolationQueue = DispatchQueue(label: "com.MoneyKeeper.CashFlow", qos: .userInteractive, attributes: .concurrent)
-    private let dao: CashFlowDAOProtocol
-    private let mapper: CashFlowModelMapper
-    
-    //Init
-    init(dao: CashFlowDAOProtocol, mapper: CashFlowModelMapper) {
-        self.dao = dao
-        self.mapper = mapper
-    }
+  // Property
+  private let isolationQueue = DispatchQueue(label: "com.MoneyKeeper.CashFlow", qos: .userInteractive, attributes: .concurrent)
+  private let dao: CashFlowDAOProtocol
+  private let mapper: CashFlowModelMapper
+
+  //Init
+  init(dao: CashFlowDAOProtocol, mapper: CashFlowModelMapper) {
+    self.dao = dao
+    self.mapper = mapper
+  }
 }
 
 // MARK: - Publics
 extension CashFlowManager {    
-    public func saveModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void) {
-        guard let coreDataModel = mapper.map(model) else {
-            let error = CustomError(title: "CashFlow model map error", description: "Unavailable to map business model to coredata model", code: -1)
-            callback(error)
-            return
-        }
-
-        self.isolationQueue.async(flags: .barrier) {
-            self.dao.saveModel(coreDataModel, callback: callback)
-        }
+  public func saveModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void) {
+    guard let coreDataModel = mapper.map(model) else {
+      let error = CustomError(title: "CashFlow model map error", description: "Unavailable to map business model to coredata model", code: -1)
+      callback(error)
+      return
     }
+
+    self.isolationQueue.async(flags: .barrier) {
+      self.dao.saveModel(coreDataModel, callback: callback)
+    }
+  }
     
-    /// Thread safe get cash flow models from CoreData
-    public func getModels() -> [CashFlowModel]? {
+  /// Thread safe get cash flow models from CoreData
+  public func getModels() -> [CashFlowModel]? {
 //        var coreDataModels: [CashFlowCoreDataModel]?
 //        self.isolationQueue.sync {
 //            coreDataModels = self.dao.getModels()
 //        }
 //        let models = coreDataModels?.forEach({ mapper.map($0) })
 //        return models
-      return nil
-    }
+    return nil
+  }
     
-    /// Thread safe delete cash flow model from CoreData
-    public func deleteModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void) {
+  /// Thread safe delete cash flow model from CoreData
+  public func deleteModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void) {
 //        self.isolationQueue.async(flags: .barrier) {
 //            self.dao.deleteModel(model, callback: callback)
 //        }
-    }
+  }
 }

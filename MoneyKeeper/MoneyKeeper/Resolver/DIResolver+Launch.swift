@@ -10,16 +10,13 @@ import UIKit
 
 // MARK: - LaunchDIResolver
 extension DIResolver {
-    
-    // TabBar
-    func createLaunchViewCotnroller() -> UIViewController {
-        let view = LaunchViewController()
-        let interactor = LaunchInteractor(dao: userDAO)
-        let wireFrame = LaunchWireFrame(resolver: self)
-        let presenter = LaunchPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
-        
-        view.presenter = presenter
-        
-        return view
-    }
+  // TabBar
+  func createLaunchViewCotnroller() -> UIViewController {
+    let view = LaunchViewController()
+    let interactor = LaunchInteractor(dao: userDAO)
+    let wireFrame = LaunchWireFrame(resolver: self)
+    let presenter = LaunchPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
+    view.presenter = presenter
+    return view
+  }
 }
