@@ -12,23 +12,18 @@ import UserNotifications
 
 // MAKR: - AppDependencies
 class AppDependencies {
+  var resolver: DIResolver
 
-    /// Resolver
-    var resolver: DIResolver
-
-    //Init
-    init() {
-        let localPushManager = LocalPushManager.sharedInstance
-        localPushManager.notificationCenter.delegate = localPushManager
-                
-        self.resolver = DIResolver()
-    }
+  init() {
+    let localPushManager = LocalPushManager.sharedInstance
+    localPushManager.notificationCenter.delegate = localPushManager
+    resolver = DIResolver()
+  }
 }
 
 // MARK: - Publics
 extension AppDependencies {
-    
-    public func rootViewController() -> UIViewController {
-        return self.resolver.createLaunchViewCotnroller()
-    }
+  public func rootViewController() -> UIViewController {
+    return resolver.createLaunchViewCotnroller()
+  }
 }
