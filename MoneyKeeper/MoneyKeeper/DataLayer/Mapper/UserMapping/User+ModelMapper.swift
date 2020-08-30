@@ -8,22 +8,18 @@
 
 // MARK: - UserModelMapper
 class UserModelMapper {
-    func map(_ model: UserModel?) -> UserCoreDataModel? {
-        guard let model = model else { return nil }
-        
-        let userCoreDataModel = UserCoreDataModel()
-        userCoreDataModel.deviceId = model.deviceId
-        userCoreDataModel.userName = model.userName
-        
-        return userCoreDataModel
-    }
-    
-    func map(_ model: UserCoreDataModel?) -> UserModel? {
-        guard let model = model else { return nil }
-        
-        let userModel = UserModel(deviceId: model.deviceId)
-        userModel.userName = model.userName
-        
-        return userModel
-    }
+  func map(_ model: UserModel?) -> UserCoreDataModel? {
+    guard let model = model else { return nil }
+    let userCoreDataModel = UserCoreDataModel()
+    userCoreDataModel.deviceId = model.deviceId
+    userCoreDataModel.userName = model.userName
+    return userCoreDataModel
+  }
+  
+  func map(_ model: UserCoreDataModel?) -> UserModel? {
+    guard let model = model else { return nil }
+    let userModel = UserModel(deviceId: model.deviceId)
+    userModel.userName = model.userName
+    return userModel
+  }
 }

@@ -10,7 +10,7 @@ import CoreData
 
 @objc(User)
 class UserCoreDataModel: NSManagedObject {
-    convenience init() {
-        self.init(entity: CoreDataManager.shared.entityForName(entityName: "User"), insertInto: CoreDataManager.shared.managedObjectContext)
-    }
+  convenience init() {
+    self.init(entity: CoreDataManager.shared.entityForName(entityName: "User"), insertInto: CoreDataManager.shared.managedObjectContext)
+  }
 }

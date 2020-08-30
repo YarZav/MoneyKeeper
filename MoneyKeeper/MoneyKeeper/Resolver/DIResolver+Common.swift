@@ -18,7 +18,6 @@ extension DIResolver {
         let presenter = SingleSelectionTablePresenter(view: view, wireFrame: wireFrame, interactor: interactor)
         
         view.presenter = presenter
-        view.controllerTitle = title
         
         return view
     }

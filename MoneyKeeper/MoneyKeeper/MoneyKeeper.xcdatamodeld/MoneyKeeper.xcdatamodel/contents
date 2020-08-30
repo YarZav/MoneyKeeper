@@ -1,52 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Card" representedClassName="Card" syncable="YES">
-        <attribute name="addDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="code" attributeType="String" syncable="YES"/>
-        <attribute name="identifier" attributeType="String" syncable="YES"/>
-        <attribute name="title" attributeType="String" syncable="YES"/>
-        <attribute name="type" attributeType="String" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cards" inverseEntity="User" syncable="YES"/>
+        <attribute name="addDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="code" attributeType="String"/>
+        <attribute name="identifier" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="type" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cards" inverseEntity="User"/>
     </entity>
     <entity name="CashFlow" representedClassName="CashFlow" syncable="YES">
-        <attribute name="currencyCode" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="identifier" attributeType="String" syncable="YES"/>
-        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="type" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="cashFlow" inverseEntity="Category" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cashFlows" inverseEntity="User" syncable="YES"/>
+        <attribute name="currencyCode" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="identifier" attributeType="String"/>
+        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="type" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="cashFlow" inverseEntity="Category"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="cashFlows" inverseEntity="User"/>
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES">
-        <attribute name="identifier" attributeType="String" syncable="YES"/>
-        <attribute name="imageName" attributeType="String" syncable="YES"/>
-        <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="cashFlow" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CashFlow" inverseName="category" inverseEntity="CashFlow" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="categories" inverseEntity="User" syncable="YES"/>
-    </entity>
-    <entity name="Settings" representedClassName="Settings" syncable="YES">
-        <attribute name="currencyCode" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="iCloud" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="languageCode" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="pincode" attributeType="String" syncable="YES"/>
-        <attribute name="push" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="showHint" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="touchID" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="settings" inverseEntity="User" syncable="YES"/>
+        <attribute name="identifier" attributeType="String"/>
+        <attribute name="imageName" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="cashFlow" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CashFlow" inverseName="category" inverseEntity="CashFlow"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="categories" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="deviceId" attributeType="String" syncable="YES"/>
-        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="user" inverseEntity="Card" syncable="YES"/>
-        <relationship name="cashFlows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CashFlow" inverseName="user" inverseEntity="CashFlow" syncable="YES"/>
-        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="user" inverseEntity="Category" syncable="YES"/>
-        <relationship name="settings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="user" inverseEntity="Settings" syncable="YES"/>
+        <attribute name="deviceId" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="user" inverseEntity="Card"/>
+        <relationship name="cashFlows" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CashFlow" inverseName="user" inverseEntity="CashFlow"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="user" inverseEntity="Category"/>
     </entity>
     <elements>
         <element name="Card" positionX="-374.8828125" positionY="-72.29296875" width="128" height="135"/>
         <element name="CashFlow" positionX="-171.80859375" positionY="-99.41015625" width="128" height="150"/>
         <element name="Category" positionX="152.71484375" positionY="27.34375" width="128" height="120"/>
-        <element name="Settings" positionX="-180" positionY="45" width="128" height="165"/>
-        <element name="User" positionX="-348.86328125" positionY="147.17578125" width="128" height="135"/>
+        <element name="User" positionX="-348.86328125" positionY="147.17578125" width="128" height="118"/>
     </elements>
 </model>

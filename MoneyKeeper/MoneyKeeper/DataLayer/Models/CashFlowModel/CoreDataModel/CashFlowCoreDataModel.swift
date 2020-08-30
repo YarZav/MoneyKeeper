@@ -10,8 +10,8 @@ import CoreData
 
 @objc(CashFlow)
 class CashFlowCoreDataModel: NSManagedObject {
-    convenience init() {
-        self.init(entity: CoreDataManager.shared.entityForName(entityName: "CashFlow"), insertInto: CoreDataManager.shared.managedObjectContext)
-    }
+  convenience init() {
+    self.init(entity: CoreDataManager.shared.entityForName(entityName: "CashFlow"), insertInto: CoreDataManager.shared.managedObjectContext)
+  }
 }
 

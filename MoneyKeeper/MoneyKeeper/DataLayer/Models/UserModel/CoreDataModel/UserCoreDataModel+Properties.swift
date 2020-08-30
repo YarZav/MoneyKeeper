@@ -9,25 +9,22 @@
 import CoreData
 
 extension UserCoreDataModel {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<UserCoreDataModel> {
-        return NSFetchRequest<UserCoreDataModel>(entityName: "User")
-    }
-    
-    /// Device identifier
-    @NSManaged public var deviceId: String
-    
-    /// User name
-    @NSManaged public var userName: String?
-    
-    /// Cash transactions for user
-    @NSManaged public var cashFlows: NSSet?
-    
-    /// Categories for user
-    @NSManaged public var categories: NSSet?
-    
-    /// Cards for user
-    @NSManaged public var cards: NSSet?
-    
-    /// Settings for user
-    @NSManaged public var settings: SettingsCoreDataModel?
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<UserCoreDataModel> {
+    return NSFetchRequest<UserCoreDataModel>(entityName: "User")
+  }
+
+  /// Device identifier
+  @NSManaged public var deviceId: String
+
+  /// User name
+  @NSManaged public var userName: String?
+
+  /// Cash transactions for user
+  @NSManaged public var cashFlows: NSSet?
+
+  /// Categories for user
+  @NSManaged public var categories: NSSet?
+
+  /// Cards for user
+  @NSManaged public var cards: NSSet?
 }

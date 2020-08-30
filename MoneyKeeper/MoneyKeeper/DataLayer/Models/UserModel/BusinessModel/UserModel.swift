@@ -8,14 +8,14 @@
 
 // MARK - UserModel
 class UserModel {
-    /// Device identifier
-    public var deviceId: String
-    
-    /// User name
-    public var userName: String?
-    
-    // Init
-    init(deviceId: String) {
-        self.deviceId = deviceId
-    }
+  /// Device identifier
+  public var deviceId: String
+
+  /// User name
+  public var userName: String?
+
+  // Init
+  init(deviceId: String) {
+    self.deviceId = deviceId
+  }
 }

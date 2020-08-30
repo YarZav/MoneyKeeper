@@ -8,30 +8,14 @@
 
 // Language for settings
 class LanguageModel {
-    /// Language enabled
-    var isOn: Bool
-    
-    /// Lanhiage code
-    var code: LanguageCode
-    
-    init(isOn: Bool, code: LanguageCode) {
-        self.isOn = isOn
-        self.code = code
-    }
-}
+  /// Language enabled
+  var isOn: Bool
 
-// MARK: - Protocol for single selection table
-extension LanguageModel: SingleSelectionModel {
-    func setSelection(_ selection: Bool) {
-        isOn = selection
-    }
-    
-    func getTitle() -> String {
-        return code.title
-    }
-    
-    func isSelection() -> Bool {
-        return isOn
-    }
-}
+  /// Lanhiage code
+  var code: LanguageCode
 
+  init(isOn: Bool, code: LanguageCode) {
+    self.isOn = isOn
+    self.code = code
+  }
+}

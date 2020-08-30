@@ -9,24 +9,7 @@
 import UIKit
 
 // MARK: - CurrencyInteractor
-class CurrencyInteractor {
-    private let currencyModels = CurrencyFactory.models()
-}
+class CurrencyInteractor { }
 
 // MARK: - SingleSelectionTableInteractorProtocol
-extension CurrencyInteractor: SingleSelectionTableInteractorProtocol {
-    
-    func getModels() -> [SingleSelectionModel] {
-//        if let settingsModel = settingsManager.getSettings() {
-//            self.currencyModels.first { $0.code == settingsModel.curencyModel.code }?.isOn = true
-//        }
-//
-//        return self.currencyModels
-        return []
-    }
-    
-    func didSelectModel(at indexPath: IndexPath, callback: @escaping (Error?) -> Void) {
-//        let currencyModel = self.currencyModels[indexPath.row]
-//        self.settingsManager.setCurrencyModel(currencyModel, callback: callback)
-    }
-}
+extension CurrencyInteractor: SingleSelectionTableInteractorProtocol { }

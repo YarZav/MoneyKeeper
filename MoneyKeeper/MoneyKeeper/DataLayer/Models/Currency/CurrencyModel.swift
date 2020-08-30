@@ -8,29 +8,14 @@
 
 // Currency for settings
 class CurrencyModel {
-    /// Currency enabled
-    var isOn: Bool
+  /// Currency enabled
+  var isOn: Bool
     
-    /// Currency code
-    var code: CurrencyCode
-    
-    init(isOn: Bool, code: CurrencyCode) {
-        self.isOn = isOn
-        self.code = code
-    }
-}
-
-// MARK: - Protocol for single selection table
-extension CurrencyModel: SingleSelectionModel {
-    func setSelection(_ selection: Bool) {
-        isOn = selection
-    }
-    
-    func getTitle() -> String {
-        return code.title
-    }
-    
-    func isSelection() -> Bool {
-        return isOn
-    }
+  /// Currency code
+  var code: CurrencyCode
+  
+  init(isOn: Bool, code: CurrencyCode) {
+    self.isOn = isOn
+    self.code = code
+  }
 }

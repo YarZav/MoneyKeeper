@@ -10,23 +10,21 @@ import UIKit
 
 /// Currency code
 enum CurrencyCode: Int, CaseIterable {
-    
-    /// Russian currency
-    case ruble = 0
-    
-    /// Code for currency
-    var title: String {
-        switch self {
-        case .ruble: return "₽"
-        }
+  /// Russian currency
+  case ruble = 0
+
+  /// Code for currency
+  var title: String {
+    switch self {
+    case .ruble: return "₽"
     }
+  }
 }
 
 // MARK: - Public
 class CurrencyFactory {
-    
-    /// Get all curencies
-    public static func models() -> [CurrencyModel] {
-        return CurrencyCode.allCases.compactMap { CurrencyModel(isOn: false, code: $0) }
-    }
+  /// Get all curencies
+  public static func models() -> [CurrencyModel] {
+    return CurrencyCode.allCases.compactMap { CurrencyModel(isOn: false, code: $0) }
+  }
 }

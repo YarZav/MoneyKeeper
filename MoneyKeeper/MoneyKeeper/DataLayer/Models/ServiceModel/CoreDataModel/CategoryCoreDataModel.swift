@@ -10,7 +10,7 @@ import CoreData
 
 @objc(Category)
 class CategoryCoreDataModel: NSManagedObject {
-    convenience init() {
-        self.init(entity: CoreDataManager.shared.entityForName(entityName: "Category"), insertInto: CoreDataManager.shared.managedObjectContext)
-    }
+  convenience init() {
+    self.init(entity: CoreDataManager.shared.entityForName(entityName: "Category"), insertInto: CoreDataManager.shared.managedObjectContext)
+  }
 }
