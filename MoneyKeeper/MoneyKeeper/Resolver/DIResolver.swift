@@ -13,7 +13,7 @@ class DIResolver {
   private let coreDataManager = CoreDataManager.shared
 
   /// Thread safe cash flow manager
-  public var cashFlowManager: CashFlowManager
+  public var cashFlowManager: CashManager
 
   /// Thread safe category manager
   public var categoryManager: CategoryManager
@@ -21,16 +21,13 @@ class DIResolver {
   /// Thread safe card manager
   public var cardManager: CardManager
 
-  public let userDAO = UserDAO(categoryMapper: CategoryModelMapper(), coreDataManager: CoreDataManager.shared)
-
   //Init
   init() {
     let cashFlowDAO = CashFlowDAO(coreDataManager: coreDataManager)
     let categoryDAO = CategoryDAO(coreDataManager: coreDataManager)
     let cardDAO = CardDAO(coreDataManager: coreDataManager)
-  //        let userDAO = UserDAO(categoryMapper: CategoryModelMapper(), coreDataManager: CoreDataManager.shared)
 
-    self.cashFlowManager = CashFlowManager(dao: cashFlowDAO, mapper: CashFlowModelMapper())
+    self.cashFlowManager = CashManager(dao: cashFlowDAO, mapper: CashFlowModelMapper())
     self.categoryManager = CategoryManager(dao: categoryDAO)
     self.cardManager = CardManager(dao: cardDAO)
   }

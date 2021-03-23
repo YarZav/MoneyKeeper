@@ -12,7 +12,7 @@ import UIKit
 class CashFlowDetailSection {
     
     var date: Date
-    var models = [CashFlowModel]()
+    var models = [CashModel]()
     
     init(date: Date) {
         self.date = date
@@ -35,14 +35,14 @@ class CashFlowDetailTableDataSource {
 // MARK: - Privates
 extension CashFlowDetailTableDataSource {
     
-    private func insertNewModel(_ model: CashFlowModel, sectionIndex: Int) {
+    private func insertNewModel(_ model: CashModel, sectionIndex: Int) {
         let newSection = CashFlowDetailSection(date: model.date.startOfDay)
         newSection.models.append(model)
         self.sections.insert(newSection, at: sectionIndex)
     }
     
-    private func getAllModels() -> [CashFlowModel] {
-        var models = [CashFlowModel]()
+    private func getAllModels() -> [CashModel] {
+        var models = [CashModel]()
         self.sections.forEach { models.append(contentsOf: $0.models) }
         return models
     }
@@ -91,7 +91,7 @@ extension CashFlowDetailTableDataSource {
 //MARK: - Insert/Delete
 extension CashFlowDetailTableDataSource {
     
-    public func insertModels(_ models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func insertModels(_ models: [CashModel], completion: @escaping () -> Void) {
         //FIXME: In Queue
         if models.isEmpty {
             completion()
@@ -112,8 +112,8 @@ extension CashFlowDetailTableDataSource {
         
         var insertedRows = [IndexPath]()
         let insertedSection = NSMutableIndexSet()
-        var newRowModels = [CashFlowModel]()
-        var newSectionModels = [CashFlowModel]()
+        var newRowModels = [CashModel]()
+        var newSectionModels = [CashModel]()
         
         for model in sortedModels {
             //Add model in created section
@@ -201,7 +201,7 @@ extension CashFlowDetailTableDataSource {
         CATransaction.commit()
     }
     
-    public func deleteModels(at models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func deleteModels(at models: [CashModel], completion: @escaping () -> Void) {
         //FIXME: In Queue
         if models.isEmpty {
             completion()
@@ -222,7 +222,7 @@ extension CashFlowDetailTableDataSource {
         self.deleteModels(at: deletedIndexPaths, completion: completion)
     }
     
-    public func getModelAt(_ indexPath: IndexPath) -> CashFlowModel {
+    public func getModelAt(_ indexPath: IndexPath) -> CashModel {
         return self.sections[indexPath.section].models[indexPath.row]
     }
 }

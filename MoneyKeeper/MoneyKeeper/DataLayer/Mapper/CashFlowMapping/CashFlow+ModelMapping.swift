@@ -10,7 +10,7 @@ import AVFoundation
 
 // MARK: - CashFlowModelMapper
 class CashFlowModelMapper {
-  func map(_ model: CashFlowModel?) -> CashFlowCoreDataModel? {
+  func map(_ model: CashModel?) -> CashFlowCoreDataModel? {
     guard let model = model else { return nil }
     guard let category = CategoryModelMapper().map(model.categoryModel) else { return nil }
     let cashFlowCoreDataModel = CashFlowCoreDataModel()
@@ -23,10 +23,10 @@ class CashFlowModelMapper {
     return cashFlowCoreDataModel
   }
       
-  func map(_ model: CashFlowCoreDataModel?) -> CashFlowModel? {
-    guard let model = model, let type = CashFlowType(rawValue: Int(model.type)) else { return nil }
+  func map(_ model: CashFlowCoreDataModel?) -> CashModel? {
+    guard let model = model, let type = CashType(rawValue: Int(model.type)) else { return nil }
     guard let category = CategoryModelMapper().map(model.category) else { return nil }
-    let cashFlowModel = CashFlowModel(type: type)
+    let cashFlowModel = CashModel(type: type)
     cashFlowModel.id = model.identifier
     cashFlowModel.price = Decimal(model.price)
     cashFlowModel.date = model.date

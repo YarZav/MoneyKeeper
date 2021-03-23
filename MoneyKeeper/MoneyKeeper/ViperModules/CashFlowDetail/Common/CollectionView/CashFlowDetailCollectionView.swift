@@ -27,7 +27,7 @@ struct CashFlowDetailCollectionStruct {
 // MARK: - CashFlowDetailCollectionView
 class CashFlowDetailCollectionView: UIView {
 
-    private var models = [CashFlowModel]()
+    private var models = [CashModel]()
     private var collectionView: GradientCollectionView!
 
     //Init
@@ -44,7 +44,7 @@ class CashFlowDetailCollectionView: UIView {
 // MARK: - Publics
 extension CashFlowDetailCollectionView {
     
-    public func displayModels(_ models: [CashFlowModel]) {
+    public func displayModels(_ models: [CashModel]) {
         self.models = models
         self.collectionView.reloadDataAndSetGradient()
     }

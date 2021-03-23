@@ -28,9 +28,6 @@ extension CashFlowCoreDataModel {
   /// Code of curency
   @NSManaged public var currencyCode: Int64
 
-  /// User who do transaction
-  @NSManaged public var user: UserCoreDataModel
-
   /// Category for cash flow
   @NSManaged public var category: CategoryCoreDataModel
 }

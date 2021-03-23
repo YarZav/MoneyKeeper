@@ -46,7 +46,7 @@ extension UIDevice {
                 return nil
             }
             
-        case .unspecified, .pad, .tv, .carPlay:
+        case .unspecified, .pad, .tv, .carPlay, .mac:
             return nil
         @unknown default:
             return nil

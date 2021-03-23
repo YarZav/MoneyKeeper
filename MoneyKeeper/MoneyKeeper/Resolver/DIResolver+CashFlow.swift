@@ -10,19 +10,19 @@ import UIKit
 
 // MARK: - CashFlowDIResolver
 extension DIResolver {
-  // CashFlow
-  func cashFlowViewCotnroller() -> UIViewController {
-    let view = CashFlowViewController()
-    let interactor = CashFlowInteractor(cashFlowManager: self.cashFlowManager)
-    let wireFrame = CashFlowWireFrame(resolver: self)
-    let presenter = CashFlowPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
+  // Cash
+  func cashViewCotnroller() -> UIViewController {
+    let view = CashViewController()
+    let interactor = CashInteractor(cashManager: self.cashFlowManager)
+    let wireFrame = CashWireFrame(resolver: self)
+    let presenter = CashPresenter(view: view, interactor: interactor, wireFrame: wireFrame)
     view.presenter = presenter
     view.type = .outcome
     return view
   }
 
   // CashFlowCategory
-  func cashFlowCategoryViewCotnroller(model: CashFlowModel, delegate: CashFlowCategoryDelegate?) -> UIViewController {
+  func cashFlowCategoryViewCotnroller(model: CashModel, delegate: CashFlowCategoryDelegate?) -> UIViewController {
     let view = CashFlowCategoryViewController()
     let interactor = CashFlowCategoryInteractor(categoryManager: self.categoryManager, cashFlowManager: self.cashFlowManager)
     let wireFrame = CashFlowCategoryWireFrame(resolver: self)

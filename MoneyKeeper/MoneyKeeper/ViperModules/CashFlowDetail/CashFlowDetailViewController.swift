@@ -15,7 +15,7 @@ class CashFlowDetailViewController: BaseViewController {
     //Properties
     public var presenter: CashFlowDetailPresenterProtocol!
     private var periodType: PeriodType = .week
-    private var viewType: CashFlowType = .outcome
+    private var viewType: CashType = .outcome
     
     private var noContentView = LabelView()
     private var contentView: CashFlowDetailContentView?
@@ -71,19 +71,19 @@ extension CashFlowDetailViewController: CashFlowDetailViewControllerProtocol {
         }
     }
     
-    func displayGraphic(models: [CashFlowModel], barModels: [YZBarViewModel]) {
+    func displayGraphic(models: [CashModel], barModels: [YZBarViewModel]) {
         self.contentView?.displayGraphic(barModels: barModels, models: models, completion: {
             //FIXME: USe it
         })
     }
     
-    func insertTable(models: [CashFlowModel]) {
+    func insertTable(models: [CashModel]) {
         self.contentView?.insertTable(models: models, completion: {
             //FIXME: Use it
         })
     }
     
-    func deleteTable(models: [CashFlowModel]) {
+    func deleteTable(models: [CashModel]) {
         self.contentView?.deleteTable(models: models, completion: {
             //FIXME: Use it
         })
@@ -127,7 +127,7 @@ extension CashFlowDetailViewController {
 // MARK: - CashFlowDetailGraphicDelegate
 extension CashFlowDetailViewController: CashFlowDetailContentViewDelegate {
     
-    func deleteModel(_ model: CashFlowModel) {
+    func deleteModel(_ model: CashModel) {
         self.presenter.deleteModel(model, period: self.periodType, type: self.viewType)
     }
     

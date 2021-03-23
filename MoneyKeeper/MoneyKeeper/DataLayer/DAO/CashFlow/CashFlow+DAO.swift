@@ -26,9 +26,10 @@ class CashFlowDAO {
 
 extension CashFlowDAO: CashFlowDAOProtocol {
   func getModels() -> [CashFlowCoreDataModel]? {
-    let userCoreDataModel: UserCoreDataModel? = coreDataManager.getCoreDataModels(entityName: "User")?.first
-    let cashFlowCareDataModels = userCoreDataModel?.cashFlows?.allObjects as? [CashFlowCoreDataModel]
-    return cashFlowCareDataModels
+//    let userCoreDataModel: UserCoreDataModel? = coreDataManager.getCoreDataModels(entityName: "User")?.first
+//    let cashFlowCareDataModels = userCoreDataModel?.cashFlows?.allObjects as? [CashFlowCoreDataModel]
+//    return cashFlowCareDataModels
+    return nil
   }
 
   func deleteModel(_ model: CashFlowCoreDataModel, callback: @escaping (Error?) -> Void) {

@@ -12,7 +12,7 @@ import YZBarChart
 // MARK: - CashFlowDetailContentViewDelegate
 protocol CashFlowDetailContentViewDelegate: class {
     func updateModels(by period: PeriodType)
-    func deleteModel(_ model: CashFlowModel)
+    func deleteModel(_ model: CashModel)
 }
 
 // MARK: - CashFlowDetailViewType
@@ -54,19 +54,19 @@ class CashFlowDetailContentView: UIView {
 // MARK: - Publics
 extension CashFlowDetailContentView {
     
-    public func displayGraphic(barModels: [YZBarViewModel], models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func displayGraphic(barModels: [YZBarViewModel], models: [CashModel], completion: @escaping () -> Void) {
         self.graphicView.displayBarViewModels(barModels)
         self.collectionView.displayModels(models)
         completion()
     }
     
-    public func insertTable(models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func insertTable(models: [CashModel], completion: @escaping () -> Void) {
         self.tableView.insertModels(models) {
             completion()
         }
     }
     
-    public func deleteTable(models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func deleteTable(models: [CashModel], completion: @escaping () -> Void) {
         self.tableView.deleteModels(models, completion: completion)
     }
 
@@ -116,7 +116,7 @@ extension CashFlowDetailContentView {
 // MARK: - CashFlowDetailTableDelegate
 extension CashFlowDetailContentView: CashFlowDetailTableDelegate {
     
-    func deleteModel(_ model: CashFlowModel) {
+    func deleteModel(_ model: CashModel) {
         self.delegate?.deleteModel(model)
     }
 }

@@ -15,8 +15,6 @@ class AppDependencies {
   var resolver: DIResolver
 
   init() {
-    let localPushManager = LocalPushManager.sharedInstance
-    localPushManager.notificationCenter.delegate = localPushManager
     resolver = DIResolver()
   }
 }
@@ -24,6 +22,6 @@ class AppDependencies {
 // MARK: - Publics
 extension AppDependencies {
   public func rootViewController() -> UIViewController {
-    return resolver.createLaunchViewCotnroller()
+    return resolver.createTabBarViewCotnroller()
   }
 }

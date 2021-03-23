@@ -27,8 +27,5 @@ extension CardCoreDataModel {
 
   /// Name for bar code
   @NSManaged public var title: String
-
-  /// User who do transaction
-  @NSManaged public var user: UserCoreDataModel
 }
 

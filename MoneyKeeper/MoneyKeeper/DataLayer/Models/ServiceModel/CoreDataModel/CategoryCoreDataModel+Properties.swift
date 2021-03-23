@@ -24,7 +24,4 @@ extension CategoryCoreDataModel {
 
   /// Cash transaction info for category
   @NSManaged public var cashFlow: CashFlowCoreDataModel
-
-  /// User model
-  @NSManaged public var user: UserCoreDataModel
 }

@@ -12,21 +12,21 @@ import Foundation
 class CashFlowDetailInteractor {
     
     //Properties
-    private let cashFlowManager: CashFlowManager
+    private let cashFlowManager: CashManager
     
     //Init
-    init(cashFlowManager: CashFlowManager) {
+    init(cashFlowManager: CashManager) {
         self.cashFlowManager = cashFlowManager
     }
 }
 
 // MARK: - CashFlowDetailInteractorProtocol
 extension CashFlowDetailInteractor: CashFlowDetailInteractorProtocol {
-    func getCashFlowDetails(type: CashFlowType) -> [CashFlowModel] {
+    func getCashFlowDetails(type: CashType) -> [CashModel] {
         return cashFlowManager.getModels() ?? []
     }
     
-    func deleteModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void) {
+    func deleteModel(_ model: CashModel, callback: @escaping (Error?) -> Void) {
         cashFlowManager.deleteModel(model, callback: callback)
     }
 }

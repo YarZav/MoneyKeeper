@@ -22,7 +22,7 @@ class CashFlowDetailPresenter: BasePresenter {
     private let interactor: CashFlowDetailInteractorProtocol
     private let wireFrame: CashFlowDetailWireFrameProtocol
     
-    private var cashFlowModels = [CashFlowModel]()
+    private var cashFlowModels = [CashModel]()
     
     //Init
     init(view: CashFlowDetailViewControllerProtocol, interactor: CashFlowDetailInteractorProtocol, wireFrame: CashFlowDetailWireFrameProtocol) {
@@ -39,13 +39,13 @@ class CashFlowDetailPresenter: BasePresenter {
 // MARK: - CashFlowDetailPresenterProtocol
 extension CashFlowDetailPresenter: CashFlowDetailPresenterProtocol {
     
-    func viewDidLoad(by period: PeriodType, type: CashFlowType) {
+    func viewDidLoad(by period: PeriodType, type: CashType) {
         self.cashFlowModels = self.interactor.getCashFlowDetails(type: type)
 
         self.updateModels(by: period, type: type)
     }
     
-    func updateModels(by period: PeriodType, type: CashFlowType) {
+    func updateModels(by period: PeriodType, type: CashType) {
         let filteredModels = self.filterModels(self.cashFlowModels, startDate: period.startDate, endDate: period.endDate).filter { $0.type == type }
         
         if filteredModels.isEmpty {
@@ -59,7 +59,7 @@ extension CashFlowDetailPresenter: CashFlowDetailPresenterProtocol {
         }
     }
     
-    func deleteModel(_ model: CashFlowModel, period: PeriodType, type: CashFlowType) {
+    func deleteModel(_ model: CashModel, period: PeriodType, type: CashType) {
         self.interactor.deleteModel(model) { (error) in
             Thread.current.doInMainThread {
                 if let error = error {
@@ -72,7 +72,7 @@ extension CashFlowDetailPresenter: CashFlowDetailPresenterProtocol {
         }
     }
     
-    func insertModel(_ model: CashFlowModel, periodType: PeriodType, type: CashFlowType) {
+    func insertModel(_ model: CashModel, periodType: PeriodType, type: CashType) {
         Thread.current.doInMainThread {
             self.cashFlowModels.append(model)
             self.updateModels(by: periodType, type: type)
@@ -84,7 +84,7 @@ extension CashFlowDetailPresenter: CashFlowDetailPresenterProtocol {
 extension CashFlowDetailPresenter {
     
     /// Queue to calculate bar models
-    private func getBarModels(_ models: [CashFlowModel], dates: [Date], type: CalculateBarModels, callback: @escaping ([YZBarModel]) -> Void) {
+    private func getBarModels(_ models: [CashModel], dates: [Date], type: CalculateBarModels, callback: @escaping ([YZBarModel]) -> Void) {
         let queue = DispatchQueue(label: "com.MoneyKeeper.getBarModels", qos: .userInteractive)
         queue.sync {
             Thread.current.doInMainThread {
@@ -97,7 +97,7 @@ extension CashFlowDetailPresenter {
     }
     
     /// Get day models
-    private func getModelsByDay(_ models: [CashFlowModel], dates: [Date]) -> [YZBarModel] {
+    private func getModelsByDay(_ models: [CashModel], dates: [Date]) -> [YZBarModel] {
         var barModels = [YZBarModel]()
         
         for (dateIndex, date) in dates.enumerated() {
@@ -120,7 +120,7 @@ extension CashFlowDetailPresenter {
     }
     
     /// Get month models
-    private func getModelsByMonth(_ models: [CashFlowModel], dates: [Date]) -> [YZBarModel] {
+    private func getModelsByMonth(_ models: [CashModel], dates: [Date]) -> [YZBarModel] {
         var barModels = [YZBarModel]()
 
         for (dateIndex, date) in dates.enumerated() {
@@ -144,7 +144,7 @@ extension CashFlowDetailPresenter {
     }
     
     /// Filter cash flow models by dates
-    private func filterModels(_ models: [CashFlowModel], startDate: Date, endDate: Date) -> [CashFlowModel] {
+    private func filterModels(_ models: [CashModel], startDate: Date, endDate: Date) -> [CashModel] {
         let filteredModels = models.filter { $0.date.isBetween(date: startDate, andDate: endDate) }
         return filteredModels
     }
@@ -160,11 +160,11 @@ extension CashFlowDetailPresenter {
     }
     
     /// Prepare and display bar models
-    private func displayGraphicContent(models: [CashFlowModel], period: PeriodType) {
+    private func displayGraphicContent(models: [CashModel], period: PeriodType) {
         let filteredModels = self.filterModels(models, startDate: period.startDate, endDate: period.endDate)
         let barConfig = self.getBarConfig()
         
-        let displayCodeBlock: (([CashFlowModel], [YZBarModel]) -> Void) = { (models, barModels) in
+        let displayCodeBlock: (([CashModel], [YZBarModel]) -> Void) = { (models, barModels) in
             let viewModels = barModels.compactMap({ YZBarViewModel(config: barConfig, model: $0) })
             self.view?.createContentView()
             self.view?.displayGraphic(models: models, barModels: viewModels)
@@ -189,7 +189,7 @@ extension CashFlowDetailPresenter {
     }
     
     /// Present table content
-    private func displayTableContent(models: [CashFlowModel]) {
+    private func displayTableContent(models: [CashModel]) {
         self.view?.createContentView()
         self.view?.insertTable(models: models)
     }

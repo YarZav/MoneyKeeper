@@ -14,23 +14,23 @@ protocol CashFlowDetailViewControllerProtocol: BaseViewControllerProtocol {
     func updateStringLocalization()
     func createNoContentView()
     func createContentView()
-    func displayGraphic(models: [CashFlowModel], barModels: [YZBarViewModel])
-    func insertTable(models: [CashFlowModel])
-    func deleteTable(models: [CashFlowModel])
+    func displayGraphic(models: [CashModel], barModels: [YZBarViewModel])
+    func insertTable(models: [CashModel])
+    func deleteTable(models: [CashModel])
 }
 
 //View -> Presenter
 protocol CashFlowDetailPresenterProtocol {
-    func viewDidLoad(by period: PeriodType, type: CashFlowType)
-    func updateModels(by period: PeriodType, type: CashFlowType)
-    func insertModel(_ model: CashFlowModel, periodType: PeriodType, type: CashFlowType)
-    func deleteModel(_ model: CashFlowModel, period: PeriodType, type: CashFlowType)
+    func viewDidLoad(by period: PeriodType, type: CashType)
+    func updateModels(by period: PeriodType, type: CashType)
+    func insertModel(_ model: CashModel, periodType: PeriodType, type: CashType)
+    func deleteModel(_ model: CashModel, period: PeriodType, type: CashType)
 }
 
 //Presenter - Interactor
 protocol CashFlowDetailInteractorProtocol {
-    func getCashFlowDetails(type: CashFlowType) -> [CashFlowModel]
-    func deleteModel(_ model: CashFlowModel, callback: @escaping (Error?) -> Void)
+    func getCashFlowDetails(type: CashType) -> [CashModel]
+    func deleteModel(_ model: CashModel, callback: @escaping (Error?) -> Void)
 }
 
 //Presenter - WireFrame

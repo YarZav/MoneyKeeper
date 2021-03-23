@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: - CashFlowDetailTableDelegate
 protocol CashFlowDetailTableDelegate: class {
-    func deleteModel(_ model: CashFlowModel)
+    func deleteModel(_ model: CashModel)
 }
 
 // MARK: - CashFlowDetailTableView
@@ -37,11 +37,11 @@ class CashFlowDetailTableView: UIView {
 // MARK: - Publics
 extension CashFlowDetailTableView {
     
-    public func insertModels(_ models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func insertModels(_ models: [CashModel], completion: @escaping () -> Void) {
         self.dataSource.insertModels(models, completion: completion)
     }
     
-    public func deleteModels(_ models: [CashFlowModel], completion: @escaping () -> Void) {
+    public func deleteModels(_ models: [CashModel], completion: @escaping () -> Void) {
         self.dataSource.deleteModels(at: models, completion: completion)
     }
     
