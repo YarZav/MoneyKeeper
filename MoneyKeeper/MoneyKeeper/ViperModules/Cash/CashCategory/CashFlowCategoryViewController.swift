@@ -106,7 +106,7 @@ extension CashFlowCategoryViewController {
 extension CashFlowCategoryViewController {
     
     private func createUI() {
-        let margin = CashFlowCategoryStruct.horizontalMargin
+//        let margin = CashFlowCategoryStruct.horizontalMargin
         self.view.backgroundColor = .anthracite
         self.navigationItem.title = "CashFlowCategoryTitle".localized()
         
@@ -126,26 +126,26 @@ extension CashFlowCategoryViewController {
         self.view.addSubview(self.collectionView)
         self.view.addSubview(self.priceLabel)
         
-        self.price.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(self.getNavigationbarHeight() + margin)
-            $0.left.equalToSuperview().offset(margin)
-            $0.right.equalToSuperview().offset(-margin)
-            $0.height.equalTo(36)
-        }
-        
-        self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.price.snp.bottom).offset(margin)
-            $0.left.equalToSuperview().offset(margin)
-            $0.right.equalToSuperview().offset(-margin)
-        }
-        
-        self.priceLabel.snp.makeConstraints {
-            $0.top.equalTo(self.collectionView.snp.bottom).offset(21)
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
-            $0.height.equalTo(44)
-            $0.bottom.equalToSuperview().offset(-self.getTabBarHeight()-margin)
-        }
+//        self.price.snp.makeConstraints {
+//            $0.top.equalToSuperview().offset(self.getNavigationbarHeight() + margin)
+//            $0.left.equalToSuperview().offset(margin)
+//            $0.right.equalToSuperview().offset(-margin)
+//            $0.height.equalTo(36)
+//        }
+//        
+//        self.collectionView.snp.makeConstraints {
+//            $0.top.equalTo(self.price.snp.bottom).offset(margin)
+//            $0.left.equalToSuperview().offset(margin)
+//            $0.right.equalToSuperview().offset(-margin)
+//        }
+//        
+//        self.priceLabel.snp.makeConstraints {
+//            $0.top.equalTo(self.collectionView.snp.bottom).offset(21)
+//            $0.left.equalToSuperview().offset(16)
+//            $0.right.equalToSuperview().offset(-16)
+//            $0.height.equalTo(44)
+//            $0.bottom.equalToSuperview().offset(-self.getTabBarHeight()-margin)
+//        }
     }
     
     private func getCell(for collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {

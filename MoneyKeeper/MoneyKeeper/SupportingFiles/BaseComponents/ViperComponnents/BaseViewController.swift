@@ -35,12 +35,6 @@ class BaseViewController: UIViewController {
 // MARK: - Navigation bar
 extension BaseViewController {
     
-    public func getNavigationbarHeight() -> CGFloat {
-        let rect = self.navigationController?.navigationBar.frame
-        let height = (rect?.size.height ?? 0) + (rect?.origin.y ?? 0)
-
-        return height
-    }
     
     public func getTabBarHeight() -> CGFloat {
         return self.tabBarController?.tabBar.frame.size.height ?? 0;

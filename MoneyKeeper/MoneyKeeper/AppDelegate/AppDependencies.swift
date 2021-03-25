@@ -22,6 +22,6 @@ class AppDependencies {
 // MARK: - Publics
 extension AppDependencies {
   public func rootViewController() -> UIViewController {
-    return resolver.createTabBarViewCotnroller()
+    return UIViewController()
   }
 }

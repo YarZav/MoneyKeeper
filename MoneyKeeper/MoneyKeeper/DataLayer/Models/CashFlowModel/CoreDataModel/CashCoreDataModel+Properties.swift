@@ -1,5 +1,5 @@
 //
-//  CashFlowCoreDataModel+Properties.swift
+//  CashCoreDataModel+Properties.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 03/02/2019.
@@ -8,9 +8,9 @@
 
 import CoreData
 
-extension CashFlowCoreDataModel {
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<CashFlowCoreDataModel> {
-    return NSFetchRequest<CashFlowCoreDataModel>(entityName: "CashFlow")
+extension CashCoreDataModel {
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<CashCoreDataModel> {
+    return NSFetchRequest<CashCoreDataModel>(entityName: "Cash")
   }
 
   /// Identifier of model

@@ -8,20 +8,19 @@
 
 import UIKit
 
-// MARK: - TabBarWireFrame
-class TabBarWireFrame: BaseWireFrame { }
+class TabBarWireFrameImp { }
 
 // MARK: - Prviates
-extension TabBarWireFrame {
+extension TabBarWireFrameImp {
 
   private func getRootViewController(by type: TabBarButtonType) -> UIViewController {
-    switch type {
-    case .cash:           return self.resolver.cashViewCotnroller()
-    case .cashFlowDetail: return self.resolver.cashFlowDetailViewCotnroller()
-    case .cards:          return self.resolver.cardsViewCotnroller()
-    case .goal:           return BaseViewController()
-    case .settings:       return self.resolver.settingsViewCotnroller()
-    }
+//    switch type {
+//    case .cash:           return resolver.cashViewCotnroller()
+//    case .cashFlowDetail: return resolver.cashFlowDetailViewCotnroller()
+//    case .cards:          return resolver.cardsViewCotnroller()
+//    case .goal:           return BaseViewController()
+//    }
+    return UIViewController()
   }
   
   private func customizeNavigationController(_ navigationController: UINavigationController, type: TabBarButtonType) {
@@ -29,24 +28,19 @@ extension TabBarWireFrame {
     case .cash, .cards:
       navigationController.navigationBar.transparentNavigationBar(textColor: .white)
 
-    case .cashFlowDetail:
+    case .cashDetail:
       navigationController.navigationBar.barTintColor = .anthracite
       navigationController.navigationBar.opaque()
       navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
     case .goal:
       break
-
-    case .settings:
-      navigationController.navigationBar.barTintColor = .lightBlue
-      navigationController.navigationBar.opaque()
-      navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
   }
 }
 
-// MARK: - TabBarWireFrameProtocol
-extension TabBarWireFrame: TabBarWireFrameProtocol {
+// MARK: - TabBarWireFrame
+extension TabBarWireFrameImp: TabBarWireFrame {
 
   func getNavigationController(by type: TabBarButtonType) -> UINavigationController {
     let rootViewController = self.getRootViewController(by: type)

@@ -9,18 +9,23 @@
 import UIKit
 import SnapKit
 
-// MARK: - CashViewStruct
-private struct CashViewStruct {
+private struct Constant {
     
     static var numPadViewTopOffset: CGFloat {
         get {
             switch UIDevice.current.deviceType {
-            case .iPhone_5S_SE?: return 43
-            case .iPhone_6_7_8?:      return 80
-            case .iPhone_6_7_8_Plus?: return 80
-            case .iPhone_X_Xs_11Pro?:       return 100
-            case .iPhone_Xr_XsMax_11_11ProMax?:   return 180
-            default:                  return 0
+            case .iPhone_5S_SE?:
+              return 43
+            case .iPhone_6_7_8?:
+              return 80
+            case .iPhone_6_7_8_Plus?:
+              return 80
+            case .iPhone_X_Xs_11Pro?:
+              return 100
+            case .iPhone_Xr_XsMax_11_11ProMax?:
+              return 180
+            default:
+              return 0
             }
         }
     }
@@ -28,12 +33,18 @@ private struct CashViewStruct {
     static var numPadViewBottomOffset: CGFloat {
         get {
             switch UIDevice.current.deviceType {
-            case .iPhone_5S_SE?: return 10
-            case .iPhone_6_7_8?:      return 34
-            case .iPhone_6_7_8_Plus?: return 34
-            case .iPhone_X_Xs_11Pro?:       return 50
-            case .iPhone_Xr_XsMax_11_11ProMax?:   return 50
-            default:                  return 0
+            case .iPhone_5S_SE?:
+              return 10
+            case .iPhone_6_7_8?:
+              return 34
+            case .iPhone_6_7_8_Plus?:
+              return 34
+            case .iPhone_X_Xs_11Pro?:
+              return 50
+            case .iPhone_Xr_XsMax_11_11ProMax?:
+              return 50
+            default:
+              return 0
             }
         }
     }
@@ -98,12 +109,12 @@ extension CashViewController {
         }
         
         self.numPadView.snp.makeConstraints {
-            $0.top.equalTo(self.priceView.snp.bottom).offset(CashViewStruct.numPadViewTopOffset)
+            $0.top.equalTo(self.priceView.snp.bottom).offset(Constant.numPadViewTopOffset)
             $0.left.right.equalToSuperview()
         }
         
         self.acceptView.snp.makeConstraints {
-            $0.top.equalTo(self.numPadView.snp.bottom).offset(CashViewStruct.numPadViewBottomOffset)
+            $0.top.equalTo(self.numPadView.snp.bottom).offset(Constant.numPadViewBottomOffset)
             $0.left.right.equalToSuperview()
             $0.height.equalTo(44)
         }

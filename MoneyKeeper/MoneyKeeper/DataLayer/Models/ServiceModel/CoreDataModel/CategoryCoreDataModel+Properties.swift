@@ -23,5 +23,5 @@ extension CategoryCoreDataModel {
   @NSManaged public var title: String
 
   /// Cash transaction info for category
-  @NSManaged public var cashFlow: CashFlowCoreDataModel
+  @NSManaged public var cashFlow: CashCoreDataModel
 }

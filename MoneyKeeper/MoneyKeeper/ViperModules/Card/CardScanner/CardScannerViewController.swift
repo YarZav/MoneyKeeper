@@ -77,11 +77,12 @@ extension CardScannerViewController: BaseScannerDelegate {
     }
     
     func scanRect(_ scannerViewController: BaseScannerViewConroller) -> CGRect {
-        let x = UIScreen.main.bounds.size.width / 10.0
-        let width = UIScreen.main.bounds.size.width - x * 2
-        let height = width / 3.0 * 2.0
-        let y = (UIScreen.main.bounds.size.height - self.getNavigationbarHeight() - height) / 2.0
-        return CGRect(x: x, y: y, width: width, height: height)
+//        let x = UIScreen.main.bounds.size.width / 10.0
+//        let width = UIScreen.main.bounds.size.width - x * 2
+//        let height = width / 3.0 * 2.0
+//        let y = (UIScreen.main.bounds.size.height - self.getNavigationbarHeight() - height) / 2.0
+//        return CGRect(x: x, y: y, width: width, height: height)
+      return .zero
     }
     
     func scanFailed(_ scannerViewController: BaseScannerViewConroller) {

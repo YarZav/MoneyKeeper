@@ -60,11 +60,11 @@ extension CashFlowCategoryAddViewController {
         let imageViewContainer = UIView(backgroundColor: .darkViolet)
         imageViewContainer.layer.cornerRadius = 10
         self.view.addSubview(imageViewContainer)
-        imageViewContainer.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(self.getNavigationbarHeight() + 32)
-            $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(70)
-        }
+//        imageViewContainer.snp.makeConstraints {
+//            $0.top.equalToSuperview().offset(self.getNavigationbarHeight() + 32)
+//            $0.centerX.equalToSuperview()
+//            $0.width.height.equalTo(70)
+//        }
         
         self.imageView.image = UIImage(named: "WhiteQuestion")
         imageViewContainer.addSubview(self.imageView)

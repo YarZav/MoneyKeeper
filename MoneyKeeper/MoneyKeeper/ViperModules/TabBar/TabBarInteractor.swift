@@ -8,5 +8,4 @@
 
 import Foundation
 
-// MARK: - TabBarInteractorProtocol
-class TabBarInteractor: TabBarInteractorProtocol { }
+class TabBarInteractorImp: TabBarInteractor { }

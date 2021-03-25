@@ -8,16 +8,13 @@
 
 import UIKit
 
-// MARK: - TabBarPresenter
-class TabBarPresenter: BasePresenter {
+class TabBarPresenterImp {
 
-  //Properties
-  private weak var view: TabBarViewControllerProtocol?
-  private let interactor: TabBarInteractorProtocol
-  private let wireFrame: TabBarWireFrameProtocol
+  private weak var view: TabBarView?
+  private let interactor: TabBarInteractor
+  private let wireFrame: TabBarWireFrame
 
-  //Init
-  init(view: TabBarViewControllerProtocol, interactor: TabBarInteractorProtocol, wireFrame: TabBarWireFrameProtocol) {
+  init(view: TabBarView?, interactor: TabBarInteractor, wireFrame: TabBarWireFrame) {
     self.view = view
     self.interactor = interactor
     self.wireFrame = wireFrame
@@ -25,18 +22,17 @@ class TabBarPresenter: BasePresenter {
 }
 
 // MARK: - Privates
-extension TabBarPresenter {
+private extension TabBarPresenterImp {
 
-  private func getNavigaitonController(for type: TabBarButtonType) -> UINavigationController {
+  func navigaitonController(for type: TabBarButtonType) -> UINavigationController {
     return self.wireFrame.getNavigationController(by: type)
   }
 }
 
-// MARK: - TabBarPresenterProtocol
-extension TabBarPresenter: TabBarPresenterProtocol {
-
-  func createTabBarControlelrs(for types: [TabBarButtonType]) {
-    let navigationControllers = types.compactMap { self.getNavigaitonController(for: $0) }
-    self.view?.createTabBarControllers(controlelrs: navigationControllers)
+// MARK: - TabBarPresenter
+extension TabBarPresenterImp: TabBarPresenter {
+  func viewDidLoad() {
+    let navigationControllers = TabBarButtonType.allCases.compactMap { navigaitonController(for: $0) }
+    self.view?.tabBarControllers(navigationControllers)
   }
 }

@@ -7,7 +7,9 @@ use_frameworks!
     pod 'YZBarChart', :git => 'https://github.com/YarZav/YZBarChart.git', :tag => '1.2.0'
     pod 'YZNotificationView', :git => 'https://github.com/YarZav/YZNotificationView.git', :tag => '1.1.0'
     pod 'YZPinCodeViewController', :git => 'https://github.com/YarZav/YZPinCodeViewController.git', :tag => '1.1.0'
+
     pod 'EANBarcodeGenerator'
+    pod 'Swinject'
 end
 
 target 'MoneyKeeper' do

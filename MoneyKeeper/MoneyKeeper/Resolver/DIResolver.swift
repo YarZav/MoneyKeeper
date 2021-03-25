@@ -23,11 +23,11 @@ class DIResolver {
 
   //Init
   init() {
-    let cashFlowDAO = CashFlowDAO(coreDataManager: coreDataManager)
+    let cashDAO = CashDAO(coreDataManager: coreDataManager)
     let categoryDAO = CategoryDAO(coreDataManager: coreDataManager)
     let cardDAO = CardDAO(coreDataManager: coreDataManager)
 
-    self.cashFlowManager = CashManager(dao: cashFlowDAO, mapper: CashFlowModelMapper())
+    self.cashFlowManager = CashManager(dao: cashDAO, mapper: CashModelMapper())
     self.categoryManager = CategoryManager(dao: categoryDAO)
     self.cardManager = CardManager(dao: cardDAO)
   }

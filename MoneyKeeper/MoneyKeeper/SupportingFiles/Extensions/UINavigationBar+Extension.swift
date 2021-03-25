@@ -10,18 +10,16 @@ import UIKit
 
 extension UINavigationBar {
     
-    /// Set transparent navigation bar
-    func transparentNavigationBar(textColor: UIColor) {
-        self.setBackgroundImage(UIImage(), for: .default)
-        self.shadowImage = UIImage()
-        self.isTranslucent = true
-        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
+  func transparentNavigationBar(textColor: UIColor) {
+    setBackgroundImage(UIImage(), for: .default)
+    shadowImage = UIImage()
+    isTranslucent = true
+    titleTextAttributes = [NSAttributedString.Key.foregroundColor: textColor]
 
-    }
-    
-    /// Opaque navigation bar
-    func opaque() {
-        self.isTranslucent = false
-        self.shadowImage = UIImage.imageWithColor(color: .darkGray)
-    }
+  }
+
+  func opaque() {
+    isTranslucent = false
+    self.shadowImage = UIImage.imageWithColor(color: .darkGray)
+  }
 }

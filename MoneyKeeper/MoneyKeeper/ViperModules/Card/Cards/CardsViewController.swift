@@ -42,14 +42,14 @@ extension CardsViewController: CardsViewControllerProtocol {
 
         self.models = []
         self.noContentView.removeFromSuperview()
-        if !self.view.subviews.contains(self.collectionView) {
-            self.view.addSubview(self.collectionView)
-            self.collectionView.snp.makeConstraints {
-                $0.top.equalToSuperview().offset(self.getNavigationbarHeight())
-                $0.left.right.equalToSuperview()
-                $0.bottom.equalToSuperview().offset(-self.getTabBarHeight())
-            }
-        }
+//        if !self.view.subviews.contains(self.collectionView) {
+//            self.view.addSubview(self.collectionView)
+//            self.collectionView.snp.makeConstraints {
+//                $0.top.equalToSuperview().offset(self.getNavigationbarHeight())
+//                $0.left.right.equalToSuperview()
+//                $0.bottom.equalToSuperview().offset(-self.getTabBarHeight())
+//            }
+//        }
         
         self.models = models
         self.collectionView.reloadDataAndSetGradient()

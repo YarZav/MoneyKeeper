@@ -9,30 +9,23 @@
 import UIKit
 
 // MARK: - TabBarViewController
-class TabBarViewController: BaseTabBarController {
+class TabBarViewController: UITabBarController {
 
   //Properties
-  public var presenter: TabBarPresenterProtocol!
-  public let navigationTypes: [TabBarButtonType] = [.cash, .cashFlowDetail, .cards, .goal, .settings]
+  var presenter: TabBarPresenter!
 
   //Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.delegate = self
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.presenter.createTabBarControlelrs(for: self.navigationTypes)
+    presenter.viewDidLoad()
   }
 }
 
-// MARK: - TabBarViewControllerProtocol
-extension TabBarViewController: TabBarViewControllerProtocol {
-
-  func createTabBarControllers(controlelrs: [UIViewController]) {
+// MARK: - TabBarView
+extension TabBarViewController: TabBarView {
+  func tabBarControllers(_ controlelrs: [UIViewController]) {
     tabBar.unselectedItemTintColor = .black
-    self.viewControllers = controlelrs
+    viewControllers = controlelrs
   }
 }
 
@@ -40,6 +33,6 @@ extension TabBarViewController: TabBarViewControllerProtocol {
 extension TabBarViewController: UITabBarControllerDelegate {
 
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    self.selectedViewController = viewController
+    selectedViewController = viewController
   }
 }
