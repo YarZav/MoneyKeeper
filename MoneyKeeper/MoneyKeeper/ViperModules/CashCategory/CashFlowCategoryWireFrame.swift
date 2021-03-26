@@ -15,11 +15,11 @@ class CashFlowCategoryWireFrame: BaseWireFrame { }
 extension CashFlowCategoryWireFrame: CashFlowCategoryWireFrameProtocol {
     
     func cashFlowCategoryDetail(from view: CashFlowCategoryViewControllerProtocol?, delegate: CashFlowCategoryDetailPresenterDelegate?, transition: CashFlowCategoryTransitionDelegate) {
-        guard let viewController = view as? UIViewController else { return }
-        let detailViewController = self.resolver.cashFlowCategoryDetailViewController(model: transition.model, delegate: delegate)
-        detailViewController.transitioningDelegate = transition
-        detailViewController.modalPresentationStyle = .custom
-        viewController.present(detailViewController, animated: true) { }
+//        guard let viewController = view as? UIViewController else { return }
+//        let detailViewController = self.resolver.cashFlowCategoryDetailViewController(model: transition.model, delegate: delegate)
+//        detailViewController.transitioningDelegate = transition
+//        detailViewController.modalPresentationStyle = .custom
+//        viewController.present(detailViewController, animated: true) { }
     }
     
     func popViewController(from view: CashFlowCategoryViewControllerProtocol?) {
@@ -28,8 +28,8 @@ extension CashFlowCategoryWireFrame: CashFlowCategoryWireFrameProtocol {
     }
     
     func presentAddCategory(from view: CashFlowCategoryViewControllerProtocol?, delegate: CashFlowCategoryAddDelegate?) {
-        guard let viewController = view as? UIViewController else { return }
-        let addCategoryController = self.resolver.cashFlowCategoryAddViewCotnroller(delegate: delegate)
-        viewController.navigationController?.pushViewController(addCategoryController, animated: true)
+//        guard let viewController = view as? UIViewController else { return }
+//        let addCategoryController = self.resolver.cashFlowCategoryAddViewCotnroller(delegate: delegate)
+//        viewController.navigationController?.pushViewController(addCategoryController, animated: true)
     }
 }

@@ -17,15 +17,18 @@ class TabBarViewController: UITabBarController {
   //Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    presenter.viewDidLoad()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    presenter.viewWillAppear()
   }
 }
 
 // MARK: - TabBarView
 extension TabBarViewController: TabBarView {
-  func tabBarControllers(_ controlelrs: [UIViewController]) {
-    tabBar.unselectedItemTintColor = .black
-    viewControllers = controlelrs
+  func tabBarControllers(_ controllers: [UINavigationController]) {
+    viewControllers = controllers
   }
 }
 

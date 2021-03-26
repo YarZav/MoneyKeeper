@@ -11,11 +11,4 @@ import UIKit
 // MARK: - BaseWireFrame
 class BaseWireFrame {
 
-    //Properties
-    internal let resolver: DIResolver
-    
-    //Init
-    init(resolver: DIResolver) {
-        self.resolver = resolver
-    }
 }

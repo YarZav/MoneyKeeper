@@ -18,7 +18,6 @@ class CashModelMapper {
     cashCoreDataModel.price = (model.price as NSNumber).doubleValue
     cashCoreDataModel.type = Int64(model.type.rawValue)
     cashCoreDataModel.date = model.date
-    cashCoreDataModel.currencyCode = Int64(model.currencyCode.rawValue)
     cashCoreDataModel.category = category
     return cashCoreDataModel
   }
@@ -30,7 +29,6 @@ class CashModelMapper {
     cashModel.id = model.identifier
     cashModel.price = Decimal(model.price)
     cashModel.date = model.date
-    cashModel.currencyCode = CurrencyCode(rawValue: Int(model.currencyCode)) ?? .ruble
     cashModel.categoryModel = category
     return cashModel
   }

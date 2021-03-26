@@ -8,7 +8,6 @@
         <attribute name="type" attributeType="String"/>
     </entity>
     <entity name="Cash" representedClassName="Cash" syncable="YES">
-        <attribute name="currencyCode" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="identifier" attributeType="String"/>
         <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -23,7 +22,7 @@
     </entity>
     <elements>
         <element name="Card" positionX="-374.8828125" positionY="-72.29296875" width="128" height="118"/>
-        <element name="Cash" positionX="-171.80859375" positionY="-99.41015625" width="128" height="133"/>
+        <element name="Cash" positionX="-171.80859375" positionY="-99.41015625" width="128" height="118"/>
         <element name="Category" positionX="152.71484375" positionY="27.34375" width="128" height="103"/>
     </elements>
 </model>

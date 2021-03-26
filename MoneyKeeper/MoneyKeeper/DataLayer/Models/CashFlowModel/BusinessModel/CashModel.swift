@@ -43,9 +43,6 @@ class CashModel {
   /// Date of transaction
   var date: Date
 
-  /// Code of curency
-  var currencyCode: CurrencyCode
-
   /// Category for cash
   var categoryModel: CategoryModel
 
@@ -55,7 +52,6 @@ class CashModel {
     self.price = Decimal(0)
     self.date = Date()
     self.categoryModel = CategoryModel(title: "", imageName: "")
-    self.currencyCode = .ruble
   }
 }
 

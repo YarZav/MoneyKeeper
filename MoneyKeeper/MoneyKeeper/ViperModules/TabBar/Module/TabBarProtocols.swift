@@ -10,18 +10,16 @@ import UIKit
 
 //Presenter -> View
 protocol TabBarView: AnyObject {
-  func tabBarControllers(_ controlelrs: [UIViewController])
+  var presenter: TabBarPresenter! { get set }
+  func tabBarControllers(_ controllers: [UINavigationController])
 }
 
 //View -> Presenter
 protocol TabBarPresenter {
-  func viewDidLoad()
+  func viewWillAppear()
 }
-
-//Presenter - Interactor
-protocol TabBarInteractor { }
 
 //Presenter - WireFrame
 protocol TabBarWireFrame {
-  func getNavigationController(by type: TabBarButtonType) -> UINavigationController
+  func navigationController(for type: TabBarButtonType) -> UINavigationController
 }

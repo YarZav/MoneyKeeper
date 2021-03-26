@@ -16,10 +16,8 @@ extension String {
     }
     
     /// Localized string
-    func localized() -> String {
-        let languageType = LanguageCode.russian
-        
-        if let path = Bundle.main.path(forResource: languageType.code, ofType: "lproj") {
+  func localized(_ languageCode: String = "ru") -> String {
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj") {
             if let bundle = Bundle(path: path) {
                 return NSLocalizedString(self, tableName: nil, bundle: bundle, value: "", comment: "")
             }
