@@ -11,7 +11,7 @@ import Foundation
 import UserNotifications
 
 // MARK: - LocalPushManager
-class LocalPushManager: NSObject {
+final class LocalPushManager: NSObject {
   /// Singleton
   public static let sharedInstance = LocalPushManager()
 

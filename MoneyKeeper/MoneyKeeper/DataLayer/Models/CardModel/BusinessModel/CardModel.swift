@@ -9,7 +9,7 @@
 import AVFoundation
 
 // MARK: - CardModel
-class CardModel {
+final class CardModel {
   /// identifier of model
   var id: String = UUID().uuidString
 

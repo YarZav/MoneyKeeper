@@ -23,7 +23,7 @@ protocol BaseScannerDelegate: class {
 }
 
 // MARK: - BaseScannerViewConroller
-class BaseScannerViewConroller: BaseViewController {
+final class BaseScannerViewConroller: BaseViewController {
     
     //Properties
     public weak var delegate: BaseScannerDelegate?

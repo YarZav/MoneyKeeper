@@ -9,15 +9,15 @@
 import UIKit
 
 /// Thread safe manager to get and set cash flow models
-class CategoryManager {
+final class CategoryManager {
   // Property
   private let isolationQueue = DispatchQueue(label: "com.MoneyKeeper.Category", qos: .userInteractive, attributes: .concurrent)
-  private let dao: CategoryDAOProtocol
+//  private let dao: CategoryDAOProtocol
 
   // Init
-  init(dao: CategoryDAOProtocol) {
-    self.dao = dao
-  }
+//  init(dao: CategoryDAOProtocol) {
+//    self.dao = dao
+//  }
 }
 
 // MARK: - Publics

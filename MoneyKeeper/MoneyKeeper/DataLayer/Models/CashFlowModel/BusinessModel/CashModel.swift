@@ -30,7 +30,7 @@ enum CashType: Int {
 }
 
 // MARK: - CashModel
-class CashModel {
+final class CashModel {
   /// identifier of model
   var id: String = UUID().uuidString
 

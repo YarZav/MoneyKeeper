@@ -10,19 +10,29 @@ import UIKit
 import CoreData
 
 // MARK: - CoreDataManager
-class CoreDataManager {
-  public static let shared = CoreDataManager()
+final class CoreDataManager {
+
+  // MARK: - Singleton
+
+  static let shared = CoreDataManager()
+
+  // MARK: - Prviate property
+
+  private let name: String = "MoneyKeeper"
+
+  // MARK: - Init
 
   private init() { }
 
   // MARK: - Core Data stack
+
   lazy var applicationDocumentsDirectory: URL = {
     let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return urls[urls.count - 1]
   }()
 
   lazy var managedObjectModel: NSManagedObjectModel? = {
-    if let modelURL = Bundle.main.url(forResource: "MoneyKeeper", withExtension: "momd") {
+    if let modelURL = Bundle.main.url(forResource: name, withExtension: "momd") {
       return NSManagedObjectModel(contentsOf: modelURL)
     }
 
@@ -30,12 +40,13 @@ class CoreDataManager {
   }()
 
   lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
-    guard let managedObjectModel = self.managedObjectModel else {
+    guard let managedObjectModel = managedObjectModel else {
       return nil
     }
 
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-    let url = self.applicationDocumentsDirectory.appendingPathComponent("MoneyKeeper.sqlite")
+    let sqLitePathString = name + ".sqlite"
+    let url = applicationDocumentsDirectory.appendingPathComponent(sqLitePathString)
     var failureReason = "There was an error creating or loading the application's saved data."
 
     do {
@@ -53,7 +64,7 @@ class CoreDataManager {
   }()
 
   lazy var managedObjectContext: NSManagedObjectContext = {
-    let coordinator = self.persistentStoreCoordinator
+    let coordinator = persistentStoreCoordinator
     var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
@@ -61,15 +72,16 @@ class CoreDataManager {
 }
 
 // MARK: - Publics
+
 extension CoreDataManager {
   public func entityForName(entityName: String) -> NSEntityDescription {
     return NSEntityDescription.entity(forEntityName: entityName, in: CoreDataManager.shared.managedObjectContext)!
   }
-  
+
   public func saveContext(callback: @escaping (Error?) -> Void) {
-    if self.managedObjectContext.hasChanges {
+    if managedObjectContext.hasChanges {
       do {
-        try self.managedObjectContext.save()
+        try managedObjectContext.save()
         callback(nil)
       } catch {
         callback(error)
@@ -79,8 +91,7 @@ extension CoreDataManager {
   }
 
   public func getFetchRequest(entityName: String) -> NSFetchRequest<NSFetchRequestResult> {
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-    return fetchRequest
+    return NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
   }
 
   public func getCoreDataModels<T>(entityName: String) -> [T]? {
@@ -93,4 +104,3 @@ extension CoreDataManager {
     }
   }
 }
-

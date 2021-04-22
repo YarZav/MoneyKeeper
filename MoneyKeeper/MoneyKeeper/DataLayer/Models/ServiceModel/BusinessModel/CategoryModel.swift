@@ -9,7 +9,7 @@
 import Foundation
 
 //MARK: - CategoryModel
-class CategoryModel {
+final class CategoryModel {
   /// Identifier of model
   var id: String = UUID().uuidString
 

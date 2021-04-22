@@ -6,16 +6,16 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// Thread safe manager to get and set card models
-class CardManager {
+final class CardManager {
   private let isolationQueue = DispatchQueue(label: "com.MoneyKeeper.Card", qos: .userInteractive, attributes: .concurrent)
-  private let dao: CardDAOProtocol
+//  private let dao: CardDAOProtocol
   
-  init(dao: CardDAOProtocol) {
-    self.dao = dao
-  }
+//  init(dao: CardDAOProtocol) {
+//    self.dao = dao
+//  }
 }
 
 // MARK: - Publics
