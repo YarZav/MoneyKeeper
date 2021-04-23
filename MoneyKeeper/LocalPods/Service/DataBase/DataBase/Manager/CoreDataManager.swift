@@ -1,6 +1,6 @@
 //
 //  CoreDataManager.swift
-//  MoneyKeeper
+//  DataBase
 //
 //  Created by Yaroslav Zavyalov on 27/01/2019.
 //  Copyright © 2019 ZYG. All rights reserved.
@@ -17,7 +17,7 @@ final class CoreDataManager {
   static let shared = CoreDataManager()
 
   // MARK: - Prviate property
-
+  // TODO: - Лучше не делать Singleton и прокидывать имя таблицы через коснтруктор
   private let name: String = "MoneyKeeper"
 
   // MARK: - Init

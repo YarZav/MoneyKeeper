@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import YZNumPad
+import Business
 
 // MARK: - CashAcceptStruct
 private struct CashAcceptStruct {
@@ -59,8 +60,8 @@ extension CashAcceptView {
     public func displayTotal(_ total: String?, type: CashType) {
         layoutIfNeeded()
         UIView.animate(withDuration: 0.15) {
-            self.priceView.backgroundColor = type.color
-            self.typeLabel.text = type.title.localized()
+//            self.priceView.backgroundColor = type.color
+//            self.typeLabel.text = type.title.localized()
             self.totalLabel.text = total
             self.layoutIfNeeded()
         }

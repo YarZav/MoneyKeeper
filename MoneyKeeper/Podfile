@@ -12,6 +12,7 @@ use_frameworks!
   pod 'Swinject'
   
   pod 'DataBase', :path => 'LocalPods/Service/DataBase'
+  pod 'Business', :path => 'LocalPods/Service/Business'
 end
 
 target 'MoneyKeeper' do

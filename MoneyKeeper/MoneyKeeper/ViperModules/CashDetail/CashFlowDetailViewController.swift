@@ -8,6 +8,7 @@
 
 import UIKit
 import YZBarChart
+import Business
 
 // MARK: - CashFlowDetailViewController
 class CashFlowDetailViewController: BaseViewController {
@@ -32,7 +33,7 @@ class CashFlowDetailViewController: BaseViewController {
 extension CashFlowDetailViewController: CashFlowDetailViewControllerProtocol {
     
     func updateStringLocalization() {
-        self.navigationItem.title = self.viewType.title.localized()
+//        self.navigationItem.title = self.viewType.title.localized()
         self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
         self.contentView?.updateStringLocalization()
     }
@@ -104,7 +105,7 @@ extension CashFlowDetailViewController {
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
         }
         
-        self.navigationItem.title = self.viewType.title.localized()
+//        self.navigationItem.title = self.viewType.title.localized()
         self.presenter.updateModels(by: self.periodType, type: self.viewType)
     }
 }
@@ -114,7 +115,7 @@ extension CashFlowDetailViewController {
     
     private func createUI() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
-        self.navigationItem.title = self.viewType.title.localized()
+//        self.navigationItem.title = self.viewType.title.localized()
         self.view.backgroundColor = .darkViolet
         
         let image = UIImage(named: "SwipeType")?.withRenderingMode(.alwaysOriginal)

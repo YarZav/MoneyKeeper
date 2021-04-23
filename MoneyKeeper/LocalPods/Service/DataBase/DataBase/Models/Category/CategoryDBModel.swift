@@ -1,6 +1,6 @@
 //
-//  CategoryDB.swift
-//  MoneyKeeper
+//  CategoryDBModel.swift
+//  DataBase
 //
 //  Created by Yaroslav Zavyalov on 02/02/2019.
 //  Copyright © 2019 ZYG. All rights reserved.
@@ -9,7 +9,7 @@
 import CoreData
 
 @objc(Category)
-final class CategoryDB: NSManagedObject, DBIdentifiable {
+public final class CategoryDBModel: NSManagedObject, DBModelIdentifiable {
 
   // MARK: - DBIdentifiable
 
@@ -18,19 +18,19 @@ final class CategoryDB: NSManagedObject, DBIdentifiable {
 
   // MARK: - CoreData
 
-  convenience init() {
+  public convenience init() {
     let manager = CoreDataManager.shared
-    self.init(entity: manager.entityForName(entityName: CategoryDB.entityName), insertInto: manager.managedObjectContext)
+    self.init(entity: manager.entityForName(entityName: CategoryDBModel.entityName), insertInto: manager.managedObjectContext)
   }
 
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<CategoryDB> {
-    return NSFetchRequest<CategoryDB>(entityName: CategoryDB.entityName)
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<CategoryDBModel> {
+    return NSFetchRequest<CategoryDBModel>(entityName: CategoryDBModel.entityName)
   }
 }
 
 // MARK: - Property
 
-extension CategoryDB { 
+extension CategoryDBModel {
   /// Image name for category item
   @NSManaged public var imageName: String
 
@@ -38,5 +38,5 @@ extension CategoryDB {
   @NSManaged public var title: String
 
   /// Cash transaction info for category
-  @NSManaged public var cashFlow: CashDB
+  @NSManaged public var cash: CashDBModel
 }

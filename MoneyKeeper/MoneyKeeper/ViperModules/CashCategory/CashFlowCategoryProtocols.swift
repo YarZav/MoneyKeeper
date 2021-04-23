@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Business
 
 //Presenter -> View
 protocol CashFlowCategoryViewControllerProtocol: BaseViewControllerProtocol {

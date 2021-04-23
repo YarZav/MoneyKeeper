@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Business
 
 // MARK: - CashFlowDetailInteractor
 class CashFlowDetailInteractor {

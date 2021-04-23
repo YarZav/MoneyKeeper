@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import YZNotificationView
+import Business
 
 // MARK: - CashFlowViewStruct
 struct CashFlowCategoryStruct {
@@ -50,7 +51,7 @@ class CashFlowCategoryViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.price.text = self.model.getPriceAsString(numberStyle: .currency)
+//        self.price.text = self.model.getPriceAsString(numberStyle: .currency)
     }
 }
 
@@ -74,14 +75,14 @@ extension CashFlowCategoryViewController: CashFlowCategoryViewControllerProtocol
     }
     
     func deleteItems(_ items: [CategoryModel]) {
-        var deletedIndexes = [IndexPath]()
-        items.forEach { (deleltedItem) in
-            if let rowIndex = self.items.firstIndex(where: { (currentItem) -> Bool in deleltedItem.id == currentItem.id }) {
-                deletedIndexes.append(IndexPath(row: rowIndex, section: 0))
-                self.items.remove(at: rowIndex)
-            }
-        }
-        self.collectionView.deleteItems(at: deletedIndexes)
+//        var deletedIndexes = [IndexPath]()
+//        items.forEach { (deleltedItem) in
+//            if let rowIndex = self.items.firstIndex(where: { (currentItem) -> Bool in deleltedItem.id == currentItem.id }) {
+//                deletedIndexes.append(IndexPath(row: rowIndex, section: 0))
+//                self.items.remove(at: rowIndex)
+//            }
+//        }
+//        self.collectionView.deleteItems(at: deletedIndexes)
     }
     
     func insertItems(_ items: [CategoryModel]) {
@@ -173,8 +174,8 @@ extension CashFlowCategoryViewController: UICollectionViewDataSource {
 extension CashFlowCategoryViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.model.categoryModel = self.items[indexPath.row]
-        self.presenter.saveCashFlowModel(self.model)
+//        self.model.categoryModel = self.items[indexPath.row]
+//        self.presenter.saveCashFlowModel(self.model)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

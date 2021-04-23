@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import EANBarcodeGenerator
+import Business
 
 // MARK: - CardCell
 class CardCell: UICollectionViewCell {

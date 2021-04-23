@@ -9,6 +9,7 @@
 import UIKit
 import EANBarcodeGenerator
 import SnapKit
+import Business
 
 class CardDetailView: UIView {
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Business
 
 //Presenter -> View
 protocol CashFlowCategoryAddViewControllerProtocol: BaseViewControllerProtocol {

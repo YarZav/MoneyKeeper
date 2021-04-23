@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Business
 
 // MARK: - CashFlowCategoryAddDelegate
 protocol CashFlowCategoryAddDelegate: class {
@@ -49,16 +50,16 @@ extension CashFlowCategoryAddPresenter: CashFlowCategoryAddPresenterProtocol {
             return
         }
         
-        let categoryModel = CategoryModel(title: title, imageName: imageName)
-        self.interactor.saveCategory(categoryModel) { (error) in
-            Thread.current.doInMainThread {
-                if let error = error {
-                    self.view?.showOkAlertController(title: "CashFlowCategoryAddWarning".localized(), message: error.localizedDescription, handler: { })
-                } else {
-                    self.delegate?.didAddCategoryModel(categoryModel)
-                    self.wireFrame.popViewController(from: self.view)
-                }
-            }
-        }
+//        let categoryModel = CategoryModel(title: title, imageName: imageName)
+//        self.interactor.saveCategory(categoryModel) { (error) in
+//            Thread.current.doInMainThread {
+//                if let error = error {
+//                    self.view?.showOkAlertController(title: "CashFlowCategoryAddWarning".localized(), message: error.localizedDescription, handler: { })
+//                } else {
+//                    self.delegate?.didAddCategoryModel(categoryModel)
+//                    self.wireFrame.popViewController(from: self.view)
+//                }
+//            }
+//        }
     }
 }

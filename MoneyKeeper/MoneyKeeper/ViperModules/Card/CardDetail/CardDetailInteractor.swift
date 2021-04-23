@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 // MARK: - CardDetailInteractor
 class CardDetailInteractor {

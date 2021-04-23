@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 protocol CardDetailDelegate: class {
     func didDeleteModel(_ model: CardModel)

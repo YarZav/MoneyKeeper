@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 /// Thread safe manager to get and set cash models
 final class CashManager {

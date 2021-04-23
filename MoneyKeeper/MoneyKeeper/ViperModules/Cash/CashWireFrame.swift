@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 // MARK: - CashWireFrame
 class CashWireFrameImp { }

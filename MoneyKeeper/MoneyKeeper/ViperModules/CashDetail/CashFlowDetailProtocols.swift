@@ -8,6 +8,7 @@
 
 import Foundation
 import YZBarChart
+import Business
 
 //Presenter -> View
 protocol CashFlowDetailViewControllerProtocol: BaseViewControllerProtocol {

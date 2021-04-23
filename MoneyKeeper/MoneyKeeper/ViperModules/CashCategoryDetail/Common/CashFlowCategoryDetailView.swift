@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Business
 
 // MARK: - CashFlowCategoryDetailView
 class CashFlowCategoryDetailView: UIView {

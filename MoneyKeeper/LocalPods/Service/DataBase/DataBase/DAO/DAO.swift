@@ -12,7 +12,7 @@ protocol DAO {
   func getAll() -> [DataBaseModel]?
   func get(by identifier: String) -> DataBaseModel?
 
-  func save(_ models: [DataBaseModel], callback: @escaping (Error?) -> Void)
+  func saveAll(_ models: [DataBaseModel], callback: @escaping (Error?) -> Void)
   func save(_ model: DataBaseModel, callback: @escaping (Error?) -> Void)
 
   func deleteAll(callback: @escaping (Error?) -> Void)

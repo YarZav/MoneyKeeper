@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 // VIEW -> PRESENTER
 protocol CardDetailPresenterProtocol: class {

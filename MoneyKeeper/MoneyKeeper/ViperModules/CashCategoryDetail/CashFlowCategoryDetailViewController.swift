@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 // MARK: - Constaints and strings
 private struct CashFlowCategoryDetailStruct {

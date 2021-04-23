@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Business
 
 // MARK: - CashFlowViewController
 class CardsViewController: BaseViewController {
@@ -67,7 +68,7 @@ extension CardsViewController: CardsViewControllerProtocol {
     }
     
     func deleteModel(_ model: CardModel) {
-        self.models.removeAll { $0.id == model.id }
+//        self.models.removeAll { $0.id == model.id }
         self.collectionView.reloadDataAndSetGradient()
     }
     

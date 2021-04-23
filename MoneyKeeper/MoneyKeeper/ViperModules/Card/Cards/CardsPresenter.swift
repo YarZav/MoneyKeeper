@@ -8,6 +8,7 @@
 
 import Foundation
 import AVFoundation
+import Business
 
 // MARK: - CardsPresenter
 class CardsPresenter: BasePresenter {
@@ -79,14 +80,14 @@ extension CardsPresenter: CardScannerPresenterDelegate {
     
     func didScanCard(code: String, type: AVMetadataObject.ObjectType) {
         self.view?.getCardTitle({ [weak self] (title) in
-            let cardModel = CardModel(code: code, type: type, title: title)
-            self?.view?.insertModels([cardModel])
-            
-            self?.interactor.saveCard(cardModel, callback: { (error) in
-                if let error = error {
-                    self?.view?.showOkAlertController(title: "CardsWarning".localized(), message: error.localizedDescription, handler: { })
-                }
-            })
+//            let cardModel = CardModel(code: code, type: type, title: title)
+//            self?.view?.insertModels([cardModel])
+//            
+//            self?.interactor.saveCard(cardModel, callback: { (error) in
+//                if let error = error {
+//                    self?.view?.showOkAlertController(title: "CardsWarning".localized(), message: error.localizedDescription, handler: { })
+//                }
+//            })
         })
     }
 }

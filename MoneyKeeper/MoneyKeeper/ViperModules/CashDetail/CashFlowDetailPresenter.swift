@@ -8,6 +8,7 @@
 
 import Foundation
 import YZBarChart
+import Business
 
 enum CalculateBarModels {
     case day
@@ -60,16 +61,16 @@ extension CashFlowDetailPresenter: CashFlowDetailPresenterProtocol {
     }
     
     func deleteModel(_ model: CashModel, period: PeriodType, type: CashType) {
-        self.interactor.deleteModel(model) { (error) in
-            Thread.current.doInMainThread {
-                if let error = error {
-                    self.view?.showOkAlertController(title: "CashFlowCategoryDetailWarning".localized(), message: error.localizedDescription, handler: { })
-                } else {
-                    self.cashFlowModels.removeAll(where: { $0.id == model.id })
-                    self.updateModels(by: period, type: type)
-                }
-            }
-        }
+//        self.interactor.deleteModel(model) { (error) in
+//            Thread.current.doInMainThread {
+//                if let error = error {
+//                    self.view?.showOkAlertController(title: "CashFlowCategoryDetailWarning".localized(), message: error.localizedDescription, handler: { })
+//                } else {
+//                    self.cashFlowModels.removeAll(where: { $0.id == model.id })
+//                    self.updateModels(by: period, type: type)
+//                }
+//            }
+//        }
     }
     
     func insertModel(_ model: CashModel, periodType: PeriodType, type: CashType) {

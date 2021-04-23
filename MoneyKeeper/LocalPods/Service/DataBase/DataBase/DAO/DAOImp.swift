@@ -7,7 +7,7 @@
 
 import CoreData
 
-final class DAOImp<Template: NSManagedObject & DBIdentifiable> {
+final class DAOImp<Template: NSManagedObject & DBModelIdentifiable> {
 
   // MARK: - Private property
 
@@ -33,14 +33,14 @@ extension DAOImp: DAO {
     return getAll()?.first(where: { $0.identifier == identifier })
   }
 
-  func save(_ models: [Template], callback: @escaping (Error?) -> Void) {
+  func saveAll(_ models: [Template], callback: @escaping (Error?) -> Void) {
     var previousCoreDataModels = getAll()
     previousCoreDataModels?.append(contentsOf: models)
     coreDataManager.saveContext(callback: callback)
   }
 
   func save(_ model: Template, callback: @escaping (Error?) -> Void) {
-    save([model], callback: callback)
+    saveAll([model], callback: callback)
   }
 
   func deleteAll(callback: @escaping (Error?) -> Void) {

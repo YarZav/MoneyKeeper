@@ -8,6 +8,7 @@
 
 import UIKit
 import YZBarChart
+import Business
 
 // MARK: - CashFlowDetailContentViewDelegate
 protocol CashFlowDetailContentViewDelegate: class {

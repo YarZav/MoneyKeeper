@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import YZNotificationView
+import Business
 
 // MARK: - CashFlowCategoryDelegate
 protocol CashFlowCategoryDelegate: class {

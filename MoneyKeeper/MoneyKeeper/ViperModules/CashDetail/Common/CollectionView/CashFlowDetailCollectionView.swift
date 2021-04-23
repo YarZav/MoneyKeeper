@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 // MARK: - CashFlowDetailContentStruct
 struct CashFlowDetailCollectionStruct {
@@ -78,7 +79,7 @@ extension CashFlowDetailCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CashFlowDetailCell = collectionView.dequeueCell(indexPath: indexPath)
         let model = self.models[indexPath.row]
-        cell.display(imageName: model.categoryModel.imageName, price: model.getPriceAsString(numberStyle: .currency), category: model.categoryModel.title.localized())
+//        cell.display(imageName: model.categoryModel.imageName, price: model.getPriceAsString(numberStyle: .currency), category: model.categoryModel.title.localized())
         return cell
     }
 }

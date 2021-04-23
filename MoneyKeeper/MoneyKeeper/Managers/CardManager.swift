@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Business
 
 /// Thread safe manager to get and set card models
 final class CardManager {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Business
 
 // MARK: - CashPresenter
 class CashPresenterImp {
@@ -37,10 +38,10 @@ extension CashPresenterImp: CashPresenter {
   
   /// Choose cash category
   func presentCashCategory(price: String, type: CashType) {
-    let model = CashModel(type: type)
-    if let decimalPrice = Decimal(string: price) {
-        model.price = decimalPrice
-    }
+//    let model = CashModel(type: type)
+//    if let decimalPrice = Decimal(string: price) {
+//        model.price = decimalPrice
+//    }
 //    wireFrame.cashCategory(from: view, model: model, delegate: self)
   }
   

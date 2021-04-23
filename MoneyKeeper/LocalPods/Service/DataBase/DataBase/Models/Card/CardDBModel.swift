@@ -1,6 +1,6 @@
 //
-//  CardDB.swift
-//  MoneyKeeper
+//  CardDBModel.swift
+//  Database
 //
 //  Created by admin on 03/06/2019.
 //  Copyright © 2019 ZYG. All rights reserved.
@@ -9,7 +9,7 @@
 import CoreData
 
 @objc(Card)
-final class CardDB: NSManagedObject, DBIdentifiable {
+public final class CardDBModel: NSManagedObject, DBModelIdentifiable {
 
   // MARK: - DBIdentifiable
 
@@ -18,21 +18,21 @@ final class CardDB: NSManagedObject, DBIdentifiable {
 
   // MARK: - CoreData
 
-  convenience init() {
+  public convenience init() {
     let manager = CoreDataManager.shared
-    self.init(entity: manager.entityForName(entityName: CardDB.entityName), insertInto: manager.managedObjectContext)
+    self.init(entity: manager.entityForName(entityName: CardDBModel.entityName), insertInto: manager.managedObjectContext)
   }
 
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<CardDB> {
-    return NSFetchRequest<CardDB>(entityName: CardDB.entityName)
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<CardDBModel> {
+    return NSFetchRequest<CardDBModel>(entityName: CardDBModel.entityName)
   }
 }
 
 // MARK: - Property
 
-extension CardDB {
+extension CardDBModel {
   /// Date of add
-  @NSManaged public var addDate: Date
+  @NSManaged public var date: Date
 
   /// Bar code value
   @NSManaged public var code: String

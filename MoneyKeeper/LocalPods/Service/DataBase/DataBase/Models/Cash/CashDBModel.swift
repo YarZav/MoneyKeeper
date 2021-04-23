@@ -1,6 +1,6 @@
 //
-//  CashDB.swift
-//  MoneyKeeper
+//  CashDBModel.swift
+//  DataBase
 //
 //  Created by Yaroslav Zavyalov on 03/02/2019.
 //  Copyright © 2019 ZYG. All rights reserved.
@@ -9,7 +9,7 @@
 import CoreData
 
 @objc(Cash)
-final class CashDB: NSManagedObject, DBIdentifiable {
+public final class CashDBModel: NSManagedObject, DBModelIdentifiable {
 
   // MARK: - DBIdentifiable
 
@@ -18,19 +18,19 @@ final class CashDB: NSManagedObject, DBIdentifiable {
 
   // MARK: - CoreData
 
-  convenience init() {
+  public convenience init() {
     let manager = CoreDataManager.shared
-    self.init(entity: manager.entityForName(entityName: CashDB.entityName), insertInto: manager.managedObjectContext)
+    self.init(entity: manager.entityForName(entityName: CashDBModel.entityName), insertInto: manager.managedObjectContext)
   }
 
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<CashDB> {
-    return NSFetchRequest<CashDB>(entityName: CashDB.entityName)
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<CashDBModel> {
+    return NSFetchRequest<CashDBModel>(entityName: CashDBModel.entityName)
   }
 }
 
 // MARK: - Property
 
-extension CashDB {
+extension CashDBModel {
   /// Income  OR outcome money
   @NSManaged public var price: Double
 
@@ -41,6 +41,6 @@ extension CashDB {
   @NSManaged public var date: Date
 
   /// Category for cash flow
-  @NSManaged public var category: CategoryDB
+  @NSManaged public var category: CategoryDBModel
 }
 

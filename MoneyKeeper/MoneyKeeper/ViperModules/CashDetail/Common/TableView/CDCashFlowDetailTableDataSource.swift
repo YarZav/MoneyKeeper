@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Business
 
 // MARK: - Cash flow detail section model
 class CashFlowDetailSection {
@@ -83,7 +84,7 @@ extension CashFlowDetailTableDataSource {
         let cell: CashFlowDetailTableCell = tableView.dequeueCell(indexPath: indexPath)
         let model = self.sections[indexPath.section].models[indexPath.row]
         cell.contentView.backgroundColor = .darkViolet
-        cell.display(imageName: model.categoryModel.imageName, price: model.getPriceAsString(numberStyle: .currency), category: model.categoryModel.title.localized())
+//        cell.display(imageName: model.categoryModel.imageName, price: model.getPriceAsString(numberStyle: .currency), category: model.categoryModel.title.localized())
         return cell
     }
 }
@@ -99,65 +100,65 @@ extension CashFlowDetailTableDataSource {
         }
         
         let allModels = self.getAllModels()
-        let sortedModels = models.sorted { $0.date > $1.date }.filter { (model) in
-            !allModels.contains(where: { (allModel) -> Bool in
-                allModel.id == model.id
-            })
-        }
-        
-        if sortedModels.isEmpty {
-            completion()
-            return
-        }
-        
-        var insertedRows = [IndexPath]()
-        let insertedSection = NSMutableIndexSet()
-        var newRowModels = [CashModel]()
-        var newSectionModels = [CashModel]()
-        
-        for model in sortedModels {
-            //Add model in created section
-            if let sectionIndex = self.sections.firstIndex(where: { $0.date.startOfDay == model.date.startOfDay }) {
-                if let rowIndex = self.sections[sectionIndex].models.lastIndex(where: { $0.date > model.date }) {
-                    self.sections[sectionIndex].models.insert(model, at: rowIndex)
-                    newRowModels.append(model)
-                } else {
-                    self.sections[sectionIndex].models.append(model)
-                    newRowModels.append(model)
-                }
-                continue
-            }
-            
-            // Creatse new section with date before
-            if let sectionIndex = self.sections.lastIndex(where: { $0.date.startOfDay > model.date.startOfDay }) {
-                self.insertNewModel(model, sectionIndex: sectionIndex)
-                newSectionModels.append(model)
-            } else {
-                self.insertNewModel(model, sectionIndex: 0)
-                newSectionModels.append(model)
-            }
-        }
-        
-        for newRowModel in newRowModels {
-            for (sectionIndex, section) in self.sections.enumerated() {
-                for (rowIndex, model) in section.models.enumerated() {
-                    if newRowModel.id == model.id {
-                        insertedRows.append(IndexPath(row: rowIndex, section: sectionIndex))
-                    }
-                }
-            }
-        }
-        
-        for newSectionModel in newSectionModels {
-            for (sectionIndex, section) in self.sections.enumerated() {
-                for (rowIndex, model) in section.models.enumerated() {
-                    if newSectionModel.id == model.id {
-                        insertedRows.append(IndexPath(row: rowIndex, section: sectionIndex))
-                        insertedSection.add(sectionIndex)
-                    }
-                }
-            }
-        }
+//        let sortedModels = models.sorted { $0.date > $1.date }.filter { (model) in
+//            !allModels.contains(where: { (allModel) -> Bool in
+//                allModel.id == model.id
+//            })
+//        }
+//
+//        if sortedModels.isEmpty {
+//            completion()
+//            return
+//        }
+//
+//        var insertedRows = [IndexPath]()
+//        let insertedSection = NSMutableIndexSet()
+//        var newRowModels = [CashModel]()
+//        var newSectionModels = [CashModel]()
+//
+//        for model in sortedModels {
+//            //Add model in created section
+//            if let sectionIndex = self.sections.firstIndex(where: { $0.date.startOfDay == model.date.startOfDay }) {
+//                if let rowIndex = self.sections[sectionIndex].models.lastIndex(where: { $0.date > model.date }) {
+//                    self.sections[sectionIndex].models.insert(model, at: rowIndex)
+//                    newRowModels.append(model)
+//                } else {
+//                    self.sections[sectionIndex].models.append(model)
+//                    newRowModels.append(model)
+//                }
+//                continue
+//            }
+//
+//            // Creatse new section with date before
+//            if let sectionIndex = self.sections.lastIndex(where: { $0.date.startOfDay > model.date.startOfDay }) {
+//                self.insertNewModel(model, sectionIndex: sectionIndex)
+//                newSectionModels.append(model)
+//            } else {
+//                self.insertNewModel(model, sectionIndex: 0)
+//                newSectionModels.append(model)
+//            }
+//        }
+//
+//        for newRowModel in newRowModels {
+//            for (sectionIndex, section) in self.sections.enumerated() {
+//                for (rowIndex, model) in section.models.enumerated() {
+//                    if newRowModel.id == model.id {
+//                        insertedRows.append(IndexPath(row: rowIndex, section: sectionIndex))
+//                    }
+//                }
+//            }
+//        }
+//
+//        for newSectionModel in newSectionModels {
+//            for (sectionIndex, section) in self.sections.enumerated() {
+//                for (rowIndex, model) in section.models.enumerated() {
+//                    if newSectionModel.id == model.id {
+//                        insertedRows.append(IndexPath(row: rowIndex, section: sectionIndex))
+//                        insertedSection.add(sectionIndex)
+//                    }
+//                }
+//            }
+//        }
         
         //FIXME: Reuse in method
         CATransaction.begin()
@@ -165,8 +166,8 @@ extension CashFlowDetailTableDataSource {
         CATransaction.setCompletionBlock {
             completion()
         }
-        self.tableView.insertSections(insertedSection as IndexSet, with: .automatic)
-        self.tableView.insertRows(at: insertedRows, with: .automatic)
+//        self.tableView.insertSections(insertedSection as IndexSet, with: .automatic)
+//        self.tableView.insertRows(at: insertedRows, with: .automatic)
         self.tableView.endUpdates()
         CATransaction.commit()
     }
@@ -208,18 +209,18 @@ extension CashFlowDetailTableDataSource {
             return
         }
         
-        var deletedIndexPaths = [IndexPath]()
-        for model in models {
-            for (sectionIndex, section) in self.sections.enumerated() {
-                for (rowIndex, sectionModel) in section.models.enumerated() {
-                    if model.id == sectionModel.id {
-                        deletedIndexPaths.append(IndexPath(row: rowIndex, section: sectionIndex))
-                    }
-                }
-            }
-        }
+//        var deletedIndexPaths = [IndexPath]()
+//        for model in models {
+//            for (sectionIndex, section) in self.sections.enumerated() {
+//                for (rowIndex, sectionModel) in section.models.enumerated() {
+//                    if model.id == sectionModel.id {
+//                        deletedIndexPaths.append(IndexPath(row: rowIndex, section: sectionIndex))
+//                    }
+//                }
+//            }
+//        }
         
-        self.deleteModels(at: deletedIndexPaths, completion: completion)
+//        self.deleteModels(at: deletedIndexPaths, completion: completion)
     }
     
     public func getModelAt(_ indexPath: IndexPath) -> CashModel {
