@@ -78,9 +78,9 @@ extension CardCell {
 // MARK: - Publics
 extension CardCell {
     
-    public func display(_ model: CardModel) {
-        self.titleLabel.text = model.title
-        self.imageView.image = self.generateBarCode(from: model.code)
-        self.codeLabel.text = model.code
-    }
+//    public func display(_ model: CardModel) {
+//        self.titleLabel.text = model.title
+//        self.imageView.image = self.generateBarCode(from: model.code)
+//        self.codeLabel.text = model.code
+//    }
 }

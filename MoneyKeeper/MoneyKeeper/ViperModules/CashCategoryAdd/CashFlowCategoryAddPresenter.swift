@@ -11,7 +11,7 @@ import Business
 
 // MARK: - CashFlowCategoryAddDelegate
 protocol CashFlowCategoryAddDelegate: class {
-    func didAddCategoryModel(_ model: CategoryModel)
+//    func didAddCategoryModel(_ model: CategoryModel)
 }
 
 // MARK: - CashFlowCategoryAddPresenter
@@ -35,8 +35,8 @@ class CashFlowCategoryAddPresenter: BasePresenter {
 extension CashFlowCategoryAddPresenter: CashFlowCategoryAddPresenterProtocol {
     
     func viewLoaded() {
-        let items = self.interactor.getImageNamed()
-        self.view?.setItems(items)
+//        let items = self.interactor.getImageNamed()
+//        self.view?.setItems(items)
     }
     
     func saveCategoryModel(title: String?, imageName: String?) {

@@ -39,8 +39,5 @@ extension CashDBModel {
 
   /// Date of transaction
   @NSManaged public var date: Date
-
-  /// Category for cash flow
-  @NSManaged public var category: CategoryDBModel
 }
 

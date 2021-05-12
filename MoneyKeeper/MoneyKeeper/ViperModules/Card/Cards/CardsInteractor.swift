@@ -14,21 +14,21 @@ import Business
 // MARK: - CardsInteractor
 class CardsInteractor {
     
-    private let cardManager: CardManager
+//    private let cardManager: CardManager
     
-    init(cardManager: CardManager) {
-        self.cardManager = cardManager
-    }
+//    init(cardManager: CardManager) {
+//        self.cardManager = cardManager
+//    }
 }
 
 // MARK: - CardsInteractorProtocol
 extension CardsInteractor: CardsInteractorProtocol {
     
-    func getCards() -> [CardModel] {
-        return cardManager.getModels() ?? []
-    }
-    
-    func saveCard(_ model: CardModel, callback: @escaping (Error?) -> Void) {
-        cardManager.saveModel(model, callback: callback)
-    }
+//    func getCards() -> [CardModel] {
+//        return cardManager.getModels() ?? []
+//    }
+//    
+//    func saveCard(_ model: CardModel, callback: @escaping (Error?) -> Void) {
+//        cardManager.saveModel(model, callback: callback)
+//    }
 }

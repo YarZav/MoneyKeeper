@@ -21,7 +21,7 @@ class CashFlowCategoryDetailViewController: BaseViewController {
     
     // Properties
     public var presenter: CashFlowCategoryDetailPresenterProtocol!
-    public var model: CategoryModel!
+//    public var model: CategoryModel!
     private var detailView: CashFlowCategoryDetailView!
     private var blurBackground: UIVisualEffectView!
     private var deleteButton = UIButton(type: .custom)
@@ -68,7 +68,7 @@ extension CashFlowCategoryDetailViewController {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped))
         self.view.addGestureRecognizer(tapRecognizer)
         
-        self.detailView = CashFlowCategoryDetailView(model: self.model, transition: false)
+//        self.detailView = CashFlowCategoryDetailView(model: self.model, transition: false)
         self.detailView.alpha = CashFlowCategoryDetailStruct.hideAlphaView
         
         self.view.insertSubview(self.blurBackground, at: 0)
@@ -111,7 +111,7 @@ extension CashFlowCategoryDetailViewController {
     }
     
     @objc private func deleteAction() {
-        self.presenter.deleteCategoryModel(self.model)
+//        self.presenter.deleteCategoryModel(self.model)
         self.dismiss(animated: true, completion: nil)
     }
 }

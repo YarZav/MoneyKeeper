@@ -13,7 +13,7 @@ import Business
 class CardDetailViewController: BaseViewController {
     
     var presenter: CardDetailPresenterProtocol!
-    var model: CardModel!
+//    var model: CardModel!
     private var detailView: CardDetailView!
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ extension CardDetailViewController {
     }
     
     @objc private func deleteAction() {
-        self.presenter.deleteModel(self.model)
+//        self.presenter.deleteModel(self.model)
     }
 }
 
@@ -42,7 +42,7 @@ extension CardDetailViewController {
     }
     
     private func createSubViews() {
-        self.detailView = CardDetailView(model: self.model, transition: false)
+//        self.detailView = CardDetailView(model: self.model, transition: false)
         self.view.addSubview(self.detailView)
         self.detailView.snp.makeConstraints {
             $0.edges.equalToSuperview()

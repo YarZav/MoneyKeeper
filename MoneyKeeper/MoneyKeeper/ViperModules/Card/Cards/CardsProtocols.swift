@@ -13,9 +13,9 @@ import Business
 protocol CardsViewControllerProtocol: BaseViewControllerProtocol {
     func updateStringLocalization()
     func showNoContentView()
-    func setModels(_ models: [CardModel])
-    func insertModels(_ models: [CardModel])
-    func deleteModel(_ model: CardModel)
+//    func setModels(_ models: [CardModel])
+//    func insertModels(_ models: [CardModel])
+//    func deleteModel(_ model: CardModel)
     func getCardTitle(_ callback: @escaping (String) -> Void)
 }
 
@@ -29,12 +29,12 @@ protocol CardsPresenterProtocol {
 
 //Presenter - Interactor
 protocol CardsInteractorProtocol {
-    func getCards() -> [CardModel]
-    func saveCard(_ model: CardModel, callback: @escaping (Error?) -> Void)
+//    func getCards() -> [CardModel]
+//    func saveCard(_ model: CardModel, callback: @escaping (Error?) -> Void)
 }
 
 //Presenter - WireFrame
 protocol CardsWireFrameProtocol {
     func cardScanner(from view: CardsViewControllerProtocol?, delegate: CardScannerPresenterDelegate?)
-    func cardDetail(from view: CardsViewControllerProtocol?, transition: CardDetailTransitionDelegate, delegate: CardDetailDelegate?)
+//    func cardDetail(from view: CardsViewControllerProtocol?, transition: CardDetailTransitionDelegate, delegate: CardDetailDelegate?)
 }

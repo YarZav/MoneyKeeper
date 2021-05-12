@@ -11,7 +11,7 @@ import Business
 
 // MARK: - CashFlowCategoryDetailPresenterDelegate
 protocol CashFlowCategoryDetailPresenterDelegate: class {
-    func didDeleteCategoryModel(_ model: CategoryModel)
+//    func didDeleteCategoryModel(_ model: CategoryModel)
 }
 
 // MARK: - CashFlowCategoryDetailPresenter
@@ -34,12 +34,12 @@ class CashFlowCategoryDetailPresenter: BasePresenter {
 // MARK: - CashFlowCategoryDetailPresenterProtocol
 extension CashFlowCategoryDetailPresenter: CashFlowCategoryDetailPresenterProtocol {
     
-    func deleteCategoryModel(_ model: CategoryModel) {
-        self.interactor.deleteCategoryModel(model) { [weak self] (error) in
-            guard let strongSelf = self else { return }
-            Thread.current.doInMainThread {
-                strongSelf.delegate?.didDeleteCategoryModel(model)
-            }
-        }
-    }
+//    func deleteCategoryModel(_ model: CategoryModel) {
+//        self.interactor.deleteCategoryModel(model) { [weak self] (error) in
+//            guard let strongSelf = self else { return }
+//            Thread.current.doInMainThread {
+//                strongSelf.delegate?.didDeleteCategoryModel(model)
+//            }
+//        }
+//    }
 }

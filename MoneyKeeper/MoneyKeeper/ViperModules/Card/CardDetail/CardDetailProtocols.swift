@@ -12,7 +12,7 @@ import Business
 // VIEW -> PRESENTER
 protocol CardDetailPresenterProtocol: class {
     func popViewController()
-    func deleteModel(_ model: CardModel)
+//    func deleteModel(_ model: CardModel)
 }
 
 // PRESENTER -> VIEW
@@ -25,5 +25,5 @@ protocol CardDetailWireFrameProtocol: class {
 
 // INTERACTOR -> PRESENTER
 protocol CardDetailInteractorProtocol: class {
-    func deleteCardModel(_ model: CardModel, callback: @escaping (Error?) -> Void)
+//    func deleteCardModel(_ model: CardModel, callback: @escaping (Error?) -> Void)
 }

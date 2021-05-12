@@ -22,8 +22,8 @@ protocol CashFlowCategoryAddPresenterProtocol {
 
 //Presenter - Interactor
 protocol CashFlowCategoryAddInteractorProtocol {
-    func getImageNamed() -> [String]
-    func saveCategory(_ model: CategoryModel, callback: @escaping (Error?) -> Void)
+//    func getImageNamed() -> [String]
+//    func saveCategory(_ model: CategoryModel, callback: @escaping (Error?) -> Void)
 }
 
 //Presenter - WireFrame

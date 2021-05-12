@@ -18,7 +18,7 @@ class CardsViewController: BaseViewController {
     private var searchBar = UISearchBar(backgroundColor: .blueGray)
     private var collectionView: GradientCollectionView!
     private var noContentView = LabelView()
-    private var models = [CardModel]()
+//    private var models = [CardModel]()
     
     private let transition = CardDetailTransitionDelegate()
     
@@ -38,11 +38,11 @@ extension CardsViewController: CardsViewControllerProtocol {
         self.noContentView.display("CardsCanDisplayCard")
     }
     
-    func setModels(_ models: [CardModel]) {
-        guard models.count > 0 else { return }
-
-        self.models = []
-        self.noContentView.removeFromSuperview()
+//    func setModels(_ models: [CardModel]) {
+//        guard models.count > 0 else { return }
+//
+//        self.models = []
+//        self.noContentView.removeFromSuperview()
 //        if !self.view.subviews.contains(self.collectionView) {
 //            self.view.addSubview(self.collectionView)
 //            self.collectionView.snp.makeConstraints {
@@ -52,25 +52,25 @@ extension CardsViewController: CardsViewControllerProtocol {
 //            }
 //        }
         
-        self.models = models
-        self.collectionView.reloadDataAndSetGradient()
-    }
+//        self.models = models
+//        self.collectionView.reloadDataAndSetGradient()
+//    }
     
-    func insertModels(_ models: [CardModel]) {
-        guard models.count > 0 else { return }
-
-        if self.models.isEmpty {
-            self.setModels(models)
-        } else {
-            self.models.append(contentsOf: models)
-            self.collectionView.reloadDataAndSetGradient()
-        }
-    }
+//    func insertModels(_ models: [CardModel]) {
+//        guard models.count > 0 else { return }
+//
+//        if self.models.isEmpty {
+//            self.setModels(models)
+//        } else {
+//            self.models.append(contentsOf: models)
+//            self.collectionView.reloadDataAndSetGradient()
+//        }
+//    }
     
-    func deleteModel(_ model: CardModel) {
+//    func deleteModel(_ model: CardModel) {
 //        self.models.removeAll { $0.id == model.id }
-        self.collectionView.reloadDataAndSetGradient()
-    }
+//        self.collectionView.reloadDataAndSetGradient()
+//    }
     
     func getCardTitle(_ callback: @escaping (String) -> Void) {
         let alert = UIAlertController(title: "CardsEnterName".localized(), message: nil, preferredStyle: .alert)
@@ -94,7 +94,7 @@ extension CardsViewController: CardsViewControllerProtocol {
             }
         }
         
-        self.models = []
+//        self.models = []
         self.collectionView.removeFromSuperview()
         self.noContentView.display("CardsCanDisplayCard")
     }
@@ -162,13 +162,14 @@ extension CardsViewController {
 extension CardsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.models.count
+//        return self.models.count
+      fatalError()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CardCell = collectionView.dequeueCell(indexPath: indexPath)
-        let model = self.models[indexPath.row]
-        cell.display(model)
+//        let model = self.models[indexPath.row]
+//        cell.display(model)
         
         let offset: CGFloat = 32.0
         let width = (UIScreen.main.bounds.width - offset * 2)
@@ -203,13 +204,13 @@ extension CardsViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let model = self.models[indexPath.row]
+//        let model = self.models[indexPath.row]
         let attributes = self.collectionView.layoutAttributesForItem(at: indexPath)
         let attributesFrame = attributes?.frame ?? .zero
         let frameToOpenFrom = collectionView.convert(attributesFrame, to: self.collectionView.superview)
         
         self.transition.openingFrame = frameToOpenFrom
-        self.transition.model = model
+//        self.transition.model = model
         self.transitioningDelegate = self.transition
 
         self.presenter.didSelectCard(transition: self.transition)

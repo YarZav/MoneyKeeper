@@ -41,8 +41,8 @@ class CashFlowCategoryPresenter: BasePresenter {
 extension CashFlowCategoryPresenter: CashFlowCategoryPresenterProtocol {
     
     func viewDidLoad(type: CashType) {
-        let items = self.interactor.getCategoryItems()
-        self.view?.setItems(items)
+//        let items = self.interactor.getCategoryItems()
+//        self.view?.setItems(items)
         
 //        let total = self.interactor.getTotalCashFlow(type: type)
 //        self.view?.setTotalPrice(total.toString(.currency))
@@ -77,15 +77,15 @@ extension CashFlowCategoryPresenter: CashFlowCategoryPresenterProtocol {
 // MARK: - CashFlowCategoryDetailPresenterDelegate
 extension CashFlowCategoryPresenter: CashFlowCategoryDetailPresenterDelegate {
     
-    func didDeleteCategoryModel(_ model: CategoryModel) {
-        self.view?.deleteItems([model])
-    }
+//    func didDeleteCategoryModel(_ model: CategoryModel) {
+//        self.view?.deleteItems([model])
+//    }
 }
 
 // MARK: - CashFlowCategoryAddDelegate
 extension CashFlowCategoryPresenter: CashFlowCategoryAddDelegate {
     
-    func didAddCategoryModel(_ model: CategoryModel) {
-        self.view?.insertItems([model])
-    }
+//    func didAddCategoryModel(_ model: CategoryModel) {
+//        self.view?.insertItems([model])
+//    }
 }

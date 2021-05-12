@@ -40,16 +40,16 @@ class CardsPresenter: BasePresenter {
 extension CardsPresenter {
     
     private func fetchCards() {
-        var cards = self.interactor.getCards()
-        if let searchText = self.searchText, !searchText.isEmpty {
-            cards = cards.filter { $0.title.lowercased().contains(searchText.lowercased()) }
-        }
-        
-        if cards.isEmpty {
-            self.view?.showNoContentView()
-        } else {
-            self.view?.setModels(cards)
-        }
+//        var cards = self.interactor.getCards()
+//        if let searchText = self.searchText, !searchText.isEmpty {
+//            cards = cards.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+//        }
+//        
+//        if cards.isEmpty {
+//            self.view?.showNoContentView()
+//        } else {
+//            self.view?.setModels(cards)
+//        }
     }
 }
 
@@ -71,7 +71,7 @@ extension CardsPresenter: CardsPresenterProtocol {
     }
     
     func didSelectCard(transition: CardDetailTransitionDelegate) {
-        self.wireFrame.cardDetail(from: self.view, transition: transition, delegate: self)
+//        self.wireFrame.cardDetail(from: self.view, transition: transition, delegate: self)
     }
 }
 
@@ -92,10 +92,10 @@ extension CardsPresenter: CardScannerPresenterDelegate {
     }
 }
 
-// MARK: - CardDetailDelegate
-extension CardsPresenter: CardDetailDelegate {
-    
-    func didDeleteModel(_ model: CardModel) {
-        self.view?.deleteModel(model)
-    }
-}
+//// MARK: - CardDetailDelegate
+//extension CardsPresenter: CardDetailDelegate {
+//    
+//    func didDeleteModel(_ model: CardModel) {
+//        self.view?.deleteModel(model)
+//    }
+//}

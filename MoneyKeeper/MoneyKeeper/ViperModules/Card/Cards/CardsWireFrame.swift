@@ -20,11 +20,11 @@ extension CardsWireFrame: CardsWireFrameProtocol {
 //        viewController.navigationController?.pushViewController(scannerViewController, animated: true)
     }
     
-    func cardDetail(from view: CardsViewControllerProtocol?, transition: CardDetailTransitionDelegate, delegate: CardDetailDelegate?) {
+//    func cardDetail(from view: CardsViewControllerProtocol?, transition: CardDetailTransitionDelegate, delegate: CardDetailDelegate?) {
 //        guard let viewController = view as? UIViewController else { return }
 //        let detailViewController = self.resolver.detailCardController(transition.model, delegate: delegate)
 //        detailViewController.transitioningDelegate = transition
 //        detailViewController.modalPresentationStyle = .custom
 //        viewController.present(detailViewController, animated: true) { }
-    }
+//    }
 }

@@ -14,7 +14,7 @@ import Business
 class CashFlowCategoryDetailView: UIView {
     
     // Properties
-    private var model: CategoryModel!
+//    private var model: CategoryModel!
     private var transition: Bool = false
     
     private var iconImageView = UIImageView()
@@ -47,9 +47,9 @@ class CashFlowCategoryDetailView: UIView {
         super.init(frame: frame)
     }
     
-    init(model: CategoryModel, transition: Bool) {
+    init(/*model: CategoryModel, */transition: Bool) {
         super.init(frame: .zero)
-        self.model = model
+//        self.model = model
         self.transition = transition
         self.createUI()
         self.displayModel()
@@ -178,8 +178,8 @@ extension CashFlowCategoryDetailView {
     }
     
     private func displayModel() {
-        self.titleLabel.text = self.model.title.localized()
-        self.categoryLabel.text = self.model.title.localized()
-        self.iconImageView.image = UIImage(named: self.model.imageName)
+//        self.titleLabel.text = self.model.title.localized()
+//        self.categoryLabel.text = self.model.title.localized()
+//        self.iconImageView.image = UIImage(named: self.model.imageName)
     }
 }

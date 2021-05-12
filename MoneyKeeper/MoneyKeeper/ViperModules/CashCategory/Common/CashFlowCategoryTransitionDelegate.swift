@@ -12,7 +12,7 @@ import Business
 // MARK: - CashFlowCategoryTransitionDelegate
 class CashFlowCategoryTransitionDelegate: NSObject {
     var openingFrame: CGRect?
-    var model: CategoryModel!
+//    var model: CategoryModel!
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
@@ -21,14 +21,14 @@ extension CashFlowCategoryTransitionDelegate: UIViewControllerTransitioningDeleg
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let presentationAnimator = CashFlowDetailPresentationAnimator()
         presentationAnimator.openingFrame = openingFrame ?? .zero
-        presentationAnimator.model = model
+//        presentationAnimator.model = model
         return presentationAnimator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let dismissAnimator = CashFlowDetailDismissalAnimator()
         dismissAnimator.openingFrame = openingFrame ?? .zero
-        dismissAnimator.model = model
+//        dismissAnimator.model = model
         return dismissAnimator
     }
 }
@@ -38,7 +38,7 @@ class CashFlowDetailPresentationAnimator: NSObject, UIViewControllerAnimatedTran
     
     //Properties
     var openingFrame: CGRect?
-    var model: CategoryModel!
+//    var model: CategoryModel!
     
     //Transitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -51,26 +51,26 @@ class CashFlowDetailPresentationAnimator: NSObject, UIViewControllerAnimatedTran
         
         let animationDuration = self.transitionDuration(using: transitionContext)
         let fromViewFrame = fromViewController.view.frame
-        let snapshotView = CashFlowCategoryDetailView(model: self.model, transition: true)
-        snapshotView.frame = self.openingFrame ?? .zero
-
-        let containerView = transitionContext.containerView
-        containerView.addSubview(toViewController.view)
-        containerView.addSubview(snapshotView)
-        
-        snapshotView.layoutIfNeeded()
-        UIView.animate(withDuration: animationDuration, animations: {
-            toViewController.presentAnimate()
-            
-            snapshotView.frame = fromViewFrame
-            snapshotView.presentAnimate()
-            snapshotView.layoutIfNeeded()
-        }) { (finished) in
-            snapshotView.removeFromSuperview()
-            toViewController.presentAnimateCompletion()
-            
-            transitionContext.completeTransition(finished)
-        }
+//        let snapshotView = CashFlowCategoryDetailView(model: self.model, transition: true)
+//        snapshotView.frame = self.openingFrame ?? .zero
+//
+//        let containerView = transitionContext.containerView
+//        containerView.addSubview(toViewController.view)
+//        containerView.addSubview(snapshotView)
+//        
+//        snapshotView.layoutIfNeeded()
+//        UIView.animate(withDuration: animationDuration, animations: {
+//            toViewController.presentAnimate()
+//            
+//            snapshotView.frame = fromViewFrame
+//            snapshotView.presentAnimate()
+//            snapshotView.layoutIfNeeded()
+//        }) { (finished) in
+//            snapshotView.removeFromSuperview()
+//            toViewController.presentAnimateCompletion()
+//            
+//            transitionContext.completeTransition(finished)
+//        }
     }
 }
 
@@ -79,7 +79,7 @@ class CashFlowDetailDismissalAnimator: NSObject, UIViewControllerAnimatedTransit
     
     //Properties
     var openingFrame: CGRect?
-    var model: CategoryModel!
+//    var model: CategoryModel!
     
     //Transitioning
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -90,25 +90,25 @@ class CashFlowDetailDismissalAnimator: NSObject, UIViewControllerAnimatedTransit
         guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? CashFlowCategoryDetailViewController else { return }
         
         let animationDuration = self.transitionDuration(using: transitionContext)
-        let snapshotView = CashFlowCategoryDetailView(model: self.model, transition: false)
-        snapshotView.frame = fromViewController.view.frame
-        fromViewController.dismissAnimateStart()
-
-        let containerView = transitionContext.containerView
-        containerView.addSubview(snapshotView)
-        
-        snapshotView.layoutIfNeeded()
-        UIView.animate(withDuration: animationDuration, animations: { () -> Void in
-            fromViewController.dismissAnimate()
-            
-            snapshotView.frame = self.openingFrame!
-            snapshotView.dismissAnimate()
-            snapshotView.layoutIfNeeded()
-        }) { (finished) -> Void in
-            snapshotView.removeFromSuperview()
-            fromViewController.view.removeFromSuperview()
-            
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-        }
+//        let snapshotView = CashFlowCategoryDetailView(model: self.model, transition: false)
+//        snapshotView.frame = fromViewController.view.frame
+//        fromViewController.dismissAnimateStart()
+//
+//        let containerView = transitionContext.containerView
+//        containerView.addSubview(snapshotView)
+//
+//        snapshotView.layoutIfNeeded()
+//        UIView.animate(withDuration: animationDuration, animations: { () -> Void in
+//            fromViewController.dismissAnimate()
+//
+//            snapshotView.frame = self.openingFrame!
+//            snapshotView.dismissAnimate()
+//            snapshotView.layoutIfNeeded()
+//        }) { (finished) -> Void in
+//            snapshotView.removeFromSuperview()
+//            fromViewController.view.removeFromSuperview()
+//
+//            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+//        }
     }
 }

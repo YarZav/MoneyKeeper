@@ -14,9 +14,9 @@ import Business
 protocol CashFlowCategoryViewControllerProtocol: BaseViewControllerProtocol {
     func updateStringLocalization()
     func setTotalPrice(_ total: String?)
-    func setItems(_ items: [CategoryModel])
-    func deleteItems(_ items: [CategoryModel])
-    func insertItems(_ items: [CategoryModel])
+//    func setItems(_ items: [CategoryModel])
+//    func deleteItems(_ items: [CategoryModel])
+//    func insertItems(_ items: [CategoryModel])
 }
 
 //View -> Presenter
@@ -29,7 +29,7 @@ protocol CashFlowCategoryPresenterProtocol {
 
 //Presenter - Interactor
 protocol CashFlowCategoryInteractorProtocol {
-    func getCategoryItems() -> [CategoryModel]
+//    func getCategoryItems() -> [CategoryModel]
     func saveCashFlowModel(_ model: CashModel, callback: @escaping (Error?) -> Void)
 }
 

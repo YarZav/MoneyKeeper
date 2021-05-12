@@ -14,12 +14,12 @@ protocol CashFlowCategoryDetailViewControllerProtocol: class { }
 
 //View -> Presenter
 protocol CashFlowCategoryDetailPresenterProtocol {
-    func deleteCategoryModel(_ model: CategoryModel)
+//    func deleteCategoryModel(_ model: CategoryModel)
 }
 
 //Presenter - Interactor
 protocol CashFlowCategoryDetailInteractorProtocol {
-    func deleteCategoryModel(_ model: CategoryModel, callback: @escaping (Error?) -> Void)
+//    func deleteCategoryModel(_ model: CategoryModel, callback: @escaping (Error?) -> Void)
 }
 
 //Presenter - WireFrame

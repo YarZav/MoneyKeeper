@@ -39,7 +39,7 @@ class CashFlowCategoryViewController: BaseViewController {
     private var price = MarginLabel(font: UIFont.systemFont(ofSize: 15), textAlignment: .center)
     private var collectionView: GradientCollectionView!
     private var priceLabel = UILabel(font: UIFont.systemFont(ofSize: 18), textColor: .white, textAlignment: .center)
-    private var items = [CategoryModel]()
+//    private var items = [CategoryModel]()
     private var totalPrice: String?
     
     //Life cycle
@@ -69,12 +69,12 @@ extension CashFlowCategoryViewController: CashFlowCategoryViewControllerProtocol
         self.priceLabel.text = "CashFlowCategoryTotal".localized() + ": " + (self.totalPrice ?? "")
     }
     
-    func setItems(_ items: [CategoryModel]) {
-        self.items = items
-        self.collectionView.reloadDataAndSetGradient()
-    }
+//    func setItems(_ items: [CategoryModel]) {
+//        self.items = items
+//        self.collectionView.reloadDataAndSetGradient()
+//    }
     
-    func deleteItems(_ items: [CategoryModel]) {
+//    func deleteItems(_ items: [CategoryModel]) {
 //        var deletedIndexes = [IndexPath]()
 //        items.forEach { (deleltedItem) in
 //            if let rowIndex = self.items.firstIndex(where: { (currentItem) -> Bool in deleltedItem.id == currentItem.id }) {
@@ -83,16 +83,16 @@ extension CashFlowCategoryViewController: CashFlowCategoryViewControllerProtocol
 //            }
 //        }
 //        self.collectionView.deleteItems(at: deletedIndexes)
-    }
+//    }
     
-    func insertItems(_ items: [CategoryModel]) {
-        var insertedIndexes = [IndexPath]()
-        items.forEach {
-            insertedIndexes.append(IndexPath(row: self.items.count, section: 0))
-            self.items.append($0)
-        }
-        self.collectionView.insertItems(at: insertedIndexes)
-    }
+//    func insertItems(_ items: [CategoryModel]) {
+//        var insertedIndexes = [IndexPath]()
+//        items.forEach {
+//            insertedIndexes.append(IndexPath(row: self.items.count, section: 0))
+//            self.items.append($0)
+//        }
+//        self.collectionView.insertItems(at: insertedIndexes)
+//    }
 }
 
 // MARK: - Actions
@@ -150,11 +150,12 @@ extension CashFlowCategoryViewController {
     }
     
     private func getCell(for collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CashFlowCategoryCell = collectionView.dequeueCell(indexPath: indexPath)
-        let item = self.items[indexPath.row]
-        cell.display(title: item.title, icon: item.imageName)
-        cell.delegate = self
-        return cell
+//        let cell: CashFlowCategoryCell = collectionView.dequeueCell(indexPath: indexPath)
+//        let item = self.items[indexPath.row]
+//        cell.display(title: item.title, icon: item.imageName)
+//        cell.delegate = self
+//        return cell
+      return UICollectionViewCell()
     }
 }
 
@@ -162,7 +163,8 @@ extension CashFlowCategoryViewController {
 extension CashFlowCategoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+//        return self.items.count
+      fatalError()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -211,7 +213,7 @@ extension CashFlowCategoryViewController: CashFlowCategoryCellDelegate {
         let frameToOpenFrom = collectionView.convert(attributesFrame, to: self.collectionView.superview)
         
         self.transition.openingFrame = frameToOpenFrom
-        self.transition.model = self.items[indexPath.row]
+//        self.transition.model = self.items[indexPath.row]
         self.transitioningDelegate = self.transition
         
         self.presenter.presentCashFlowDetailCategory(transition: self.transition)

@@ -12,17 +12,17 @@ import Business
 // MARK: - CashFlowCategoryDetailInteractor
 class CashFlowCategoryDetailInteractor {
     
-    private let categoryManager: CategoryManager
+//    private let categoryManager: CategoryManager
     
-    init(categoryManager: CategoryManager) {
-        self.categoryManager = categoryManager
-    }
+//    init(categoryManager: CategoryManager) {
+//        self.categoryManager = categoryManager
+//    }
 }
 
 // MARK: - CashFlowCategoryDetailInteractorProtocol
 extension CashFlowCategoryDetailInteractor: CashFlowCategoryDetailInteractorProtocol {
     
-    func deleteCategoryModel(_ model: CategoryModel, callback: @escaping (Error?) -> Void) {
-        categoryManager.deleteModel(model, callback: callback)
-    }
+//    func deleteCategoryModel(_ model: CategoryModel, callback: @escaping (Error?) -> Void) {
+//        categoryManager.deleteModel(model, callback: callback)
+//    }
 }

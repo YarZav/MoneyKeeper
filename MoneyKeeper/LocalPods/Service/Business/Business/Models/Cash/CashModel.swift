@@ -31,9 +31,6 @@ public struct CashModel {
 
   /// Date of transaction
   public var date: Date
-
-  /// Category for cash
-  public var category: CategoryModel
 }
 
 //// MARK: - Publics

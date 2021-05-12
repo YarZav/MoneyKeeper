@@ -13,7 +13,7 @@ import Business
 
 class CardDetailView: UIView {
     
-    private var model: CardModel!
+//    private var model: CardModel!
     private var transition: Bool = false
     
     private var titleLabel = UILabel()
@@ -36,9 +36,9 @@ class CardDetailView: UIView {
         super.init(frame: frame)
     }
     
-    init(model: CardModel, transition: Bool) {
+    init(/*model: CardModel, */transition: Bool) {
         super.init(frame: .zero)
-        self.model = model
+//        self.model = model
         self.transition = transition
         self.createUI()
         self.displayModel()
@@ -119,9 +119,9 @@ extension CardDetailView {
     }
     
     private func displayModel() {
-        self.titleLabel.text = model.title
-        self.imageView.image = self.generateBarCode(from: model.code)
-        self.codeLabel.text = model.code
+//        self.titleLabel.text = model.title
+//        self.imageView.image = self.generateBarCode(from: model.code)
+//        self.codeLabel.text = model.code
     }
     
     private func generateBarCode(from string: String) -> UIImage? {
