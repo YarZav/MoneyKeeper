@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-// MARK: - CashType
 public enum CashType: Int {
   // Расходы
   case outcome
@@ -18,19 +17,18 @@ public enum CashType: Int {
   case income
 }
 
-// MARK: - CashModel
 public struct CashModel {
   /// identifier of model
-  public var identifier: String
+  public let identifier: String
 
   /// Cash transaction type
-  public var type: CashType
+  public let type: CashType
 
   /// Total price
-  public var price: Decimal
+  public let price: Decimal
 
   /// Date of transaction
-  public var date: Date
+  public let date: Date
 }
 
 //// MARK: - Publics

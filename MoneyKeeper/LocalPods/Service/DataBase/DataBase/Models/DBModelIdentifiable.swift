@@ -6,6 +6,10 @@
 //
 
 protocol DBModelIdentifiable {
+
+  /// DataBase model identifier
   var identifier: String { get set }
+
+  /// DataBase name
   static var entityName: String { get }
 }

@@ -9,12 +9,7 @@
 import CoreData
 
 @objc(Cash)
-public final class CashDBModel: NSManagedObject, DBModelIdentifiable {
-
-  // MARK: - DBIdentifiable
-
-  static var entityName: String = "Cash"
-  @NSManaged public var identifier: String
+public final class CashDBModel: NSManagedObject {
 
   // MARK: - CoreData
 
@@ -28,9 +23,14 @@ public final class CashDBModel: NSManagedObject, DBModelIdentifiable {
   }
 }
 
-// MARK: - Property
+// MARK: - DBIdentifiable
 
-extension CashDBModel {
+extension CashDBModel: DBModelIdentifiable {
+  static var entityName: String = "Cash"
+
+  /// Identifier of model
+  @NSManaged public var identifier: String
+
   /// Income  OR outcome money
   @NSManaged public var price: Double
 

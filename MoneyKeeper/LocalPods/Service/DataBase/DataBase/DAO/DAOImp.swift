@@ -45,19 +45,14 @@ extension DAOImp: DAO {
 
   func deleteAll(callback: @escaping (Error?) -> Void) {
     let previousCoreDataModels = getAll()
-    previousCoreDataModels?.forEach({
-      coreDataManager.managedObjectContext.delete($0)
-    })
+    previousCoreDataModels?.forEach({ coreDataManager.managedObjectContext.delete($0) })
     coreDataManager.saveContext(callback: callback)
   }
 
   func delete(by identifier: String, callback: @escaping (Error?) -> Void) {
-    if let previousCoreDataModel = get(by: identifier) {
-      coreDataManager.managedObjectContext.delete(previousCoreDataModel)
-      coreDataManager.saveContext(callback: callback)
-    } else {
-      callback(nil)
-    }
+    guard let previousCoreDataModel = get(by: identifier) else { return callback(nil) }
+    coreDataManager.managedObjectContext.delete(previousCoreDataModel)
+    coreDataManager.saveContext(callback: callback)
   }
 }
 
