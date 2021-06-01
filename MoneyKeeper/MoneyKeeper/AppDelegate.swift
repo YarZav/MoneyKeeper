@@ -15,6 +15,7 @@ final class AppDelegate: UIResponder {
 }
 
 // MARK: - UIApplicationDelegate
+
 extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
@@ -23,4 +24,3 @@ extension AppDelegate: UIApplicationDelegate {
     return true
   }
 }
-
