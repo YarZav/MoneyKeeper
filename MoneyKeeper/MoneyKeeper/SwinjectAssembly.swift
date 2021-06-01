@@ -6,6 +6,8 @@
 //
 
 import Swinject
+import TabBar
+import Cash
 
 // MARK: - SwinjectAssembly
 final class SwinjectAssembly {
@@ -29,7 +31,8 @@ final class SwinjectAssembly {
 extension SwinjectAssembly {
   class var moduleAssembly: [Assembly] {
     return [
-      TabBarAssembly()
+      TabBarAssembly(),
+      AddCashAssembly()
     ]
   }
 }

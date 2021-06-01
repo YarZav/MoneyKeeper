@@ -8,6 +8,7 @@
 
 import UIKit
 import Business
+import DesignSystem
 
 // MARK: - CardDetailViewController
 class CardDetailViewController: BaseViewController {
