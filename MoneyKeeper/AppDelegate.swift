@@ -19,7 +19,7 @@ final class AppDelegate: UIResponder {
 extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = SwinjectAssembly.assembler.tabBar(addCash: SwinjectAssembly.assembler.addCash())
+    window?.rootViewController = SwinjectAssembly.assembler.tabBar(cash: SwinjectAssembly.assembler.cash())
     window?.makeKeyAndVisible()
     return true
   }

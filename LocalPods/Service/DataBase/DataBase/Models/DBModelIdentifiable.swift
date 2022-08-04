@@ -8,7 +8,7 @@
 protocol DBModelIdentifiable {
 
   /// DataBase model identifier
-  var identifier: String { get set }
+  var identifier: UUID { get set }
 
   /// DataBase name
   static var entityName: String { get }

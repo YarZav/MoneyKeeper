@@ -47,7 +47,7 @@ class CashFlowDetailPresentationAnimator: NSObject, UIViewControllerAnimatedTran
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else { return }
-        guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as? CashFlowCategoryDetailViewController else { return }
+//        guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as? CashFlowCategoryDetailViewController else { return }
         
         let animationDuration = self.transitionDuration(using: transitionContext)
         let fromViewFrame = fromViewController.view.frame
@@ -87,7 +87,7 @@ class CashFlowDetailDismissalAnimator: NSObject, UIViewControllerAnimatedTransit
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? CashFlowCategoryDetailViewController else { return }
+//        guard let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? CashFlowCategoryDetailViewController else { return }
         
         let animationDuration = self.transitionDuration(using: transitionContext)
 //        let snapshotView = CashFlowCategoryDetailView(model: self.model, transition: false)

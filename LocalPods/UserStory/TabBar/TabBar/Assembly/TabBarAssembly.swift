@@ -43,16 +43,18 @@ extension TabBarAssembly: Assembly {
 }
 
 public protocol TabBarAssembler {
-  func tabBar(addCash: UIViewController) -> UIViewController
+
+  func tabBar(cash: UIViewController) -> UIViewController
+
 }
 
 // MARK: - TabBarAssembler
 
 extension Assembler: TabBarAssembler {
 
-  public func tabBar(addCash: UIViewController) -> UIViewController {
+  public func tabBar(cash: UIViewController) -> UIViewController {
     let view = resolver.resolve(TabBarView.self)
-    view?.rootViewController = addCash
+    view?.rootViewController = cash
     
     guard let viewController = resolver.resolve(TabBarView.self) as? UIViewController else {
       fatalError("Fatal Error (Swinject): TabBarView is not UIViewController")

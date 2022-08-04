@@ -44,17 +44,17 @@ extension CashFlowCategoryCell {
         self.contentView.addSubview(self.titleLabel)
         self.contentView.addSubview(self.iconImageView)
 
-        self.iconImageView.snp.makeConstraints {
-            $0.width.height.equalTo(40)
-            $0.top.equalToSuperview().offset(16)
-            $0.centerX.equalToSuperview()
-        }
-        
-        self.titleLabel.snp.makeConstraints {
-            $0.top.equalTo(self.iconImageView.snp.bottom).offset(8)
-            $0.right.bottom.equalToSuperview().offset(-8)
-            $0.left.equalToSuperview().offset(8)
-        }
+//        self.iconImageView.snp.makeConstraints {
+//            $0.width.height.equalTo(40)
+//            $0.top.equalToSuperview().offset(16)
+//            $0.centerX.equalToSuperview()
+//        }
+//        
+//        self.titleLabel.snp.makeConstraints {
+//            $0.top.equalTo(self.iconImageView.snp.bottom).offset(8)
+//            $0.right.bottom.equalToSuperview().offset(-8)
+//            $0.left.equalToSuperview().offset(8)
+//        }
     }
     
     @objc private func longPressed(sender: UILongPressGestureRecognizer) {

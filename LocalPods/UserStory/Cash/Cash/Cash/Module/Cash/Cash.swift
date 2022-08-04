@@ -1,5 +1,5 @@
 //
-//  AddCash.swift
+//  Cash.swift
 //  Cash
 //
 //  Created by Yaroslav Zavyalov on 10.10.2018.
@@ -10,7 +10,7 @@ import Foundation
 import Business
 
 // Presenter -> View
-protocol AddCashView: AnyObject {
+protocol CashView: AnyObject {
 
   func dropPrice()
   func setTotalPrice(_ total: String?)
@@ -18,7 +18,7 @@ protocol AddCashView: AnyObject {
 }
 
 // View -> Presenter
-protocol AddCashPresenter {
+protocol CashPresenter {
 
   func viewDidApepar(type: CashType)
   func presentCashCategory(price: String, type: CashType)
@@ -28,11 +28,11 @@ protocol AddCashPresenter {
 }
 
 // Presenter - Interactor
-protocol AddCashInteractor {
+protocol CashInteractor {
 
   func getTotalCash(type: CashType) -> Decimal
 
 }
 
 // Presenter - WireFrame
-protocol AddCashWireFrame { }
+protocol CashWireFrame { }

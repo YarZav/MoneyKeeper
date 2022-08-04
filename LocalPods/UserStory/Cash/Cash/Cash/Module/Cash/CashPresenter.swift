@@ -1,5 +1,5 @@
 //
-//  AddCashPresenter.swift
+//  CashPresenter.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 10.10.2018.
@@ -10,22 +10,22 @@ import Foundation
 import Business
 import Extension
 
-final class AddCashPresenterImp {
+final class CashPresenterImp {
     
   // MARK: - Private property
 
-  private let interactor: AddCashInteractor
-  private let wireFrame: AddCashWireFrame
+  private let interactor: CashInteractor
+  private let wireFrame: CashWireFrame
   
   private var totalPrice = Decimal(0)
 
   // MARK: - Internal property
 
-  weak var view: AddCashView?
+  weak var view: CashView?
 
   //MARK: - Init
 
-  init(interactor: AddCashInteractor, wireFrame: AddCashWireFrame) {
+  init(interactor: CashInteractor, wireFrame: CashWireFrame) {
     self.interactor = interactor
     self.wireFrame = wireFrame
   }
@@ -34,7 +34,7 @@ final class AddCashPresenterImp {
 
 // MARK: - CashPresenter
 
-extension AddCashPresenterImp: AddCashPresenter {
+extension CashPresenterImp: CashPresenter {
     
   func viewDidApepar(type: CashType) {
     totalPrice = interactor.getTotalCash(type: type)

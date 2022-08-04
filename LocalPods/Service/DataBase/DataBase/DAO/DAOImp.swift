@@ -31,7 +31,7 @@ extension DAOImp: DAO {
     return coreDataManager.getCoreDataModels(entityName: Template.entityName)
   }
 
-  func get(by identifier: String) -> Template? {
+  func get(by identifier: UUID) -> Template? {
     return getAll()?.first(where: { $0.identifier == identifier })
   }
 
@@ -51,7 +51,7 @@ extension DAOImp: DAO {
     coreDataManager.saveContext(callback: callback)
   }
 
-  func delete(by identifier: String, callback: @escaping (Error?) -> Void) {
+  func delete(by identifier: UUID, callback: @escaping (Error?) -> Void) {
     guard let previousCoreDataModel = get(by: identifier) else { return callback(nil) }
     coreDataManager.managedObjectContext.delete(previousCoreDataModel)
     coreDataManager.saveContext(callback: callback)

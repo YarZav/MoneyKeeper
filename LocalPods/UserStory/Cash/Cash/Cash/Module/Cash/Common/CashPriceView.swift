@@ -1,5 +1,5 @@
 //
-//  AddCashPriceView.swift
+//  CashPriceView.swift
 //  MoneyKeeper
 //
 //  Created by admin on 26.02.2019.
@@ -9,9 +9,9 @@
 import UIKit
 import DesignSystem
 
-// MARK: - AddCashPriceView
+// MARK: - CashPriceView
 
-final class AddCashPriceView: UIView {
+final class CashPriceView: UIView {
 
   // MARK: - Constants
 
@@ -57,7 +57,7 @@ final class AddCashPriceView: UIView {
 
 // MARK: - Private
 
-private extension AddCashPriceView {
+private extension CashPriceView {
 
   func createUI() {
     addSubview(threeCircleView)
@@ -87,7 +87,7 @@ private extension AddCashPriceView {
 
 // MARK: - Internal
 
-extension AddCashPriceView {
+extension CashPriceView {
 
   func editing(_ isEditing: Bool) {
     UIView.animate(withDuration: 0.25) {

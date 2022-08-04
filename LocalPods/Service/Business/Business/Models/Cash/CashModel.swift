@@ -6,23 +6,10 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import UIKit
-import Foundation
-
-public enum CashType: Int {
-
-  // Расходы
-  case outcome
-
-  // Доходы
-  case income
-
-}
-
 public struct CashModel {
 
   /// identifier of model
-  public let identifier: String
+  public let identifier: UUID
 
   /// Cash transaction type
   public let type: CashType
@@ -32,5 +19,8 @@ public struct CashModel {
 
   /// Date of transaction
   public let date: Date
+
+  /// Category
+  public let category: CashCategoryModel?
 
 }

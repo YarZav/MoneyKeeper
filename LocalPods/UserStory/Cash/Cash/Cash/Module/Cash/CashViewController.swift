@@ -1,5 +1,5 @@
 //
-//  AddCashViewController.swift
+//  CashViewController.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 10.10.2018.
@@ -52,18 +52,18 @@ private struct Constant {
 }
 
 // MARK: - CashViewController
-final class AddCashViewController: UIViewController {
+final class CashViewController: UIViewController {
 
   // MARK: - Private property
 
-  private var presenter: AddCashPresenter
+  private var presenter: CashPresenter
   private var type: CashType = .outcome
 
-  private var priceView = AddCashPriceView()
-  private var numPadView = AddCashNumPadView(priceLengthLimit: 7)
-  private var acceptView: AddCashAcceptView!
+  private var priceView = CashPriceView()
+  private var numPadView = CashNumPadView(priceLengthLimit: 7)
+  private var acceptView: CashAcceptView!
 
-  init(presenter: AddCashPresenter) {
+  init(presenter: CashPresenter) {
     self.presenter = presenter
     super.init(nibName: nil, bundle: nil)
   }
@@ -83,8 +83,9 @@ final class AddCashViewController: UIViewController {
 
 }
 
-// MARK: - AddCashView
-extension AddCashViewController: AddCashView {
+// MARK: - CashView
+
+extension CashViewController: CashView {
 
   func dropPrice() {
     numPadView.dropPrice()
@@ -97,7 +98,7 @@ extension AddCashViewController: AddCashView {
 
 // MARK: - Private
 
-private extension AddCashViewController {
+private extension CashViewController {
 
   func createUI() {
     let backgroundColor = UIColor.anthracite
@@ -106,7 +107,7 @@ private extension AddCashViewController {
     priceView.backgroundColor = backgroundColor
     numPadView.delegate = self
     
-    acceptView = AddCashAcceptView(type: type)
+    acceptView = CashAcceptView(type: type)
     acceptView.backgroundColor = backgroundColor
     acceptView.delegate = self
     
@@ -157,9 +158,9 @@ private extension AddCashViewController {
 
 }
 
-// MARK: - AddCashNumPadDelegate
+// MARK: - CashNumPadDelegate
 
-extension AddCashViewController: AddCashNumPadDelegate {
+extension CashViewController: CashNumPadDelegate {
 
   func setPrice(_ price: String?) {
     if let price = price, !(price.isEmpty || price == "0") {
@@ -173,9 +174,9 @@ extension AddCashViewController: AddCashNumPadDelegate {
 
 }
 
-// MARK: - AddCashExtraDelegate
+// MARK: - CashAcceptDelegate
 
-extension AddCashViewController: AddCashAcceptDelegate {
+extension CashViewController: CashAcceptDelegate {
 
   func presentCashCategory() {
     guard let priceText = priceView.priceText, !priceText.isEmpty else { return }

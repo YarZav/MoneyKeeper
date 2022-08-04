@@ -32,7 +32,7 @@ extension SwinjectAssembly {
   class var moduleAssembly: [Assembly] {
     return [
       TabBarAssembly(),
-      AddCashAssembly()
+      CashAssembly()
     ]
   }
 }

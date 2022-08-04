@@ -1,5 +1,5 @@
 //
-//  AddCashAcceptView.swift
+//  CashAcceptView.swift
 //  MoneyKeeper
 //
 //  Created by admin on 26.02.2019.
@@ -12,36 +12,13 @@ import Business
 import Extension
 import DesignSystem
 
-private struct AddCashAcceptStruct {
-
-  static var totalPriceWidth: CGFloat {
-    get {
-      switch UIDevice.current.type {
-      case .iPhone_5S_SE?:
-        return 200
-      case .iPhone_6_7_8?:
-        return 276
-      case .iPhone_6_7_8_Plus?:
-        return 276
-      case .iPhone_X_Xs_11Pro?:
-        return 276
-      case .iPhone_Xr_XsMax_11_11ProMax?:
-        return 276
-      default:
-        return 0
-      }
-    }
-  }
-
-}
-
-protocol AddCashAcceptDelegate: AnyObject {
+protocol CashAcceptDelegate: AnyObject {
 
   func presentCashCategory()
 
 }
 
-final class AddCashAcceptView: UIView {
+final class CashAcceptView: UIView {
 
   // MARK: - Constants
 
@@ -85,7 +62,7 @@ final class AddCashAcceptView: UIView {
 
   // MARK: - Internal property
 
-  weak var delegate: AddCashAcceptDelegate?
+  weak var delegate: CashAcceptDelegate?
 
   // MARK: - Init
 
@@ -103,7 +80,7 @@ final class AddCashAcceptView: UIView {
 
 // MARK: - Internal
 
-extension AddCashAcceptView {
+extension CashAcceptView {
 
   func displayTotal(_ total: String?, type: CashType) {
     layoutIfNeeded()
@@ -116,7 +93,7 @@ extension AddCashAcceptView {
 }
 
 // MARK: - Private
-private extension AddCashAcceptView {
+private extension CashAcceptView {
 
   func createUI() {
     addSubview(priceView)
@@ -150,7 +127,7 @@ private extension AddCashAcceptView {
 
 // MARK: - Actions
 
-private extension AddCashAcceptView {
+private extension CashAcceptView {
 
   @objc
   func nextAction() {
@@ -161,7 +138,7 @@ private extension AddCashAcceptView {
 
 // MARK: - Internal
 
-extension AddCashAcceptView {
+extension CashAcceptView {
 
   func editing(_ isEdiging: Bool) {
     layoutIfNeeded()

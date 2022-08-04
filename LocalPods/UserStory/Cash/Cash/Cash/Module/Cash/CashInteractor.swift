@@ -1,5 +1,5 @@
 //
-//  AddCashInteractor.swift
+//  CashInteractor.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 10.10.2018.
@@ -10,11 +10,11 @@ import Foundation
 import CoreData
 import Business
 
-final class AddCashInteractorImp { }
+final class CashInteractorImp { }
 
 // MARK: - CashInteractor
 
-extension AddCashInteractorImp: AddCashInteractor {
+extension CashInteractorImp: CashInteractor {
     
   func getTotalCash(type: CashType) -> Decimal {
     // TODO: - Вернуть общие потраченные деньги

@@ -24,14 +24,14 @@ public final class CashDBModel: NSManagedObject {
 
 }
 
-// MARK: - DBIdentifiable
+// MARK: - DBModelIdentifiable
 
 extension CashDBModel: DBModelIdentifiable {
 
   static var entityName: String = "Cash"
 
   /// Identifier of model
-  @NSManaged public var identifier: String
+  @NSManaged public var identifier: UUID
 
   /// Income  OR outcome money
   @NSManaged public var price: Double
@@ -41,5 +41,8 @@ extension CashDBModel: DBModelIdentifiable {
 
   /// Date of transaction
   @NSManaged public var date: Date
+
+  /// Category
+  @NSManaged public var category: CashCategoryDBModel
 
 }

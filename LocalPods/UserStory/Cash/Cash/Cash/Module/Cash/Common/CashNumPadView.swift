@@ -1,5 +1,5 @@
 //
-//  AddCashNumPadView.swift
+//  CashNumPadView.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 20/02/2019.
@@ -9,15 +9,15 @@
 import UIKit
 import YZNumPad
 
-protocol AddCashNumPadDelegate: AnyObject {
+protocol CashNumPadDelegate: AnyObject {
 
   func setPrice(_ price: String?)
 
 }
 
-// MARK: - AddCashNumPadStruct
+// MARK: - CashNumPadStruct
 
-private struct AddCashNumPadStruct {
+private struct CashNumPadStruct {
 
   static var horizontalSpacing: CGFloat {
     get {
@@ -78,7 +78,7 @@ private struct AddCashNumPadStruct {
 
 }
 
-final class AddCashNumPadView: UIView {
+final class CashNumPadView: UIView {
 
   // MARK: - Constants
 
@@ -100,7 +100,7 @@ final class AddCashNumPadView: UIView {
 
   // MARK: - Internal
 
-  weak var delegate: AddCashNumPadDelegate?
+  weak var delegate: CashNumPadDelegate?
 
   // MARK: - Init
 
@@ -122,7 +122,7 @@ final class AddCashNumPadView: UIView {
 
 // MARK: - Internal
 
-extension AddCashNumPadView {
+extension CashNumPadView {
 
   func dropPrice() {
     price = ""
@@ -133,7 +133,7 @@ extension AddCashNumPadView {
 
 // MARK: - Private
 
-private extension AddCashNumPadView {
+private extension CashNumPadView {
 
   func createUI() {
     addSubview(numPadView)
@@ -154,9 +154,9 @@ private extension AddCashNumPadView {
     numPadViewStruct.borderColor = .darkViolet
     numPadViewStruct.buttonColor = .anthracite
     numPadViewStruct.textColor = .white
-    numPadViewStruct.horizontalSpacing = AddCashNumPadStruct.horizontalSpacing
-    numPadViewStruct.verticalSpacing = AddCashNumPadStruct.verticalSpacing
-    numPadViewStruct.buttonRadius = AddCashNumPadStruct.buttonRadius
+    numPadViewStruct.horizontalSpacing = CashNumPadStruct.horizontalSpacing
+    numPadViewStruct.verticalSpacing = CashNumPadStruct.verticalSpacing
+    numPadViewStruct.buttonRadius = CashNumPadStruct.buttonRadius
     numPadViewStruct.textSize = 36
     numPadViewStruct.deleteIcon = Constants.deleteImage
     return numPadViewStruct
@@ -165,7 +165,8 @@ private extension AddCashNumPadView {
 }
 
 // MARK: - YZNumPadViewDelegate
-extension AddCashNumPadView: YZNumPadViewDelegate {
+
+extension CashNumPadView: YZNumPadViewDelegate {
   
   func didTapNumber(_ number: Int, numPadView: YZNumPadView) {
     guard price.count <= priceLengthLimit else { return }
