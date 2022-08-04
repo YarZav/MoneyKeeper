@@ -1,0 +1,103 @@
+PODS:
+  - Business (1.0.0):
+    - DataBase
+  - Cash (1.0.0):
+    - Business
+    - DesignSystem
+    - Extension
+    - Swinject
+    - YZNumPad
+  - DataBase (1.0.0)
+  - DesignSystem (1.0.0)
+  - EANBarcodeGenerator (0.2.0)
+  - Extension (1.0.0)
+  - SnapKit (5.6.0)
+  - Swinject (2.8.1)
+  - TabBar (1.0.0):
+    - Cash
+    - DesignSystem
+    - Swinject
+  - YZBarChart (1.2.0)
+  - YZNotificationView (1.1.0)
+  - YZNumPad (1.1.0)
+  - YZPinCodeViewController (1.1.0)
+
+DEPENDENCIES:
+  - Business (from `LocalPods/Service/Business`)
+  - Cash (from `LocalPods/UserStory/Cash`)
+  - DataBase (from `LocalPods/Service/DataBase`)
+  - DesignSystem (from `LocalPods/Common/DesignSystem`)
+  - EANBarcodeGenerator
+  - Extension (from `LocalPods/Common/Extension`)
+  - SnapKit
+  - Swinject
+  - TabBar (from `LocalPods/UserStory/TabBar`)
+  - YZBarChart (from `https://github.com/YarZav/YZBarChart.git`, tag `1.2.0`)
+  - YZNotificationView (from `https://github.com/YarZav/YZNotificationView.git`, tag `1.1.0`)
+  - YZNumPad (from `https://github.com/YarZav/YZNumPad.git`, tag `1.1.0`)
+  - YZPinCodeViewController (from `https://github.com/YarZav/YZPinCodeViewController.git`, tag `1.1.0`)
+
+SPEC REPOS:
+  trunk:
+    - EANBarcodeGenerator
+    - SnapKit
+    - Swinject
+
+EXTERNAL SOURCES:
+  Business:
+    :path: LocalPods/Service/Business
+  Cash:
+    :path: LocalPods/UserStory/Cash
+  DataBase:
+    :path: LocalPods/Service/DataBase
+  DesignSystem:
+    :path: LocalPods/Common/DesignSystem
+  Extension:
+    :path: LocalPods/Common/Extension
+  TabBar:
+    :path: LocalPods/UserStory/TabBar
+  YZBarChart:
+    :git: https://github.com/YarZav/YZBarChart.git
+    :tag: 1.2.0
+  YZNotificationView:
+    :git: https://github.com/YarZav/YZNotificationView.git
+    :tag: 1.1.0
+  YZNumPad:
+    :git: https://github.com/YarZav/YZNumPad.git
+    :tag: 1.1.0
+  YZPinCodeViewController:
+    :git: https://github.com/YarZav/YZPinCodeViewController.git
+    :tag: 1.1.0
+
+CHECKOUT OPTIONS:
+  YZBarChart:
+    :git: https://github.com/YarZav/YZBarChart.git
+    :tag: 1.2.0
+  YZNotificationView:
+    :git: https://github.com/YarZav/YZNotificationView.git
+    :tag: 1.1.0
+  YZNumPad:
+    :git: https://github.com/YarZav/YZNumPad.git
+    :tag: 1.1.0
+  YZPinCodeViewController:
+    :git: https://github.com/YarZav/YZPinCodeViewController.git
+    :tag: 1.1.0
+
+SPEC CHECKSUMS:
+  Business: 8b8c43cfaed96f50b9a267096dad174b5090aad1
+  Cash: 27b6212bba15a5927e40c320b8c2e3826b484b40
+  DataBase: 27381cbe6acf130e513e99bb612115499768ceab
+  DesignSystem: 4f355d165782095ebba957149d584995630ca6fd
+  EANBarcodeGenerator: 61083e912254454e374d7ad88876970f9e21b942
+  Extension: 744bbb18c618ec4412551cbc8ca88cfbf87d0222
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
+  TabBar: e3cea0202af973ab9f832cd56ad84a7dc07a66b2
+  YZBarChart: e69f02d6778dd0dcfb28defb41d418975b2a1e0a
+  YZNotificationView: 9a2985a1338641d6f5a60c794dde7d45f3b8090f
+  YZNumPad: bfb34718997db4e0c3ef384755013fe4dee37d40
+  YZPinCodeViewController: 46cab35c882bf0edb3dfc8b196f9dd9c559e10e6
+
+PODFILE CHECKSUM: 71d8f40042b22f4ca35f79a5ca8cc9d434d75d4b
+
+COCOAPODS: 1.11.3

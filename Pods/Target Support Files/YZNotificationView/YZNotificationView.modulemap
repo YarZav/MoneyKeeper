@@ -1,0 +1,6 @@
+framework module YZNotificationView {
+  umbrella header "YZNotificationView-umbrella.h"
+
+  export *
+  module * { export * }
+}

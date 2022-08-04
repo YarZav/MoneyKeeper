@@ -1,0 +1,14 @@
+${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Business/Business.framework
+${BUILT_PRODUCTS_DIR}/Cash/Cash.framework
+${BUILT_PRODUCTS_DIR}/DataBase/DataBase.framework
+${BUILT_PRODUCTS_DIR}/DesignSystem/DesignSystem.framework
+${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework
+${BUILT_PRODUCTS_DIR}/Extension/Extension.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework
+${BUILT_PRODUCTS_DIR}/TabBar/TabBar.framework
+${BUILT_PRODUCTS_DIR}/YZBarChart/YZBarChart.framework
+${BUILT_PRODUCTS_DIR}/YZNotificationView/YZNotificationView.framework
+${BUILT_PRODUCTS_DIR}/YZNumPad/YZNumPad.framework
+${BUILT_PRODUCTS_DIR}/YZPinCodeViewController/YZPinCodeViewController.framework

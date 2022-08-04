@@ -1,0 +1,6 @@
+framework module TabBar {
+  umbrella header "TabBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

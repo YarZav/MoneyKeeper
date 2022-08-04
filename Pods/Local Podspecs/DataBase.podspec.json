@@ -1,0 +1,19 @@
+{
+  "name": "DataBase",
+  "platforms": {
+    "ios": "12.0"
+  },
+  "summary": "DataBase service",
+  "requires_arc": true,
+  "version": "1.0.0",
+  "authors": {
+    "Author": "https://www.author.ru"
+  },
+  "homepage": "https://www.author.ru",
+  "source": {
+    "git": "",
+    "tag": "1.0.0"
+  },
+  "frameworks": "UIKit",
+  "source_files": "DataBase/**/*.swift"
+}

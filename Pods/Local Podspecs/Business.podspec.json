@@ -1,0 +1,24 @@
+{
+  "name": "Business",
+  "platforms": {
+    "ios": "12.0"
+  },
+  "summary": "Business service",
+  "requires_arc": true,
+  "version": "1.0.0",
+  "authors": {
+    "Author": "https://www.author.ru"
+  },
+  "homepage": "https://www.author.ru",
+  "source": {
+    "git": "",
+    "tag": "1.0.0"
+  },
+  "frameworks": "UIKit",
+  "dependencies": {
+    "DataBase": [
+
+    ]
+  },
+  "source_files": "Business/**/*.swift"
+}
