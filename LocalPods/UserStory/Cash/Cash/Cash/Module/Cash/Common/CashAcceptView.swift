@@ -14,7 +14,7 @@ import DesignSystem
 
 protocol CashAcceptDelegate: AnyObject {
 
-  func presentCashCategory()
+  func presentCategory()
 
 }
 
@@ -30,6 +30,8 @@ final class CashAcceptView: UIView {
     static let totalRightOffset: CGFloat = -26
     static let totalLeftOffset: CGFloat = 40
     static let nextEnabledRightOffset: CGFloat = 32
+
+    static let nextText = "CashFlowNext"
   }
 
   // MARK: - Pirvte property
@@ -51,13 +53,13 @@ final class CashAcceptView: UIView {
   }()
 
   private lazy var nextButton: YZRoundButton = {
-      let button = YZRoundButton(backgroundColor: color, radius: 20, borderColor: color, borderWidth: 1)
-      button.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
-      button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-      button.setTitle("CashFlowNext", for: .normal)
-      button.setTitleColor(.white, for: .normal)
-      button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 26.0, bottom: 0.0, right: 40.0)
-      return button
+    let button = YZRoundButton(backgroundColor: color, radius: 20, borderColor: color, borderWidth: 1)
+    button.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+    button.setTitle(Constants.nextText, for: .normal)
+    button.setTitleColor(.white, for: .normal)
+    button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 26.0, bottom: 0.0, right: 40.0)
+    return button
   }()
 
   // MARK: - Internal property
@@ -131,7 +133,7 @@ private extension CashAcceptView {
 
   @objc
   func nextAction() {
-    delegate?.presentCashCategory()
+    delegate?.presentCategory()
   }
 
 }

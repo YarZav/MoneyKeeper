@@ -7,179 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05BA3128A73BCEA2F4C4FA89 /* CashFlowCategoryAddPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981025553D885FBE73B5CA88 /* CashFlowCategoryAddPresenter.swift */; };
 		086ACCA23FE64B4CC2804DAE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6214CD5C65088320835BA /* BaseNavigationController.swift */; };
-		0921A51D9E5D5E4F9161D663 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B72C5D5E074F7129EFCF4 /* CardsInteractor.swift */; };
 		0EF340A23ADB3E3BAC35171E /* CashFlowDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0998F78A837C5BC5A1A73E /* CashFlowDetailTableCell.swift */; };
-		121547CF60D7E7B582D7C076 /* CardScannerWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6953437979599B74BAF03 /* CardScannerWireFrame.swift */; };
-		1B0060994887A61D20DA5443 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580BA6E51F1A4EFDF1A49CC9 /* CardDetailView.swift */; };
 		1B012EF65B7A403E9AC86D92 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40116C7167A4454BA536C809 /* Date+Extension.swift */; };
 		1CF61DADCAAD184AF435A7AC /* CashFlowDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70E8AC9989D2FD3780765C /* CashFlowDetailPresenter.swift */; };
 		1D60B9D0D35091288A90F229 /* CashFlowDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F05E06DA7FB6CF0790D0B /* CashFlowDetailProtocols.swift */; };
-		1E2C785A4DFB3624C95CF48E /* CashFlowCategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D805A5778F7BC33A4E6647 /* CashFlowCategoryDetailViewController.swift */; };
-		1F1CA2AE60711249F8F651B3 /* CardScannerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C544C5C01855B87CE649314F /* CardScannerProtocols.swift */; };
-		218960478C3D5E572588F65D /* CardsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FDEAFEE9D4B85FCDE3BDEF /* CardsProtocols.swift */; };
-		227181BFE958784240A59F57 /* LocalPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFFE15C60AE68A9A9CAF870 /* LocalPushManager.swift */; };
 		24501C8C6DCD5C0C15361CD5 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434F20CD0AC7B4F7789F43B9 /* HeaderView.swift */; };
 		24A729C3A4407C2B168C3220 /* CashFlowDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A2B1B7B69CB17366D4641 /* CashFlowDetailWireFrame.swift */; };
-		29229D5014B87464B82B80C1 /* CardScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1048EC93B1DC2CA512C667 /* CardScannerViewController.swift */; };
-		299101521EA557B8A0DA66CA /* SwinjectAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24B9AA27C747B6BCF0DFA1 /* SwinjectAssembly.swift */; };
-		2C89085F509F9F2D1E0F1F37 /* CardDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AE5B6D963FB9B3850E614 /* CardDetailInteractor.swift */; };
-		2CC0714E8FA949F38D9B6BDC /* GradientCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE46394F55E3106DD937727C /* GradientCollectionView.swift */; };
 		30D2E8C9E984B802DFAD7655 /* CDCashFlowDetailTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE883EA27D978403F1DF987 /* CDCashFlowDetailTableDataSource.swift */; };
-		34E931BF56CC726161E49A1E /* CashFlowCategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE1543D91A90A98F434C71D /* CashFlowCategoryDetailView.swift */; };
-		37ADA23E608B1F7D1B27ED04 /* CashFlowCategoryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6F0959E7DC75C103FDF9A3 /* CashFlowCategoryAddViewController.swift */; };
-		39E1E72C9496C27DE4434E94 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E23DF708219B656BE7B6ACA /* UICollectionView+Extension.swift */; };
-		3B79B93333799DAA95224165 /* CashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233F2F156B44FABB0443D965 /* CashManager.swift */; };
-		3C989F0DA76E02F02CABD962 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D93A8ED16B5434BA3B3D1 /* CardsPresenter.swift */; };
 		3EE7D8E0B93AFFF9D50714E6 /* Local+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D676126631049B50ACA2637 /* Local+Extension.swift */; };
-		43309D52CA5241D286852618 /* CashFlowCategoryDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360FC46160C387DD37D45BA /* CashFlowCategoryDetailWireFrame.swift */; };
 		450AA90B049C1A6543E266CD /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89976ED4E42164DF364BA166 /* UINavigationBar+Extension.swift */; };
-		45D185908D405BBD6DF8713F /* CashFlowCategoryAddProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F8E4ADE35E15D408DDA6A /* CashFlowCategoryAddProtocols.swift */; };
 		4AA21CACF9EA695D741ED636 /* PeriodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6713E3E426605B2C4998E8 /* PeriodsView.swift */; };
 		50511271663B78CEE7602E6C /* CashFlowDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F2619E3C2E7122A5003557 /* CashFlowDetailInteractor.swift */; };
 		506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DD36C58C136AA72C6AB3794 /* MoneyKeeper.xcdatamodeld */; };
 		50B499C62520858C1F3515D9 /* MarginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF373EFD9F3A2AAED85C05 /* MarginLabel.swift */; };
 		52021F2B1DC74013878929FF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344189406A9230D81613305 /* GradientView.swift */; };
-		52FD31A19000BEA3525EE618 /* CashFlowCategoryAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2BEE69EEAE9784CACC177 /* CashFlowCategoryAddCell.swift */; };
 		5AA7339086918ECD68A60AD0 /* CashFlowDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8F9C098DC29AC00EC4921 /* CashFlowDetailCollectionView.swift */; };
 		5DD4CD0E74B97C4CDD43CECB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C255A3D741550B5B7AF245AE /* BaseViewController.swift */; };
-		624D352138DFEA79FECF5FC2 /* CardsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070A111B46B6627AA61C5B87 /* CardsWireFrame.swift */; };
 		655CB526BB29529715F88DAB /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC32570C298FE4BE73BB44 /* BasePresenter.swift */; };
-		657B5A518B19520A7375BA19 /* CardDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743B51609FFFDF544176844 /* CardDetailPresenter.swift */; };
-		671C760C06F8D9F5151B3FB5 /* CardDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FD5D733B1AF3EA49A0642B /* CardDetailWireFrame.swift */; };
 		6CA4085E634ACEAF9899D275 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9252620BFB2257BE52965C6B /* CustomError.swift */; };
 		760CC4156D3C7C7A8768748A /* CashFlowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EF2F3170431599A4FC12F9 /* CashFlowDetailViewController.swift */; };
-		774DCAB9BBEA7280963EC7F4 /* CashFlowCategoryAddWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F625EEF0E7A2B18B2AB4 /* CashFlowCategoryAddWireFrame.swift */; };
-		798586418404F06CB27ED5D6 /* CashFlowCategoryDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000708CD35D429EE801C6954 /* CashFlowCategoryDetailInteractor.swift */; };
-		7CA45934800FD79BE712D387 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656BB2281D790958AF25F32B /* UITableView+Extension.swift */; };
 		80569D2C648715D9CA92D445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C793A0F4FD37941BBE3022B3 /* Assets.xcassets */; };
-		877C8D099C2465F9772FD6A8 /* CashFlowCategoryAddInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798AFCBB8F50A1E8B7825EA /* CashFlowCategoryAddInteractor.swift */; };
-		891CE64FAD7A9EFE5352CEB6 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC1CC74955DA10324618563 /* CardsViewController.swift */; };
 		8932E505D56C8A441398CE41 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B507B2610C5CB887C1517E /* BaseWireFrame.swift */; };
 		8C10C6456D57BD0131C17083 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5E7686A35FB5964F2D78 /* BaseTableCell.swift */; };
 		90F7B259959AF3F6633B752D /* BaseScannerViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF97AE24947FC15EC21F29E9 /* BaseScannerViewConroller.swift */; };
 		927488EB3B1C929783662BC8 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45B875F845E761615407E2 /* Array+Extension.swift */; };
 		954E05950B9AC1BAB92DF603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43C4487AC16BBE066223A15 /* LaunchScreen.storyboard */; };
 		9AEDA07B92968B8336B5D4BF /* Thread+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76219FCFF672A25E47706663 /* Thread+Extension.swift */; };
-		9EF6094D15E67EA29BC43E14 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E520189BD19320689FFE082 /* CardCell.swift */; };
-		9F24E9A0D72C0F42939A0AFC /* CashFlowCategoryDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBAB642D2410665CF129298 /* CashFlowCategoryDetailProtocols.swift */; };
-		A4A94B5A3385BFF49EF001B6 /* CardDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF8CB6EA4C8DB74B22EF4FB /* CardDetailProtocols.swift */; };
 		A65DCA62795CC24FC37DD87D /* CashFlowDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66C7B7C396AAB9EA45A635F /* CashFlowDetailContentView.swift */; };
-		B20FD795A56D16571361F7B3 /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43BE53776DCC2FF507C02A2 /* Pods_MoneyKeeper.framework */; };
+		B2A2530DF91ED46B5EBF3A95 /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E59EDC48566EE70E5682DC /* Pods_MoneyKeeper.framework */; };
 		B2F40EBA21A0B4D0BC7D5E2C /* CashFlowDetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B636CBAA4C5A94C110BB373 /* CashFlowDetailTableView.swift */; };
 		BC3C90176B679181D097300C /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D3583A0EE50044FC1E5F03 /* BaseTabBarController.swift */; };
 		BCA65B78EAF754B9EF4AA946 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04ECE9017797BDA499B1EE8 /* Localizable.strings */; };
-		BE54D8592C5538B800348E1A /* CashFlowCategoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7850C45D4BBC6971D99B037A /* CashFlowCategoryDetailPresenter.swift */; };
 		C4E645EF0853C78B3E86D2FD /* CashFlowDetailGraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364FFE6668C94B61CB07845E /* CashFlowDetailGraphicView.swift */; };
-		CBD8C06DD0AD3C58094E1F0E /* CardDetailTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC18E806AB58382C839C96 /* CardDetailTransitionDelegate.swift */; };
 		CD698767BA6D66B972170443 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8364CF4BBB250EC8E715F8E /* LabelView.swift */; };
 		CEAD53AE839C2AD9FF77677D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66105F2CF73DFC1EE056664C /* AppDelegate.swift */; };
 		D1C3B65676BC1DD6958C4554 /* CashFlowDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B433721FBBD690AE859CEA /* CashFlowDetailCell.swift */; };
-		D21F3AB26B64EECDCB32BD3B /* CardScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B3422A1386BEDEB207BE13 /* CardScannerPresenter.swift */; };
 		D235464F090C92AFB720AE25 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0173391D7DCDF6CE261FB6 /* UINavigationController+Extension.swift */; };
 		D2EFE86C2E9A0A2EE1BE9F88 /* BaseSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD3CC19F2A39FD814E43C4 /* BaseSwitchCell.swift */; };
-		D575D3275351A19E09FA5999 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6065D076AE8C396211DD8DE /* CardDetailViewController.swift */; };
-		D85084846DB954638B4600E1 /* CardScannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534000A73E06E5633BED9AB /* CardScannerInteractor.swift */; };
 		E4DFF3EF0D9AB9D984FDEDD1 /* UICollectionViewFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B60A195BC81FCF6BC5D23A /* UICollectionViewFlowLayout+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		000708CD35D429EE801C6954 /* CashFlowCategoryDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryDetailInteractor.swift; sourceTree = "<group>"; };
-		00D6953437979599B74BAF03 /* CardScannerWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerWireFrame.swift; sourceTree = "<group>"; };
-		064F8E4ADE35E15D408DDA6A /* CashFlowCategoryAddProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryAddProtocols.swift; sourceTree = "<group>"; };
 		06B8CD3A9FFECBE337C28A9F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		070A111B46B6627AA61C5B87 /* CardsWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsWireFrame.swift; sourceTree = "<group>"; };
-		07FDEAFEE9D4B85FCDE3BDEF /* CardsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsProtocols.swift; sourceTree = "<group>"; };
 		0AAF5E7686A35FB5964F2D78 /* BaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
-		0D6F0959E7DC75C103FDF9A3 /* CashFlowCategoryAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryAddViewController.swift; sourceTree = "<group>"; };
-		0FBAB642D2410665CF129298 /* CashFlowCategoryDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryDetailProtocols.swift; sourceTree = "<group>"; };
-		1360FC46160C387DD37D45BA /* CashFlowCategoryDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryDetailWireFrame.swift; sourceTree = "<group>"; };
+		0FC36D746B395EF71928CD8C /* Pods-MoneyKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.debug.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		14E8F9C098DC29AC00EC4921 /* CashFlowDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailCollectionView.swift; sourceTree = "<group>"; };
 		1D676126631049B50ACA2637 /* Local+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Local+Extension.swift"; sourceTree = "<group>"; };
-		231D93A8ED16B5434BA3B3D1 /* CardsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
-		233F2F156B44FABB0443D965 /* CashManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashManager.swift; sourceTree = "<group>"; };
 		2A53AB9A7EBFA8D966DC2100 /* MoneyKeeper.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MoneyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2AFFE15C60AE68A9A9CAF870 /* LocalPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushManager.swift; sourceTree = "<group>"; };
 		364FFE6668C94B61CB07845E /* CashFlowDetailGraphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailGraphicView.swift; sourceTree = "<group>"; };
 		39F2619E3C2E7122A5003557 /* CashFlowDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailInteractor.swift; sourceTree = "<group>"; };
 		3B636CBAA4C5A94C110BB373 /* CashFlowDetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailTableView.swift; sourceTree = "<group>"; };
-		3C6AE5B6D963FB9B3850E614 /* CardDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailInteractor.swift; sourceTree = "<group>"; };
 		3C93DAF9A5B14F5DB9B45A88 /* MoneyKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyKeeper.xcdatamodel; sourceTree = "<group>"; };
 		40116C7167A4454BA536C809 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		434F20CD0AC7B4F7789F43B9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		48BD3CC19F2A39FD814E43C4 /* BaseSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwitchCell.swift; sourceTree = "<group>"; };
 		4A7F05E06DA7FB6CF0790D0B /* CashFlowDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailProtocols.swift; sourceTree = "<group>"; };
 		4D6713E3E426605B2C4998E8 /* PeriodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodsView.swift; sourceTree = "<group>"; };
-		55AC18E806AB58382C839C96 /* CardDetailTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailTransitionDelegate.swift; sourceTree = "<group>"; };
-		580BA6E51F1A4EFDF1A49CC9 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
-		63B2BEE69EEAE9784CACC177 /* CashFlowCategoryAddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryAddCell.swift; sourceTree = "<group>"; };
-		656BB2281D790958AF25F32B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		66105F2CF73DFC1EE056664C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E520189BD19320689FFE082 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		6EF1A6BD171D9FCAA605D176 /* Pods-MoneyKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.debug.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		75D3583A0EE50044FC1E5F03 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76219FCFF672A25E47706663 /* Thread+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+Extension.swift"; sourceTree = "<group>"; };
-		7850C45D4BBC6971D99B037A /* CashFlowCategoryDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryDetailPresenter.swift; sourceTree = "<group>"; };
 		7B70E8AC9989D2FD3780765C /* CashFlowDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailPresenter.swift; sourceTree = "<group>"; };
-		7E23DF708219B656BE7B6ACA /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		814B72C5D5E074F7129EFCF4 /* CardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
-		8534000A73E06E5633BED9AB /* CardScannerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerInteractor.swift; sourceTree = "<group>"; };
 		88B507B2610C5CB887C1517E /* BaseWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
 		89976ED4E42164DF364BA166 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
-		8AE1543D91A90A98F434C71D /* CashFlowCategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryDetailView.swift; sourceTree = "<group>"; };
 		8C6A2B1B7B69CB17366D4641 /* CashFlowDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailWireFrame.swift; sourceTree = "<group>"; };
 		8DFC32570C298FE4BE73BB44 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		8F0998F78A837C5BC5A1A73E /* CashFlowDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailTableCell.swift; sourceTree = "<group>"; };
-		91D805A5778F7BC33A4E6647 /* CashFlowCategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryDetailViewController.swift; sourceTree = "<group>"; };
 		91EF2F3170431599A4FC12F9 /* CashFlowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailViewController.swift; sourceTree = "<group>"; };
 		9252620BFB2257BE52965C6B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		981025553D885FBE73B5CA88 /* CashFlowCategoryAddPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryAddPresenter.swift; sourceTree = "<group>"; };
-		9D1048EC93B1DC2CA512C667 /* CardScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerViewController.swift; sourceTree = "<group>"; };
 		9DA226CBEB4FDC02FA156164 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A43BE53776DCC2FF507C02A2 /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6065D076AE8C396211DD8DE /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
-		A743B51609FFFDF544176844 /* CardDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailPresenter.swift; sourceTree = "<group>"; };
-		A880F625EEF0E7A2B18B2AB4 /* CashFlowCategoryAddWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryAddWireFrame.swift; sourceTree = "<group>"; };
-		AE46394F55E3106DD937727C /* GradientCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientCollectionView.swift; sourceTree = "<group>"; };
 		AEE883EA27D978403F1DF987 /* CDCashFlowDetailTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCashFlowDetailTableDataSource.swift; sourceTree = "<group>"; };
 		B66C7B7C396AAB9EA45A635F /* CashFlowDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailContentView.swift; sourceTree = "<group>"; };
+		B74174B00B48287BB0F5219E /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		B9B433721FBBD690AE859CEA /* CashFlowDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowDetailCell.swift; sourceTree = "<group>"; };
 		B9B60A195BC81FCF6BC5D23A /* UICollectionViewFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+Extension.swift"; sourceTree = "<group>"; };
 		B9DAACFDAC4CB34C77F72415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF97AE24947FC15EC21F29E9 /* BaseScannerViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScannerViewConroller.swift; sourceTree = "<group>"; };
 		C1F6214CD5C65088320835BA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C255A3D741550B5B7AF245AE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		C544C5C01855B87CE649314F /* CardScannerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerProtocols.swift; sourceTree = "<group>"; };
 		C793A0F4FD37941BBE3022B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8364CF4BBB250EC8E715F8E /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		CC0173391D7DCDF6CE261FB6 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		CC37252D9C5681506B4C17FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D344189406A9230D81613305 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		D451EA297B38C73B1AC842B7 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
-		D6B3422A1386BEDEB207BE13 /* CardScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScannerPresenter.swift; sourceTree = "<group>"; };
 		DFD073770CAA57522E00AA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		E3FD5D733B1AF3EA49A0642B /* CardDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailWireFrame.swift; sourceTree = "<group>"; };
-		E798AFCBB8F50A1E8B7825EA /* CashFlowCategoryAddInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowCategoryAddInteractor.swift; sourceTree = "<group>"; };
-		EAF8CB6EA4C8DB74B22EF4FB /* CardDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailProtocols.swift; sourceTree = "<group>"; };
-		ECC1CC74955DA10324618563 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		E0E59EDC48566EE70E5682DC /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED45B875F845E761615407E2 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		F5FF373EFD9F3A2AAED85C05 /* MarginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginLabel.swift; sourceTree = "<group>"; };
-		FB24B9AA27C747B6BCF0DFA1 /* SwinjectAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4496DE7C6CDB43C87DFEF9E2 /* Frameworks */ = {
+		029167217F78C628DA136D3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B20FD795A56D16571361F7B3 /* Pods_MoneyKeeper.framework in Frameworks */,
+				B2A2530DF91ED46B5EBF3A95 /* Pods_MoneyKeeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0074B306C64D1294552332E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FC36D746B395EF71928CD8C /* Pods-MoneyKeeper.debug.xcconfig */,
+				B74174B00B48287BB0F5219E /* Pods-MoneyKeeper.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		0484D7EE792E0938E5CD02C4 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,36 +143,6 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		0765FC080B5E36DA89667008 /* Card */ = {
-			isa = PBXGroup;
-			children = (
-				FF03506732D0AAD3E3B81C2B /* CardDetail */,
-				7B31682B744BA1F9E63CDFB4 /* Cards */,
-				1D4F73407EFA974EDB251828 /* CardScanner */,
-			);
-			path = Card;
-			sourceTree = "<group>";
-		};
-		08BFE294D3D1DB0D4BC605D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A43BE53776DCC2FF507C02A2 /* Pods_MoneyKeeper.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1D4F73407EFA974EDB251828 /* CardScanner */ = {
-			isa = PBXGroup;
-			children = (
-				8534000A73E06E5633BED9AB /* CardScannerInteractor.swift */,
-				D6B3422A1386BEDEB207BE13 /* CardScannerPresenter.swift */,
-				C544C5C01855B87CE649314F /* CardScannerProtocols.swift */,
-				9D1048EC93B1DC2CA512C667 /* CardScannerViewController.swift */,
-				00D6953437979599B74BAF03 /* CardScannerWireFrame.swift */,
-			);
-			path = CardScanner;
-			sourceTree = "<group>";
-		};
 		3DA2C630058E4C1D1083AC11 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,14 +150,6 @@
 				0AAF5E7686A35FB5964F2D78 /* BaseTableCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		40629BD52FBBC808EF5BF8A6 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				8AE1543D91A90A98F434C71D /* CashFlowCategoryDetailView.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		4958458DC87E5CC88654142F /* Products */ = {
@@ -277,13 +177,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		683A029E4F0D37DA0F014921 /* Common */ = {
+		6BDDD558D2E2880A47677D86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E520189BD19320689FFE082 /* CardCell.swift */,
-				55AC18E806AB58382C839C96 /* CardDetailTransitionDelegate.swift */,
+				E0E59EDC48566EE70E5682DC /* Pods_MoneyKeeper.framework */,
 			);
-			path = Common;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		73765EBA814E95A8D3FB5BDD /* Common */ = {
@@ -306,39 +205,15 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		7B31682B744BA1F9E63CDFB4 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				814B72C5D5E074F7129EFCF4 /* CardsInteractor.swift */,
-				231D93A8ED16B5434BA3B3D1 /* CardsPresenter.swift */,
-				07FDEAFEE9D4B85FCDE3BDEF /* CardsProtocols.swift */,
-				ECC1CC74955DA10324618563 /* CardsViewController.swift */,
-				070A111B46B6627AA61C5B87 /* CardsWireFrame.swift */,
-				683A029E4F0D37DA0F014921 /* Common */,
-			);
-			path = Cards;
-			sourceTree = "<group>";
-		};
 		7E2B4972D29939C6E58A2828 /* MoneyKeeper */ = {
 			isa = PBXGroup;
 			children = (
 				66105F2CF73DFC1EE056664C /* AppDelegate.swift */,
 				1DD36C58C136AA72C6AB3794 /* MoneyKeeper.xcdatamodeld */,
-				FB24B9AA27C747B6BCF0DFA1 /* SwinjectAssembly.swift */,
-				845285D8532CCF359C773BAF /* Managers */,
 				F8948E8C89E57BB39FC87653 /* Modules */,
 				0549493F907895AF19C60A1E /* SupportingFiles */,
 			);
 			path = MoneyKeeper;
-			sourceTree = "<group>";
-		};
-		845285D8532CCF359C773BAF /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				233F2F156B44FABB0443D965 /* CashManager.swift */,
-				2AFFE15C60AE68A9A9CAF870 /* LocalPushManager.swift */,
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		8D15EA5B8F4305A08A28EBB7 /* Controllers */ = {
@@ -349,19 +224,6 @@
 				75D3583A0EE50044FC1E5F03 /* BaseTabBarController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		90FC6D9712D16A099DA06BCA /* CashCategoryDetail */ = {
-			isa = PBXGroup;
-			children = (
-				000708CD35D429EE801C6954 /* CashFlowCategoryDetailInteractor.swift */,
-				7850C45D4BBC6971D99B037A /* CashFlowCategoryDetailPresenter.swift */,
-				0FBAB642D2410665CF129298 /* CashFlowCategoryDetailProtocols.swift */,
-				91D805A5778F7BC33A4E6647 /* CashFlowCategoryDetailViewController.swift */,
-				1360FC46160C387DD37D45BA /* CashFlowCategoryDetailWireFrame.swift */,
-				40629BD52FBBC808EF5BF8A6 /* Common */,
-			);
-			path = CashCategoryDetail;
 			sourceTree = "<group>";
 		};
 		9E3C5AF01C02E79FC4902434 /* CashDetail */ = {
@@ -377,26 +239,9 @@
 			path = CashDetail;
 			sourceTree = "<group>";
 		};
-		A05EEB3FA30ADBA1FFE0FE06 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				580BA6E51F1A4EFDF1A49CC9 /* CardDetailView.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		B3BCF231D3B779F3F64247D7 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				63B2BEE69EEAE9784CACC177 /* CashFlowCategoryAddCell.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		B58716EEA7385F291F8C3080 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				AE46394F55E3106DD937727C /* GradientCollectionView.swift */,
 				D344189406A9230D81613305 /* GradientView.swift */,
 				434F20CD0AC7B4F7789F43B9 /* HeaderView.swift */,
 				C8364CF4BBB250EC8E715F8E /* LabelView.swift */,
@@ -412,11 +257,9 @@
 				40116C7167A4454BA536C809 /* Date+Extension.swift */,
 				1D676126631049B50ACA2637 /* Local+Extension.swift */,
 				76219FCFF672A25E47706663 /* Thread+Extension.swift */,
-				7E23DF708219B656BE7B6ACA /* UICollectionView+Extension.swift */,
 				B9B60A195BC81FCF6BC5D23A /* UICollectionViewFlowLayout+Extension.swift */,
 				89976ED4E42164DF364BA166 /* UINavigationBar+Extension.swift */,
 				CC0173391D7DCDF6CE261FB6 /* UINavigationController+Extension.swift */,
-				656BB2281D790958AF25F32B /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -426,8 +269,8 @@
 			children = (
 				7E2B4972D29939C6E58A2828 /* MoneyKeeper */,
 				4958458DC87E5CC88654142F /* Products */,
-				FBF1CFDCC47B9461B0E12DF1 /* Pods */,
-				08BFE294D3D1DB0D4BC605D5 /* Frameworks */,
+				0074B306C64D1294552332E1 /* Pods */,
+				6BDDD558D2E2880A47677D86 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -453,51 +296,12 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		EC20466BDF1CB8E2B4EBE29B /* CashCategoryAdd */ = {
-			isa = PBXGroup;
-			children = (
-				E798AFCBB8F50A1E8B7825EA /* CashFlowCategoryAddInteractor.swift */,
-				981025553D885FBE73B5CA88 /* CashFlowCategoryAddPresenter.swift */,
-				064F8E4ADE35E15D408DDA6A /* CashFlowCategoryAddProtocols.swift */,
-				0D6F0959E7DC75C103FDF9A3 /* CashFlowCategoryAddViewController.swift */,
-				A880F625EEF0E7A2B18B2AB4 /* CashFlowCategoryAddWireFrame.swift */,
-				B3BCF231D3B779F3F64247D7 /* Common */,
-			);
-			path = CashCategoryAdd;
-			sourceTree = "<group>";
-		};
 		F8948E8C89E57BB39FC87653 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0765FC080B5E36DA89667008 /* Card */,
-				EC20466BDF1CB8E2B4EBE29B /* CashCategoryAdd */,
-				90FC6D9712D16A099DA06BCA /* CashCategoryDetail */,
 				9E3C5AF01C02E79FC4902434 /* CashDetail */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		FBF1CFDCC47B9461B0E12DF1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6EF1A6BD171D9FCAA605D176 /* Pods-MoneyKeeper.debug.xcconfig */,
-				D451EA297B38C73B1AC842B7 /* Pods-MoneyKeeper.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		FF03506732D0AAD3E3B81C2B /* CardDetail */ = {
-			isa = PBXGroup;
-			children = (
-				3C6AE5B6D963FB9B3850E614 /* CardDetailInteractor.swift */,
-				A743B51609FFFDF544176844 /* CardDetailPresenter.swift */,
-				EAF8CB6EA4C8DB74B22EF4FB /* CardDetailProtocols.swift */,
-				A6065D076AE8C396211DD8DE /* CardDetailViewController.swift */,
-				E3FD5D733B1AF3EA49A0642B /* CardDetailWireFrame.swift */,
-				A05EEB3FA30ADBA1FFE0FE06 /* Common */,
-			);
-			path = CardDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,11 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DE9C6778DDF8AAA3F70D65E /* Build configuration list for PBXNativeTarget "MoneyKeeper" */;
 			buildPhases = (
-				ABF22E1D8586013B3A2818BD /* [CP] Check Pods Manifest.lock */,
+				E799E4920012E8A66F162819 /* [CP] Check Pods Manifest.lock */,
 				4C5B87BD958F3FFFFCA33CC6 /* Sources */,
 				9B2738B84C86E20EC4288291 /* Resources */,
-				4496DE7C6CDB43C87DFEF9E2 /* Frameworks */,
-				05673CCE1857381CF826B2A4 /* [CP] Embed Pods Frameworks */,
+				029167217F78C628DA136D3C /* Frameworks */,
+				862124B75A9FBD1875FE9198 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -569,7 +373,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05673CCE1857381CF826B2A4 /* [CP] Embed Pods Frameworks */ = {
+		862124B75A9FBD1875FE9198 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -586,7 +390,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABF22E1D8586013B3A2818BD /* [CP] Check Pods Manifest.lock */ = {
+		E799E4920012E8A66F162819 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -626,36 +430,6 @@
 				5DD4CD0E74B97C4CDD43CECB /* BaseViewController.swift in Sources */,
 				8932E505D56C8A441398CE41 /* BaseWireFrame.swift in Sources */,
 				30D2E8C9E984B802DFAD7655 /* CDCashFlowDetailTableDataSource.swift in Sources */,
-				9EF6094D15E67EA29BC43E14 /* CardCell.swift in Sources */,
-				2C89085F509F9F2D1E0F1F37 /* CardDetailInteractor.swift in Sources */,
-				657B5A518B19520A7375BA19 /* CardDetailPresenter.swift in Sources */,
-				A4A94B5A3385BFF49EF001B6 /* CardDetailProtocols.swift in Sources */,
-				CBD8C06DD0AD3C58094E1F0E /* CardDetailTransitionDelegate.swift in Sources */,
-				1B0060994887A61D20DA5443 /* CardDetailView.swift in Sources */,
-				D575D3275351A19E09FA5999 /* CardDetailViewController.swift in Sources */,
-				671C760C06F8D9F5151B3FB5 /* CardDetailWireFrame.swift in Sources */,
-				D85084846DB954638B4600E1 /* CardScannerInteractor.swift in Sources */,
-				D21F3AB26B64EECDCB32BD3B /* CardScannerPresenter.swift in Sources */,
-				1F1CA2AE60711249F8F651B3 /* CardScannerProtocols.swift in Sources */,
-				29229D5014B87464B82B80C1 /* CardScannerViewController.swift in Sources */,
-				121547CF60D7E7B582D7C076 /* CardScannerWireFrame.swift in Sources */,
-				0921A51D9E5D5E4F9161D663 /* CardsInteractor.swift in Sources */,
-				3C989F0DA76E02F02CABD962 /* CardsPresenter.swift in Sources */,
-				218960478C3D5E572588F65D /* CardsProtocols.swift in Sources */,
-				891CE64FAD7A9EFE5352CEB6 /* CardsViewController.swift in Sources */,
-				624D352138DFEA79FECF5FC2 /* CardsWireFrame.swift in Sources */,
-				52FD31A19000BEA3525EE618 /* CashFlowCategoryAddCell.swift in Sources */,
-				877C8D099C2465F9772FD6A8 /* CashFlowCategoryAddInteractor.swift in Sources */,
-				05BA3128A73BCEA2F4C4FA89 /* CashFlowCategoryAddPresenter.swift in Sources */,
-				45D185908D405BBD6DF8713F /* CashFlowCategoryAddProtocols.swift in Sources */,
-				37ADA23E608B1F7D1B27ED04 /* CashFlowCategoryAddViewController.swift in Sources */,
-				774DCAB9BBEA7280963EC7F4 /* CashFlowCategoryAddWireFrame.swift in Sources */,
-				798586418404F06CB27ED5D6 /* CashFlowCategoryDetailInteractor.swift in Sources */,
-				BE54D8592C5538B800348E1A /* CashFlowCategoryDetailPresenter.swift in Sources */,
-				9F24E9A0D72C0F42939A0AFC /* CashFlowCategoryDetailProtocols.swift in Sources */,
-				34E931BF56CC726161E49A1E /* CashFlowCategoryDetailView.swift in Sources */,
-				1E2C785A4DFB3624C95CF48E /* CashFlowCategoryDetailViewController.swift in Sources */,
-				43309D52CA5241D286852618 /* CashFlowCategoryDetailWireFrame.swift in Sources */,
 				D1C3B65676BC1DD6958C4554 /* CashFlowDetailCell.swift in Sources */,
 				5AA7339086918ECD68A60AD0 /* CashFlowDetailCollectionView.swift in Sources */,
 				A65DCA62795CC24FC37DD87D /* CashFlowDetailContentView.swift in Sources */,
@@ -667,25 +441,19 @@
 				B2F40EBA21A0B4D0BC7D5E2C /* CashFlowDetailTableView.swift in Sources */,
 				760CC4156D3C7C7A8768748A /* CashFlowDetailViewController.swift in Sources */,
 				24A729C3A4407C2B168C3220 /* CashFlowDetailWireFrame.swift in Sources */,
-				3B79B93333799DAA95224165 /* CashManager.swift in Sources */,
 				6CA4085E634ACEAF9899D275 /* CustomError.swift in Sources */,
 				1B012EF65B7A403E9AC86D92 /* Date+Extension.swift in Sources */,
-				2CC0714E8FA949F38D9B6BDC /* GradientCollectionView.swift in Sources */,
 				52021F2B1DC74013878929FF /* GradientView.swift in Sources */,
 				24501C8C6DCD5C0C15361CD5 /* HeaderView.swift in Sources */,
 				CD698767BA6D66B972170443 /* LabelView.swift in Sources */,
 				3EE7D8E0B93AFFF9D50714E6 /* Local+Extension.swift in Sources */,
-				227181BFE958784240A59F57 /* LocalPushManager.swift in Sources */,
 				50B499C62520858C1F3515D9 /* MarginLabel.swift in Sources */,
 				506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */,
 				4AA21CACF9EA695D741ED636 /* PeriodsView.swift in Sources */,
-				299101521EA557B8A0DA66CA /* SwinjectAssembly.swift in Sources */,
 				9AEDA07B92968B8336B5D4BF /* Thread+Extension.swift in Sources */,
-				39E1E72C9496C27DE4434E94 /* UICollectionView+Extension.swift in Sources */,
 				E4DFF3EF0D9AB9D984FDEDD1 /* UICollectionViewFlowLayout+Extension.swift in Sources */,
 				450AA90B049C1A6543E266CD /* UINavigationBar+Extension.swift in Sources */,
 				D235464F090C92AFB720AE25 /* UINavigationController+Extension.swift in Sources */,
-				7CA45934800FD79BE712D387 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,14 +613,14 @@
 		};
 		9C1091540E647B0955BEEE41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D451EA297B38C73B1AC842B7 /* Pods-MoneyKeeper.release.xcconfig */;
+			baseConfigurationReference = B74174B00B48287BB0F5219E /* Pods-MoneyKeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = MoneyKeeper/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -865,14 +633,14 @@
 		};
 		C4215AB47D36032DC1B11D86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EF1A6BD171D9FCAA605D176 /* Pods-MoneyKeeper.debug.xcconfig */;
+			baseConfigurationReference = 0FC36D746B395EF71928CD8C /* Pods-MoneyKeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = MoneyKeeper/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

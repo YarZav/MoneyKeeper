@@ -20,11 +20,11 @@ private struct Constants {
 }
 
 // MARK: - CoreDataManager
-final class CoreDataManager {
+public final class CoreDataManager {
 
   // MARK: - Singleton
 
-  static let shared = CoreDataManager()
+  public static let shared = CoreDataManager()
 
   // MARK: - Init
 
@@ -63,7 +63,7 @@ final class CoreDataManager {
     return coordinator
   }()
 
-  lazy var managedObjectContext: NSManagedObjectContext = {
+  public lazy var managedObjectContext: NSManagedObjectContext = {
     let coordinator = persistentStoreCoordinator
     let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     managedObjectContext.persistentStoreCoordinator = coordinator
@@ -74,13 +74,13 @@ final class CoreDataManager {
 
 // MARK: - Publics
 
-extension CoreDataManager {
+public extension CoreDataManager {
 
-  public func entityForName(entityName: String) -> NSEntityDescription {
+  func entityForName(entityName: String) -> NSEntityDescription {
     return NSEntityDescription.entity(forEntityName: entityName, in: CoreDataManager.shared.managedObjectContext)!
   }
 
-  public func saveContext(callback: @escaping (Error?) -> Void) {
+  func saveContext(callback: @escaping (Error?) -> Void) {
     if managedObjectContext.hasChanges {
       do {
         try managedObjectContext.save()
@@ -94,11 +94,11 @@ extension CoreDataManager {
     }
   }
 
-  public func getFetchRequest(entityName: String) -> NSFetchRequest<NSFetchRequestResult> {
+  func getFetchRequest(entityName: String) -> NSFetchRequest<NSFetchRequestResult> {
     return NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
   }
 
-  public func getCoreDataModels<T>(entityName: String) -> [T]? {
+  func getCoreDataModels<T>(entityName: String) -> [T]? {
     let fetchRequest = getFetchRequest(entityName: entityName)
     let results = try? managedObjectContext.fetch(fetchRequest) as? [T]
     return results

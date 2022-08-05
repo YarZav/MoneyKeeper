@@ -24,7 +24,7 @@ enum TabBarButtonType: Int, CaseIterable {
   var image: UIImage? {
     switch self {
     case .cash:
-      let image = UIImage.named("CashFlow")?.withRenderingMode(.alwaysTemplate)
+      let image = UIImage(systemName: "banknote")?.withRenderingMode(.alwaysTemplate)
       return image?.maskWithColor(color: .plainGray)
     }
   }
@@ -33,7 +33,7 @@ enum TabBarButtonType: Int, CaseIterable {
   var selectedImage: UIImage? {
     switch self {
     case .cash:
-      let image = UIImage.named("CashFlow")?.withRenderingMode(.alwaysTemplate)
+      let image = UIImage(systemName: "banknote")?.withRenderingMode(.alwaysTemplate)
       return image?.maskWithColor(color: .white)
     }
   }

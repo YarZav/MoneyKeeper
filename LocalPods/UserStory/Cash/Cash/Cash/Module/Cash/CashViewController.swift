@@ -178,9 +178,9 @@ extension CashViewController: CashNumPadDelegate {
 
 extension CashViewController: CashAcceptDelegate {
 
-  func presentCashCategory() {
+  func presentCategory() {
     guard let priceText = priceView.priceText, !priceText.isEmpty else { return }
-    presenter.presentCashCategory(price: priceText, type: type)
+    presenter.presentCategory(price: priceText, type: type)
   }
 
 }

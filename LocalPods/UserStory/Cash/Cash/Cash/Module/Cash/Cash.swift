@@ -10,7 +10,7 @@ import Foundation
 import Business
 
 // Presenter -> View
-protocol CashView: AnyObject {
+public protocol CashView: AnyObject {
 
   func dropPrice()
   func setTotalPrice(_ total: String?)
@@ -21,9 +21,7 @@ protocol CashView: AnyObject {
 protocol CashPresenter {
 
   func viewDidApepar(type: CashType)
-  func presentCashCategory(price: String, type: CashType)
-  func savedModel(_ model: CashModel)
-  func deletedModel(_ model: CashModel)
+  func presentCategory(price: String, type: CashType)
 
 }
 
@@ -35,4 +33,8 @@ protocol CashInteractor {
 }
 
 // Presenter - WireFrame
-protocol CashWireFrame { }
+protocol CashWireFrame {
+
+  func pushCashCategory(from view: CashView?, cashModel: CashModel)
+
+}

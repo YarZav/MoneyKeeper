@@ -12,22 +12,23 @@ import Business
 // MARK: - CashFlowDetailInteractor
 class CashFlowDetailInteractor {
     
-    //Properties
-    private let cashFlowManager: CashManager
-    
-    //Init
-    init(cashFlowManager: CashManager) {
-        self.cashFlowManager = cashFlowManager
-    }
+//    //Properties
+//    private let cashFlowManager: CashManager
+//
+//    //Init
+//    init(cashFlowManager: CashManager) {
+//        self.cashFlowManager = cashFlowManager
+//    }
 }
 
 // MARK: - CashFlowDetailInteractorProtocol
 extension CashFlowDetailInteractor: CashFlowDetailInteractorProtocol {
     func getCashFlowDetails(type: CashType) -> [CashModel] {
-        return cashFlowManager.getModels() ?? []
+//        return cashFlowManager.getModels() ?? []
+      return []
     }
     
     func deleteModel(_ model: CashModel, callback: @escaping (Error?) -> Void) {
-        cashFlowManager.deleteModel(model, callback: callback)
+//        cashFlowManager.deleteModel(model, callback: callback)
     }
 }

@@ -10,15 +10,24 @@ import Foundation
 import CoreData
 import Business
 
-final class CashInteractorImp { }
+final class CashInteractorImp {
+
+  private let cashDAO: CashDAO
+
+  init(cashDAO: CashDAO) {
+    self.cashDAO = cashDAO
+  }
+
+}
 
 // MARK: - CashInteractor
 
 extension CashInteractorImp: CashInteractor {
     
   func getTotalCash(type: CashType) -> Decimal {
-    // TODO: - Вернуть общие потраченные деньги
-    return 0
+    let cashModels = cashDAO.getAll()
+    let price = cashModels?.compactMap { $0.price }.reduce(0, +) ?? 0
+    return Decimal(price)
   }
 
 }

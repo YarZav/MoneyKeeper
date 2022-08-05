@@ -6,15 +6,18 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-protocol DAO {
+public protocol DAOProtocol {
 
   associatedtype DataBaseModel
+  associatedtype BusinessModel
 
   func getAll() -> [DataBaseModel]?
   func get(by identifier: UUID) -> DataBaseModel?
 
-  func saveAll(_ models: [DataBaseModel], callback: @escaping (Error?) -> Void)
-  func save(_ model: DataBaseModel, callback: @escaping (Error?) -> Void)
+  func saveAll(_ models: [BusinessModel], callback: @escaping (Error?) -> Void)
+  func save(_ model: BusinessModel, callback: @escaping (Error?) -> Void)
+
+  func update(_ model: BusinessModel, callback: @escaping (Error?) -> Void)
 
   func deleteAll(callback: @escaping (Error?) -> Void)
   func delete(by identifier: UUID, callback: @escaping (Error?) -> Void)

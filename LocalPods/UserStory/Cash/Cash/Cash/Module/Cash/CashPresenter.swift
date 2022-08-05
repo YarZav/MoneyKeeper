@@ -41,10 +41,11 @@ extension CashPresenterImp: CashPresenter {
     view?.setTotalPrice(totalPrice.toString(.currency))
   }
   
-  func presentCashCategory(price: String, type: CashType) { }
-  
-  func savedModel(_ model: CashModel) { }
-  
-  func deletedModel(_ model: CashModel) { }
+  func presentCategory(price: String, type: CashType) {
+    guard let priceDouble = price.toDouble() else { return }
+    let priceDecimal = Decimal(priceDouble)
+    let cashModel = CashModel(type: type, price: priceDecimal)
+    wireFrame.pushCashCategory(from: view, cashModel: cashModel)
+  }
 
 }

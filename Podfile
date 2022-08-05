@@ -1,4 +1,4 @@
-platform :ios, '12.0'
+platform :ios, '13.0'
 
 def working_pods
 use_frameworks!
@@ -17,6 +17,8 @@ use_frameworks!
   pod 'Business', :path => 'LocalPods/Service/Business'
   pod 'Extension', :path => 'LocalPods/Common/Extension'
   pod 'DesignSystem', :path => 'LocalPods/Common/DesignSystem'
+
+  pod 'DI', :path => 'LocalPods/DI'
 
   pod 'Cash', :path => 'LocalPods/UserStory/Cash'
   pod 'TabBar', :path => 'LocalPods/UserStory/TabBar'

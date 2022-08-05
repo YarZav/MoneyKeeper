@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Business/Business.framework
 ${BUILT_PRODUCTS_DIR}/Cash/Cash.framework
+${BUILT_PRODUCTS_DIR}/DI/DI.framework
 ${BUILT_PRODUCTS_DIR}/DataBase/DataBase.framework
 ${BUILT_PRODUCTS_DIR}/DesignSystem/DesignSystem.framework
 ${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework

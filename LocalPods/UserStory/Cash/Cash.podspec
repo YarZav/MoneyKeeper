@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.platform = :ios
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.name = "Cash"
   s.summary = "Cash module"
   s.requires_arc = true
@@ -14,5 +14,6 @@ Pod::Spec.new do |s|
   s.dependency 'Extension'
   s.dependency 'DesignSystem'
   s.dependency 'Swinject'
+  s.dependency 'DI'
   s.source_files = "Cash/**/*.swift"
 end

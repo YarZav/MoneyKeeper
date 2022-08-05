@@ -28,7 +28,7 @@ class CashFlowDetailContentView: UIView {
     //Properties
     private var periodView: PeriodsView!
     private var graphicView = CashFlowDetailGraphicView()
-    private var collectionView = CashFlowDetailCollectionView()
+//    private var collectionView = CashFlowDetailCollectionView()
     private var tableView = CashFlowDetailTableView()
     private var viewType: CashFlowDetailViewType = .graphic
     public weak var delegate: CashFlowDetailContentViewDelegate?
@@ -57,7 +57,7 @@ extension CashFlowDetailContentView {
     
     public func displayGraphic(barModels: [YZBarViewModel], models: [CashModel], completion: @escaping () -> Void) {
         self.graphicView.displayBarViewModels(barModels)
-        self.collectionView.displayModels(models)
+//        self.collectionView.displayModels(models)
         completion()
     }
     
@@ -75,7 +75,7 @@ extension CashFlowDetailContentView {
     public func updateStringLocalization() {
         self.periodView.updateStringLocalization()
         self.tableView.updateStringLocalization()
-        self.collectionView.updateStringLocalization()
+//        self.collectionView.updateStringLocalization()
     }
 }
 
@@ -97,11 +97,11 @@ extension CashFlowDetailContentView {
             $0.height.equalTo(250)
         }
         
-        self.addSubview(self.collectionView)
-        self.collectionView.snp.makeConstraints {
-            $0.top.equalTo(self.graphicView.snp.bottom)
-            $0.left.right.bottom.equalToSuperview()
-        }
+//        self.addSubview(self.collectionView)
+//        self.collectionView.snp.makeConstraints {
+//            $0.top.equalTo(self.graphicView.snp.bottom)
+//            $0.left.right.bottom.equalToSuperview()
+//        }
 
         self.tableView.delegate = self
         self.addSubview(self.tableView)
@@ -138,9 +138,9 @@ extension CashFlowDetailContentView: PeriodsViewDelegate {
                 self.graphicView.snp.updateConstraints({
                     $0.left.right.equalToSuperview().offset(windowWidth)
                 })
-                self.collectionView.snp.updateConstraints({
-                    $0.left.right.equalToSuperview().offset(windowWidth)
-                })
+//                self.collectionView.snp.updateConstraints({
+//                    $0.left.right.equalToSuperview().offset(windowWidth)
+//                })
                 self.layoutIfNeeded()
             }) { (completion) in
                 if completion {

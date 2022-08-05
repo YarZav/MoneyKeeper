@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.platform = :ios
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.name = "DataBase"
   s.summary = "DataBase service"
   s.requires_arc = true

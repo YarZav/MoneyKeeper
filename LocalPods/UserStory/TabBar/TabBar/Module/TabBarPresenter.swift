@@ -30,10 +30,9 @@ final class TabBarPresenterImp {
 
 extension TabBarPresenterImp: TabBarPresenter {
 
-  func viewWillAppear(rootViewController: UIViewController) {
-    let navigationControllers = TabBarButtonType.allCases
-      .compactMap { wireFrame.navigationController(with: rootViewController, type: $0) }
-    view?.tabBarControllers(navigationControllers)
+  func viewWillAppear() {
+    let cashNavigationController = wireFrame.cashNavigationController()
+    view?.tabBarControllers([cashNavigationController])
   }
 
 }

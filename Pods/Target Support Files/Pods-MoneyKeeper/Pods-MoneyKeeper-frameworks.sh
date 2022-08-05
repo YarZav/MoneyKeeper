@@ -178,6 +178,7 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Business/Business.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cash/Cash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DI/DI.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DataBase/DataBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DesignSystem/DesignSystem.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework"
@@ -193,6 +194,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Business/Business.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cash/Cash.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DI/DI.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DataBase/DataBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DesignSystem/DesignSystem.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework"

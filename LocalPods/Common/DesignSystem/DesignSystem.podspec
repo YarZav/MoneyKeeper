@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.platform = :ios
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.name = "DesignSystem"
   s.summary = "Design system"
   s.requires_arc = true

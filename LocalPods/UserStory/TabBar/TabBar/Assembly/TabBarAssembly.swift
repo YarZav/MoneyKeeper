@@ -7,6 +7,7 @@
 //
 
 import Swinject
+import Cash
 
 public final class TabBarAssembly {
 
@@ -26,8 +27,11 @@ extension TabBarAssembly: Assembly {
       return TabBarViewController(presenter: presenter)
     }.inObjectScope(.container)
 
-    container.register(TabBarWireFrame.self) { _ in
-      return TabBarWireFrameImp()
+    container.register(TabBarWireFrame.self) {
+      guard let cashView = $0.resolve(CashView.self) else {
+        fatalError("CashView is not in container")
+      }
+      return TabBarWireFrameImp(cashView: cashView)
     }.inObjectScope(.container)
 
     container.register(TabBarPresenter.self) {
@@ -44,7 +48,7 @@ extension TabBarAssembly: Assembly {
 
 public protocol TabBarAssembler {
 
-  func tabBar(cash: UIViewController) -> UIViewController
+  func tabBar() -> UIViewController
 
 }
 
@@ -52,11 +56,8 @@ public protocol TabBarAssembler {
 
 extension Assembler: TabBarAssembler {
 
-  public func tabBar(cash: UIViewController) -> UIViewController {
-    let view = resolver.resolve(TabBarView.self)
-    view?.rootViewController = cash
-    
-    guard let viewController = resolver.resolve(TabBarView.self) as? UIViewController else {
+  public func tabBar() -> UIViewController {
+    guard let viewController = resolver.resolve(TabBarView.self) as? TabBarViewController else {
       fatalError("Fatal Error (Swinject): TabBarView is not UIViewController")
     }
     return viewController

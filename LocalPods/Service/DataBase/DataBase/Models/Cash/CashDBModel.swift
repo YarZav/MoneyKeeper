@@ -28,7 +28,7 @@ public final class CashDBModel: NSManagedObject {
 
 extension CashDBModel: DBModelIdentifiable {
 
-  static var entityName: String = "Cash"
+  public static var entityName: String = "Cash"
 
   /// Identifier of model
   @NSManaged public var identifier: UUID
@@ -43,6 +43,6 @@ extension CashDBModel: DBModelIdentifiable {
   @NSManaged public var date: Date
 
   /// Category
-  @NSManaged public var category: CashCategoryDBModel
+  @NSManaged public var cashCategory: CashCategoryDBModel
 
 }

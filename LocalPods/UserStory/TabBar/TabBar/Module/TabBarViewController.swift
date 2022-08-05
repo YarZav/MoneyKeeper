@@ -14,10 +14,6 @@ final class TabBarViewController: UITabBarController {
 
   private let presenter: TabBarPresenter
 
-  // MARK: - Internal property
-
-  var rootViewController: UIViewController?
-
   // MARK: - Init
 
   init(presenter: TabBarPresenter) {
@@ -37,8 +33,7 @@ final class TabBarViewController: UITabBarController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    guard let rootViewController = rootViewController else { return }
-    presenter.viewWillAppear(rootViewController: rootViewController)
+    presenter.viewWillAppear()
   }
 
 }

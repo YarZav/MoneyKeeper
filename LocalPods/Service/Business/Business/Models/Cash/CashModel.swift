@@ -21,6 +21,32 @@ public struct CashModel {
   public let date: Date
 
   /// Category
-  public let category: CashCategoryModel?
+  public var cashCategory: CashCategoryModel?
+
+  // MARK: - Init
+
+  public init(
+    identifier: UUID,
+    type: CashType,
+    price: Decimal,
+    date: Date,
+    cashCategory: CashCategoryModel?
+  ) {
+    self.identifier = identifier
+    self.type = type
+    self.price = price
+    self.date = date
+    self.cashCategory = cashCategory
+  }
+
+  public init(
+    type: CashType,
+    price: Decimal
+  ) {
+    self.identifier = UUID()
+    self.type = type
+    self.price = price
+    self.date = Date()
+  }
 
 }
