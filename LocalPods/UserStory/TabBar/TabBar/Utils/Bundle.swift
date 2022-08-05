@@ -11,10 +11,10 @@ extension Bundle {
 
   private static var tabBarBundleCocoapods: Bundle = Bundle(
     identifier: "org.cocoapods.TabBar"
-    ) ?? .main
+  ) ?? .main
 
   static var tabBarBundle: Bundle = Bundle(
     url: tabBarBundleCocoapods.bundleURL.appendingPathComponent("TabBar.bundle")
-    ) ?? tabBarBundleCocoapods
+  ) ?? tabBarBundleCocoapods
 
 }

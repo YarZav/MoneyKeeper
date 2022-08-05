@@ -157,6 +157,7 @@
 		B3618F9E3461CC97A498019653DC71DD /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83073CC7A5A1D1C55563B57F3F1890B7 /* Behavior.swift */; };
 		B43017FEC99D227D4CDD81DD2C27D9D9 /* ConstraintMakerPrioritizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357DD8D492EA730EB308296D7383679 /* ConstraintMakerPrioritizable.swift */; };
 		B752F7C4BECB65894B1F49421049CE5F /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B49FA5D03466F98E319FCC9E8E0B77 /* ConstraintView.swift */; };
+		B80B5572289D7A1600DF25F7 /* Assembler+TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80B5571289D7A1600DF25F7 /* Assembler+TabBar.swift */; };
 		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 12112E6802F86E7988D7D16BD46B74F9 /* SnapKit-dummy.m */; };
 		BE3F068DC196E6DCEF2C17B16903D47B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DE942FB3DAA92CE782989AF2C19632 /* UIKit.framework */; };
 		C2B6B8FFF5462A85B7D4C185D692734E /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC6A42833AE3C1CC8FC876B3B6E3C6E /* Localized.swift */; };
@@ -481,7 +482,7 @@
 		38E704B1685C1329783F4AFE63FE1FDA /* YZBarChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YZBarChart.release.xcconfig; sourceTree = "<group>"; };
 		3B16FAA133E4CA2623FB0A83C46B2B5C /* Extension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Extension; path = Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7AECEBB182B71297A03E24C50A5DC4 /* DesignSystem-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DesignSystem-prefix.pch"; sourceTree = "<group>"; };
-		3DF0E3377DBEC95A36407522442280F6 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "Extension/UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		3DF0E3377DBEC95A36407522442280F6 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extension.swift"; path = "Extension/UIDevice+Extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		3E374F2013B6E804462132296BE120EF /* EANBarcodeGenerator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EANBarcodeGenerator.modulemap; sourceTree = "<group>"; };
 		3EADFD0DD7883CE4C85DBA480FAEF663 /* YZRoundButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YZRoundButton.swift; path = YZNumPad/YZRoundButton.swift; sourceTree = "<group>"; };
 		3F27D6CBC6B20FCBB900375AC97F3D02 /* Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Extension-dummy.m"; sourceTree = "<group>"; };
@@ -496,7 +497,7 @@
 		4556D8502DA18C5D70AA659DB0E3A955 /* InstanceWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InstanceWrapper.swift; path = Sources/InstanceWrapper.swift; sourceTree = "<group>"; };
 		457586FDD135A74A71F3BC2D4AB081CA /* CashNumPadView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashNumPadView.swift; sourceTree = "<group>"; };
 		45FF378BF22F5ACA702A2DCD4A6E3E73 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		4608A682A2CC8F7028730042A466E755 /* TabBarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabBarProtocols.swift; sourceTree = "<group>"; };
+		4608A682A2CC8F7028730042A466E755 /* TabBarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TabBarProtocols.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4656F3A44E34A661ADF93C6ADEF59105 /* YZPinCodeViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YZPinCodeViewController.release.xcconfig; sourceTree = "<group>"; };
 		48EB81E39110A721407976F173E9FB6E /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Sources/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		49F49741D60B366CB9CE319314608910 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Sources/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
@@ -605,6 +606,7 @@
 		AB725804551CE26A5B40577D55F99E12 /* YZBarChart-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YZBarChart-Info.plist"; sourceTree = "<group>"; };
 		AD5D404BA7BA182D35BE9A1D75BC89AD /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		B0A32050ED748CD8C2E981796E282A13 /* YZNumPad-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YZNumPad-umbrella.h"; sourceTree = "<group>"; };
+		B80B5571289D7A1600DF25F7 /* Assembler+TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+TabBar.swift"; sourceTree = "<group>"; };
 		B89B10AE338F5E6449F7101D90C30572 /* Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Extension.debug.xcconfig; sourceTree = "<group>"; };
 		B9274B8B1F1907D4728B7ABF67B93E88 /* DI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B995DA901258B99CE94C21EFA91FD9BB /* CashCategoryWireFrame.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CashCategoryWireFrame.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -653,13 +655,13 @@
 		DDD1C34CBF9C29CF73943E72F553F524 /* Cash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cash.debug.xcconfig; sourceTree = "<group>"; };
 		DE8617CC1F61B392ED871DF43190809B /* CashAcceptView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashAcceptView.swift; sourceTree = "<group>"; };
 		DFEEC1FDF66F58A979AB4B90FB48FED7 /* DesignSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DesignSystem.release.xcconfig; sourceTree = "<group>"; };
-		E2E2DF8FE2B5E5C8B7CCE92CA079F932 /* TabBarAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
+		E2E2DF8FE2B5E5C8B7CCE92CA079F932 /* TabBarAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; tabWidth = 2; };
 		E3F583378B5CD29045B32F13B42ECFAA /* YZNotificationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YZNotificationView.swift; path = YZNotificationView/YZNotificationView/YZNotificationView.swift; sourceTree = "<group>"; };
 		E518DC0E06772BB9C76BFB98C01B0500 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Sources/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		E56683306F1CDEDCCB85B5D6CC390216 /* Swinject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swinject.debug.xcconfig; sourceTree = "<group>"; };
 		E6339EF8C9533D2A61D2A4E6AF5E3C90 /* Cash-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cash-dummy.m"; sourceTree = "<group>"; };
 		E80DF2707EB20F206B5AC0232C81F64A /* CoreDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		EAE7D752F24E9F4389BB29F388CE6390 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Extension/String+Extension.swift"; sourceTree = "<group>"; };
+		EAE7D752F24E9F4389BB29F388CE6390 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Extension/String+Extension.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		EBC0A4E899DE342FF9CE6D0DB27A0352 /* CashModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CashModel.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ECACD94D5D70B33711C9614313AF0657 /* DesignSystem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DesignSystem-dummy.m"; sourceTree = "<group>"; };
 		F119F48D04D641195E8461FF662F3B66 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
@@ -1168,6 +1170,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E2DF8FE2B5E5C8B7CCE92CA079F932 /* TabBarAssembly.swift */,
+				B80B5571289D7A1600DF25F7 /* Assembler+TabBar.swift */,
 			);
 			name = Assembly;
 			path = TabBar/Assembly;
@@ -2567,6 +2570,7 @@
 				56DB4D6AC6B9AC013F1D81B66A30D81B /* TabBarPresenter.swift in Sources */,
 				10F17C4479B5BF53971EA887109EFFBC /* TabBarProtocols.swift in Sources */,
 				216D03785E2B41F7F79E0A0DD127440F /* TabBarViewController.swift in Sources */,
+				B80B5572289D7A1600DF25F7 /* Assembler+TabBar.swift in Sources */,
 				1A06E17CB8719E37D6E323F67FA3136A /* TabBarWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

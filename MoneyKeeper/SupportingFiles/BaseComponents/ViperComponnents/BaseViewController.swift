@@ -63,12 +63,12 @@ extension BaseViewController {
 extension BaseViewController: BaseViewControllerProtocol {
     
     func showOkAlertController(title: String?, message: String?, handler: @escaping () -> Void) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "BaseControllerOk".localized(), style: .default) { (_) in
-            handler()
-        }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "BaseControllerOk".localized(), style: .default) { (_) in
+//            handler()
+//        }
+//        alertController.addAction(okAction)
+//        self.present(alertController, animated: true, completion: nil)
     }
     
     func showNotificationView(title: String?, image: UIImage?) {

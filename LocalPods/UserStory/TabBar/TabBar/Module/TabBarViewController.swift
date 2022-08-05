@@ -12,12 +12,13 @@ final class TabBarViewController: UITabBarController {
 
   // MARK: - Private property
 
-  private let presenter: TabBarPresenter
+  private let presenter: TabBarPresenterProtocol
 
   // MARK: - Init
 
-  init(presenter: TabBarPresenter) {
+  init(presenter: TabBarPresenterProtocol) {
     self.presenter = presenter
+
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -27,10 +28,6 @@ final class TabBarViewController: UITabBarController {
 
   // MARK: - Life circle
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     presenter.viewWillAppear()
@@ -38,12 +35,12 @@ final class TabBarViewController: UITabBarController {
 
 }
 
-// MARK: - TabBarView
+// MARK: - TabBarViewProtocol
 
-extension TabBarViewController: TabBarView {
+extension TabBarViewController: TabBarViewProtocol {
 
-  func tabBarControllers(_ controllers: [UINavigationController]) {
-    viewControllers = controllers
+  func tabBarControllers(_ viewControllers: [UINavigationController]) {
+    self.viewControllers = viewControllers
   }
 
 }

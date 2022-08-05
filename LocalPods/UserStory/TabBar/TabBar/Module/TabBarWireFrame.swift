@@ -10,22 +10,26 @@ import UIKit
 import Cash
 import Swinject
 
-final class TabBarWireFrameImp {
+final class TabBarWireFrame {
 
-    private let cashView: CashView
+    // MARK: - Private property
 
-    init(cashView: CashView) {
-        self.cashView = cashView
+    // TODO: - Надо как-то изменить работу с WireFrame
+    private let cashViewController: UIViewController
+
+    // MARK: - Init
+
+    init(cashViewController: UIViewController) {
+        self.cashViewController = cashViewController
     }
 
 }
 
-// MARK: - TabBarWireFrame
+// MARK: - TabBarWireFrameProtocol
 
-extension TabBarWireFrameImp: TabBarWireFrame {
+extension TabBarWireFrame: TabBarWireFrameProtocol {
 
   func cashNavigationController() -> UINavigationController {
-    guard let cashViewController = cashView as? UIViewController else { return UINavigationController() }
     let navigationController = UINavigationController(rootViewController: cashViewController)
     navigationController.tabBarItem.title = nil
     navigationController.tabBarItem.image = TabBarButtonType.cash.image

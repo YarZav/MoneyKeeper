@@ -28,7 +28,7 @@ class LabelView: UIView {
 extension LabelView {
     
     public func display(_ text: String?) {
-        self.label.text = text?.localized()
+//        self.label.text = text?.localized()
     }
 }
 

@@ -22,13 +22,13 @@ private struct CashNumPadStruct {
   static var horizontalSpacing: CGFloat {
     get {
       switch UIDevice.current.type {
-      case .iPhone_5S_SE?:
+      case .iPhone_5S_SE1?:
         return 30
-      case .iPhone_6_7_8?:
+      case .iPhone_6_7_8_SE2_SE3?:
         return 43
       case .iPhone_6_7_8_Plus?:
         return 43
-      case .iPhone_X_Xs_11Pro?:
+      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
         return 50
       case .iPhone_Xr_XsMax_11_11ProMax?:
         return 50
@@ -41,13 +41,13 @@ private struct CashNumPadStruct {
   static var verticalSpacing: CGFloat {
     get {
       switch UIDevice.current.type {
-      case .iPhone_5S_SE?:
+      case .iPhone_5S_SE1?:
         return 10
-      case .iPhone_6_7_8?:
+      case .iPhone_6_7_8_SE2_SE3?:
         return 20
       case .iPhone_6_7_8_Plus?:
         return 25
-      case .iPhone_X_Xs_11Pro?:
+      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
         return 25
       case .iPhone_Xr_XsMax_11_11ProMax?:
         return 25
@@ -60,13 +60,13 @@ private struct CashNumPadStruct {
   static var buttonRadius: CGFloat {
     get {
       switch UIDevice.current.type {
-      case .iPhone_5S_SE?:
+      case .iPhone_5S_SE1?:
         return 29
-      case .iPhone_6_7_8?:
+      case .iPhone_6_7_8_SE2_SE3?:
         return 29
       case .iPhone_6_7_8_Plus?:
         return 35
-      case .iPhone_X_Xs_11Pro?:
+      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
         return 35
       case .iPhone_Xr_XsMax_11_11ProMax?:
         return 35
@@ -170,7 +170,7 @@ extension CashNumPadView: YZNumPadViewDelegate {
   
   func didTapNumber(_ number: Int, numPadView: YZNumPadView) {
     guard price.count <= priceLengthLimit else { return }
-    price.addNumberToPriceString(number, pointSymbol: point)
+    price.addNumber(number, pointSymbol: point)
     delegate?.setPrice(price)
   }
   

@@ -17,10 +17,10 @@ enum PeriodType: Int, CaseIterable {
     
     var title: String {
         switch self {
-        case .week:     return "CashFlowCategoryDetailWeek".localized()
-        case .month:    return "CashFlowCategoryDetailMonth".localized()
-        case .year:     return "CashFlowCategoryDetailYear".localized()
-        case .all:      return "CashFlowCategoryDetailAllTime".localized()
+        case .week:     return "CashFlowCategoryDetailWeek"//.localized()
+        case .month:    return "CashFlowCategoryDetailMonth"//.localized()
+        case .year:     return "CashFlowCategoryDetailYear"//.localized()
+        case .all:      return "CashFlowCategoryDetailAllTime"//.localized()
         }
     }
     
@@ -73,9 +73,9 @@ class PeriodsView: UIView {
 extension PeriodsView {
     
     public func updateStringLocalization() {
-        for (index, button) in self.buttons.enumerated() {
-            button.setTitle(PeriodType(rawValue: index)?.title.localized(), for: .normal)
-        }
+//        for (index, button) in self.buttons.enumerated() {
+//            button.setTitle(PeriodType(rawValue: index)?.title.localized(), for: .normal)
+//        }
     }
 }
 
@@ -127,7 +127,7 @@ extension PeriodsView {
         let btn = UIButton(type: .custom)
         btn.backgroundColor = .anthracite
         btn.tag = type.rawValue
-        btn.setTitle(type.title.localized(), for: .normal)
+//        btn.setTitle(type.title.localized(), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         if self.selectedPeriod == type {
             btn.setTitleColor(.white, for: .normal)

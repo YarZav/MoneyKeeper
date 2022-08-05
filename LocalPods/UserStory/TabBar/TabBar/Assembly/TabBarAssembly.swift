@@ -20,47 +20,47 @@ public final class TabBarAssembly {
 extension TabBarAssembly: Assembly {
 
   public func assemble(container: Container) {
-    container.register(TabBarView.self) {
-      guard let presenter = $0.resolve(TabBarPresenter.self) else {
-        fatalError("TabBarWireFrame is not in container")
-      }
-      return TabBarViewController(presenter: presenter)
-    }.inObjectScope(.container)
-
-    container.register(TabBarWireFrame.self) {
-      guard let cashView = $0.resolve(CashView.self) else {
-        fatalError("CashView is not in container")
-      }
-      return TabBarWireFrameImp(cashView: cashView)
-    }.inObjectScope(.container)
-
-    container.register(TabBarPresenter.self) {
-      guard let wireFrame = $0.resolve(TabBarWireFrame.self) else {
-        fatalError("TabBarWireFrame is not in container")
-      }
-      return TabBarPresenterImp(wireFrame: wireFrame)
-    }.initCompleted { resolver, presenter in
-      (presenter as? TabBarPresenterImp)?.view = resolver.resolve(TabBarView.self)
-    }.inObjectScope(.container)
+    registerTabBarView(container: container)
+    registerTabBarWireFrame(container: container)
+    registerTabBarPresenter(container: container)
   }
 
 }
 
-public protocol TabBarAssembler {
+// MARK: - Private
 
-  func tabBar() -> UIViewController
+private extension TabBarAssembly {
 
-}
+  func registerTabBarView(container: Container) {
+    container.register(TabBarViewProtocol.self) {
+      guard let presenter = $0.resolve(TabBarPresenterProtocol.self) else {
+        fatalError("TabBarWireFrame is not in container")
+      }
+      return TabBarViewController(presenter: presenter)
+    }.inObjectScope(.container)
+  }
 
-// MARK: - TabBarAssembler
+  func registerTabBarWireFrame(container: Container) {
+    container.register(TabBarWireFrameProtocol.self) {
+      guard let cashView = $0.resolve(CashView.self) else {
+        fatalError("CashView is not in container")
+      }
+      guard let cashViewController = cashView as? UIViewController else {
+        fatalError("CashView is not UIViewController")
+      }
+      return TabBarWireFrame(cashViewController: cashViewController)
+    }.inObjectScope(.container)
+  }
 
-extension Assembler: TabBarAssembler {
-
-  public func tabBar() -> UIViewController {
-    guard let viewController = resolver.resolve(TabBarView.self) as? TabBarViewController else {
-      fatalError("Fatal Error (Swinject): TabBarView is not UIViewController")
-    }
-    return viewController
+  func registerTabBarPresenter(container: Container) {
+    container.register(TabBarPresenterProtocol.self) {
+      guard let wireFrame = $0.resolve(TabBarWireFrameProtocol.self) else {
+        fatalError("TabBarWireFrameProtocol is not in container")
+      }
+      return TabBarPresenter(wireFrame: wireFrame)
+    }.initCompleted { resolver, presenter in
+      (presenter as? TabBarPresenter)?.view = resolver.resolve(TabBarViewProtocol.self)
+    }.inObjectScope(.container)
   }
 
 }

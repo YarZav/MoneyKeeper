@@ -14,13 +14,13 @@ private struct Constant {
   static var numPadViewTopOffset: CGFloat {
     get {
       switch UIDevice.current.type {
-      case .iPhone_5S_SE?:
+      case .iPhone_5S_SE1?:
         return 43
-      case .iPhone_6_7_8?:
+      case .iPhone_6_7_8_SE2_SE3?:
         return 80
       case .iPhone_6_7_8_Plus?:
         return 80
-      case .iPhone_X_Xs_11Pro?:
+      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
         return 100
       case .iPhone_Xr_XsMax_11_11ProMax?:
         return 130
@@ -33,13 +33,13 @@ private struct Constant {
   static var numPadViewBottomOffset: CGFloat {
     get {
       switch UIDevice.current.type {
-      case .iPhone_5S_SE?:
+      case .iPhone_5S_SE1?:
         return 10
-      case .iPhone_6_7_8?:
+      case .iPhone_6_7_8_SE2_SE3?:
         return 30
       case .iPhone_6_7_8_Plus?:
         return 30
-      case .iPhone_X_Xs_11Pro?:
+      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
         return 40
       case .iPhone_Xr_XsMax_11_11ProMax?:
         return 40

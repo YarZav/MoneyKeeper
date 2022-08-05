@@ -6,29 +6,27 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import UIKit
-
-final class TabBarPresenterImp {
+final class TabBarPresenter {
 
   // MARK: - Private property
 
-  private let wireFrame: TabBarWireFrame
+  private let wireFrame: TabBarWireFrameProtocol
 
   // MARK: - Internal property
 
-  weak var view: TabBarView?
+  weak var view: TabBarViewProtocol?
 
   // MARK: - Init
 
-  init(wireFrame: TabBarWireFrame) {
+  init(wireFrame: TabBarWireFrameProtocol) {
     self.wireFrame = wireFrame
   }
 
 }
 
-// MARK: - TabBarPresenter
+// MARK: - TabBarPresenterProtocol
 
-extension TabBarPresenterImp: TabBarPresenter {
+extension TabBarPresenter: TabBarPresenterProtocol {
 
   func viewWillAppear() {
     let cashNavigationController = wireFrame.cashNavigationController()

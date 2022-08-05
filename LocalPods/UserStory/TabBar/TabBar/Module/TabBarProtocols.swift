@@ -9,21 +9,21 @@
 import UIKit
 
 // Presenter -> View
-protocol TabBarView: AnyObject {
+protocol TabBarViewProtocol: AnyObject {
 
-  func tabBarControllers(_ controllers: [UINavigationController])
+  func tabBarControllers(_ viewControllers: [UINavigationController])
 
 }
 
 // View -> Presenter
-protocol TabBarPresenter {
+protocol TabBarPresenterProtocol {
 
   func viewWillAppear()
 
 }
 
 // Presenter - WireFrame
-protocol TabBarWireFrame {
+protocol TabBarWireFrameProtocol {
 
     func cashNavigationController() -> UINavigationController
 

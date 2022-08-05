@@ -6,9 +6,7 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
-
-extension NumberFormatter {
+public extension NumberFormatter {
 
   /// Number formatter
   ///
@@ -30,8 +28,6 @@ extension NumberFormatter {
     formatter.maximumFractionDigits = maximumFractionDigits
     formatter.minimumFractionDigits = minimumFractionDigits
     formatter.numberStyle = numberStyle
-    // TODO: -  Нужно править локализацию
-    formatter.locale = Locale(identifier: "ru_RU")
     return formatter
   }
 

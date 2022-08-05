@@ -6,8 +6,6 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
-
 public extension UIImage {
 
   /// Color image with color

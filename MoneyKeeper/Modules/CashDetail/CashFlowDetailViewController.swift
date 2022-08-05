@@ -34,7 +34,7 @@ extension CashFlowDetailViewController: CashFlowDetailViewControllerProtocol {
     
     func updateStringLocalization() {
 //        self.navigationItem.title = self.viewType.title.localized()
-        self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
+//        self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
         self.contentView?.updateStringLocalization()
     }
     
@@ -50,7 +50,7 @@ extension CashFlowDetailViewController: CashFlowDetailViewControllerProtocol {
                 $0.bottom.equalToSuperview().offset(-self.getTabBarHeight())
             }
         }
-        self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
+//        self.noContentView.display("CashFlowCategoryDetailCanDisplayCashFlow".localized())
     }
     
     func createContentView() {

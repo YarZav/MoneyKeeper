@@ -6,8 +6,6 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
-
 public extension UIView {
 
   /// DropShadow - Бросает тень на вьюшку, необходимые поля - ширина и высота тени
