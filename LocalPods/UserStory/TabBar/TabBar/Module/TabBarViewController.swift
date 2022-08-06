@@ -30,7 +30,15 @@ final class TabBarViewController: UITabBarController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+
     presenter.viewWillAppear()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    tabBar.isTranslucent = false
+    tabBar.barTintColor = .anthracite
   }
 
 }

@@ -195,6 +195,7 @@
 		B50CF777A19C7499927330768DA2E28B /* TabBar.strings in Resources */ = {isa = PBXBuildFile; fileRef = C571E47E3FC5DD02642DFFDBD3E8D997 /* TabBar.strings */; };
 		B752F7C4BECB65894B1F49421049CE5F /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BD51668B0B5DEC63F893EDB1882E24 /* ConstraintView.swift */; };
 		B76743E5932B904A1E48A59C36B6E595 /* Cash-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3281455FBC11439EED35ED9A194325C3 /* Cash-dummy.m */; };
+		B894A075289E74950058EC58 /* Assembler+Cash.swift in Sources */ = {isa = PBXBuildFile; fileRef = B894A074289E74950058EC58 /* Assembler+Cash.swift */; };
 		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B706DCE128B684F1A1098DCB8A1EE9 /* SnapKit-dummy.m */; };
 		BD87C03DE91DCDDFF6CC9339B15BA5D2 /* DraggingOverlayContainerTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB243C9ED84CFE373F9C56E38F5EDCC8 /* DraggingOverlayContainerTransitionCoordinator.swift */; };
 		BDDAAB352CEC7B8AD11BCCBB1BA32CE9 /* HeightContraintOverlayTranslationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E7E62AED24906E6D256718BA0E113 /* HeightContraintOverlayTranslationController.swift */; };
@@ -596,7 +597,7 @@
 		601D07AE71240E8F12585AAC9C059999 /* DAO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		603CD4AE6B7C23B2E024D2FE05C51DD8 /* CashMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashMapper.swift; sourceTree = "<group>"; };
 		61023069F46B0AED69ADAA692BB73881 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		6120B26786EC7225DC79467CB6A77C14 /* TabBarViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		6120B26786EC7225DC79467CB6A77C14 /* TabBarViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		62B8D033AC31EB782B5ED96E40A2E4E6 /* OverlayContainerViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayContainerViewControllerDelegate.swift; path = Source/Classes/OverlayContainerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		63157BA77BD553897259729F99D0A0B9 /* OverlayScrollViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayScrollViewDelegate.swift; path = Source/Classes/Internal/OverlayScrollViewDelegate.swift; sourceTree = "<group>"; };
 		63C5EA9BA523846C5D658D272B0C49A9 /* OverlayContainerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayContainerViewController.swift; path = Source/Classes/OverlayContainerViewController.swift; sourceTree = "<group>"; };
@@ -690,14 +691,14 @@
 		A4BD51668B0B5DEC63F893EDB1882E24 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Sources/ConstraintView.swift; sourceTree = "<group>"; };
 		A630EC3FC02327458A6B7DB701B28E67 /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
 		A63BED5CF81BF95BD28BB65AAF7FD7CF /* OverlayScrollViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayScrollViewDelegateProxy.swift; path = Source/Classes/Internal/OverlayScrollViewDelegateProxy.swift; sourceTree = "<group>"; };
-		A7334E57150EEE6985E39E7E3EADA81D /* CashAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashAssembly.swift; sourceTree = "<group>"; };
+		A7334E57150EEE6985E39E7E3EADA81D /* CashAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CashAssembly.swift; sourceTree = "<group>"; tabWidth = 2; };
 		A741D76EC2F5CD9F5DEAA58C93F4A302 /* Cash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cash.swift; sourceTree = "<group>"; };
 		A7BE65C6476A2F86BBA31D4FAB808CA8 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Sources/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		A805F02175B024862D6479B8D5044A02 /* CashDBModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashDBModel.swift; sourceTree = "<group>"; };
 		A813ED45A97A059BB2F14745EA2C6A7D /* YZPinCodeViewController */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YZPinCodeViewController; path = YZPinCodeViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84C1E74BB290C0F3F28EAD7D6C09205 /* Pods-MoneyKeeper-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MoneyKeeper-frameworks.sh"; sourceTree = "<group>"; };
 		AB674598B5F34335E3642D6F80DCFCC6 /* TabBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TabBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AB6D7267E37F154BF6AD89162F6FC877 /* CashPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashPresenter.swift; sourceTree = "<group>"; };
+		AB6D7267E37F154BF6AD89162F6FC877 /* CashPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CashPresenter.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AB86EF0BC8D2F2673B53ADF54CC0F582 /* ServiceEntry.TypeForwarding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServiceEntry.TypeForwarding.swift; path = Sources/ServiceEntry.TypeForwarding.swift; sourceTree = "<group>"; };
 		AC4488B425A88EA2894A1696293BFEC6 /* CashPriceView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashPriceView.swift; sourceTree = "<group>"; };
 		ADE5EDC9F1EE86822AA43A28DD1B3E7B /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
@@ -711,6 +712,7 @@
 		B69939A3913C6E5B9B38A59900A5EFE7 /* OverlayTranslationContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayTranslationContainerView.swift; path = Source/Classes/Internal/Views/OverlayTranslationContainerView.swift; sourceTree = "<group>"; };
 		B7846235DBA46980F126319168DB64C7 /* YZPInCodeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YZPInCodeDelegate.swift; path = YZPinCodeViewController/YZPInCodeDelegate.swift; sourceTree = "<group>"; };
 		B7CCF501364267F51832701642179944 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Sources/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		B894A074289E74950058EC58 /* Assembler+Cash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembler+Cash.swift"; sourceTree = "<group>"; };
 		B89B10AE338F5E6449F7101D90C30572 /* Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Extension.debug.xcconfig; sourceTree = "<group>"; };
 		B89E1A17D30457B90348A219B8728FFD /* GroundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GroundView.swift; path = Source/Classes/Internal/Views/GroundView.swift; sourceTree = "<group>"; };
 		B9274B8B1F1907D4728B7ABF67B93E88 /* DI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -754,7 +756,7 @@
 		DBB63245589C329B45A1AD44CC8C546A /* Business-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Business-Info.plist"; sourceTree = "<group>"; };
 		DC564AE6FF5E1150980A1C0AADB9A4C3 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
 		DC94D67F1C5E88CC6FB0A5963C1C3958 /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Behavior.swift; sourceTree = "<group>"; };
-		DD607C270809C9E8D0B72EEA163EB75E /* CashCategoryProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashCategoryProtocols.swift; sourceTree = "<group>"; };
+		DD607C270809C9E8D0B72EEA163EB75E /* CashCategoryProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CashCategoryProtocols.swift; sourceTree = "<group>"; tabWidth = 2; };
 		DEAFB4187FB5CF7724DE700E8A1CF8E8 /* InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift; path = Source/Classes/Internal/InterruptibleAnimatorOverlayContainerTransitionCoordinator.swift; sourceTree = "<group>"; };
 		DEE1C8AACD39FAEE979C86C9089B9D4D /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		DFEEC1FDF66F58A979AB4B90FB48FED7 /* DesignSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DesignSystem.release.xcconfig; sourceTree = "<group>"; };
@@ -1712,6 +1714,7 @@
 			isa = PBXGroup;
 			children = (
 				A7334E57150EEE6985E39E7E3EADA81D /* CashAssembly.swift */,
+				B894A074289E74950058EC58 /* Assembler+Cash.swift */,
 			);
 			name = Assembly;
 			path = Cash/Cash/Assembly;
@@ -2755,6 +2758,7 @@
 				779A24A9B3C81124C33CCD66CD5DB158 /* CashDAO.swift in Sources */,
 				2AAC281A1B1AF5786377E4489AB54558 /* CashInteractor.swift in Sources */,
 				163A402E2F97D5656BA0CDF04F8444A4 /* CashNumPadView.swift in Sources */,
+				B894A075289E74950058EC58 /* Assembler+Cash.swift in Sources */,
 				E07F87078C40A8DCBB8BFCBB7B716129 /* CashPresenter.swift in Sources */,
 				33537E03C3A46B953A294B6293D3F1C6 /* CashPriceView.swift in Sources */,
 				55214B9E64FDAEDFFC19550F3A302259 /* CashViewController.swift in Sources */,

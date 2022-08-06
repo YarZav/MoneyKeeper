@@ -41,7 +41,7 @@ extension CashCategoryPresenter: CashCategoryPresenterProtocol {
     cashModel.cashCategory = category
 
     interactor.saveCash(cashModel) { [weak self] _ in
-      self?.view?.dismissViewController()
+      self?.view?.didComplete()
     }
   }
 

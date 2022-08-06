@@ -17,9 +17,24 @@ final class CashViewController: UIViewController {
   private var presenter: CashPresenter
   private var type: CashType = .outcome
 
-  private var priceView = CashPriceView()
-  private var numPadView = CashNumPadView(priceLengthLimit: 7)
-  private var acceptView: CashAcceptView!
+  private lazy var priceView: CashPriceView = {
+    let view = CashPriceView()
+    view.backgroundColor = .anthracite
+    return view
+  }()
+
+  private lazy var numPadView: CashNumPadView = {
+    let view = CashNumPadView(priceLengthLimit: 7)
+    view.delegate = self
+    return view
+  }()
+
+  private lazy var acceptView: CashAcceptView = {
+    let view = CashAcceptView(type: type)
+    view.backgroundColor = .anthracite
+    view.delegate = self
+    return view
+  }()
 
   init(presenter: CashPresenter) {
     self.presenter = presenter
@@ -36,7 +51,7 @@ final class CashViewController: UIViewController {
     super.viewDidLoad()
 
     createUI()
-    presenter.viewDidApepar(type: type)
+    presenter.viewDidApepar()
   }
 
 }
@@ -47,6 +62,7 @@ extension CashViewController: CashView {
 
   func dropPrice() {
     numPadView.dropPrice()
+    ativateConstraint(false)
   }
   
   func setTotalPrice(_ total: String?) {
@@ -59,15 +75,7 @@ extension CashViewController: CashView {
 private extension CashViewController {
 
   func createUI() {
-    let backgroundColor = UIColor.anthracite
-    view.backgroundColor = backgroundColor
-    
-    priceView.backgroundColor = backgroundColor
-    numPadView.delegate = self
-    
-    acceptView = CashAcceptView(type: type)
-    acceptView.backgroundColor = backgroundColor
-    acceptView.delegate = self
+    view.backgroundColor = .anthracite
     
     view.addSubview(priceView)
     view.addSubview(numPadView)
@@ -83,17 +91,15 @@ private extension CashViewController {
       priceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       priceView.heightAnchor.constraint(equalToConstant: 120),
 
-      numPadView.topAnchor.constraint(equalTo: priceView.bottomAnchor, constant: Constant.numPadViewTopOffset),
+      numPadView.topAnchor.constraint(equalTo: priceView.bottomAnchor, constant: numPadViewTopOffset),
       numPadView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       numPadView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
 
-      acceptView.topAnchor.constraint(equalTo: numPadView.bottomAnchor, constant: Constant.numPadViewBottomOffset),
+      acceptView.topAnchor.constraint(equalTo: numPadView.bottomAnchor, constant: numPadViewBottomOffset),
       acceptView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       acceptView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
       acceptView.heightAnchor.constraint(equalToConstant: 44)
     ])
-
-    ativateConstraint(false)
   }
 
   func ativateConstraint(_ isActivate: Bool) {
@@ -138,7 +144,7 @@ extension CashViewController: CashAcceptDelegate {
 
   func presentCategory() {
     guard let priceText = priceView.priceText, !priceText.isEmpty else { return }
-    presenter.presentCategory(price: priceText, type: type)
+    presenter.presentCategory(price: priceText)
   }
 
 }

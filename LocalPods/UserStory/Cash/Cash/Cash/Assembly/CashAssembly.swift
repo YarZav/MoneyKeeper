@@ -20,33 +20,65 @@ public final class CashAssembly {
 extension CashAssembly: Assembly {
 
   public func assemble(container: Container) {
-    // MARK: - Cash
+    registerCashDAO(container: container)
 
+    registerCashView(container: container)
+    registerCashWireFrame(container: container)
+    registerCashInteractor(container: container)
+    registerCashPresenter(container: container)
+
+    registerCashCategoryView(container: container)
+    registerCashCategoryWireFrame(container: container)
+    registerCashCategoryInteractor(container: container)
+    registerCashCategoryPresenter(container: container)
+  }
+
+}
+
+// MARK: - Cash DAO
+
+private extension CashAssembly {
+
+  func registerCashDAO(container: Container) {
     container.register(CashDAO.self) { _ in
       return CashDAO(mapper: CashMapper(), coreDataManager: CoreDataManager.shared)
     }.inObjectScope(.container)
+  }
 
+}
+
+// MARK: - Cash
+
+private extension CashAssembly {
+
+  func registerCashView(container: Container) {
     container.register(CashView.self) {
       guard let presenter = $0.resolve(CashPresenter.self) else {
         fatalError("CashPresenter is not in container")
       }
       return CashViewController(presenter: presenter)
     }.inObjectScope(.container)
+  }
 
+  func registerCashWireFrame(container: Container) {
     container.register(CashWireFrame.self) {
       guard let cashCategoryView = $0.resolve(CashCategoryViewProtocol.self) else {
         fatalError("CashCategoryViewProtocol is not in container")
       }
       return CashWireFrameImp(cashCategoryView: cashCategoryView)
     }.inObjectScope(.container)
+  }
 
+  func registerCashInteractor(container: Container) {
     container.register(CashInteractor.self) {
       guard let cashDAO = $0.resolve(CashDAO.self) else {
         fatalError("CashDAO is not in container")
       }
       return CashInteractorImp(cashDAO: cashDAO)
     }.inObjectScope(.container)
+  }
 
+  func registerCashPresenter(container: Container) {
     container.register(CashPresenter.self) {
       guard let wireFrame = $0.resolve(CashWireFrame.self) else {
         fatalError("CashWireFrame is not in container")
@@ -58,27 +90,39 @@ extension CashAssembly: Assembly {
     }.initCompleted { resolver, presenter in
       (presenter as? CashPresenterImp)?.view = resolver.resolve(CashView.self)
     }.inObjectScope(.container)
+  }
 
-    // MARK: - Cash category
+}
 
+// MARK: - Cash category
+
+private extension CashAssembly {
+
+  func registerCashCategoryView(container: Container) {
     container.register(CashCategoryViewProtocol.self) {
       guard let presenter = $0.resolve(CashCategoryPresenterProtocol.self) else {
         fatalError("CashCategoryPresenterProtocol is not in container")
       }
       return CashCategoryViewController(presenter: presenter)
     }.inObjectScope(.container)
+  }
 
+  func registerCashCategoryWireFrame(container: Container) {
     container.register(CashCategoryWireFrameProtocol.self) { _ in
       return CashCategoryWireFrame()
     }.inObjectScope(.container)
+  }
 
+  func registerCashCategoryInteractor(container: Container) {
     container.register(CashCategoryInteractorProtocol.self) {
       guard let cashDAO = $0.resolve(CashDAO.self) else {
         fatalError("CashDAO is not in container")
       }
       return CashCategoryInteractor(cashDAO: cashDAO)
     }.inObjectScope(.container)
+  }
 
+  func registerCashCategoryPresenter(container: Container) {
     container.register(CashCategoryPresenterProtocol.self) {
       guard let wireFrame = $0.resolve(CashCategoryWireFrameProtocol.self) else {
         fatalError("CashCategoryWireFrameProtocol is not in container")
@@ -90,36 +134,6 @@ extension CashAssembly: Assembly {
     }.initCompleted { resolver, presenter in
       (presenter as? CashCategoryPresenter)?.view = resolver.resolve(CashCategoryViewProtocol.self)
     }.inObjectScope(.container)
-  }
-
-}
-
-public protocol CashAssembler {
-
-  func cash() -> UIViewController
-
-}
-
-// MARK: - CashAssembler
-
-extension Assembler: CashAssembler {
-
-  public func cash() -> UIViewController {
-    guard let view = resolver.resolve(CashView.self) as? UIViewController else {
-      fatalError("Fatal Error (Swinject): CashView is not UIViewController")
-    }
-    return view
-  }
-
-  public func category(_ cashModel: CashModel?) -> UIViewController {
-    let view = resolver.resolve(CashCategoryViewProtocol.self)
-    view?.cashModel = cashModel
-
-    guard let viewController = view as? UIViewController else {
-      fatalError("Fatal Error (Swinject): CashView is not UIViewController")
-    }
-
-    return viewController
   }
 
 }

@@ -25,8 +25,9 @@ final class CashWireFrameImp {
 
 extension CashWireFrameImp: CashWireFrame {
 
-  func pushCashCategory(from view: CashView?, cashModel: CashModel) {
+  func pushCashCategory(from view: CashView?, cashModel: CashModel,  delegate: CashCategoryViewDelegate?) {
     cashCategoryView.cashModel = cashModel
+    cashCategoryView.delegate = delegate
 
     guard let fromViewController = view as? UIViewController else { return }
     guard let toViewController = cashCategoryView as? UIViewController else { return }
@@ -57,7 +58,7 @@ extension CashWireFrameImp: CashWireFrame {
     overlayContainer.view.layoutIfNeeded()
     overlayContainer.moveOverlay(toNotchAt: 1, animated: true)
 
-    guard let cashCateogoryViewController = view as? CashCategoryViewController else { return }
+    guard let cashCateogoryViewController = cashCategoryView as? CashCategoryViewController else { return }
     cashCateogoryViewController.hideViewController = { [weak self] in
       self?.overlayViewController?.hide(animated: true)
     }
@@ -67,6 +68,8 @@ extension CashWireFrameImp: CashWireFrame {
 extension CashWireFrameImp: OverlayViewControllerDelegate {
 
   func viewDidHide() {
+    cashCategoryView.isOpened = false
+    overlayViewController?.viewControllers.removeAll()
     overlayViewController = nil
   }
 

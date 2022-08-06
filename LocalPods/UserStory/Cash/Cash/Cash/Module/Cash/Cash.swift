@@ -20,21 +20,21 @@ public protocol CashView: AnyObject {
 // View -> Presenter
 protocol CashPresenter {
 
-  func viewDidApepar(type: CashType)
-  func presentCategory(price: String, type: CashType)
+  func viewDidApepar()
+  func presentCategory(price: String)
 
 }
 
 // Presenter - Interactor
 protocol CashInteractor {
 
-  func getTotalCash(type: CashType) -> Decimal
+  func getTotalCash() -> Decimal
 
 }
 
 // Presenter - WireFrame
 protocol CashWireFrame {
 
-  func pushCashCategory(from view: CashView?, cashModel: CashModel)
+  func pushCashCategory(from view: CashView?, cashModel: CashModel,  delegate: CashCategoryViewDelegate?)
 
 }

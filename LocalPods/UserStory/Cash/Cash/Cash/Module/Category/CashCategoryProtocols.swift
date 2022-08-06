@@ -10,11 +10,19 @@ import Foundation
 import UIKit
 import Business
 
+protocol CashCategoryViewDelegate: AnyObject {
+
+  func didComplete()
+
+}
+
 //Presenter -> View
 protocol CashCategoryViewProtocol: AnyObject {
 
   var cashModel: CashModel? { get set }
-  func dismissViewController()
+  var delegate: CashCategoryViewDelegate? { get set }
+  var isOpened: Bool { get set }
+  func didComplete()
 
 }
 

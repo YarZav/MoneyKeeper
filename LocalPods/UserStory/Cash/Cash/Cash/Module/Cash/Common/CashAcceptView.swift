@@ -106,7 +106,7 @@ private extension CashAcceptView {
     totalLabel.translatesAutoresizingMaskIntoConstraints = false
     nextButton.translatesAutoresizingMaskIntoConstraints = false
 
-    nextButtonRightConstraint = nextButton.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.nextEnabledRightOffset)
+    nextButtonRightConstraint = nextButton.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.nextButtonWidth)
 
     NSLayoutConstraint.activate([
       nextButton.topAnchor.constraint(equalTo: topAnchor),

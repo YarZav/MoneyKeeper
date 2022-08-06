@@ -24,7 +24,7 @@ final class CashInteractorImp {
 
 extension CashInteractorImp: CashInteractor {
     
-  func getTotalCash(type: CashType) -> Decimal {
+  func getTotalCash() -> Decimal {
     let cashModels = cashDAO.getAll()
     let price = cashModels?.compactMap { $0.price }.reduce(0, +) ?? 0
     return Decimal(price)

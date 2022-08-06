@@ -45,11 +45,11 @@ final class CashCategoryViewController: UIViewController {
       return collectionView
   }()
 
-  private var isOpened: Bool = false
-
   // MARK: - Internal property
 
   var cashModel: CashModel?
+  weak var delegate: CashCategoryViewDelegate?
+  var isOpened: Bool = false
 
   var hideViewController: (() -> Void)?
 
@@ -84,7 +84,8 @@ final class CashCategoryViewController: UIViewController {
 
 extension CashCategoryViewController: CashCategoryViewProtocol {
 
-  func dismissViewController() {
+  func didComplete() {
+    delegate?.didComplete()
     hideViewController?()
   }
 }
@@ -113,6 +114,12 @@ extension CashCategoryViewController: UICollectionViewDelegate {
     let cashCategory = presenter.categories[indexPath.row]
     presenter.didSelectCategory(cashCategory)
   }
+
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    collectionView.setTopGradientPoint(scrollView)
+    collectionView.setBottomGradientPoint(scrollView)
+  }
+
 }
 
 // MARK: - Private
@@ -150,20 +157,19 @@ extension CashCategoryViewController: OverlayContainerViewControllerDelegate {
     heightForNotchAt index: Int,
     availableSpace: CGFloat
   ) -> CGFloat {
-    switch CashCategoryViewNotches(rawValue: index) {
-    case .hide?:
+    guard let type = CashCategoryViewNotches(rawValue: index) else { return 0 }
+    switch type {
+    case .hide:
       return 0.0
-    case .medium?:
+    case .medium:
       return UIScreen.main.bounds.height / 2.0
-    case .full?:
+    case .full:
       let screenHeight = UIScreen.main.bounds.height
       let statusBarHeight = UIApplication.shared.statusBarFrame.height
       return min(screenHeight - statusBarHeight, contentHeight)
-
-    default:
-      return 0.0
     }
   }
+
   public func numberOfNotches(in containerViewController: OverlayContainerViewController) -> Int {
     if contentHeight > (UIScreen.main.bounds.height / 2.0) {
       return CashCategoryViewNotches.allCases.count
@@ -171,6 +177,7 @@ extension CashCategoryViewController: OverlayContainerViewControllerDelegate {
       return [CashCategoryViewNotches.medium, CashCategoryViewNotches.hide].count
     }
   }
+
   public func overlayContainerViewController(
     _ containerViewController: OverlayContainerViewController,
     didMoveOverlay overlayViewController: UIViewController,

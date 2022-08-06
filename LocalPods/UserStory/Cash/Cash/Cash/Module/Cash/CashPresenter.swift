@@ -36,16 +36,27 @@ final class CashPresenterImp {
 
 extension CashPresenterImp: CashPresenter {
     
-  func viewDidApepar(type: CashType) {
-    totalPrice = interactor.getTotalCash(type: type)
+  func viewDidApepar() {
+    totalPrice = interactor.getTotalCash()
     view?.setTotalPrice(totalPrice.toString(.currency))
   }
   
-  func presentCategory(price: String, type: CashType) {
+  func presentCategory(price: String) {
     guard let priceDouble = price.toDouble() else { return }
     let priceDecimal = Decimal(priceDouble)
-    let cashModel = CashModel(type: type, price: priceDecimal)
-    wireFrame.pushCashCategory(from: view, cashModel: cashModel)
+    let cashModel = CashModel(type: .outcome, price: priceDecimal)
+    wireFrame.pushCashCategory(from: view, cashModel: cashModel, delegate: self)
+  }
+
+}
+
+// MARK: - CashCategoryViewDelegate
+
+extension CashPresenterImp: CashCategoryViewDelegate {
+
+  func didComplete() {
+    view?.dropPrice()
+    viewDidApepar()
   }
 
 }

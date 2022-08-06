@@ -15,71 +15,12 @@ protocol CashNumPadDelegate: AnyObject {
 
 }
 
-// MARK: - CashNumPadStruct
-
-private struct CashNumPadStruct {
-
-  static var horizontalSpacing: CGFloat {
-    get {
-      guard let deviceType = UIDevice.current.type else { return 0 }
-      switch deviceType {
-      case .iPhone_5S_SE1:
-        return 30
-      case .iPhone_6_7_8_SE2_SE3,
-           .iPhone_6_7_8_Plus,
-           .iPhone_X_Xs_11Pro_12Mini_13Mini:
-        return 43
-      case .iPhone_Xr_XsMax_11_11ProMax,
-           .iPhone_12_12Pro_13_13Pro,
-           .iPhone_12ProMax_13ProMax:
-        return 50
-      }
-    }
-  }
-  
-  static var verticalSpacing: CGFloat {
-    get {
-      guard let deviceType = UIDevice.current.type else { return 0 }
-      switch deviceType {
-      case .iPhone_5S_SE1:
-        return 10
-      case .iPhone_6_7_8_SE2_SE3,
-           .iPhone_X_Xs_11Pro_12Mini_13Mini:
-        return 20
-      case .iPhone_6_7_8_Plus,
-           .iPhone_Xr_XsMax_11_11ProMax,
-           .iPhone_12_12Pro_13_13Pro,
-           .iPhone_12ProMax_13ProMax:
-        return 25
-      }
-    }
-  }
-  
-  static var buttonRadius: CGFloat {
-    get {
-      guard let deviceType = UIDevice.current.type else { return 0 }
-      switch deviceType {
-      case .iPhone_5S_SE1,
-           .iPhone_6_7_8_SE2_SE3,
-           .iPhone_X_Xs_11Pro_12Mini_13Mini:
-        return 29
-      case .iPhone_6_7_8_Plus,
-           .iPhone_Xr_XsMax_11_11ProMax,
-           .iPhone_12_12Pro_13_13Pro,
-           .iPhone_12ProMax_13ProMax:
-        return 35
-      }
-    }
-  }
-
-}
-
 final class CashNumPadView: UIView {
 
   // MARK: - Constants
 
   private enum Constants {
-      static let deleteImage = UIImage(named: "DeleteSymbol")
+      static let deleteImage = UIImage(systemName: "delete.left")
   }
 
   // MARK: - Private property
@@ -143,18 +84,18 @@ private extension CashNumPadView {
       numPadView.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
   }
-  
+
   func getNumPadConfig() -> YZNumPadViewConfiguration {
     var numPadViewStruct = YZNumPadViewConfiguration()
     numPadViewStruct.viewColor = .anthracite
     numPadViewStruct.borderColor = .darkViolet
     numPadViewStruct.buttonColor = .anthracite
     numPadViewStruct.textColor = .white
-    numPadViewStruct.horizontalSpacing = CashNumPadStruct.horizontalSpacing
-    numPadViewStruct.verticalSpacing = CashNumPadStruct.verticalSpacing
-    numPadViewStruct.buttonRadius = CashNumPadStruct.buttonRadius
+    numPadViewStruct.horizontalSpacing = horizontalSpacing
+    numPadViewStruct.verticalSpacing = verticalSpacing
+    numPadViewStruct.buttonRadius = buttonRadius
     numPadViewStruct.textSize = 36
-    numPadViewStruct.deleteIcon = Constants.deleteImage
+    numPadViewStruct.deleteIcon = Constants.deleteImage?.maskWithColor(color: .white)
     return numPadViewStruct
   }
 
@@ -182,6 +123,59 @@ extension CashNumPadView: YZNumPadViewDelegate {
   func didTapDelete(numPadView: YZNumPadView) {
     price.deleteLastCharacter()
     delegate?.setPrice(price)
+  }
+
+}
+
+// MARK: - NumPad spacing
+
+private extension CashNumPadView {
+
+  var horizontalSpacing: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0 }
+    switch deviceType {
+    case .iPhone_5S_SE1:
+      return 30
+    case .iPhone_6_7_8_SE2_SE3,
+         .iPhone_6_7_8_Plus,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini:
+      return 43
+    case .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return 50
+    }
+  }
+  
+  var verticalSpacing: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0 }
+    switch deviceType {
+    case .iPhone_5S_SE1:
+      return 10
+    case .iPhone_6_7_8_SE2_SE3,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini:
+      return 20
+    case .iPhone_6_7_8_Plus,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return 25
+    }
+  }
+  
+  var buttonRadius: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0 }
+    switch deviceType {
+    case .iPhone_5S_SE1,
+         .iPhone_6_7_8_SE2_SE3,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini:
+      return 29
+    case .iPhone_6_7_8_Plus,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return 35
+    }
   }
 
 }
