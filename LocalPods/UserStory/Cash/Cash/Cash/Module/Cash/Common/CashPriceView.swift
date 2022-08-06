@@ -30,7 +30,7 @@ final class CashPriceView: UIView {
   private lazy var titleLabel: UILabel = {
     let label = UILabel(font: UIFont.systemFont(ofSize: 36))
     label.numberOfLines = 2
-    label.text = "COIN\nWALLET"
+    label.text = Constants.titleText
     return label
   }()
 
@@ -75,7 +75,7 @@ private extension CashPriceView {
 
       titleLabel.widthAnchor.constraint(equalToConstant: Constants.titleWidth),
       titleLabel.centerXAnchor.constraint(equalTo: threeCircleView.centerXAnchor),
-      titleLabel.centerYAnchor.constraint(equalTo: threeCircleView.centerYAnchor),
+      titleLabel.centerYAnchor.constraint(equalTo: topAnchor, constant: 40),
 
       priceLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor),
       priceLabel.leftAnchor.constraint(equalTo: leftAnchor),

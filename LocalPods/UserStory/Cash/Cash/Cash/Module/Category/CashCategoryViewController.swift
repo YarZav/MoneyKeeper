@@ -9,6 +9,19 @@
 import UIKit
 import Business
 import DesignSystem
+import OverlayContainer
+
+/// Default notches for over lay controller
+public enum CashCategoryViewNotches: Int, CaseIterable {
+  /// When hide
+  case hide = 0
+
+  /// When show half
+  case medium = 1
+
+  /// When show full
+  case full
+}
 
 struct CashCategoryStruct { }
 
@@ -32,9 +45,13 @@ final class CashCategoryViewController: UIViewController {
       return collectionView
   }()
 
+  private var isOpened: Bool = false
+
   // MARK: - Internal property
 
   var cashModel: CashModel?
+
+  var hideViewController: (() -> Void)?
 
   // MARK: - Init
 
@@ -55,11 +72,22 @@ final class CashCategoryViewController: UIViewController {
     createUI()
   }
 
+  override public func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    isOpened = true
+  }
+
 }
 
 // MARK: - CashCategoryViewProtocol
 
-extension CashCategoryViewController: CashCategoryViewProtocol { }
+extension CashCategoryViewController: CashCategoryViewProtocol {
+
+  func dismissViewController() {
+    hideViewController?()
+  }
+}
 
 // MARK: - UICollectionViewDataSource
 
@@ -94,6 +122,8 @@ private extension CashCategoryViewController {
   func createUI() {
     view.backgroundColor = .anthracite
 
+    view.roundCorners(corners: [.topLeft, .topRight], radius: 16)
+
     view.addSubview(collectionView)
 
     collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -104,6 +134,76 @@ private extension CashCategoryViewController {
       collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
       collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
+  }
+
+  var contentHeight: CGFloat {
+    CGFloat(collectionView.intrinsicContentSize.height)
+  }
+
+}
+
+// MARK: - OverlayContainerViewControllerDelegate
+
+extension CashCategoryViewController: OverlayContainerViewControllerDelegate {
+  public func overlayContainerViewController(
+    _ containerViewController: OverlayContainerViewController,
+    heightForNotchAt index: Int,
+    availableSpace: CGFloat
+  ) -> CGFloat {
+    switch CashCategoryViewNotches(rawValue: index) {
+    case .hide?:
+      return 0.0
+    case .medium?:
+      return UIScreen.main.bounds.height / 2.0
+    case .full?:
+      let screenHeight = UIScreen.main.bounds.height
+      let statusBarHeight = UIApplication.shared.statusBarFrame.height
+      return min(screenHeight - statusBarHeight, contentHeight)
+
+    default:
+      return 0.0
+    }
+  }
+  public func numberOfNotches(in containerViewController: OverlayContainerViewController) -> Int {
+    if contentHeight > (UIScreen.main.bounds.height / 2.0) {
+      return CashCategoryViewNotches.allCases.count
+    } else {
+      return [CashCategoryViewNotches.medium, CashCategoryViewNotches.hide].count
+    }
+  }
+  public func overlayContainerViewController(
+    _ containerViewController: OverlayContainerViewController,
+    didMoveOverlay overlayViewController: UIViewController,
+    toNotchAt index: Int
+  ) {
+    guard isOpened else { return }
+    guard let type = CashCategoryViewNotches(rawValue: index), type == .hide else { return }
+    hideViewController?()
+  }
+
+  public func overlayContainerViewController(
+    _ containerViewController: OverlayContainerViewController,
+    scrollViewDrivingOverlay
+    overlayViewController: UIViewController
+  ) -> UIScrollView? {
+    return collectionView
+  }
+}
+
+extension UIView {
+
+  /// Set corner radius
+  ///
+  /// - Parameters:
+  ///     - corners: Corner position
+  ///     - radius: Corner radius
+  func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    let path = UIBezierPath(roundedRect: bounds,
+                            byRoundingCorners: corners,
+                            cornerRadii: CGSize(width: radius, height: radius))
+    let mask = CAShapeLayer()
+    mask.path = path.cgPath
+    layer.mask = mask
   }
 
 }

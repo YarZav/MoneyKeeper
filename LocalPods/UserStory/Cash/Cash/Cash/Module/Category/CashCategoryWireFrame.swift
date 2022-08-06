@@ -12,10 +12,10 @@ final class CashCategoryWireFrame { }
 
 extension CashCategoryWireFrame: CashCategoryWireFrameProtocol {
 
-  func popViewController(from view: CashCategoryViewProtocol?) {
-    guard let viewController = view as? UIViewController else { return }
-    viewController.navigationController?.popViewController(animated: true)
-    
-  }
+//  func popViewController(from view: CashCategoryViewProtocol?) {
+//    guard let viewController = view as? UIViewController else { return }
+//    viewController.navigationController?.popViewController(animated: true)
+//
+//  }
 
 }

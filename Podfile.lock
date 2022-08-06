@@ -6,6 +6,7 @@ PODS:
     - DesignSystem
     - DI
     - Extension
+    - OverlayContainer
     - Swinject
     - YZNumPad
   - DataBase (1.0.0)
@@ -14,6 +15,7 @@ PODS:
     - Swinject
   - EANBarcodeGenerator (0.2.0)
   - Extension (1.0.0)
+  - OverlayContainer (3.5.2)
   - SnapKit (5.6.0)
   - Swinject (2.8.1)
   - TabBar (1.0.0):
@@ -33,6 +35,7 @@ DEPENDENCIES:
   - DI (from `LocalPods/DI`)
   - EANBarcodeGenerator
   - Extension (from `LocalPods/Common/Extension`)
+  - OverlayContainer
   - SnapKit
   - Swinject
   - TabBar (from `LocalPods/UserStory/TabBar`)
@@ -44,6 +47,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - EANBarcodeGenerator
+    - OverlayContainer
     - SnapKit
     - Swinject
 
@@ -91,12 +95,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Business: 63adfc3440049b0a294d06e429a2576554872754
-  Cash: 9968dfaa076210ff1800356f8bb96b8676ecbe45
+  Cash: d9a960662dbfb65c8c2c529b8f921ee82a23f057
   DataBase: dceeeae4e89f1eb11364f3088550f4253d808ccc
   DesignSystem: ed2a77cef3fafb4fe255bbccf1cf08a94342dc77
   DI: 60275a11d3e02a66d18ef220d547e9ad757dd621
   EANBarcodeGenerator: 61083e912254454e374d7ad88876970f9e21b942
   Extension: 4c78b86a754a34d76912ebd01a1ae6b144b8059f
+  OverlayContainer: 6b2727437ee7d76dc22b00d0275a94c9191f962a
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
   TabBar: 051c6bb22c749f803130bc2c723f97d5582e6457
@@ -105,6 +110,6 @@ SPEC CHECKSUMS:
   YZNumPad: bfb34718997db4e0c3ef384755013fe4dee37d40
   YZPinCodeViewController: 46cab35c882bf0edb3dfc8b196f9dd9c559e10e6
 
-PODFILE CHECKSUM: f1e021e5b0a621d59636098286192c7919fde707
+PODFILE CHECKSUM: 0bb9144b3652aa596098fc5df62678724025fd83
 
 COCOAPODS: 1.11.3

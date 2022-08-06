@@ -14,6 +14,7 @@ import Business
 protocol CashCategoryViewProtocol: AnyObject {
 
   var cashModel: CashModel? { get set }
+  func dismissViewController()
 
 }
 
@@ -35,6 +36,6 @@ protocol CashCategoryInteractorProtocol {
 //Presenter - WireFrame
 protocol CashCategoryWireFrameProtocol {
 
-  func popViewController(from view: CashCategoryViewProtocol?)
+//  func popViewController(from view: CashCategoryViewProtocol?)
 
 }

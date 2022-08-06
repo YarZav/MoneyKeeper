@@ -9,48 +9,6 @@
 import UIKit
 import Business
 
-private struct Constant {
-
-  static var numPadViewTopOffset: CGFloat {
-    get {
-      switch UIDevice.current.type {
-      case .iPhone_5S_SE1?:
-        return 43
-      case .iPhone_6_7_8_SE2_SE3?:
-        return 80
-      case .iPhone_6_7_8_Plus?:
-        return 80
-      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
-        return 100
-      case .iPhone_Xr_XsMax_11_11ProMax?:
-        return 130
-      default:
-        return 0
-      }
-    }
-  }
-  
-  static var numPadViewBottomOffset: CGFloat {
-    get {
-      switch UIDevice.current.type {
-      case .iPhone_5S_SE1?:
-        return 10
-      case .iPhone_6_7_8_SE2_SE3?:
-        return 30
-      case .iPhone_6_7_8_Plus?:
-        return 30
-      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
-        return 40
-      case .iPhone_Xr_XsMax_11_11ProMax?:
-        return 40
-      default:
-        return 0
-      }
-    }
-  }
-
-}
-
 // MARK: - CashViewController
 final class CashViewController: UIViewController {
 
@@ -123,7 +81,7 @@ private extension CashViewController {
       priceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       priceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
       priceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      priceView.heightAnchor.constraint(equalToConstant: 150),
+      priceView.heightAnchor.constraint(equalToConstant: 120),
 
       numPadView.topAnchor.constraint(equalTo: priceView.bottomAnchor, constant: Constant.numPadViewTopOffset),
       numPadView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -181,6 +139,47 @@ extension CashViewController: CashAcceptDelegate {
   func presentCategory() {
     guard let priceText = priceView.priceText, !priceText.isEmpty else { return }
     presenter.presentCategory(price: priceText, type: type)
+  }
+
+}
+
+// MARK: - NumPad offsets
+
+private extension CashViewController {
+
+  var numPadViewTopOffset: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0 }
+    switch deviceType {
+    case .iPhone_5S_SE1:
+      return 0
+    case .iPhone_6_7_8_SE2_SE3:
+      return 20
+    case .iPhone_6_7_8_Plus:
+      return 30
+    case .iPhone_X_Xs_11Pro_12Mini_13Mini:
+      return 70
+    case .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12ProMax_13ProMax:
+      return 130
+    case .iPhone_12_12Pro_13_13Pro:
+      return 100
+    }
+  }
+
+  var numPadViewBottomOffset: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0 }
+    switch deviceType {
+    case .iPhone_5S_SE1:
+      return 10
+    case .iPhone_6_7_8_SE2_SE3,
+         .iPhone_6_7_8_Plus:
+      return 30
+    case .iPhone_X_Xs_11Pro_12Mini_13Mini,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return 40
+    }
   }
 
 }

@@ -13,20 +13,6 @@ import Extension
 
 final class ThreeCircleView: UIView {
 
-  // MARK: - Constants
-
-  private enum Constants {
-    static let firstCircleRadius: CGFloat = 248
-    static let firstCircleTopToffset: CGFloat = -225
-    static let firstCircleLeftffset: CGFloat = -91
-    static let secondCircleRadius: CGFloat = 175
-    static let secondCircleBottomOffset: CGFloat = 70
-    static let secondCircleCentralXOffset: CGFloat = 50
-    static let thirdCircleRadius: CGFloat = 178
-    static let thirdCircleTopOffset: CGFloat = -214
-    static let thirdCircleLeftOffset: CGFloat = -71
-  }
-
   // MARK: - Private property
 
   private var firstColor: UIColor = .white
@@ -59,9 +45,9 @@ final class ThreeCircleView: UIView {
 private extension ThreeCircleView {
 
   func createUI() {
-    let firstCircle = createCircle(radius: Constants.firstCircleRadius, color: firstColor)
-    let secondCircle = createCircle(radius: Constants.secondCircleRadius, color: secondColor)
-    let thirdCircle = createCircle(radius: Constants.thirdCircleRadius, color: thirdColor)
+    let firstCircle = createCircle(radius: firstCircleRadius, color: firstColor)
+    let secondCircle = createCircle(radius: secondCircleRadius, color: secondColor)
+    let thirdCircle = createCircle(radius: thirdCircleRadius, color: thirdColor)
 
     addSubview(firstCircle)
     firstCircle.addSubview(secondCircle)
@@ -72,20 +58,20 @@ private extension ThreeCircleView {
     thirdCircle.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      firstCircle.topAnchor.constraint(equalTo: topAnchor, constant: Constants.firstCircleTopToffset),
-      firstCircle.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.firstCircleLeftffset),
-      firstCircle.widthAnchor.constraint(equalToConstant: Constants.firstCircleRadius * 2),
-      firstCircle.heightAnchor.constraint(equalToConstant: Constants.firstCircleRadius * 2),
+      firstCircle.topAnchor.constraint(equalTo: topAnchor, constant: firstCircleTopToffset),
+      firstCircle.leftAnchor.constraint(equalTo: leftAnchor, constant: firstCircleLeftffset),
+      firstCircle.widthAnchor.constraint(equalToConstant: firstCircleRadius * 2),
+      firstCircle.heightAnchor.constraint(equalToConstant: firstCircleRadius * 2),
 
-      secondCircle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.secondCircleBottomOffset),
-      secondCircle.centerXAnchor.constraint(equalTo: centerXAnchor, constant: Constants.secondCircleCentralXOffset),
-      secondCircle.widthAnchor.constraint(equalToConstant: Constants.secondCircleRadius * 2),
-      secondCircle.heightAnchor.constraint(equalToConstant: Constants.secondCircleRadius * 2),
+      secondCircle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: secondCircleBottomOffset),
+      secondCircle.centerXAnchor.constraint(equalTo: centerXAnchor, constant: secondCircleCentralXOffset),
+      secondCircle.widthAnchor.constraint(equalToConstant: secondCircleRadius * 2),
+      secondCircle.heightAnchor.constraint(equalToConstant: secondCircleRadius * 2),
 
-      thirdCircle.topAnchor.constraint(equalTo: topAnchor, constant: Constants.thirdCircleTopOffset),
-      thirdCircle.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.thirdCircleLeftOffset),
-      thirdCircle.widthAnchor.constraint(equalToConstant: Constants.thirdCircleRadius * 2),
-      thirdCircle.heightAnchor.constraint(equalToConstant: Constants.thirdCircleRadius * 2)
+      thirdCircle.topAnchor.constraint(equalTo: topAnchor, constant: thirdCircleTopOffset),
+      thirdCircle.leftAnchor.constraint(equalTo: leftAnchor, constant: thirdCircleLeftOffset),
+      thirdCircle.widthAnchor.constraint(equalToConstant: thirdCircleRadius * 2),
+      thirdCircle.heightAnchor.constraint(equalToConstant: thirdCircleRadius * 2)
     ])
   }
 
@@ -93,6 +79,127 @@ private extension ThreeCircleView {
     let view = UIView()
     view.cornerRadius(radius, color: color)
     return view
+  }
+
+}
+
+// MARK: - First circle
+
+private extension ThreeCircleView {
+
+  var firstCircleRadius: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    switch deviceType {
+    case .iPhone_5S_SE1,
+         .iPhone_6_7_8_SE2_SE3,
+         .iPhone_6_7_8_Plus:
+      return 200
+    case .iPhone_X_Xs_11Pro_12Mini_13Mini,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return 248
+    }
+  }
+
+  var firstCircleTopToffset: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    switch deviceType {
+    case .iPhone_5S_SE1,
+         .iPhone_6_7_8_SE2_SE3,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax,
+         .iPhone_6_7_8_Plus:
+      return -305
+    case .iPhone_X_Xs_11Pro_12Mini_13Mini:
+      return -325
+    }
+  }
+
+  var firstCircleLeftffset: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    switch deviceType {
+    case .iPhone_5S_SE1,
+         .iPhone_6_7_8_SE2_SE3:
+      return -61
+    case .iPhone_6_7_8_Plus,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return -91
+    }
+  }
+
+}
+
+// MARK: - Second circle
+
+private extension ThreeCircleView {
+
+  var secondCircleRadius: CGFloat {
+    175
+  }
+
+  var secondCircleCentralXOffset: CGFloat {
+    50
+  }
+
+  var secondCircleBottomOffset: CGFloat {
+    70
+  }
+
+}
+
+// MARK: - Third circle
+
+private extension ThreeCircleView {
+
+  var thirdCircleRadius: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    switch deviceType {
+    case .iPhone_5S_SE1,
+         .iPhone_6_7_8_SE2_SE3:
+      return 178
+    case .iPhone_6_7_8_Plus,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return 208
+    }
+  }
+
+  var thirdCircleLeftOffset: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    switch deviceType {
+    case .iPhone_5S_SE1:
+      return 15
+    case .iPhone_6_7_8_SE2_SE3,
+         .iPhone_6_7_8_Plus,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini,
+         .iPhone_12ProMax_13ProMax:
+      return 30
+    case .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro:
+      return -71
+    }
+  }
+
+  var thirdCircleTopOffset: CGFloat {
+    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    switch deviceType {
+    case .iPhone_5S_SE1,
+         .iPhone_6_7_8_SE2_SE3,
+         .iPhone_X_Xs_11Pro_12Mini_13Mini,
+         .iPhone_Xr_XsMax_11_11ProMax,
+         .iPhone_12_12Pro_13_13Pro,
+         .iPhone_12ProMax_13ProMax:
+      return -254
+    case .iPhone_6_7_8_Plus:
+      return -280
+    }
   }
 
 }

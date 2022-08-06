@@ -7,6 +7,8 @@ use_frameworks!
   pod 'Swinject', :inhibit_warnings => true
   pod 'EANBarcodeGenerator', :inhibit_warnings => true
 
+  pod 'OverlayContainer', :inhibit_warnings => true
+
   # Перенести локально
   pod 'YZNumPad', :git => 'https://github.com/YarZav/YZNumPad.git', :tag => '1.1.0'
   pod 'YZBarChart', :git => 'https://github.com/YarZav/YZBarChart.git', :tag => '1.2.0'

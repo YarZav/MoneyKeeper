@@ -21,57 +21,53 @@ private struct CashNumPadStruct {
 
   static var horizontalSpacing: CGFloat {
     get {
-      switch UIDevice.current.type {
-      case .iPhone_5S_SE1?:
+      guard let deviceType = UIDevice.current.type else { return 0 }
+      switch deviceType {
+      case .iPhone_5S_SE1:
         return 30
-      case .iPhone_6_7_8_SE2_SE3?:
+      case .iPhone_6_7_8_SE2_SE3,
+           .iPhone_6_7_8_Plus,
+           .iPhone_X_Xs_11Pro_12Mini_13Mini:
         return 43
-      case .iPhone_6_7_8_Plus?:
-        return 43
-      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
+      case .iPhone_Xr_XsMax_11_11ProMax,
+           .iPhone_12_12Pro_13_13Pro,
+           .iPhone_12ProMax_13ProMax:
         return 50
-      case .iPhone_Xr_XsMax_11_11ProMax?:
-        return 50
-      default:
-        return 0
       }
     }
   }
   
   static var verticalSpacing: CGFloat {
     get {
-      switch UIDevice.current.type {
-      case .iPhone_5S_SE1?:
+      guard let deviceType = UIDevice.current.type else { return 0 }
+      switch deviceType {
+      case .iPhone_5S_SE1:
         return 10
-      case .iPhone_6_7_8_SE2_SE3?:
+      case .iPhone_6_7_8_SE2_SE3,
+           .iPhone_X_Xs_11Pro_12Mini_13Mini:
         return 20
-      case .iPhone_6_7_8_Plus?:
+      case .iPhone_6_7_8_Plus,
+           .iPhone_Xr_XsMax_11_11ProMax,
+           .iPhone_12_12Pro_13_13Pro,
+           .iPhone_12ProMax_13ProMax:
         return 25
-      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
-        return 25
-      case .iPhone_Xr_XsMax_11_11ProMax?:
-        return 25
-      default:
-        return 0
       }
     }
   }
   
   static var buttonRadius: CGFloat {
     get {
-      switch UIDevice.current.type {
-      case .iPhone_5S_SE1?:
+      guard let deviceType = UIDevice.current.type else { return 0 }
+      switch deviceType {
+      case .iPhone_5S_SE1,
+           .iPhone_6_7_8_SE2_SE3,
+           .iPhone_X_Xs_11Pro_12Mini_13Mini:
         return 29
-      case .iPhone_6_7_8_SE2_SE3?:
-        return 29
-      case .iPhone_6_7_8_Plus?:
+      case .iPhone_6_7_8_Plus,
+           .iPhone_Xr_XsMax_11_11ProMax,
+           .iPhone_12_12Pro_13_13Pro,
+           .iPhone_12ProMax_13ProMax:
         return 35
-      case .iPhone_X_Xs_11Pro_12Mini_13Mini?:
-        return 35
-      case .iPhone_Xr_XsMax_11_11ProMax?:
-        return 35
-      default:
-        return 0
       }
     }
   }
