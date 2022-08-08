@@ -8,23 +8,22 @@
 
 import UIKit
 
-// Presenter -> View
-protocol TabBarViewProtocol: AnyObject {
+// INPUT & OUTPUT
+public protocol TabBarProtocol: TabBarInputProtocol & TabBarOutputProtocol { }
 
-  func tabBarControllers(_ viewControllers: [UINavigationController])
+// INPUT
+public protocol TabBarInputProtocol {
 
-}
-
-// View -> Presenter
-protocol TabBarPresenterProtocol {
-
-  func viewWillAppear()
+  var cashViewController: UIViewController? { get set }
 
 }
 
-// Presenter - WireFrame
-protocol TabBarWireFrameProtocol {
+// OUTPUT
+public protocol TabBarOutputProtocol {
 
-    func cashNavigationController() -> UINavigationController
+  var cashViewController: UIViewController? { get set }
 
 }
+
+// VIEW
+protocol TabBarViewProtocol: AnyObject { }

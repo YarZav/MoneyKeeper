@@ -23,7 +23,9 @@ public extension UICollectionView {
       self.delegate = delegate
       
       cells.forEach { cellClass in
-        guard let casted = cellClass.self as? UICollectionViewCell.Type else { return }
+        guard let casted = cellClass.self as? UICollectionViewCell.Type else {
+          fatalError("Cell is not inheritance from UIColelctionCell")
+        }
         let reuseIdentifier = String(describing: casted.self)
         self.register(cellClass, forCellWithReuseIdentifier: reuseIdentifier)
       }

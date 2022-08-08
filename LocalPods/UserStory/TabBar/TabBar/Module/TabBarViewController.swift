@@ -8,30 +8,18 @@
 
 import UIKit
 
-final class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController, TabBarProtocol {
 
-  // MARK: - Private property
+  // MARK: - TabBarProtocol
 
-  private let presenter: TabBarPresenterProtocol
-
-  // MARK: - Init
-
-  init(presenter: TabBarPresenterProtocol) {
-    self.presenter = presenter
-
-    super.init(nibName: nil, bundle: nil)
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
+  var cashViewController: UIViewController?
 
   // MARK: - Life circle
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    presenter.viewWillAppear()
+    updateUI()
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -43,15 +31,29 @@ final class TabBarViewController: UITabBarController {
 
 }
 
-// MARK: - TabBarViewProtocol
+// MARK: - Private
 
-extension TabBarViewController: TabBarViewProtocol {
+private extension TabBarViewController {
 
-  func tabBarControllers(_ viewControllers: [UINavigationController]) {
-    self.viewControllers = viewControllers
+  func updateUI() {
+    viewControllers = [cashNavigationController]
+  }
+
+  var cashNavigationController: UINavigationController {
+    guard let rootViewController = cashViewController else {
+      fatalError("CashViewController is nil")
+    }
+    let navigationController = UINavigationController(rootViewController: rootViewController)
+    navigationController.tabBarItem.title = nil
+    navigationController.tabBarItem.image = TabBarButtonType.cash.image
+    return navigationController
   }
 
 }
+
+// MARK: - TabBarViewProtocol
+
+extension TabBarViewController: TabBarViewProtocol { }
 
 // MARK: - UITabBarControllerDelegate
 

@@ -9,11 +9,14 @@ import Swinject
 
 extension Assembler {
 
-  public func tabBarViewController() -> UIViewController {
-    guard let viewController = resolver.resolve(TabBarViewProtocol.self) as? TabBarViewController else {
-      fatalError("Fatal Error (Swinject): TabBarViewProtocol is not UIViewController")
+  public func getTabBar() -> TabBarProtocol {
+    guard let tabBarView = resolver.resolve(TabBarViewProtocol.self) else {
+      fatalError("Fatal Error (Swinject): TabBarViewProtocol is not in container")
     }
-    return viewController
+    guard let tabBar = tabBarView as? TabBarProtocol else {
+      fatalError("Fatal Error (Swinject): TabBarViewProtocol is not in container")
+    }
+    return tabBar
   }
 
 }

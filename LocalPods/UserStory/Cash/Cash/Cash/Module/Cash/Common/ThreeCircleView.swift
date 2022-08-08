@@ -88,7 +88,9 @@ private extension ThreeCircleView {
 private extension ThreeCircleView {
 
   var firstCircleRadius: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1,
          .iPhone_6_7_8_SE2_SE3,
@@ -103,7 +105,9 @@ private extension ThreeCircleView {
   }
 
   var firstCircleTopToffset: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1,
          .iPhone_6_7_8_SE2_SE3,
@@ -118,7 +122,9 @@ private extension ThreeCircleView {
   }
 
   var firstCircleLeftffset: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1,
          .iPhone_6_7_8_SE2_SE3:
@@ -157,7 +163,9 @@ private extension ThreeCircleView {
 private extension ThreeCircleView {
 
   var thirdCircleRadius: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1,
          .iPhone_6_7_8_SE2_SE3:
@@ -172,7 +180,9 @@ private extension ThreeCircleView {
   }
 
   var thirdCircleLeftOffset: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1:
       return 15
@@ -188,7 +198,9 @@ private extension ThreeCircleView {
   }
 
   var thirdCircleTopOffset: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0.0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1,
          .iPhone_6_7_8_SE2_SE3,

@@ -10,53 +10,42 @@ import Foundation
 import Business
 import Extension
 
-final class CashPresenterImp {
+final class CashPresenter {
     
   // MARK: - Private property
 
-  private let interactor: CashInteractor
-  private let wireFrame: CashWireFrame
+  private let interactor: CashInteractorProtocol
   
   private var totalPrice = Decimal(0)
 
   // MARK: - Internal property
 
-  weak var view: CashView?
+  weak var view: CashViewProtocol?
 
   //MARK: - Init
 
-  init(interactor: CashInteractor, wireFrame: CashWireFrame) {
+  init(interactor: CashInteractorProtocol) {
     self.interactor = interactor
-    self.wireFrame = wireFrame
   }
 
 }
 
-// MARK: - CashPresenter
+// MARK: - CashPresenterProtocol
 
-extension CashPresenterImp: CashPresenter {
-    
+extension CashPresenter: CashPresenterProtocol {
+
   func viewDidApepar() {
     totalPrice = interactor.getTotalCash()
     view?.setTotalPrice(totalPrice.toString(.currency))
   }
-  
-  func presentCategory(price: String) {
-    guard let priceDouble = price.toDouble() else { return }
+
+  func didTapNext(with price: String?) {
+    guard let priceDouble = price?.toDouble() else {
+      fatalError("Can not convert input price String to Double")
+    }
     let priceDecimal = Decimal(priceDouble)
     let cashModel = CashModel(type: .outcome, price: priceDecimal)
-    wireFrame.pushCashCategory(from: view, cashModel: cashModel, delegate: self)
-  }
-
-}
-
-// MARK: - CashCategoryViewDelegate
-
-extension CashPresenterImp: CashCategoryViewDelegate {
-
-  func didComplete() {
-    view?.dropPrice()
-    viewDidApepar()
+    view?.presentCategory(with: cashModel)
   }
 
 }

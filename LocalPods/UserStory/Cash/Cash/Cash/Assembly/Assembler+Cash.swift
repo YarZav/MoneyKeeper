@@ -10,22 +10,25 @@ import Business
 
 extension Assembler {
 
-  public func cash() -> UIViewController {
-    guard let view = resolver.resolve(CashView.self) as? UIViewController else {
-      fatalError("Fatal Error (Swinject): CashView is not UIViewController")
+  public func getCash() -> CashProtocol {
+    guard let cashView = resolver.resolve(CashViewProtocol.self) else {
+      fatalError("Fatal Error (Swinject): CashViewProtocol is not in container")
     }
-    return view
+    guard let cash = cashView as? CashProtocol else {
+      fatalError("Fatal Error (Swinject): CashProtocol is not in container")
+    }
+    return cash
   }
 
-  public func category(_ cashModel: CashModel?) -> UIViewController {
-    let view = resolver.resolve(CashCategoryViewProtocol.self)
-    view?.cashModel = cashModel
-
-    guard let viewController = view as? UIViewController else {
-      fatalError("Fatal Error (Swinject): CashView is not UIViewController")
+  public func getCashCategory(_ cashModel: CashModel) -> CashCategoryProtocol {
+    guard let cashCategoryView = resolver.resolve(CashCategoryViewProtocol.self) else {
+      fatalError("Fatal Error (Swinject): CashCategoryViewProtocol is not in container")
     }
-
-    return viewController
+    guard var cashCategory = cashCategoryView as? CashCategoryProtocol else {
+      fatalError("Fatal Error (Swinject): CashCategoryProtocol is not in container")
+    }
+    cashCategory.cashModel = cashModel
+    return cashCategory
   }
 
 }

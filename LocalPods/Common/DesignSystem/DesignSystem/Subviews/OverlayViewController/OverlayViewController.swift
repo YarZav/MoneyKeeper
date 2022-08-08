@@ -8,13 +8,6 @@
 import UIKit
 import OverlayContainer
 
-public protocol OverlayViewControllerDelegate: AnyObject {
-
-  /// View did hide
-  func viewDidHide()
-
-}
-
 private struct Appearance {
 
   /// Show alpha
@@ -26,11 +19,6 @@ private struct Appearance {
 }
 
 public final class OverlayViewController: OverlayContainerViewController {
-
-  // MARK: - Public property
-
-  /// Output delegate
-  public weak var showDelegate: OverlayViewControllerDelegate?
 
   // MARK: - Private property
 
@@ -83,7 +71,9 @@ private extension OverlayViewController {
 
   /// Add out dark view
   func addDarkView() {
-    guard let parent = self.parent else { return }
+    guard let parent = self.parent else {
+      fatalError("Parent view for dark is nil")
+    }
 
     parent.navigationController?.navigationBar.layer.zPosition = -1
 
@@ -119,18 +109,23 @@ private extension OverlayViewController {
 public extension OverlayViewController {
 
   /// Hide view controller
-  func hide(animated: Bool) {
+  func hide(animated: Bool, completion: (() -> Void)?) {
     UIView.animate(withDuration: animated ? appearance.animationDuration : 0.0, animations: {
       self.darkView.alpha = 0.0
       let bound = self.view.bounds
       self.view.frame = CGRect(x: 0, y: bound.height, width: bound.width, height: bound.height)
-    }, completion: { _ in
-      self.parent?.navigationController?.navigationBar.isUserInteractionEnabled = true
-      self.parent?.navigationController?.navigationBar.layer.zPosition = 0
-      self.darkView.removeFromSuperview()
-      self.view.removeFromSuperview()
-      self.removeFromParent()
-      self.showDelegate?.viewDidHide()
+    }, completion: { [weak self] _ in
+      self?.darkView.removeFromSuperview()
+
+      self?.parent?.navigationController?.navigationBar.isUserInteractionEnabled = true
+      self?.parent?.navigationController?.navigationBar.layer.zPosition = 0
+
+      self?.children.forEach { $0.removeFromParent() }
+
+      self?.willMove(toParent: nil)
+      self?.view.removeFromSuperview()
+      self?.removeFromParent()
+      completion?()
     })
   }
 
@@ -141,7 +136,7 @@ private extension OverlayViewController {
 
   @objc
   func hideAction() {
-    hide(animated: true)
+    hide(animated: true, completion: nil)
   }
 
 }

@@ -10,40 +10,44 @@ import Foundation
 import UIKit
 import Business
 
-protocol CashCategoryViewDelegate: AnyObject {
+public protocol CashCategoryProtocol: CashCategoryInputProtocol & CashCategoryOutputProtocol { }
 
-  func didComplete()
-
-}
-
-//Presenter -> View
-protocol CashCategoryViewProtocol: AnyObject {
+// INPUT
+public protocol CashCategoryInputProtocol {
 
   var cashModel: CashModel? { get set }
-  var delegate: CashCategoryViewDelegate? { get set }
   var isOpened: Bool { get set }
+
+}
+
+// OUTPUT
+public protocol CashCategoryOutputProtocol {
+
+    var completion: (() -> Void)? { get set }
+    var hide: (() -> Void)? { get set }
+
+}
+
+// PRESENTER -> VIEW
+protocol CashCategoryViewProtocol: AnyObject {
+
+  func reloadData()
   func didComplete()
 
 }
 
-//View -> Presenter
+// VIEW -> PRESENTER
 protocol CashCategoryPresenterProtocol {
 
-  var categories: [CashCategoryModel] { get }
-  func didSelectCategory(_ category: CashCategoryModel)
+  var displayedCategories: [CashCategoryModel] { get }
+  func searchCategory(by text: String)
+  func didSelectCategory(_ category: CashCategoryModel, for cashModel: CashModel?)
 
 }
 
-//Presenter - Interactor
+// PRESENTER - INTERACTOR
 protocol CashCategoryInteractorProtocol {
 
   func saveCash(_ cashModel: CashModel, callback: @escaping (Error?) -> Void)
-
-}
-
-//Presenter - WireFrame
-protocol CashCategoryWireFrameProtocol {
-
-//  func popViewController(from view: CashCategoryViewProtocol?)
 
 }

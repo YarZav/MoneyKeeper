@@ -12,7 +12,8 @@ import DesignSystem
 import OverlayContainer
 
 /// Default notches for over lay controller
-public enum CashCategoryViewNotches: Int, CaseIterable {
+private enum CashCategoryViewNotches: Int, CaseIterable {
+
   /// When hide
   case hide = 0
 
@@ -21,15 +22,31 @@ public enum CashCategoryViewNotches: Int, CaseIterable {
 
   /// When show full
   case full
+
 }
 
-struct CashCategoryStruct { }
+final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
 
-final class CashCategoryViewController: UIViewController {
+  // MARK: - CashCategoryProtocol
+
+  var cashModel: CashModel?
+  var isOpened: Bool = false
+  var completion: (() -> Void)?
+  var hide: (() -> Void)?
+  
     
   // MARK: - Private property
 
   private var presenter: CashCategoryPresenterProtocol
+
+  private lazy var searchBar: SearchBar = {
+    let searchBar = SearchBar(backgroundColor: .anthracite)
+    searchBar.backgroundColor = .anthracite
+    searchBar.barTintColor = .anthracite
+    searchBar.searchDelegate = self
+    return searchBar
+  }()
+
   private lazy var collectionViewFlowLayout: UICollectionViewFlowLayout = {
       let layout = UICollectionViewFlowLayout()
       layout.scrollDirection = .vertical
@@ -44,14 +61,6 @@ final class CashCategoryViewController: UIViewController {
       collectionView.backgroundColor = .anthracite
       return collectionView
   }()
-
-  // MARK: - Internal property
-
-  var cashModel: CashModel?
-  weak var delegate: CashCategoryViewDelegate?
-  var isOpened: Bool = false
-
-  var hideViewController: (() -> Void)?
 
   // MARK: - Init
 
@@ -70,9 +79,10 @@ final class CashCategoryViewController: UIViewController {
     super.viewDidLoad()
 
     createUI()
+    presenter.searchCategory(by: "")
   }
 
-  override public func viewDidAppear(_ animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
 
     isOpened = true
@@ -84,9 +94,12 @@ final class CashCategoryViewController: UIViewController {
 
 extension CashCategoryViewController: CashCategoryViewProtocol {
 
+  func reloadData() {
+    collectionView.reloadDataAndSetGradient()
+  }
+
   func didComplete() {
-    delegate?.didComplete()
-    hideViewController?()
+    completion?()
   }
 }
 
@@ -95,12 +108,12 @@ extension CashCategoryViewController: CashCategoryViewProtocol {
 extension CashCategoryViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    presenter.categories.count
+    presenter.displayedCategories.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: CashFlowCategoryCell = collectionView.dequeueCell(indexPath: indexPath)
-    cell.categoryModel = presenter.categories[indexPath.row]
+    cell.categoryModel = presenter.displayedCategories[indexPath.row]
     return cell
   }
 
@@ -111,8 +124,8 @@ extension CashCategoryViewController: UICollectionViewDataSource {
 extension CashCategoryViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let cashCategory = presenter.categories[indexPath.row]
-    presenter.didSelectCategory(cashCategory)
+    let cashCategory = presenter.displayedCategories[indexPath.row]
+    presenter.didSelectCategory(cashCategory, for: cashModel)
   }
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -131,15 +144,21 @@ private extension CashCategoryViewController {
 
     view.roundCorners(corners: [.topLeft, .topRight], radius: 16)
 
+    view.addSubview(searchBar)
     view.addSubview(collectionView)
 
+    searchBar.translatesAutoresizingMaskIntoConstraints = false
     collectionView.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+      searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+
+      collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
       collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-      collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+      collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
     ])
   }
 
@@ -157,7 +176,9 @@ extension CashCategoryViewController: OverlayContainerViewControllerDelegate {
     heightForNotchAt index: Int,
     availableSpace: CGFloat
   ) -> CGFloat {
-    guard let type = CashCategoryViewNotches(rawValue: index) else { return 0 }
+    guard let type = CashCategoryViewNotches(rawValue: index) else {
+      fatalError("Unavailable notch type for CashCategoryViewController")
+    }
     switch type {
     case .hide:
       return 0.0
@@ -183,9 +204,16 @@ extension CashCategoryViewController: OverlayContainerViewControllerDelegate {
     didMoveOverlay overlayViewController: UIViewController,
     toNotchAt index: Int
   ) {
-    guard isOpened else { return }
-    guard let type = CashCategoryViewNotches(rawValue: index), type == .hide else { return }
-    hideViewController?()
+    guard let type = CashCategoryViewNotches(rawValue: index) else {
+      fatalError("Unavailable notch type for CashCategoryViewController")
+    }
+    switch type {
+    case .hide:
+      guard isOpened else { return }
+      hide?()
+    case .medium, .full:
+      break
+    }
   }
 
   public func overlayContainerViewController(
@@ -193,24 +221,16 @@ extension CashCategoryViewController: OverlayContainerViewControllerDelegate {
     scrollViewDrivingOverlay
     overlayViewController: UIViewController
   ) -> UIScrollView? {
-    return collectionView
+    collectionView
   }
 }
 
-extension UIView {
+// MARK: - SearchBarDelegate
 
-  /// Set corner radius
-  ///
-  /// - Parameters:
-  ///     - corners: Corner position
-  ///     - radius: Corner radius
-  func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-    let path = UIBezierPath(roundedRect: bounds,
-                            byRoundingCorners: corners,
-                            cornerRadii: CGSize(width: radius, height: radius))
-    let mask = CAShapeLayer()
-    mask.path = path.cgPath
-    layer.mask = mask
+extension CashCategoryViewController: SearchBarDelegate {
+
+  func search(by text: String) {
+    presenter.searchCategory(by: text)
   }
 
 }

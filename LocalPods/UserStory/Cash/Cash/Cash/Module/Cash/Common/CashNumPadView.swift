@@ -11,7 +11,7 @@ import YZNumPad
 
 protocol CashNumPadDelegate: AnyObject {
 
-  func setPrice(_ price: String?)
+  func setCurrentPrice(_ price: String?)
 
 }
 
@@ -63,7 +63,7 @@ extension CashNumPadView {
 
   func dropPrice() {
     price = ""
-    delegate?.setPrice(price)
+    delegate?.setCurrentPrice(price)
   }
 
 }
@@ -108,7 +108,7 @@ extension CashNumPadView: YZNumPadViewDelegate {
   func didTapNumber(_ number: Int, numPadView: YZNumPadView) {
     guard price.count <= priceLengthLimit else { return }
     price.addNumber(number, pointSymbol: point)
-    delegate?.setPrice(price)
+    delegate?.setCurrentPrice(price)
   }
   
   func didTapDecimapSeparator(_ decimapSeparator: String?, numPadView: YZNumPadView) {
@@ -117,12 +117,12 @@ extension CashNumPadView: YZNumPadViewDelegate {
     
     guard price.count <= priceLengthLimit else { return }
     price.addDecimalSeparator(decimapSeparator)
-    delegate?.setPrice(price)
+    delegate?.setCurrentPrice(price)
   }
   
   func didTapDelete(numPadView: YZNumPadView) {
     price.deleteLastCharacter()
-    delegate?.setPrice(price)
+    delegate?.setCurrentPrice(price)
   }
 
 }
@@ -132,7 +132,9 @@ extension CashNumPadView: YZNumPadViewDelegate {
 private extension CashNumPadView {
 
   var horizontalSpacing: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1:
       return 30
@@ -148,7 +150,9 @@ private extension CashNumPadView {
   }
   
   var verticalSpacing: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1:
       return 10
@@ -164,7 +168,9 @@ private extension CashNumPadView {
   }
   
   var buttonRadius: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1,
          .iPhone_6_7_8_SE2_SE3,

@@ -13,17 +13,19 @@ final class CashCategoryPresenter {
   // MARK: - Private property
 
   private let interactor: CashCategoryInteractorProtocol
-  private let wireFrame: CashCategoryWireFrameProtocol
+
+  private let categories = CashCategoryModel.categories
 
   // MARK: - Internal property
 
   weak var view: CashCategoryViewProtocol?
 
+  var displayedCategories: [CashCategoryModel] = []
+
   // MARK: - Init
 
-  init(interactor: CashCategoryInteractorProtocol, wireFrame: CashCategoryWireFrameProtocol) {
+  init(interactor: CashCategoryInteractorProtocol) {
     self.interactor = interactor
-    self.wireFrame = wireFrame
   }
 
 }
@@ -32,12 +34,19 @@ final class CashCategoryPresenter {
 
 extension CashCategoryPresenter: CashCategoryPresenterProtocol {
 
-  var categories: [CashCategoryModel] {
-    CashCategoryModel.categories
+  func searchCategory(by text: String) {
+    if text.isEmpty {
+      displayedCategories = categories
+    } else {
+      displayedCategories = categories.filter { $0.title.lowercased().contains(text.lowercased()) }
+    }
+    view?.reloadData()
   }
 
-  func didSelectCategory(_ category: CashCategoryModel) {
-    guard var cashModel = view?.cashModel else { return }
+  func didSelectCategory(_ category: CashCategoryModel, for cashModel: CashModel?) {
+    guard var cashModel = cashModel else {
+      fatalError("Cash model for category can not be nil")
+    }
     cashModel.cashCategory = category
 
     interactor.saveCash(cashModel) { [weak self] _ in

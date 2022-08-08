@@ -23,12 +23,10 @@ extension CashAssembly: Assembly {
     registerCashDAO(container: container)
 
     registerCashView(container: container)
-    registerCashWireFrame(container: container)
     registerCashInteractor(container: container)
     registerCashPresenter(container: container)
 
     registerCashCategoryView(container: container)
-    registerCashCategoryWireFrame(container: container)
     registerCashCategoryInteractor(container: container)
     registerCashCategoryPresenter(container: container)
   }
@@ -52,43 +50,31 @@ private extension CashAssembly {
 private extension CashAssembly {
 
   func registerCashView(container: Container) {
-    container.register(CashView.self) {
-      guard let presenter = $0.resolve(CashPresenter.self) else {
+    container.register(CashViewProtocol.self) {
+      guard let presenter = $0.resolve(CashPresenterProtocol.self) else {
         fatalError("CashPresenter is not in container")
       }
       return CashViewController(presenter: presenter)
     }.inObjectScope(.container)
   }
 
-  func registerCashWireFrame(container: Container) {
-    container.register(CashWireFrame.self) {
-      guard let cashCategoryView = $0.resolve(CashCategoryViewProtocol.self) else {
-        fatalError("CashCategoryViewProtocol is not in container")
-      }
-      return CashWireFrameImp(cashCategoryView: cashCategoryView)
-    }.inObjectScope(.container)
-  }
-
   func registerCashInteractor(container: Container) {
-    container.register(CashInteractor.self) {
+    container.register(CashInteractorProtocol.self) {
       guard let cashDAO = $0.resolve(CashDAO.self) else {
         fatalError("CashDAO is not in container")
       }
-      return CashInteractorImp(cashDAO: cashDAO)
+      return CashInteractor(cashDAO: cashDAO)
     }.inObjectScope(.container)
   }
 
   func registerCashPresenter(container: Container) {
-    container.register(CashPresenter.self) {
-      guard let wireFrame = $0.resolve(CashWireFrame.self) else {
-        fatalError("CashWireFrame is not in container")
-      }
-      guard let interactor = $0.resolve(CashInteractor.self) else {
+    container.register(CashPresenterProtocol.self) {
+      guard let interactor = $0.resolve(CashInteractorProtocol.self) else {
         fatalError("CashInteractor is not in container")
       }
-      return CashPresenterImp(interactor: interactor, wireFrame: wireFrame)
+      return CashPresenter(interactor: interactor)
     }.initCompleted { resolver, presenter in
-      (presenter as? CashPresenterImp)?.view = resolver.resolve(CashView.self)
+      (presenter as? CashPresenter)?.view = resolver.resolve(CashViewProtocol.self)
     }.inObjectScope(.container)
   }
 
@@ -107,12 +93,6 @@ private extension CashAssembly {
     }.inObjectScope(.container)
   }
 
-  func registerCashCategoryWireFrame(container: Container) {
-    container.register(CashCategoryWireFrameProtocol.self) { _ in
-      return CashCategoryWireFrame()
-    }.inObjectScope(.container)
-  }
-
   func registerCashCategoryInteractor(container: Container) {
     container.register(CashCategoryInteractorProtocol.self) {
       guard let cashDAO = $0.resolve(CashDAO.self) else {
@@ -124,13 +104,10 @@ private extension CashAssembly {
 
   func registerCashCategoryPresenter(container: Container) {
     container.register(CashCategoryPresenterProtocol.self) {
-      guard let wireFrame = $0.resolve(CashCategoryWireFrameProtocol.self) else {
-        fatalError("CashCategoryWireFrameProtocol is not in container")
-      }
       guard let interactor = $0.resolve(CashCategoryInteractorProtocol.self) else {
         fatalError("CashCategoryInteractorProtocol is not in container")
       }
-      return CashCategoryPresenter(interactor: interactor, wireFrame: wireFrame)
+      return CashCategoryPresenter(interactor: interactor)
     }.initCompleted { resolver, presenter in
       (presenter as? CashCategoryPresenter)?.view = resolver.resolve(CashCategoryViewProtocol.self)
     }.inObjectScope(.container)

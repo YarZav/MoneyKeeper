@@ -23,7 +23,9 @@ public extension UITableView {
       self.dataSource = dataSource
       self.delegate = delegate
       cells.forEach { cellClass in
-        guard let casted = cellClass.self as? UITableViewCell.Type else { return }
+        guard let casted = cellClass.self as? UITableViewCell.Type else {
+          fatalError("Cell is not inheritance from UITableCell")
+        }
         let reuseIdentifier = String(describing: casted.self)
         self.register(cellClass, forCellReuseIdentifier: reuseIdentifier)
       }

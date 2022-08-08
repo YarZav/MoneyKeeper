@@ -6,13 +6,15 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import Foundation
-import CoreData
 import Business
 
-final class CashInteractorImp {
+final class CashInteractor {
+
+  // MARK: - Private property
 
   private let cashDAO: CashDAO
+
+  // MARK: - Init
 
   init(cashDAO: CashDAO) {
     self.cashDAO = cashDAO
@@ -20,10 +22,10 @@ final class CashInteractorImp {
 
 }
 
-// MARK: - CashInteractor
+// MARK: - CashInteractorProtocol
 
-extension CashInteractorImp: CashInteractor {
-    
+extension CashInteractor: CashInteractorProtocol {
+
   func getTotalCash() -> Decimal {
     let cashModels = cashDAO.getAll()
     let price = cashModels?.compactMap { $0.price }.reduce(0, +) ?? 0

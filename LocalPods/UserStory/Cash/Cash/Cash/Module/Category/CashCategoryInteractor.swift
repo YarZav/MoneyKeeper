@@ -10,7 +10,11 @@ import Business
 
 final class CashCategoryInteractor {
 
+  // MARK: - Private property
+
   private let cashDAO: CashDAO
+
+  // MARK: - Init
 
   init(cashDAO: CashDAO) {
     self.cashDAO = cashDAO
@@ -25,4 +29,5 @@ extension CashCategoryInteractor: CashCategoryInteractorProtocol {
   func saveCash(_ cashModel: CashModel, callback: @escaping (Error?) -> Void) {
     cashDAO.save(cashModel, callback: callback)
   }
+
 }

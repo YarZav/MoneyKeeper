@@ -14,7 +14,7 @@ import DesignSystem
 
 protocol CashAcceptDelegate: AnyObject {
 
-  func presentCategory()
+  func didTapNext()
 
 }
 
@@ -39,14 +39,14 @@ final class CashAcceptView: UIView {
   private let color = UIColor.darkViolet.withAlphaComponent(0.5)
   private var nextButtonRightConstraint: NSLayoutConstraint!
 
-  private lazy var priceView: UIView = {
+  private lazy var currentPriceView: UIView = {
       let view = UIView()
       view.cornerRadius(20, color: color)
       view.backgroundColor = .darkRed
       return view
   }()
 
-  private lazy var totalLabel: UILabel = {
+  private lazy var totalPriceLabel: UILabel = {
       let label = UILabel(font: UIFont.systemFont(ofSize: 18), textColor: .white, textAlignment: .right)
       label.text = "0"
       return label
@@ -84,10 +84,10 @@ final class CashAcceptView: UIView {
 
 extension CashAcceptView {
 
-  func displayTotal(_ total: String?, type: CashType) {
+  func setTotalPrice(_ price: String?) {
     layoutIfNeeded()
     UIView.animate(withDuration: 0.15) {
-      self.totalLabel.text = total
+      self.totalPriceLabel.text = price
       self.layoutIfNeeded()
     }
   }
@@ -98,12 +98,12 @@ extension CashAcceptView {
 private extension CashAcceptView {
 
   func createUI() {
-    addSubview(priceView)
-    priceView.addSubview(totalLabel)
+    addSubview(currentPriceView)
+    currentPriceView.addSubview(totalPriceLabel)
     addSubview(nextButton)
 
-    priceView.translatesAutoresizingMaskIntoConstraints = false
-    totalLabel.translatesAutoresizingMaskIntoConstraints = false
+    currentPriceView.translatesAutoresizingMaskIntoConstraints = false
+    totalPriceLabel.translatesAutoresizingMaskIntoConstraints = false
     nextButton.translatesAutoresizingMaskIntoConstraints = false
 
     nextButtonRightConstraint = nextButton.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.nextButtonWidth)
@@ -114,14 +114,14 @@ private extension CashAcceptView {
       nextButtonRightConstraint,
       nextButton.widthAnchor.constraint(equalToConstant: Constants.nextButtonWidth),
 
-      priceView.topAnchor.constraint(equalTo: topAnchor),
-      priceView.bottomAnchor.constraint(equalTo: bottomAnchor),
-      priceView.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.priceLeftOffset),
+      currentPriceView.topAnchor.constraint(equalTo: topAnchor),
+      currentPriceView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      currentPriceView.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.priceLeftOffset),
 
-      totalLabel.topAnchor.constraint(equalTo: priceView.topAnchor),
-      totalLabel.bottomAnchor.constraint(equalTo: priceView.bottomAnchor),
-      totalLabel.rightAnchor.constraint(equalTo: priceView.rightAnchor, constant: Constants.totalRightOffset),
-      totalLabel.leftAnchor.constraint(equalTo: priceView.leftAnchor, constant: Constants.totalLeftOffset)
+      totalPriceLabel.topAnchor.constraint(equalTo: currentPriceView.topAnchor),
+      totalPriceLabel.bottomAnchor.constraint(equalTo: currentPriceView.bottomAnchor),
+      totalPriceLabel.rightAnchor.constraint(equalTo: currentPriceView.rightAnchor, constant: Constants.totalRightOffset),
+      totalPriceLabel.leftAnchor.constraint(equalTo: currentPriceView.leftAnchor, constant: Constants.totalLeftOffset)
     ])
   }
 
@@ -133,7 +133,7 @@ private extension CashAcceptView {
 
   @objc
   func nextAction() {
-    delegate?.presentCategory()
+    delegate?.didTapNext()
   }
 
 }

@@ -9,13 +9,15 @@
 import UIKit
 import Business
 
-// MARK: - CashViewController
-final class CashViewController: UIViewController {
+final class CashViewController: UIViewController, CashProtocol {
+
+  // MARK: - CashProtocol
+
+  var category: ((CashModel, (() -> Void)?) -> Void)?
 
   // MARK: - Private property
 
-  private var presenter: CashPresenter
-  private var type: CashType = .outcome
+  private var presenter: CashPresenterProtocol
 
   private lazy var priceView: CashPriceView = {
     let view = CashPriceView()
@@ -30,13 +32,15 @@ final class CashViewController: UIViewController {
   }()
 
   private lazy var acceptView: CashAcceptView = {
-    let view = CashAcceptView(type: type)
+    let view = CashAcceptView(type: .outcome)
     view.backgroundColor = .anthracite
     view.delegate = self
     return view
   }()
 
-  init(presenter: CashPresenter) {
+  // MARK: - Init
+
+  init(presenter: CashPresenterProtocol) {
     self.presenter = presenter
     super.init(nibName: nil, bundle: nil)
   }
@@ -54,20 +58,6 @@ final class CashViewController: UIViewController {
     presenter.viewDidApepar()
   }
 
-}
-
-// MARK: - CashView
-
-extension CashViewController: CashView {
-
-  func dropPrice() {
-    numPadView.dropPrice()
-    ativateConstraint(false)
-  }
-  
-  func setTotalPrice(_ total: String?) {
-    acceptView.displayTotal(total, type: type)
-  }
 }
 
 // MARK: - Private
@@ -103,13 +93,8 @@ private extension CashViewController {
   }
 
   func ativateConstraint(_ isActivate: Bool) {
-    if isActivate {
-      acceptView.editing(true)
-      priceView.editing(true)
-    } else {
-      acceptView.editing(false)
-      priceView.editing(false)
-    }
+    acceptView.editing(isActivate)
+    priceView.editing(isActivate)
   }
 
   func ativateAnimationConstraint(_ activate: Bool) {
@@ -122,11 +107,33 @@ private extension CashViewController {
 
 }
 
+// MARK: - CashViewProtocol
+
+extension CashViewController: CashViewProtocol {
+
+  func dropPrice() {
+    numPadView.dropPrice()
+    ativateConstraint(false)
+  }
+  
+  func setTotalPrice(_ price: String?) {
+    acceptView.setTotalPrice(price)
+  }
+
+  func presentCategory(with cashModel: CashModel) {
+    category?(cashModel) { [weak self] in
+      self?.dropPrice()
+      self?.presenter.viewDidApepar()
+    }
+  }
+
+}
+
 // MARK: - CashNumPadDelegate
 
 extension CashViewController: CashNumPadDelegate {
 
-  func setPrice(_ price: String?) {
+  func setCurrentPrice(_ price: String?) {
     if let price = price, !(price.isEmpty || price == "0") {
         priceView.priceText = price
         ativateAnimationConstraint(true)
@@ -142,9 +149,8 @@ extension CashViewController: CashNumPadDelegate {
 
 extension CashViewController: CashAcceptDelegate {
 
-  func presentCategory() {
-    guard let priceText = priceView.priceText, !priceText.isEmpty else { return }
-    presenter.presentCategory(price: priceText)
+  func didTapNext() {
+    presenter.didTapNext(with: priceView.priceText)
   }
 
 }
@@ -154,7 +160,9 @@ extension CashViewController: CashAcceptDelegate {
 private extension CashViewController {
 
   var numPadViewTopOffset: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1:
       return 0
@@ -173,7 +181,9 @@ private extension CashViewController {
   }
 
   var numPadViewBottomOffset: CGFloat {
-    guard let deviceType = UIDevice.current.type else { return 0 }
+    guard let deviceType = UIDevice.current.type else {
+      fatalError("Unavailable device")
+    }
     switch deviceType {
     case .iPhone_5S_SE1:
       return 10
