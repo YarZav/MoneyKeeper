@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
   s.dependency 'Swinject'
   s.dependency 'DI'
   s.dependency 'OverlayContainer'
+  s.dependency 'YZBarChart'
   s.source_files = "Cash/**/*.swift"
 end

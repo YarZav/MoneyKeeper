@@ -12,28 +12,26 @@ import Extension
 enum TabBarButtonType: Int, CaseIterable {
 
   case cash = 0
+  case cashDetail = 1
 
-  var color: UIColor {
-    switch self {
-    case .cash:
-      return .darkViolet
-    }
-  }
-
-  /// Image for tabbar button
   var image: UIImage? {
     switch self {
     case .cash:
       let image = UIImage(systemName: "banknote")?.withRenderingMode(.alwaysTemplate)
       return image?.maskWithColor(color: .plainGray)
+    case .cashDetail:
+      let image = UIImage(systemName: "doc.text")?.withRenderingMode(.alwaysTemplate)
+      return image?.maskWithColor(color: .plainGray)
     }
   }
 
-  /// Selected image for tabbar button
   var selectedImage: UIImage? {
     switch self {
     case .cash:
       let image = UIImage(systemName: "banknote")?.withRenderingMode(.alwaysTemplate)
+      return image?.maskWithColor(color: .white)
+    case .cashDetail:
+      let image = UIImage(systemName: "doc.text")?.withRenderingMode(.alwaysTemplate)
       return image?.maskWithColor(color: .white)
     }
   }

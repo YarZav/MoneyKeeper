@@ -36,6 +36,9 @@
     ],
     "OverlayContainer": [
 
+    ],
+    "YZBarChart": [
+
     ]
   },
   "source_files": "Cash/**/*.swift"

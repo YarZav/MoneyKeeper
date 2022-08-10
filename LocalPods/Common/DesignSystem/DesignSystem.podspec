@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.homepage = "https://www.author.ru"
   s.source = { :git => "", :tag => "#{s.version}"}
   s.framework = "UIKit"
+  s.dependency 'OverlayContainer'
   s.source_files = "DesignSystem/**/*.swift"
 end

@@ -12,6 +12,7 @@ import DI
 import Cash
 import Business
 import OverlayContainer
+import DesignSystem
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
@@ -32,6 +33,7 @@ extension AppDelegate: UIApplicationDelegate {
   }
 }
 
+// TODO: - Сделать отдельный файл
 protocol AppCoordinatorFlowProtocol {
 
   var rootViewController: UIViewController? { get }
@@ -59,6 +61,7 @@ private extension AppCoordinatorFlow {
   func getTabBarViewController() -> UIViewController? {
     var tabBar = swinjectAssembly.assembler.getTabBar()
     tabBar.cashViewController = getCashViewController()
+    tabBar.cashDetailViewController = getCashDetailViewController()
     let viewController = tabBar as? UIViewController
     return viewController
   }
@@ -73,6 +76,12 @@ private extension AppCoordinatorFlow {
     }
 
     return cashViewController
+  }
+
+  func getCashDetailViewController() -> UIViewController? {
+    let cashDetail = swinjectAssembly.assembler.getCashDetail()
+    let cashDetailViewController = cashDetail as? UIViewController
+    return cashDetailViewController
   }
 
   func getCashCategoryViewController(_ cashModel: CashModel, completion: (() -> Void)?) -> UIViewController? {

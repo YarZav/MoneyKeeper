@@ -29,6 +29,10 @@ extension CashAssembly: Assembly {
     registerCashCategoryView(container: container)
     registerCashCategoryInteractor(container: container)
     registerCashCategoryPresenter(container: container)
+
+    registerCashDetailView(container: container)
+    registerCashDetailInteractor(container: container)
+    registerCashDetailPresenter(container: container)
   }
 
 }
@@ -110,6 +114,41 @@ private extension CashAssembly {
       return CashCategoryPresenter(interactor: interactor)
     }.initCompleted { resolver, presenter in
       (presenter as? CashCategoryPresenter)?.view = resolver.resolve(CashCategoryViewProtocol.self)
+    }.inObjectScope(.container)
+  }
+
+}
+
+// MARK: - Cash detail
+
+private extension CashAssembly {
+
+  func registerCashDetailView(container: Container) {
+    container.register(CashDetailViewProtocol.self) {
+      guard let presenter = $0.resolve(CashDetailPresenterProtocol.self) else {
+        fatalError("CashPresenter is not in container")
+      }
+      return CashDetailViewController(presenter: presenter)
+    }.inObjectScope(.container)
+  }
+
+  func registerCashDetailInteractor(container: Container) {
+    container.register(CashDetailInteractorProtocol.self) {
+      guard let cashDAO = $0.resolve(CashDAO.self) else {
+        fatalError("CashDAO is not in container")
+      }
+      return CashDetailInteractor(cashDAO: cashDAO)
+    }.inObjectScope(.container)
+  }
+
+  func registerCashDetailPresenter(container: Container) {
+    container.register(CashDetailPresenterProtocol.self) {
+      guard let interactor = $0.resolve(CashDetailInteractorProtocol.self) else {
+        fatalError("CashInteractor is not in container")
+      }
+      return CashDetailPresenter(interactor: interactor)
+    }.initCompleted { resolver, presenter in
+      (presenter as? CashDetailPresenter)?.view = resolver.resolve(CashDetailViewProtocol.self)
     }.inObjectScope(.container)
   }
 

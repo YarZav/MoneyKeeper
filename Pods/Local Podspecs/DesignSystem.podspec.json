@@ -15,5 +15,10 @@
     "tag": "1.0.0"
   },
   "frameworks": "UIKit",
+  "dependencies": {
+    "OverlayContainer": [
+
+    ]
+  },
   "source_files": "DesignSystem/**/*.swift"
 }

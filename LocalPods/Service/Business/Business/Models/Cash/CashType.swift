@@ -13,4 +13,12 @@ public enum CashType: Int {
   // Доходы
   case income
 
+  public var title: String {
+    switch self {
+    case .outcome:
+      return "Расходы"
+    case .income:
+      return "Доходы"
+    }
+  }
 }

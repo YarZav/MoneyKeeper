@@ -11,8 +11,8 @@ public protocol DAOProtocol {
   associatedtype DataBaseModel
   associatedtype BusinessModel
 
-  func getAll() -> [DataBaseModel]?
-  func get(by identifier: UUID) -> DataBaseModel?
+  func getAll() -> [BusinessModel]?
+  func get(by identifier: UUID) -> BusinessModel?
 
   func saveAll(_ models: [BusinessModel], callback: @escaping (Error?) -> Void)
   func save(_ model: BusinessModel, callback: @escaping (Error?) -> Void)

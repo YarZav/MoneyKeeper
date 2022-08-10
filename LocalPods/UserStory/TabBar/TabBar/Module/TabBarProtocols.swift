@@ -15,6 +15,7 @@ public protocol TabBarProtocol: TabBarInputProtocol & TabBarOutputProtocol { }
 public protocol TabBarInputProtocol {
 
   var cashViewController: UIViewController? { get set }
+  var cashDetailViewController: UIViewController? { get set }
 
 }
 

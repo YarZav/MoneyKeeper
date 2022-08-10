@@ -36,14 +36,15 @@ extension CashDAO: DAOProtocol {
   typealias DataBaseModel = CashDBModel
   typealias BusinessModel = CashModel
 
-  func getAll() -> [CashDBModel]? {
-    coreDataManager.getCoreDataModels(entityName: DataBaseModel.entityName)
+  func getAll() -> [CashModel]? {
+    let dataBaseModels: [CashDBModel]? = coreDataManager.getCoreDataModels(entityName: DataBaseModel.entityName)
+    return dataBaseModels?.compactMap { mapper.map($0) }
   }
 
-  func get(by identifier: UUID) -> CashDBModel? {
-    let dataBaseModels = getAll()
-    let dataBaseModel = dataBaseModels?.first(where: { $0.identifier == identifier })
-    return dataBaseModel
+  func get(by identifier: UUID) -> CashModel? {
+    let models = getAll()
+    let model = models?.first(where: { $0.identifier == identifier })
+    return model
   }
 
   func saveAll(_ models: [CashModel], callback: @escaping (Error?) -> Void) {
@@ -61,14 +62,16 @@ extension CashDAO: DAOProtocol {
   }
 
   func deleteAll(callback: @escaping (Error?) -> Void) {
-    let dataBaseModels = getAll()
+    let dataBaseModels: [CashDBModel]? = coreDataManager.getCoreDataModels(entityName: DataBaseModel.entityName)
     dataBaseModels?.forEach({ coreDataManager.managedObjectContext.delete($0) })
     coreDataManager.saveContext(callback: callback)
   }
 
   func delete(by identifier: UUID, callback: @escaping (Error?) -> Void) {
-    guard let previousCoreDataModel = get(by: identifier) else { return callback(nil) }
-    coreDataManager.managedObjectContext.delete(previousCoreDataModel)
+    let dataBaseModels: [CashDBModel]? = coreDataManager.getCoreDataModels(entityName: DataBaseModel.entityName)
+    let dataBaseModel = dataBaseModels?.first(where: { $0.identifier == identifier })
+    guard let dataBaseModel = dataBaseModel else { return callback(nil) }
+    coreDataManager.managedObjectContext.delete(dataBaseModel)
     coreDataManager.saveContext(callback: callback)
   }
 
