@@ -16,9 +16,9 @@ public enum CashType: Int {
   public var title: String {
     switch self {
     case .outcome:
-      return NSLocalizedString("Outcom", comment: "The name of the outcom")
+        return "OutcomKey".localized()
     case .income:
-      return NSLocalizedString("Incom", comment: "The name of the outcom")
+        return "IncomKey".localized()
     }
   }
 }

@@ -538,8 +538,8 @@
 		1383F0A244F2472B7FCFDB4FADDC603A /* RushingForwardTargetNotchPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RushingForwardTargetNotchPolicy.swift; path = Source/Classes/RushingForwardTargetNotchPolicy.swift; sourceTree = "<group>"; };
 		13AA31159A83674AF08FAA5B68E5B3C7 /* YZRoundButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YZRoundButton.swift; path = YZNumPad/YZRoundButton.swift; sourceTree = "<group>"; };
 		1490F2CE5E0D89D983B408CB3C8C9A14 /* Business */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Business; path = Business.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		155F14EE4AB98A88C76B93494576C5C7 /* DataBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DataBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		1590CB21AF8B3FCEE4E26BD89E6341B3 /* CashFlowDetailContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashFlowDetailContentView.swift; sourceTree = "<group>"; };
+		155F14EE4AB98A88C76B93494576C5C7 /* DataBase.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DataBase.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1590CB21AF8B3FCEE4E26BD89E6341B3 /* CashFlowDetailContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CashFlowDetailContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		162A268FB11CB3803D0AEBF9794B5D0A /* OverlayContainerPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayContainerPresentationController.swift; path = Source/Classes/OverlayContainerPresentationController.swift; sourceTree = "<group>"; };
 		16CA1CC0C3024F28CC707558AEB3BAB1 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		17764126353FE632BF2CE86DC62D4C6B /* DI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DI-prefix.pch"; sourceTree = "<group>"; };
@@ -559,7 +559,7 @@
 		1ED8F28A4CC9E08FBB09A7BEE97D6082 /* DI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DI.modulemap; sourceTree = "<group>"; };
 		1EF3FB3488D0D3D7C3E21ECF7F8A7EA9 /* Swinject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swinject-umbrella.h"; sourceTree = "<group>"; };
 		1FB73727CD7D55EDE69CF7D79D5F1BD3 /* Swinject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Swinject.h; path = Sources/Swinject.h; sourceTree = "<group>"; };
-		1FBD3FFE9FA905485859C7595E281FBF /* Extension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Extension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1FBD3FFE9FA905485859C7595E281FBF /* Extension.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Extension.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1FC1626978F1A26F0DEA971CACFC0DF8 /* YZPinCodeViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YZPinCodeViewController-prefix.pch"; sourceTree = "<group>"; };
 		2075495588F2FB3E2B1B22D7FDDA537D /* DesignSystem-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
 		2140D3EC74987D460D93E3EE4F97D9F1 /* Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Extension.release.xcconfig; sourceTree = "<group>"; };
@@ -637,7 +637,7 @@
 		550139ADBE4C15208DE41965EB1FE6A5 /* ObjectScope.Standard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectScope.Standard.swift; path = Sources/ObjectScope.Standard.swift; sourceTree = "<group>"; };
 		565F134031A2DD04C0B9311B37990803 /* SynchronizedResolver.Arguments.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedResolver.Arguments.swift; path = Sources/SynchronizedResolver.Arguments.swift; sourceTree = "<group>"; };
 		586EC64DBD2AA50F3D776787F229AEA9 /* LabelView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
-		58F996E9A6735F6B914B086CC79505F9 /* DesignSystem.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DesignSystem.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		58F996E9A6735F6B914B086CC79505F9 /* DesignSystem.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DesignSystem.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		598D8CA20209C310AB9C45A5E92CA789 /* DAO.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		5A458BAF6C4D3522760FC1C5CF973D22 /* Business.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = Business.strings; path = Business/Resources/Business.strings; sourceTree = "<group>"; };
 		5BC0A9F7CFAC9B251F455B9C016B5B31 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
@@ -670,7 +670,7 @@
 		6F57D886F3EA2F9C4DC1234E573A71EE /* Assembler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Assembler.swift; path = Sources/Assembler.swift; sourceTree = "<group>"; };
 		6F8F33398A78448E0B825E00C6226314 /* YZNotificationView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YZNotificationView.debug.xcconfig; sourceTree = "<group>"; };
 		6FFBFD14477E46214ACFA019546FBF9B /* CashPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashPresenter.swift; sourceTree = "<group>"; };
-		7057694C6A24AAE9F19096077D972886 /* DI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7057694C6A24AAE9F19096077D972886 /* DI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		70916662EEFC43AC98E30D201C0E1CFA /* YZNotificationView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YZNotificationView-Info.plist"; sourceTree = "<group>"; };
 		74173C52C51BA9CA1CE8BF98635D644F /* YZBarChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YZBarChart.release.xcconfig; sourceTree = "<group>"; };
 		741BEE93D68943F2BD2A26C35FD7254B /* Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
@@ -711,10 +711,10 @@
 		8939D164B5F4C84F231A6937CCE800F0 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		8949B7BE75DC3296EBE24056B3CAD458 /* Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Extension-dummy.m"; sourceTree = "<group>"; };
 		8966B6D70FBEA5ACE61A6A0707703A17 /* DI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DI-dummy.m"; sourceTree = "<group>"; };
-		89BF4E6A3FE56978299DB7BA14587254 /* Business.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Business.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		89BF4E6A3FE56978299DB7BA14587254 /* Business.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Business.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8A32A803D6EC050D31225BB79BA3529C /* EANBarcodeGenerator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EANBarcodeGenerator.modulemap; sourceTree = "<group>"; };
 		8ACA110EF3B35B3FCC08297B3799D9AD /* Swinject */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swinject; path = Swinject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8AFD5ECC7A2E86DCC1BFAC467D8047E8 /* SearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		8AFD5ECC7A2E86DCC1BFAC467D8047E8 /* SearchBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; tabWidth = 2; };
 		8BC695D19AF282940859B0F78C84463E /* OverlayContainerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayContainerConfiguration.swift; path = Source/Classes/Internal/OverlayContainerConfiguration.swift; sourceTree = "<group>"; };
 		8CE1AA6C3A3D6BC9165437DF2510A0B5 /* UIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "Extension/UIView+Extension.swift"; sourceTree = "<group>"; };
 		8CE7D70720633E0810F24FB5AAC8C9BC /* OverlayContainerSheetPresentationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayContainerSheetPresentationControllerDelegate.swift; path = Source/Classes/OverlayContainerSheetPresentationControllerDelegate.swift; sourceTree = "<group>"; };
@@ -737,7 +737,7 @@
 		9CC2882C0850356377EF60D62895B620 /* ObjectScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectScope.swift; path = Sources/ObjectScope.swift; sourceTree = "<group>"; };
 		9CD27FA282C0B10A764BB2AD02E6474A /* DesignSystem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DesignSystem-dummy.m"; sourceTree = "<group>"; };
 		9D22064B358108D33C8C569334A3B45B /* CashCategoryInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashCategoryInteractor.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DABFBABA2905AAEDD20D4044225C66A /* Pods-MoneyKeeper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MoneyKeeper.modulemap"; sourceTree = "<group>"; };
 		9E55B78E31E744A7C4F24E5D04C8098E /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Sources/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		9EA408D7B2727A166D20CD890F2A7CAB /* Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Extension.modulemap; sourceTree = "<group>"; };
@@ -764,7 +764,7 @@
 		ADE5EDC9F1EE86822AA43A28DD1B3E7B /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		AF5FA8405FE4901CBE658E93C89A4136 /* Swinject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swinject.modulemap; sourceTree = "<group>"; };
 		B0132686BF99343BFC8532485D1436A8 /* DesignSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DesignSystem.debug.xcconfig; sourceTree = "<group>"; };
-		B0CE2C3F4FA7D27D55D9D045B70C9626 /* Cash.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Cash.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B0CE2C3F4FA7D27D55D9D045B70C9626 /* Cash.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Cash.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B1A684943EB32EE03A78EEC09967DF89 /* YZNumberFormatter+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "YZNumberFormatter+Extension.swift"; path = "YZBarChart/YZBarChart/YZNumberFormatter+Extension.swift"; sourceTree = "<group>"; };
 		B226CB1D7F71EEE9FAD869FA6BECB552 /* CashDetailProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashDetailProtocols.swift; sourceTree = "<group>"; };
 		B4E12813C637132D024F0C9AA0DF2489 /* CashCategoryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashCategoryPresenter.swift; sourceTree = "<group>"; };
@@ -839,7 +839,7 @@
 		E64D1F779471365E8EB41674983E98BD /* OverlayContainerTransitionCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlayContainerTransitionCoordinator.swift; path = Source/Classes/OverlayContainerTransitionCoordinator.swift; sourceTree = "<group>"; };
 		E7FF51F286F5F5B9FBAF3935FE57DF2B /* YZPinCodeErrorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YZPinCodeErrorView.swift; path = YZPinCodeViewController/YZPinCodeErrorView.swift; sourceTree = "<group>"; };
 		E81782432E21725D359E5F3C3B00B248 /* YZBarChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YZBarChart.modulemap; sourceTree = "<group>"; };
-		E96679386A301B2A300B4E87AE8276E8 /* TabBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TabBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E96679386A301B2A300B4E87AE8276E8 /* TabBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TabBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EAF1924A043B4CB23725244EA9FAFE2B /* TabBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TabBar-dummy.m"; sourceTree = "<group>"; };
 		EB60DBE449F83A6E0B18F8F2BCD537BB /* SwinjectAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwinjectAssembly.swift; path = DI/SwinjectAssembly.swift; sourceTree = "<group>"; };
 		EBF22A6C58190C2E78BF2DD4829038AB /* CashDetailTableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CashDetailTableCell.swift; sourceTree = "<group>"; };
@@ -1048,7 +1048,6 @@
 			children = (
 				A97AFD69734EAF2297F75521C62BDE01 /* CashMapper.swift */,
 			);
-			name = Cash;
 			path = Cash;
 			sourceTree = "<group>";
 		};
@@ -1060,7 +1059,6 @@
 				13AA31159A83674AF08FAA5B68E5B3C7 /* YZRoundButton.swift */,
 				A98E958799FCF30CB3470208309E54A6 /* Support Files */,
 			);
-			name = YZNumPad;
 			path = YZNumPad;
 			sourceTree = "<group>";
 		};
@@ -1094,7 +1092,6 @@
 				4215E8CC138C900D57FE601C2F929301 /* CashModel.swift */,
 				A177C1BAB02B1F7A6409F98CDD1CAB05 /* CashType.swift */,
 			);
-			name = Cash;
 			path = Cash;
 			sourceTree = "<group>";
 		};
@@ -1126,7 +1123,6 @@
 			children = (
 				D4F455E25F8F1C17E9B4365D3E10D346 /* CashCategoryDBModel.swift */,
 			);
-			name = Category;
 			path = Category;
 			sourceTree = "<group>";
 		};
@@ -1146,7 +1142,6 @@
 			children = (
 				22BEDF63C7AA0BC71A61ED7C8A36FE9C /* CashCategoryModel.swift */,
 			);
-			name = Category;
 			path = Category;
 			sourceTree = "<group>";
 		};
@@ -1158,7 +1153,6 @@
 				7775DE3F27CA16DCE00875570585464E /* CashPriceView.swift */,
 				D7B4D131F775DCC87F37CED405E6FB8C /* ThreeCircleView.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -1185,7 +1179,6 @@
 				75682D0DB4BDB4D0611A72BF315B230C /* CIEANBarcodeGenerator.swift */,
 				55C2B6B0E70B1608F77900BEE7276CED /* Support Files */,
 			);
-			name = EANBarcodeGenerator;
 			path = EANBarcodeGenerator;
 			sourceTree = "<group>";
 		};
@@ -1209,7 +1202,6 @@
 			children = (
 				FE7E084FBB32EE8A1F93F82EF2B32505 /* TabBarButtonType.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -1290,7 +1282,6 @@
 				2EB2196AEB3086D9809F18B76340866B /* UnavailableItems.swift */,
 				7517B59B332596AEDDEC24701343FE78 /* Support Files */,
 			);
-			name = Swinject;
 			path = Swinject;
 			sourceTree = "<group>";
 		};
@@ -1350,7 +1341,6 @@
 				235213190E69F62A30EDE9617559369C /* UILayoutSupport+Extensions.swift */,
 				7D133E4C81271B0BC0DEF3924BEB56A0 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1363,7 +1353,6 @@
 				08CEEE690C231C043566207EF2A2510D /* CashFlowDetailGraphicView.swift */,
 				E250673AB614EF0BD2F0E90749BF949A /* TableView */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -1372,7 +1361,6 @@
 			children = (
 				4A4769076B60DF025BD11C61D860BB0F /* CashCategoryCell.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -1491,7 +1479,6 @@
 				E18AC1ABC24DB7FB3E3B274E8327ED73 /* CashFlowDetailViewController.swift */,
 				500F51AE6AC815CE02C8FBE0523F0F88 /* Common */,
 			);
-			name = CashDetail;
 			path = CashDetail;
 			sourceTree = "<group>";
 		};
@@ -1688,7 +1675,6 @@
 				3F9011E1B356F7E5397005207DC19E9D /* CashCategoryViewController.swift */,
 				527CBA037BF446806B01F9E4C6DF799A /* Common */,
 			);
-			name = Category;
 			path = Category;
 			sourceTree = "<group>";
 		};
@@ -1701,7 +1687,6 @@
 				B1A684943EB32EE03A78EEC09967DF89 /* YZNumberFormatter+Extension.swift */,
 				97AF34AED5647A4B69A0B12863E95B20 /* Support Files */,
 			);
-			name = YZBarChart;
 			path = YZBarChart;
 			sourceTree = "<group>";
 		};
@@ -1710,7 +1695,6 @@
 			children = (
 				7C1DEDC21F2D2893557C4BA89ABA2087 /* CashDAO.swift */,
 			);
-			name = DAO;
 			path = DAO;
 			sourceTree = "<group>";
 		};
@@ -1788,7 +1772,6 @@
 				222B1DE0D16872FF154712ACEB710615 /* UIViewController+Children.swift */,
 				97BEA47073CF639ABAA91DFB29F61356 /* Support Files */,
 			);
-			name = OverlayContainer;
 			path = OverlayContainer;
 			sourceTree = "<group>";
 		};
@@ -1797,7 +1780,6 @@
 			children = (
 				8E876B92CC81EDC598FD02C9C75E3ACC /* CashDBModel.swift */,
 			);
-			name = Cash;
 			path = Cash;
 			sourceTree = "<group>";
 		};
@@ -1849,7 +1831,6 @@
 				19F5E2467F05C47537840EEAAB27A8B1 /* Common */,
 				A1C40F58D9120534BA75ABE40582E62D /* DAO */,
 			);
-			name = Cash;
 			path = Cash;
 			sourceTree = "<group>";
 		};
@@ -1858,7 +1839,6 @@
 			children = (
 				DEE737BCDDA5EF54EA3A28D57345E945 /* GradientCollectionView.swift */,
 			);
-			name = CollectionView;
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
@@ -1876,7 +1856,6 @@
 			children = (
 				7AB1F7698839297624C70E369883D5CB /* OverlayViewController.swift */,
 			);
-			name = OverlayViewController;
 			path = OverlayViewController;
 			sourceTree = "<group>";
 		};
@@ -1964,7 +1943,6 @@
 				8845EC66C49276D004B19EFB9687FF2F /* YZPinCodeViewController.swift */,
 				69910E862302A2851A1B319BE45A06E6 /* Support Files */,
 			);
-			name = YZPinCodeViewController;
 			path = YZPinCodeViewController;
 			sourceTree = "<group>";
 		};
@@ -1991,7 +1969,6 @@
 				429F6A4093815A75689C181A9C74DF50 /* YZNotificationView.swift */,
 				2BE18AC6AD053C380A6CB850628FC708 /* Support Files */,
 			);
-			name = YZNotificationView;
 			path = YZNotificationView;
 			sourceTree = "<group>";
 		};
@@ -2003,7 +1980,6 @@
 				F3CACD1AFEBA21391BCBE95CF16C3465 /* CashDetailTableSection.swift */,
 				CA6633927619988F0D45BA32A86CDC1A /* CashDetailTableView.swift */,
 			);
-			name = TableView;
 			path = TableView;
 			sourceTree = "<group>";
 		};
@@ -2027,7 +2003,6 @@
 			children = (
 				8AFD5ECC7A2E86DCC1BFAC467D8047E8 /* SearchBar.swift */,
 			);
-			name = SearchBar;
 			path = SearchBar;
 			sourceTree = "<group>";
 		};

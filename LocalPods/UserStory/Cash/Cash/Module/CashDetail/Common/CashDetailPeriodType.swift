@@ -15,13 +15,13 @@ enum CashDetailPeriodType: Int, CaseIterable {
   var title: String {
     switch self {
     case .week:
-      return NSLocalizedString("Week", comment: "The name of the animal")
+        return "WeekKey".localized()
     case .month:
-      return NSLocalizedString("Month", comment: "The name of the animal")
+        return "MonthKey".localized()
     case .year:
-      return NSLocalizedString("Year", comment: "The name of the animal")
+        return "YearKey".localized()
     case .all:
-      return NSLocalizedString("AllTime", comment: "The name of the animal")
+        return "AllTimeKey".localized()
     }
   }
 

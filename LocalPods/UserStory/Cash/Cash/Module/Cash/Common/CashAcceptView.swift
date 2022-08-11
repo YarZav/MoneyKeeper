@@ -30,8 +30,7 @@ final class CashAcceptView: UIView {
     static let totalRightOffset: CGFloat = -26
     static let totalLeftOffset: CGFloat = 40
     static let nextEnabledRightOffset: CGFloat = 32
-
-    static let nextText = NSLocalizedString("CashFlowNext", comment: "The name of the next step button")
+    static let nextText = "CashFlowNextKey".localized()
   }
 
   // MARK: - Pirvte property

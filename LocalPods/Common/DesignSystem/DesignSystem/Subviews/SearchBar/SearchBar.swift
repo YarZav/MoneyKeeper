@@ -19,7 +19,7 @@ public final class SearchBar: UISearchBar {
   // MARK: - Constants
 
   private enum Constants {
-    static let searchPlacehodler = NSLocalizedString("SearchPlacehodler", comment: "The name of the search placeholder")
+    static let searchPlacehodler = "SearchPlacehodlerKey".localized()
   }
 
   // MARK: - Public property

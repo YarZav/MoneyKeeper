@@ -113,24 +113,15 @@ private extension CashFlowDetailContentView {
 // MARK: - CashDetailContentViewDelegate
 
 extension CashFlowDetailContentView: CashDetailPeriodsViewDelegate {
-    
-    func didSelectPeriod(_ period: CashDetailPeriodType) {
-        let newViewType: CashFlowDetailViewType = (period == .all) ? .table : .graphic
-        if newViewType == viewType {
-            delegate?.didChangePeriod(by: period)
-        } else {
-            viewType = newViewType
-            
-            let windowWidth = newViewType == .table ? -UIScreen.main.bounds.width : 0
-            setNeedsLayout()
-            UIView.animate(withDuration: 0.2, animations: {
-//                self.graphicView.snp.updateConstraints({
-//                    $0.left.right.equalToSuperview().offset(windowWidth)
-//                })
-                self.layoutIfNeeded()
-            }) { [weak self] completion in
-              self?.delegate?.didChangePeriod(by: period)
-            }
-        }
+
+  func didSelectPeriod(_ period: CashDetailPeriodType) {
+    let newViewType: CashFlowDetailViewType = (period == .all) ? .table : .graphic
+    if newViewType == viewType {
+      delegate?.didChangePeriod(by: period)
+    } else {
+      viewType = newViewType
+      delegate?.didChangePeriod(by: period)
     }
+  }
+
 }

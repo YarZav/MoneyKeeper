@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DD36C58C136AA72C6AB3794 /* MoneyKeeper.xcdatamodeld */; };
 		80569D2C648715D9CA92D445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C793A0F4FD37941BBE3022B3 /* Assets.xcassets */; };
 		954E05950B9AC1BAB92DF603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43C4487AC16BBE066223A15 /* LaunchScreen.storyboard */; };
+		B8CB096028A52F0D007B63D7 /* AppCoordinatorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB095F28A52F0D007B63D7 /* AppCoordinatorFlow.swift */; };
 		CEAD53AE839C2AD9FF77677D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66105F2CF73DFC1EE056664C /* AppDelegate.swift */; };
 		E0E03A4BEEBF24142779CF12 /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11335895117D306B08FA86 /* Pods_MoneyKeeper.framework */; };
 /* End PBXBuildFile section */
@@ -21,6 +22,7 @@
 		3C93DAF9A5B14F5DB9B45A88 /* MoneyKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyKeeper.xcdatamodel; sourceTree = "<group>"; };
 		66105F2CF73DFC1EE056664C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BC45DAEAAD121378D2BA6E2 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
+		B8CB095F28A52F0D007B63D7 /* AppCoordinatorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFlow.swift; sourceTree = "<group>"; };
 		B9DAACFDAC4CB34C77F72415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C793A0F4FD37941BBE3022B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC37252D9C5681506B4C17FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -55,7 +57,6 @@
 				3BD31BFF00C101AED7B9B186 /* Pods-MoneyKeeper.debug.xcconfig */,
 				7BC45DAEAAD121378D2BA6E2 /* Pods-MoneyKeeper.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +82,7 @@
 				66105F2CF73DFC1EE056664C /* AppDelegate.swift */,
 				1DD36C58C136AA72C6AB3794 /* MoneyKeeper.xcdatamodeld */,
 				0549493F907895AF19C60A1E /* SupportingFiles */,
+				B8CB095F28A52F0D007B63D7 /* AppCoordinatorFlow.swift */,
 			);
 			path = MoneyKeeper;
 			sourceTree = "<group>";
@@ -219,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8CB096028A52F0D007B63D7 /* AppCoordinatorFlow.swift in Sources */,
 				CEAD53AE839C2AD9FF77677D /* AppDelegate.swift in Sources */,
 				506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */,
 			);

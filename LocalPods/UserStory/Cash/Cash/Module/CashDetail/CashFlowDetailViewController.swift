@@ -16,7 +16,7 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
   // MARK: - Constants
 
   private enum Constants {
-    static let emptyDataText = NSLocalizedString("EmptyData", comment: "The name of the empty data")
+      static let emptyDataText = "EmptyDataKey".localized()
   }
 
   // MARK: - Private property
