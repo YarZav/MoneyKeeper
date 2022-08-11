@@ -20,5 +20,6 @@
 
     ]
   },
-  "source_files": "Business/**/*.swift"
+  "source_files": "Business/**/*.swift",
+  "resources": "Business/Resources/**/*.{xcassets,strings}"
 }

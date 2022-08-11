@@ -18,4 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'OverlayContainer'
   s.dependency 'YZBarChart'
   s.source_files = "Cash/**/*.swift"
+  s.resources = 'Cash/Resources/**/*.{xcassets,strings}'
 end

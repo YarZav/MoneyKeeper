@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.framework = "UIKit"
   s.dependency 'OverlayContainer'
   s.source_files = "DesignSystem/**/*.swift"
+  s.resources = 'DesignSystem/Resources/**/*.{xcassets,strings}'
 end

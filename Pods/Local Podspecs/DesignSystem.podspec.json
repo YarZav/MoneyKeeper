@@ -20,5 +20,6 @@
 
     ]
   },
-  "source_files": "DesignSystem/**/*.swift"
+  "source_files": "DesignSystem/**/*.swift",
+  "resources": "DesignSystem/Resources/**/*.{xcassets,strings}"
 }

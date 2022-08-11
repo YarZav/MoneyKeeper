@@ -41,5 +41,6 @@
 
     ]
   },
-  "source_files": "Cash/**/*.swift"
+  "source_files": "Cash/**/*.swift",
+  "resources": "Cash/Resources/**/*.{xcassets,strings}"
 }

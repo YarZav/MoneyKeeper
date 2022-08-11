@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.framework = "UIKit"
   s.dependency 'DataBase'
   s.source_files = "Business/**/*.swift"
+  s.resources = 'Business/Resources/**/*.{xcassets,strings}'
 end

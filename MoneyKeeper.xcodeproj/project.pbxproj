@@ -7,95 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		086ACCA23FE64B4CC2804DAE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F6214CD5C65088320835BA /* BaseNavigationController.swift */; };
-		3EE7D8E0B93AFFF9D50714E6 /* Local+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D676126631049B50ACA2637 /* Local+Extension.swift */; };
-		450AA90B049C1A6543E266CD /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89976ED4E42164DF364BA166 /* UINavigationBar+Extension.swift */; };
 		506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DD36C58C136AA72C6AB3794 /* MoneyKeeper.xcdatamodeld */; };
-		50B499C62520858C1F3515D9 /* MarginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FF373EFD9F3A2AAED85C05 /* MarginLabel.swift */; };
-		52021F2B1DC74013878929FF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D344189406A9230D81613305 /* GradientView.swift */; };
-		6CA4085E634ACEAF9899D275 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9252620BFB2257BE52965C6B /* CustomError.swift */; };
 		80569D2C648715D9CA92D445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C793A0F4FD37941BBE3022B3 /* Assets.xcassets */; };
-		90F7B259959AF3F6633B752D /* BaseScannerViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF97AE24947FC15EC21F29E9 /* BaseScannerViewConroller.swift */; };
-		927488EB3B1C929783662BC8 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45B875F845E761615407E2 /* Array+Extension.swift */; };
 		954E05950B9AC1BAB92DF603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43C4487AC16BBE066223A15 /* LaunchScreen.storyboard */; };
-		9950A4A63A7663296C68D37F /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736959165F62FD9B8FFC38E3 /* Pods_MoneyKeeper.framework */; };
-		9AEDA07B92968B8336B5D4BF /* Thread+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76219FCFF672A25E47706663 /* Thread+Extension.swift */; };
-		BCA65B78EAF754B9EF4AA946 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04ECE9017797BDA499B1EE8 /* Localizable.strings */; };
 		CEAD53AE839C2AD9FF77677D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66105F2CF73DFC1EE056664C /* AppDelegate.swift */; };
-		D235464F090C92AFB720AE25 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0173391D7DCDF6CE261FB6 /* UINavigationController+Extension.swift */; };
-		D2EFE86C2E9A0A2EE1BE9F88 /* BaseSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD3CC19F2A39FD814E43C4 /* BaseSwitchCell.swift */; };
-		E4DFF3EF0D9AB9D984FDEDD1 /* UICollectionViewFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B60A195BC81FCF6BC5D23A /* UICollectionViewFlowLayout+Extension.swift */; };
+		E0E03A4BEEBF24142779CF12 /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B11335895117D306B08FA86 /* Pods_MoneyKeeper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06B8CD3A9FFECBE337C28A9F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1D676126631049B50ACA2637 /* Local+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Local+Extension.swift"; sourceTree = "<group>"; };
+		1B11335895117D306B08FA86 /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A53AB9A7EBFA8D966DC2100 /* MoneyKeeper.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MoneyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD31BFF00C101AED7B9B186 /* Pods-MoneyKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.debug.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		3C93DAF9A5B14F5DB9B45A88 /* MoneyKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyKeeper.xcdatamodel; sourceTree = "<group>"; };
-		48BD3CC19F2A39FD814E43C4 /* BaseSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwitchCell.swift; sourceTree = "<group>"; };
 		66105F2CF73DFC1EE056664C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		736959165F62FD9B8FFC38E3 /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76219FCFF672A25E47706663 /* Thread+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+Extension.swift"; sourceTree = "<group>"; };
-		796F6839B03B173382CCD003 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
-		7F3AFE2F39D9CB33085A2C29 /* Pods-MoneyKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.debug.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.debug.xcconfig"; sourceTree = "<group>"; };
-		89976ED4E42164DF364BA166 /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
-		9252620BFB2257BE52965C6B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		9DA226CBEB4FDC02FA156164 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B9B60A195BC81FCF6BC5D23A /* UICollectionViewFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+Extension.swift"; sourceTree = "<group>"; };
+		7BC45DAEAAD121378D2BA6E2 /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		B9DAACFDAC4CB34C77F72415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BF97AE24947FC15EC21F29E9 /* BaseScannerViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScannerViewConroller.swift; sourceTree = "<group>"; };
-		C1F6214CD5C65088320835BA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		C793A0F4FD37941BBE3022B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC0173391D7DCDF6CE261FB6 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		CC37252D9C5681506B4C17FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		D344189406A9230D81613305 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DFD073770CAA57522E00AA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		ED45B875F845E761615407E2 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
-		F5FF373EFD9F3A2AAED85C05 /* MarginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F0C7C2506253D5D445DFFB47 /* Frameworks */ = {
+		E7DA8B2909FB969B6A85DF2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9950A4A63A7663296C68D37F /* Pods_MoneyKeeper.framework in Frameworks */,
+				E0E03A4BEEBF24142779CF12 /* Pods_MoneyKeeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0484D7EE792E0938E5CD02C4 /* BaseComponents */ = {
-			isa = PBXGroup;
-			children = (
-				3DA2C630058E4C1D1083AC11 /* Cells */,
-				8D15EA5B8F4305A08A28EBB7 /* Controllers */,
-				7A5CBDF328B2D2757D0D6397 /* Error */,
-			);
-			path = BaseComponents;
-			sourceTree = "<group>";
-		};
 		0549493F907895AF19C60A1E /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				C793A0F4FD37941BBE3022B3 /* Assets.xcassets */,
 				DFD073770CAA57522E00AA89 /* Info.plist */,
-				A04ECE9017797BDA499B1EE8 /* Localizable.strings */,
-				0484D7EE792E0938E5CD02C4 /* BaseComponents */,
-				CF59C42C99D2987F77DA636D /* Extensions */,
 				6839E772C7359667588B2357 /* Storyboards */,
-				B58716EEA7385F291F8C3080 /* SubViews */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		3DA2C630058E4C1D1083AC11 /* Cells */ = {
+		108D8CB2C2B14A33031074CC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				48BD3CC19F2A39FD814E43C4 /* BaseSwitchCell.swift */,
+				3BD31BFF00C101AED7B9B186 /* Pods-MoneyKeeper.debug.xcconfig */,
+				7BC45DAEAAD121378D2BA6E2 /* Pods-MoneyKeeper.release.xcconfig */,
 			);
-			path = Cells;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		4958458DC87E5CC88654142F /* Products */ = {
@@ -114,14 +75,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		7A5CBDF328B2D2757D0D6397 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				9252620BFB2257BE52965C6B /* CustomError.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
 		7E2B4972D29939C6E58A2828 /* MoneyKeeper */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,45 +85,12 @@
 			path = MoneyKeeper;
 			sourceTree = "<group>";
 		};
-		81846500B16043663ACF0DCE /* Pods */ = {
+		8D2F622EDBC3A1DA850A7992 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F3AFE2F39D9CB33085A2C29 /* Pods-MoneyKeeper.debug.xcconfig */,
-				796F6839B03B173382CCD003 /* Pods-MoneyKeeper.release.xcconfig */,
+				1B11335895117D306B08FA86 /* Pods_MoneyKeeper.framework */,
 			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		8D15EA5B8F4305A08A28EBB7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C1F6214CD5C65088320835BA /* BaseNavigationController.swift */,
-				BF97AE24947FC15EC21F29E9 /* BaseScannerViewConroller.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B58716EEA7385F291F8C3080 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				D344189406A9230D81613305 /* GradientView.swift */,
-				F5FF373EFD9F3A2AAED85C05 /* MarginLabel.swift */,
-			);
-			path = SubViews;
-			sourceTree = "<group>";
-		};
-		CF59C42C99D2987F77DA636D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				ED45B875F845E761615407E2 /* Array+Extension.swift */,
-				1D676126631049B50ACA2637 /* Local+Extension.swift */,
-				76219FCFF672A25E47706663 /* Thread+Extension.swift */,
-				B9B60A195BC81FCF6BC5D23A /* UICollectionViewFlowLayout+Extension.swift */,
-				89976ED4E42164DF364BA166 /* UINavigationBar+Extension.swift */,
-				CC0173391D7DCDF6CE261FB6 /* UINavigationController+Extension.swift */,
-			);
-			path = Extensions;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D8E94F95594644B3B74F87F5 = {
@@ -178,20 +98,12 @@
 			children = (
 				7E2B4972D29939C6E58A2828 /* MoneyKeeper */,
 				4958458DC87E5CC88654142F /* Products */,
-				81846500B16043663ACF0DCE /* Pods */,
-				DA0B83574691BA9EF4CD2296 /* Frameworks */,
+				108D8CB2C2B14A33031074CC /* Pods */,
+				8D2F622EDBC3A1DA850A7992 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
 			tabWidth = 2;
-		};
-		DA0B83574691BA9EF4CD2296 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				736959165F62FD9B8FFC38E3 /* Pods_MoneyKeeper.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -200,11 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DE9C6778DDF8AAA3F70D65E /* Build configuration list for PBXNativeTarget "MoneyKeeper" */;
 			buildPhases = (
-				0F09469EA3B0946CA4831FC7 /* [CP] Check Pods Manifest.lock */,
+				810B92F0BB68143CC85BEB4A /* [CP] Check Pods Manifest.lock */,
 				4C5B87BD958F3FFFFCA33CC6 /* Sources */,
 				9B2738B84C86E20EC4288291 /* Resources */,
-				F0C7C2506253D5D445DFFB47 /* Frameworks */,
-				43F91EE0C1C7FA27544D0BE9 /* [CP] Embed Pods Frameworks */,
+				E7DA8B2909FB969B6A85DF2A /* Frameworks */,
+				442A5748D33EDDF981422634 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,14 +167,30 @@
 			files = (
 				80569D2C648715D9CA92D445 /* Assets.xcassets in Resources */,
 				954E05950B9AC1BAB92DF603 /* LaunchScreen.storyboard in Resources */,
-				BCA65B78EAF754B9EF4AA946 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F09469EA3B0946CA4831FC7 /* [CP] Check Pods Manifest.lock */ = {
+		442A5748D33EDDF981422634 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		810B92F0BB68143CC85BEB4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,23 +212,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		43F91EE0C1C7FA27544D0BE9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -309,34 +220,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD53AE839C2AD9FF77677D /* AppDelegate.swift in Sources */,
-				927488EB3B1C929783662BC8 /* Array+Extension.swift in Sources */,
-				086ACCA23FE64B4CC2804DAE /* BaseNavigationController.swift in Sources */,
-				90F7B259959AF3F6633B752D /* BaseScannerViewConroller.swift in Sources */,
-				D2EFE86C2E9A0A2EE1BE9F88 /* BaseSwitchCell.swift in Sources */,
-				6CA4085E634ACEAF9899D275 /* CustomError.swift in Sources */,
-				52021F2B1DC74013878929FF /* GradientView.swift in Sources */,
-				3EE7D8E0B93AFFF9D50714E6 /* Local+Extension.swift in Sources */,
-				50B499C62520858C1F3515D9 /* MarginLabel.swift in Sources */,
 				506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */,
-				9AEDA07B92968B8336B5D4BF /* Thread+Extension.swift in Sources */,
-				E4DFF3EF0D9AB9D984FDEDD1 /* UICollectionViewFlowLayout+Extension.swift in Sources */,
-				450AA90B049C1A6543E266CD /* UINavigationBar+Extension.swift in Sources */,
-				D235464F090C92AFB720AE25 /* UINavigationController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A04ECE9017797BDA499B1EE8 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9DA226CBEB4FDC02FA156164 /* en */,
-				06B8CD3A9FFECBE337C28A9F /* ru */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		E43C4487AC16BBE066223A15 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -481,7 +371,7 @@
 		};
 		9C1091540E647B0955BEEE41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 796F6839B03B173382CCD003 /* Pods-MoneyKeeper.release.xcconfig */;
+			baseConfigurationReference = 7BC45DAEAAD121378D2BA6E2 /* Pods-MoneyKeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -501,7 +391,7 @@
 		};
 		C4215AB47D36032DC1B11D86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F3AFE2F39D9CB33085A2C29 /* Pods-MoneyKeeper.debug.xcconfig */;
+			baseConfigurationReference = 3BD31BFF00C101AED7B9B186 /* Pods-MoneyKeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
