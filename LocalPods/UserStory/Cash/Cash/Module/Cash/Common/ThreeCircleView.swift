@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Extension
 
 // MARK: - ThreeCircleView
 

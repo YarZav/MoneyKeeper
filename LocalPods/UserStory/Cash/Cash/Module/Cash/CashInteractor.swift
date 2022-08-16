@@ -6,8 +6,6 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import Business
-
 final class CashInteractor {
 
   // MARK: - Private property

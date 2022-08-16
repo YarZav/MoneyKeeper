@@ -7,7 +7,6 @@
 //
 
 import Swinject
-import Cash
 
 public final class TabBarAssembly {
 

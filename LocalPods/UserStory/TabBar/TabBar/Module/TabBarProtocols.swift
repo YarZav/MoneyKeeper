@@ -6,8 +6,6 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import UIKit
-
 // INPUT & OUTPUT
 public protocol TabBarProtocol: TabBarInputProtocol & TabBarOutputProtocol { }
 
@@ -26,5 +24,5 @@ public protocol TabBarOutputProtocol {
 
 }
 
-// VIEW
-protocol TabBarViewProtocol: AnyObject { }
+// View
+public protocol TabBarViewProtocol { }

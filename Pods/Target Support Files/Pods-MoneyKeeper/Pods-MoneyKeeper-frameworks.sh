@@ -176,15 +176,11 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Business/Business.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cash/Cash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DI/DI.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DataBase/DataBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DesignSystem/DesignSystem.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Extension/Extension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/OverlayContainer/OverlayContainer.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Service/Service.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TabBar/TabBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YZBarChart/YZBarChart.framework"
@@ -193,15 +189,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/YZPinCodeViewController/YZPinCodeViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Business/Business.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cash/Cash.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DI/DI.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DataBase/DataBase.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DesignSystem/DesignSystem.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/EANBarcodeGenerator/EANBarcodeGenerator.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Extension/Extension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/OverlayContainer/OverlayContainer.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Service/Service.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TabBar/TabBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YZBarChart/YZBarChart.framework"

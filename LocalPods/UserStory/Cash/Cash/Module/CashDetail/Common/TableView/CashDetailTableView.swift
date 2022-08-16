@@ -6,8 +6,7 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
-import Business
+import Service
 
 final class CashDetailTableView: UIView {
 

@@ -5,8 +5,6 @@
 //  Created by ZOLOTAREV Sergey on 02.02.2021.
 //
 
-import Foundation
-
 extension Bundle {
 
   private static var tabBarBundleCocoapods: Bundle = Bundle(

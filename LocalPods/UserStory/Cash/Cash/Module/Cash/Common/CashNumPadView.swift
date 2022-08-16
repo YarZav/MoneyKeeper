@@ -6,8 +6,8 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
 import YZNumPad
+import DesignSystem
 
 protocol CashNumPadDelegate: AnyObject {
 
@@ -16,12 +16,6 @@ protocol CashNumPadDelegate: AnyObject {
 }
 
 final class CashNumPadView: UIView {
-
-  // MARK: - Constants
-
-  private enum Constants {
-      static let deleteImage = UIImage(systemName: "delete.left")
-  }
 
   // MARK: - Private property
 
@@ -95,7 +89,7 @@ private extension CashNumPadView {
     numPadViewStruct.verticalSpacing = verticalSpacing
     numPadViewStruct.buttonRadius = buttonRadius
     numPadViewStruct.textSize = 36
-    numPadViewStruct.deleteIcon = Constants.deleteImage?.maskWithColor(color: .white)
+    numPadViewStruct.deleteIcon = UIImage.deleteLeft?.maskWithColor(color: .white)
     return numPadViewStruct
   }
 

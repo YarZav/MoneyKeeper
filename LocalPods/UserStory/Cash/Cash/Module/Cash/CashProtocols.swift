@@ -6,7 +6,7 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import Business
+import Service
 
 // INPUT & OUTPUT
 public protocol CashProtocol: CashInputProtocol & CashOutputProtool { }

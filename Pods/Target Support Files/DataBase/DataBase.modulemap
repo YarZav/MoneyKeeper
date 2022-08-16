@@ -1,6 +1,0 @@
-framework module DataBase {
-  umbrella header "DataBase-umbrella.h"
-
-  export *
-  module * { export * }
-}

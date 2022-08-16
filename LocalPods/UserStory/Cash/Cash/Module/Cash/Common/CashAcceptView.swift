@@ -6,10 +6,8 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
+import Service
 import YZNumPad
-import Business
-import Extension
 import DesignSystem
 
 protocol CashAcceptDelegate: AnyObject {
@@ -24,13 +22,11 @@ final class CashAcceptView: UIView {
 
   enum Constants {
     static let nextButtonWidth: CGFloat = 210
-    // TODO: - Вынести
-    static let buttonHeight: CGFloat = 44
     static let priceLeftOffset: CGFloat = -26
     static let totalRightOffset: CGFloat = -26
     static let totalLeftOffset: CGFloat = 40
     static let nextEnabledRightOffset: CGFloat = 32
-    static let nextText = "CashFlowNextKey".localized()
+    static let nextText = "CashNextKey".localized()
   }
 
   // MARK: - Pirvte property
@@ -85,7 +81,7 @@ extension CashAcceptView {
 
   func setTotalPrice(_ price: String?) {
     layoutIfNeeded()
-    UIView.animate(withDuration: 0.15) {
+    UIView.animate(withDuration: DesignConstants.Time.plainDuration) {
       self.totalPriceLabel.text = price
       self.layoutIfNeeded()
     }
@@ -143,7 +139,7 @@ extension CashAcceptView {
 
   func editing(_ isEdiging: Bool) {
     layoutIfNeeded()
-    UIView.animate(withDuration: 0.25) {
+    UIView.animate(withDuration: DesignConstants.Time.plainDuration) {
       self.nextButtonRightConstraint.constant = isEdiging ? Constants.nextEnabledRightOffset : Constants.nextButtonWidth
       self.layoutIfNeeded()
     }

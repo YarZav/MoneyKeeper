@@ -6,9 +6,9 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import UIKit
+import DesignSystem
 
-final class TabBarViewController: UITabBarController, TabBarProtocol {
+final class TabBarViewController: UITabBarController, TabBarProtocol, TabBarViewProtocol {
 
   // MARK: - TabBarProtocol
 
@@ -17,17 +17,16 @@ final class TabBarViewController: UITabBarController, TabBarProtocol {
 
   // MARK: - Life circle
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    createUI()
+  }
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     updateUI()
-  }
-
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-
-    tabBar.barTintColor = .anthracite
-    tabBar.tintColor = .white
   }
 
 }
@@ -36,37 +35,29 @@ final class TabBarViewController: UITabBarController, TabBarProtocol {
 
 private extension TabBarViewController {
 
+  func createUI() {
+    tabBar.barTintColor = .anthracite
+    tabBar.tintColor = .white
+  }
+
   func updateUI() {
+    let cashNavigationController = navigationController(with: cashViewController, type: .cash)
+    let cashDetailNavigationController = navigationController(with: cashDetailViewController, type: .cashDetail)
     viewControllers = [cashNavigationController, cashDetailNavigationController]
   }
 
-  var cashNavigationController: UINavigationController {
-    guard let rootViewController = cashViewController else {
-      fatalError("CashViewController is nil")
+  func navigationController(with rootViewController: UIViewController?, type: TabBarType) -> UINavigationController {
+    guard let rootViewController = rootViewController else {
+      fatalError("UIViewController for \(Self.self) is nil")
     }
-    let image = TabBarButtonType.cash.image
-    let selectedImage = TabBarButtonType.cash.selectedImage
-    let navigationController = UINavigationController(rootViewController: rootViewController)
-    navigationController.tabBarItem = UITabBarItem(title: nil, image: image, selectedImage: selectedImage)
-    return navigationController
-  }
-
-  var cashDetailNavigationController: UINavigationController {
-    guard let rootViewController = cashDetailViewController else {
-      fatalError("CashViewController is nil")
-    }
-    let image = TabBarButtonType.cashDetail.image
-    let selectedImage = TabBarButtonType.cashDetail.selectedImage
+    let image = type.image?.maskWithColor(color: .plainGray)
+    let selectedImage = type.image?.maskWithColor(color: .white)
     let navigationController = UINavigationController(rootViewController: rootViewController)
     navigationController.tabBarItem = UITabBarItem(title: nil, image: image, selectedImage: selectedImage)
     return navigationController
   }
 
 }
-
-// MARK: - TabBarViewProtocol
-
-extension TabBarViewController: TabBarViewProtocol { }
 
 // MARK: - UITabBarControllerDelegate
 

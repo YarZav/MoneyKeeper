@@ -5,8 +5,6 @@
 //  Created by ZOLOTAREV Sergey on 02.02.2021.
 //
 
-import UIKit
-
 extension UIImage {
 
   class func named(_ named: String) -> UIImage? {

@@ -10,8 +10,7 @@ Pod::Spec.new do |s|
   s.source = { :git => "", :tag => "#{s.version}"}
   s.framework = "UIKit"
   s.dependency 'YZNumPad'
-  s.dependency 'Business'
-  s.dependency 'Extension'
+  s.dependency 'Service'
   s.dependency 'DesignSystem'
   s.dependency 'Swinject'
   s.dependency 'DI'

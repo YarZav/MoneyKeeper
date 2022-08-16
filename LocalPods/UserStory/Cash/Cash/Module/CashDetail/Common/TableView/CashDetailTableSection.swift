@@ -5,7 +5,7 @@
 //  Created by Yaroslav Zavyalov on 8/10/22.
 //
 
-import Business
+import Service
 
 final class CashDetailTableSection {
 

@@ -6,9 +6,8 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
+import Service
 import YZBarChart
-import Business
 import DesignSystem
 
 final class CashDetailViewController: UIViewController, CashDetailProtocol {

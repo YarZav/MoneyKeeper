@@ -5,8 +5,8 @@
 //  Created by Yaroslav Zavyalov on 8/6/22.
 //
 
+import Service
 import Swinject
-import Business
 
 extension Assembler {
 

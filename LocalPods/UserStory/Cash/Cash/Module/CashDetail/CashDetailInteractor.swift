@@ -6,7 +6,7 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import Business
+import Service
 
 final class CashDetailInteractor {
 

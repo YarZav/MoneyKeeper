@@ -6,10 +6,17 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import UIKit
-import Business
+import Service
+import DesignSystem
 
 final class CashViewController: UIViewController, CashProtocol {
+
+  // MARK: - Constants
+
+  private enum Constants {
+    static let maxPriceLength: Int = 7
+    static let priceViewHeight: CGFloat = 120
+  }
 
   // MARK: - CashProtocol
 
@@ -26,7 +33,7 @@ final class CashViewController: UIViewController, CashProtocol {
   }()
 
   private lazy var numPadView: CashNumPadView = {
-    let view = CashNumPadView(priceLengthLimit: 7)
+    let view = CashNumPadView(priceLengthLimit: Constants.maxPriceLength)
     view.delegate = self
     return view
   }()
@@ -79,7 +86,7 @@ private extension CashViewController {
       priceView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       priceView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
       priceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      priceView.heightAnchor.constraint(equalToConstant: 120),
+      priceView.heightAnchor.constraint(equalToConstant: Constants.priceViewHeight),
 
       numPadView.topAnchor.constraint(equalTo: priceView.bottomAnchor, constant: numPadViewTopOffset),
       numPadView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -88,7 +95,7 @@ private extension CashViewController {
       acceptView.topAnchor.constraint(equalTo: numPadView.bottomAnchor, constant: numPadViewBottomOffset),
       acceptView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       acceptView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-      acceptView.heightAnchor.constraint(equalToConstant: 44)
+      acceptView.heightAnchor.constraint(equalToConstant: DesignConstants.Height.plainHeight)
     ])
   }
 
@@ -99,7 +106,7 @@ private extension CashViewController {
 
   func ativateAnimationConstraint(_ activate: Bool) {
     view.setNeedsLayout()
-    UIView.animate(withDuration: 0.15, animations: {
+    UIView.animate(withDuration: DesignConstants.Time.plainDuration, animations: {
       self.ativateConstraint(activate)
       self.view.layoutIfNeeded()
     })

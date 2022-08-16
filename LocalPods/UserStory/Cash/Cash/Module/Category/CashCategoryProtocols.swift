@@ -6,9 +6,7 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import Foundation
-import UIKit
-import Business
+import Service
 
 public protocol CashCategoryProtocol: CashCategoryInputProtocol & CashCategoryOutputProtocol { }
 

@@ -1,0 +1,34 @@
+"CashNextKey" = "Next";
+"EmptyDataKey" = "Empty data";
+"WeekKey" = "Week";
+"MonthKey" = "Month";
+"YearKey" = "Year";
+"AllTimeKey" = "All time";
+
+"OutcomKey" = "Outcom";
+"IncomKey" = "Incom";
+
+"AlcoholKey" = "Alcohol";
+"AnimalsKey" = "Animals";
+"AppStoreKey" = "AppStore";
+"AutomobileKey" = "Automobile";
+"BabyKey" = "Baby";
+"BikeKey" = "Bike";
+"BooksKey" = "Books";
+"BusinessKey" = "Business";
+"ClothesKey" = "Clothes";
+"CoffeeKey" = "Coffee";
+"EducationKey" = "Education";
+"ElectronicsKey" = "Electronics";
+"FurnitureKey" = "Furniture";
+"GiftKey" = "Gift";
+"GymKey" = "Gym";
+"HouseKey" = "House";
+"InternetKey" = "Internet";
+"MedicineKey" = "Medicine";
+"MobileKey" = "Mobile";
+"PetrolStationKey" = "Petrol Station";
+"ProductsKey" = "Products";
+"RelaxationKey" = "Relaxation";
+"TransitKey" = "Transit";
+"TVKey" = "TV";

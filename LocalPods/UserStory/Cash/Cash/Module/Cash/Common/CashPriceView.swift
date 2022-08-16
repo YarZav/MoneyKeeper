@@ -20,6 +20,7 @@ final class CashPriceView: UIView {
     static let titleWidth: CGFloat = 218
     static let threeCircleHeight: CGFloat = 191
     static let priceRightOffset: CGFloat = -40
+    static let titleTopOffset: CGFloat = 40
   }
   
   // MARK: - Private property
@@ -75,7 +76,7 @@ private extension CashPriceView {
 
       titleLabel.widthAnchor.constraint(equalToConstant: Constants.titleWidth),
       titleLabel.centerXAnchor.constraint(equalTo: threeCircleView.centerXAnchor),
-      titleLabel.centerYAnchor.constraint(equalTo: topAnchor, constant: 40),
+      titleLabel.centerYAnchor.constraint(equalTo: topAnchor, constant: Constants.titleTopOffset),
 
       priceLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor),
       priceLabel.leftAnchor.constraint(equalTo: leftAnchor),
@@ -90,7 +91,7 @@ private extension CashPriceView {
 extension CashPriceView {
 
   func editing(_ isEditing: Bool) {
-    UIView.animate(withDuration: 0.25) {
+    UIView.animate(withDuration: DesignConstants.Time.plainDuration) {
       self.titleLabel.alpha = isEditing ? 0 : 1
     }
   }

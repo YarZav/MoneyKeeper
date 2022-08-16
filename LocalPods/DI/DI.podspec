@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.author = { "Author" => "https://www.author.ru" }
   s.homepage = "https://www.author.ru"
   s.source = { :git => "", :tag => "#{s.version}"}
-  s.framework = "UIKit"
   s.dependency 'Swinject'
   s.source_files = "DI/**/*.swift"
 end

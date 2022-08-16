@@ -6,16 +6,14 @@
 //  Copyright © 2018 ZYG. All rights reserved.
 //
 
-import Foundation
-import Business
-import Extension
+import Service
 
 final class CashPresenter {
     
   // MARK: - Private property
 
   private let interactor: CashInteractorProtocol
-  
+
   private var totalPrice = Decimal(0)
 
   // MARK: - Internal property
@@ -40,7 +38,7 @@ extension CashPresenter: CashPresenterProtocol {
   }
 
   func didTapNext(with price: String?) {
-    guard let priceDouble = price?.toDouble() else {
+    guard let priceDouble = price?.toDouble else {
       fatalError("Can not convert input price String to Double")
     }
     let priceDecimal = Decimal(priceDouble)

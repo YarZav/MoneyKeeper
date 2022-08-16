@@ -6,9 +6,9 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import Foundation
+import Service
 import YZBarChart
-import Business
+import DesignSystem
 
 enum CalculateBarModels {
   case day
@@ -51,7 +51,7 @@ extension CashDetailPresenter: CashDetailPresenterProtocol {
     let typeCashModels = periodCashModels.filter { $0.type == type }
 
     if typeCashModels.isEmpty {
-        view?.showNoContentView()
+      view?.showNoContentView()
     } else {
       displayGraphicContent(models: cashModels, period: period)
     }

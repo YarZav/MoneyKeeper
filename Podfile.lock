@@ -1,24 +1,18 @@
 PODS:
-  - Business (1.0.0):
-    - DataBase
   - Cash (1.0.0):
-    - Business
     - DesignSystem
     - DI
-    - Extension
     - OverlayContainer
+    - Service
     - Swinject
     - YZBarChart
     - YZNumPad
-  - DataBase (1.0.0)
   - DesignSystem (1.0.0):
     - OverlayContainer
   - DI (1.0.0):
     - Swinject
-  - EANBarcodeGenerator (0.2.0)
-  - Extension (1.0.0)
   - OverlayContainer (3.5.2)
-  - SnapKit (5.6.0)
+  - Service (1.0.0)
   - Swinject (2.8.1)
   - TabBar (1.0.0):
     - Cash
@@ -30,15 +24,11 @@ PODS:
   - YZPinCodeViewController (1.1.0)
 
 DEPENDENCIES:
-  - Business (from `LocalPods/Service/Business`)
   - Cash (from `LocalPods/UserStory/Cash`)
-  - DataBase (from `LocalPods/Service/DataBase`)
-  - DesignSystem (from `LocalPods/Common/DesignSystem`)
+  - DesignSystem (from `LocalPods/DesignSystem`)
   - DI (from `LocalPods/DI`)
-  - EANBarcodeGenerator
-  - Extension (from `LocalPods/Common/Extension`)
   - OverlayContainer
-  - SnapKit
+  - Service (from `LocalPods/Service`)
   - Swinject
   - TabBar (from `LocalPods/UserStory/TabBar`)
   - YZBarChart (from `https://github.com/YarZav/YZBarChart.git`, tag `1.2.0`)
@@ -48,24 +38,18 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - EANBarcodeGenerator
     - OverlayContainer
-    - SnapKit
     - Swinject
 
 EXTERNAL SOURCES:
-  Business:
-    :path: LocalPods/Service/Business
   Cash:
     :path: LocalPods/UserStory/Cash
-  DataBase:
-    :path: LocalPods/Service/DataBase
   DesignSystem:
-    :path: LocalPods/Common/DesignSystem
+    :path: LocalPods/DesignSystem
   DI:
     :path: LocalPods/DI
-  Extension:
-    :path: LocalPods/Common/Extension
+  Service:
+    :path: LocalPods/Service
   TabBar:
     :path: LocalPods/UserStory/TabBar
   YZBarChart:
@@ -96,15 +80,11 @@ CHECKOUT OPTIONS:
     :tag: 1.1.0
 
 SPEC CHECKSUMS:
-  Business: fb72104ebc49448395fc9d8cb983ded86a681248
-  Cash: 39550a1b592f60f0b42c0798a35d9b9ac6be5324
-  DataBase: dceeeae4e89f1eb11364f3088550f4253d808ccc
+  Cash: ed023f5eaac25fa602b7f9c7b3856dc2e8133bdd
   DesignSystem: d41db51ffe352e7af01d0afc40710c5883954a31
-  DI: 60275a11d3e02a66d18ef220d547e9ad757dd621
-  EANBarcodeGenerator: 61083e912254454e374d7ad88876970f9e21b942
-  Extension: 4c78b86a754a34d76912ebd01a1ae6b144b8059f
+  DI: 8d4558cf222a6b20ad82e6b3374d0e8a2f0dd9ee
   OverlayContainer: 6b2727437ee7d76dc22b00d0275a94c9191f962a
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Service: 290c0a4af7252d5eb4c5ce7e5f168af23ccf20ef
   Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
   TabBar: 051c6bb22c749f803130bc2c723f97d5582e6457
   YZBarChart: e69f02d6778dd0dcfb28defb41d418975b2a1e0a
@@ -112,6 +92,6 @@ SPEC CHECKSUMS:
   YZNumPad: bfb34718997db4e0c3ef384755013fe4dee37d40
   YZPinCodeViewController: 46cab35c882bf0edb3dfc8b196f9dd9c559e10e6
 
-PODFILE CHECKSUM: 0bb9144b3652aa596098fc5df62678724025fd83
+PODFILE CHECKSUM: affb50ddb6e9319c6b3b01a8ed9d255048865786
 
 COCOAPODS: 1.11.3
