@@ -26,6 +26,12 @@ private enum CashCategoryViewNotches: Int, CaseIterable {
 
 final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
 
+  // MARK: - Constants
+
+  private enum Constants {
+    static let itemSize: CGSize = .init(width: 100, height: 100)
+  }
+
   // MARK: - CashCategoryProtocol
 
   var cashModel: CashModel?
@@ -47,11 +53,12 @@ final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
   }()
 
   private lazy var collectionViewFlowLayout: UICollectionViewFlowLayout = {
-      let layout = UICollectionViewFlowLayout()
-      layout.scrollDirection = .vertical
-      layout.itemSize = .init(width: 100, height: 100)
-      layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-      return layout
+    let margin: CGFloat = DesignConstants.Margin.plain
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+    layout.itemSize = Constants.itemSize
+    layout.sectionInset = .init(top: margin, left: margin, bottom: margin, right: margin)
+    return layout
   }()
 
   private lazy var collectionView: GradientCollectionView = {
@@ -65,6 +72,7 @@ final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
 
   init(presenter: CashCategoryPresenterProtocol) {
     self.presenter = presenter
+
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -140,8 +148,7 @@ private extension CashCategoryViewController {
 
   func createUI() {
     view.backgroundColor = .anthracite
-
-    view.roundCorners(corners: [.topLeft, .topRight], radius: 16)
+    view.roundCorners(corners: [.topLeft, .topRight], radius: DesignConstants.Radius.plain)
 
     view.addSubview(searchBar)
     view.addSubview(collectionView)

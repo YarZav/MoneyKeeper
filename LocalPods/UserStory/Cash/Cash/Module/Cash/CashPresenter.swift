@@ -14,8 +14,6 @@ final class CashPresenter {
 
   private let interactor: CashInteractorProtocol
 
-  private var totalPrice = Decimal(0)
-
   // MARK: - Internal property
 
   weak var view: CashViewProtocol?
@@ -33,8 +31,8 @@ final class CashPresenter {
 extension CashPresenter: CashPresenterProtocol {
 
   func viewDidApepar() {
-    totalPrice = interactor.getTotalCash()
-    view?.setTotalPrice(totalPrice.toString(.currency))
+    let totalPrice = interactor.getTotalCash()
+    view?.setTotalPrice(totalPrice)
   }
 
   func didTapNext(with price: String?) {

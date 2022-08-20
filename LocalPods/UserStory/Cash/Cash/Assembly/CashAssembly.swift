@@ -42,7 +42,7 @@ private extension CashAssembly {
 
   func registerCashDAO(container: Container) {
     container.register(CashDAO.self) { _ in
-      return CashDAO(mapper: CashMapper(), coreDataManager: CoreDataManager.shared)
+      return CashDAO(cashMapper: CashMapper(), coreDataManager: CoreDataManager.shared)
     }.inObjectScope(.container)
   }
 

@@ -6,19 +6,20 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
 import DesignSystem
 
 final class CashDetailTableCell: UITableViewCell {
 
   // MARK: - Private property
+
   private var iconImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
     imageView.backgroundColor = .anthracite
-    imageView.layer.cornerRadius = 16
+    imageView.layer.cornerRadius = DesignConstants.Radius.plain
     return imageView
   }()
+
   private var priceLabel = UILabel(font: UIFont.systemFont(ofSize: 17), textColor: .white)
   private var categoryLabel = UILabel(font: UIFont.systemFont(ofSize: 15), textColor: .lightGray)
 
@@ -62,17 +63,17 @@ private extension CashDetailTableCell {
     categoryLabel.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
+      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: DesignConstants.Margin.plain),
       iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor),
-      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-      iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: DesignConstants.Margin.plain),
+      iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DesignConstants.Margin.plain),
 
       priceLabel.topAnchor.constraint(equalTo: iconImageView.topAnchor),
-      priceLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 16),
+      priceLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: DesignConstants.Margin.plain),
       priceLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
 
       categoryLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor),
-      categoryLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 16),
+      categoryLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: DesignConstants.Margin.plain),
       categoryLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
       categoryLabel.bottomAnchor.constraint(equalTo: iconImageView.bottomAnchor),
     ])

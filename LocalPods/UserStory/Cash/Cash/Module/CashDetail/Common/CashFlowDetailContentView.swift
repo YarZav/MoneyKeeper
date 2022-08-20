@@ -8,6 +8,7 @@
 
 import Service
 import YZBarChart
+import DesignSystem
 
 protocol CashDetailContentViewDelegate: AnyObject {
 
@@ -23,6 +24,12 @@ enum CashFlowDetailViewType: Int {
 }
 
 final class CashFlowDetailContentView: UIView {
+
+  // MARK: - Contants
+
+  private enum Constants {
+    static let graphicHeight: CGFloat = 200
+  }
 
   // MARK: - Private property
 
@@ -92,12 +99,12 @@ private extension CashFlowDetailContentView {
       periodView.topAnchor.constraint(equalTo: topAnchor),
       periodView.leftAnchor.constraint(equalTo: leftAnchor),
       periodView.rightAnchor.constraint(equalTo: rightAnchor),
-      periodView.heightAnchor.constraint(equalToConstant: 44),
+      periodView.heightAnchor.constraint(equalToConstant: DesignConstants.Height.plain),
 
       graphicView.topAnchor.constraint(equalTo: periodView.bottomAnchor),
       graphicView.leftAnchor.constraint(equalTo: leftAnchor),
       graphicView.rightAnchor.constraint(equalTo: rightAnchor),
-      graphicView.heightAnchor.constraint(equalToConstant: 200),
+      graphicView.heightAnchor.constraint(equalToConstant: Constants.graphicHeight),
 
       tableView.topAnchor.constraint(equalTo: graphicView.bottomAnchor),
       tableView.leftAnchor.constraint(equalTo: leftAnchor),

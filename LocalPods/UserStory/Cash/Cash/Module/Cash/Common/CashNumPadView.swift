@@ -41,6 +41,7 @@ final class CashNumPadView: UIView {
 
   init(priceLengthLimit: Int) {
     super.init(frame: .zero)
+
     self.priceLengthLimit = priceLengthLimit
     createUI()
   }

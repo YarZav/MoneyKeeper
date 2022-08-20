@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DesignSystem
 
 protocol CashDetailPeriodsViewDelegate: AnyObject {
 
@@ -23,7 +24,7 @@ final class CashDetailPeriodsView: UIView {
     stackView.axis = .horizontal
     stackView.distribution = .equalSpacing
     stackView.alignment = .center
-    stackView.spacing = 16
+    stackView.spacing = DesignConstants.Margin.plain
     return stackView
   }()
 
@@ -59,8 +60,8 @@ private extension CashDetailPeriodsView {
 
     NSLayoutConstraint.activate([
       stackView.topAnchor.constraint(equalTo: topAnchor),
-      stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-      stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+      stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: DesignConstants.Margin.plain),
+      stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -DesignConstants.Margin.plain),
       stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
     ])
     

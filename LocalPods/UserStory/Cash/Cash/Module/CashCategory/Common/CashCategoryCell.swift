@@ -10,10 +10,20 @@ import Service
 import DesignSystem
 
 final class CashFlowCategoryCell: UICollectionViewCell {
+
+  // MARK: - Constants
+
+  private enum Constants {
+    static let margin: CGFloat = 10
+  }
     
   // MARK: - Private property
 
-  private let titleLabel = UILabel(font: UIFont.systemFont(ofSize: 14), textColor: .plainGray, textAlignment: .center)
+  private let titleLabel: UILabel = {
+    let label = UILabel(font: UIFont.systemFont(ofSize: 14), textColor: .plainGray, textAlignment: .center)
+    label.numberOfLines = 2
+    return label
+  }()
 
   private lazy var iconImageView: UIImageView = {
     let imageView = UIImageView()
@@ -38,6 +48,7 @@ final class CashFlowCategoryCell: UICollectionViewCell {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+
     self.createUI()
   }
 
@@ -52,8 +63,8 @@ final class CashFlowCategoryCell: UICollectionViewCell {
 private extension CashFlowCategoryCell {
 
   func createUI(){
-    contentView.cornerRadius(16, color: .darkViolet)
-            
+    contentView.cornerRadius(DesignConstants.Radius.plain, color: .darkViolet)
+
     contentView.addSubview(titleLabel)
     contentView.addSubview(iconImageView)
 
@@ -61,14 +72,14 @@ private extension CashFlowCategoryCell {
     iconImageView.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-      iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
+      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.margin),
+      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.margin),
+      iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -Constants.margin),
 
-      titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 8),
-      titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
-      titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
-      titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+      titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: Constants.margin),
+      titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.margin),
+      titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -Constants.margin),
+      titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.margin),
     ])
   }
 

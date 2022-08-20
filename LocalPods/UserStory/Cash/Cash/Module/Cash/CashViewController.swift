@@ -49,6 +49,7 @@ final class CashViewController: UIViewController, CashProtocol {
 
   init(presenter: CashPresenterProtocol) {
     self.presenter = presenter
+
     super.init(nibName: nil, bundle: nil)
   }
 
@@ -73,7 +74,7 @@ private extension CashViewController {
 
   func createUI() {
     view.backgroundColor = .anthracite
-    
+
     view.addSubview(priceView)
     view.addSubview(numPadView)
     view.addSubview(acceptView)
@@ -95,7 +96,7 @@ private extension CashViewController {
       acceptView.topAnchor.constraint(equalTo: numPadView.bottomAnchor, constant: numPadViewBottomOffset),
       acceptView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       acceptView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-      acceptView.heightAnchor.constraint(equalToConstant: DesignConstants.Height.plainHeight)
+      acceptView.heightAnchor.constraint(equalToConstant: DesignConstants.Height.plain)
     ])
   }
 
@@ -123,7 +124,7 @@ extension CashViewController: CashViewProtocol {
     ativateConstraint(false)
   }
   
-  func setTotalPrice(_ price: String?) {
+  func setTotalPrice(_ price: Decimal) {
     acceptView.setTotalPrice(price)
   }
 
@@ -141,13 +142,8 @@ extension CashViewController: CashViewProtocol {
 extension CashViewController: CashNumPadDelegate {
 
   func setCurrentPrice(_ price: String?) {
-    if let price = price, !(price.isEmpty || price == "0") {
-        priceView.priceText = price
-        ativateAnimationConstraint(true)
-    } else {
-        priceView.priceText = nil
-        ativateAnimationConstraint(false)
-    }
+    priceView.priceText = price.isNilOrEmptyOrZero ? nil : price
+    ativateAnimationConstraint(!price.isNilOrEmptyOrZero)
   }
 
 }

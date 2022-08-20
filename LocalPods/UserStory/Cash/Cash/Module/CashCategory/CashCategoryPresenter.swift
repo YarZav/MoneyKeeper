@@ -13,13 +13,11 @@ final class CashCategoryPresenter {
   // MARK: - Private property
 
   private let interactor: CashCategoryInteractorProtocol
-
   private let categories = CashCategoryModel.categories
 
   // MARK: - Internal property
 
   weak var view: CashCategoryViewProtocol?
-
   var displayedCategories: [CashCategoryModel] = []
 
   // MARK: - Init
@@ -35,11 +33,9 @@ final class CashCategoryPresenter {
 extension CashCategoryPresenter: CashCategoryPresenterProtocol {
 
   func searchCategory(by text: String) {
-    if text.isEmpty {
-      displayedCategories = categories
-    } else {
-      displayedCategories = categories.filter { $0.title.lowercased().contains(text.lowercased()) }
-    }
+    displayedCategories = text.isEmpty
+      ? categories
+      : categories.filter { $0.title.lowercased().contains(text.lowercased()) }
     view?.reloadData()
   }
 

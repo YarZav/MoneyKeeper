@@ -15,7 +15,20 @@ public enum DesignConstants {
 
   public enum Height {
 
-    public static let plainHeight: CGFloat = 44
+    public static let plain: CGFloat = 44
+
+  }
+
+  public enum Margin {
+
+    public static let small: CGFloat = 8
+    public static let plain: CGFloat = 16
+
+  }
+
+  public enum Radius {
+
+    public static let plain: CGFloat = 16
 
   }
 

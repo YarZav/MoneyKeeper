@@ -50,3 +50,15 @@ public extension String {
   }
 
 }
+
+public extension Optional where Wrapped == String {
+
+  // Check for nil, empty string and equal 0
+  var isNilOrEmptyOrZero: Bool {
+    if let text = self, !(text.isEmpty || text == "0") {
+      return false
+    }
+    return true
+  }
+
+}

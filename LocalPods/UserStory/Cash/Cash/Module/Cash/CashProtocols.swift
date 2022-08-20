@@ -25,7 +25,7 @@ public protocol CashOutputProtool {
 protocol CashViewProtocol: AnyObject {
 
   func dropPrice()
-  func setTotalPrice(_ price: String?)
+  func setTotalPrice(_ price: Decimal)
   func presentCategory(with cashModel: CashModel)
 
 }

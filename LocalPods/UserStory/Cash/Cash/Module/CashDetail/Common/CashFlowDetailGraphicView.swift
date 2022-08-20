@@ -6,8 +6,8 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-import UIKit
 import YZBarChart
+import DesignSystem
 
 final class CashFlowDetailGraphicView: UIView {
 
@@ -54,8 +54,8 @@ private extension CashFlowDetailGraphicView {
     NSLayoutConstraint.activate([
       barChartView.topAnchor.constraint(equalTo: topAnchor),
       barChartView.bottomAnchor.constraint(equalTo: bottomAnchor),
-      barChartView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-      barChartView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16)
+      barChartView.leftAnchor.constraint(equalTo: leftAnchor, constant: DesignConstants.Margin.plain),
+      barChartView.rightAnchor.constraint(equalTo: rightAnchor, constant: -DesignConstants.Margin.plain)
     ])
   }
 

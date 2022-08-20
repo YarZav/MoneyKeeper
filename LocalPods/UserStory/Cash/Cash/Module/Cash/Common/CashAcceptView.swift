@@ -26,19 +26,23 @@ final class CashAcceptView: UIView {
     static let totalRightOffset: CGFloat = -26
     static let totalLeftOffset: CGFloat = 40
     static let nextEnabledRightOffset: CGFloat = 32
+    static let cornerRadius: CGFloat = 20
+    static let nextButtonInsets: UIEdgeInsets = .init(top: 0.0, left: 26.0, bottom: 0.0, right: 40.0)
     static let nextText = "CashNextKey".localized()
   }
 
   // MARK: - Pirvte property
 
   private let color = UIColor.darkViolet.withAlphaComponent(0.5)
-  private var nextButtonRightConstraint: NSLayoutConstraint!
+  private lazy var nextButtonRightConstraint: NSLayoutConstraint = {
+    nextButton.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.nextButtonWidth)
+  }()
 
   private lazy var currentPriceView: UIView = {
-      let view = UIView()
-      view.cornerRadius(20, color: color)
-      view.backgroundColor = .darkRed
-      return view
+    let view = UIView()
+    view.cornerRadius(Constants.cornerRadius, color: color)
+    view.backgroundColor = .darkRed
+    return view
   }()
 
   private lazy var totalPriceLabel: UILabel = {
@@ -48,12 +52,12 @@ final class CashAcceptView: UIView {
   }()
 
   private lazy var nextButton: YZRoundButton = {
-    let button = YZRoundButton(backgroundColor: color, radius: 20, borderColor: color, borderWidth: 1)
+    let button = YZRoundButton(backgroundColor: color, radius: Constants.cornerRadius, borderColor: color, borderWidth: 1)
     button.addTarget(self, action: #selector(nextAction), for: .touchUpInside)
     button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
     button.setTitle(Constants.nextText, for: .normal)
     button.setTitleColor(.white, for: .normal)
-    button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 26.0, bottom: 0.0, right: 40.0)
+    button.titleEdgeInsets = Constants.nextButtonInsets
     return button
   }()
 
@@ -79,10 +83,10 @@ final class CashAcceptView: UIView {
 
 extension CashAcceptView {
 
-  func setTotalPrice(_ price: String?) {
+  func setTotalPrice(_ price: Decimal) {
     layoutIfNeeded()
     UIView.animate(withDuration: DesignConstants.Time.plainDuration) {
-      self.totalPriceLabel.text = price
+      self.totalPriceLabel.text = price.toString(.currency)
       self.layoutIfNeeded()
     }
   }
@@ -90,6 +94,7 @@ extension CashAcceptView {
 }
 
 // MARK: - Private
+
 private extension CashAcceptView {
 
   func createUI() {
@@ -100,8 +105,6 @@ private extension CashAcceptView {
     currentPriceView.translatesAutoresizingMaskIntoConstraints = false
     totalPriceLabel.translatesAutoresizingMaskIntoConstraints = false
     nextButton.translatesAutoresizingMaskIntoConstraints = false
-
-    nextButtonRightConstraint = nextButton.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.nextButtonWidth)
 
     NSLayoutConstraint.activate([
       nextButton.topAnchor.constraint(equalTo: topAnchor),
