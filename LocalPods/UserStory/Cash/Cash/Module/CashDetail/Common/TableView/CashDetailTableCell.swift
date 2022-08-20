@@ -12,11 +12,16 @@ final class CashDetailTableCell: UITableViewCell {
 
   // MARK: - Private property
 
-  private var iconImageView: UIImageView = {
+  private lazy var containerImageView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .anthracite
+    view.layer.cornerRadius = DesignConstants.Radius.plain
+    return view
+  }()
+
+  private lazy var iconImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
-    imageView.backgroundColor = .anthracite
-    imageView.layer.cornerRadius = DesignConstants.Radius.plain
     return imageView
   }()
 
@@ -54,28 +59,35 @@ extension CashDetailTableCell {
 private extension CashDetailTableCell {
 
   func createUI() {
-    contentView.addSubview(iconImageView)
+    contentView.addSubview(containerImageView)
+    containerImageView.addSubview(iconImageView)
     contentView.addSubview(priceLabel)
     contentView.addSubview(categoryLabel)
 
+    containerImageView.translatesAutoresizingMaskIntoConstraints = false
     iconImageView.translatesAutoresizingMaskIntoConstraints = false
     priceLabel.translatesAutoresizingMaskIntoConstraints = false
     categoryLabel.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: DesignConstants.Margin.plain),
-      iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor),
-      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: DesignConstants.Margin.plain),
-      iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DesignConstants.Margin.plain),
+      containerImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: DesignConstants.Margin.plain),
+      containerImageView.widthAnchor.constraint(equalTo: containerImageView.heightAnchor),
+      containerImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: DesignConstants.Margin.plain),
+      containerImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DesignConstants.Margin.plain),
 
-      priceLabel.topAnchor.constraint(equalTo: iconImageView.topAnchor),
-      priceLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: DesignConstants.Margin.plain),
+      iconImageView.leftAnchor.constraint(equalTo: containerImageView.leftAnchor, constant: DesignConstants.Margin.small),
+      iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor),
+      iconImageView.topAnchor.constraint(equalTo: containerImageView.topAnchor, constant: DesignConstants.Margin.small),
+      iconImageView.bottomAnchor.constraint(equalTo: containerImageView.bottomAnchor, constant: -DesignConstants.Margin.small),
+
+      priceLabel.topAnchor.constraint(equalTo: containerImageView.topAnchor),
+      priceLabel.leftAnchor.constraint(equalTo: containerImageView.rightAnchor, constant: DesignConstants.Margin.plain),
       priceLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
 
       categoryLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor),
-      categoryLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: DesignConstants.Margin.plain),
+      categoryLabel.leftAnchor.constraint(equalTo: containerImageView.rightAnchor, constant: DesignConstants.Margin.plain),
       categoryLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-      categoryLabel.bottomAnchor.constraint(equalTo: iconImageView.bottomAnchor),
+      categoryLabel.bottomAnchor.constraint(equalTo: containerImageView.bottomAnchor),
     ])
   }
 

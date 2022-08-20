@@ -24,9 +24,7 @@ public protocol CashDetailOutputProtocol { }
 protocol CashDetailViewProtocol: AnyObject {
 
   func showNoContentView()
-  func showContentView()
-  func displayGraphic(models: [CashModel], barModels: [YZBarViewModel])
-  func insertTable(models: [CashModel])
+  func showContentView(models: [CashModel], barModels: [YZBarViewModel])
 
 }
 

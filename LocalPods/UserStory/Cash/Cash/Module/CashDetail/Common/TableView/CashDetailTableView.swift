@@ -7,14 +7,16 @@
 //
 
 import Service
+import DesignSystem
 
 final class CashDetailTableView: UIView {
 
   // MARK: - Proeprties
 
-  private lazy var tableView: UITableView = {
-    let tableView = UITableView(cells: [CashDetailTableCell.self], dataSource: self, delegate: self)
+  private lazy var tableView: GradientTableView = {
+    let tableView = GradientTableView(cells: [CashDetailTableCell.self], dataSource: self, delegate: self)
     tableView.backgroundColor = .clear
+    tableView.separatorColor = .plainGray
     return tableView
   }()
 
@@ -40,8 +42,12 @@ final class CashDetailTableView: UIView {
 
 extension CashDetailTableView {
 
-  func insertModels(_ models: [CashModel], completion: @escaping () -> Void) {
-      dataSource.insertModels(models, completion: completion)
+  func insertModels(_ models: [CashModel]) {
+      dataSource.insertModels(models, completion: { [weak self] in
+        guard let self = self else { return }
+        self.tableView.setTopGradientPoint(self.tableView)
+        self.tableView.setBottomGradientPoint(self.tableView)
+      })
   }
 
 }
@@ -97,4 +103,11 @@ extension CashDetailTableView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension CashDetailTableView: UITableViewDelegate { }
+extension CashDetailTableView: UITableViewDelegate {
+
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    tableView.setTopGradientPoint(scrollView)
+    tableView.setBottomGradientPoint(scrollView)
+  }
+
+}

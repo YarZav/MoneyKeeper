@@ -71,13 +71,12 @@ final class CashFlowDetailContentView: UIView {
 
 extension CashFlowDetailContentView {
 
-  func displayGraphic(barModels: [YZBarViewModel], models: [CashModel], completion: @escaping () -> Void) {
+  func displayGraphic(barModels: [YZBarViewModel], models: [CashModel]) {
     graphicView.displayBarViewModels(barModels)
-    completion()
   }
   
-  func insertTable(models: [CashModel], completion: @escaping () -> Void) {
-    tableView.insertModels(models) { completion() }
+  func insertTable(models: [CashModel]) {
+    tableView.insertModels(models)
   }
 
 }

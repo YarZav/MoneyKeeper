@@ -24,8 +24,18 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
   private var periodType: CashDetailPeriodType = .week
   private var viewType: CashType = .outcome
 
-  private let noContentView = LabelView()
-  private var contentView: CashFlowDetailContentView?
+  private let noContentView: LabelView = {
+    let view = LabelView()
+    view.isHidden = true
+    return view
+  }()
+
+  private lazy var contentView: CashFlowDetailContentView = {
+    let view = CashFlowDetailContentView(periodType: periodType)
+    view.isHidden = true
+    view.delegate = self
+    return view
+  }()
 
   // MARK: - Init
 
@@ -54,55 +64,17 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
 extension CashDetailViewController: CashDetailViewProtocol {
 
   func showNoContentView() {
-    if let contentView = contentView, view.subviews.contains(contentView) {
-      contentView.removeFromSuperview()
-    }
-
-    if !view.subviews.contains(noContentView) {
-      view.addSubview(noContentView)
-      noContentView.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.activate([
-        noContentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-        noContentView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        noContentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        noContentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      ])
-    }
+    contentView.isHidden = true
+    noContentView.isHidden = false
     noContentView.setText(Constants.emptyDataText)
   }
 
-  func showContentView() {
-    if view.subviews.contains(noContentView) {
-      noContentView.removeFromSuperview()
-    }
-    
-    if contentView == nil {
-      contentView = CashFlowDetailContentView(periodType: periodType)
-      contentView?.delegate = self
-    }
-    
-    if let contentView = contentView, !view.subviews.contains(contentView) {
-      view.addSubview(contentView)
-      contentView.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.activate([
-        contentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-        contentView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-        contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      ])
-    }
-  }
+  func showContentView(models: [CashModel], barModels: [YZBarViewModel]) {
+    contentView.isHidden = false
+    noContentView.isHidden = true
 
-  func displayGraphic(models: [CashModel], barModels: [YZBarViewModel]) {
-    contentView?.displayGraphic(barModels: barModels, models: models, completion: {
-      //FIXME: USe it
-    })
-  }
-
-  func insertTable(models: [CashModel]) {
-    contentView?.insertTable(models: models, completion: {
-        //FIXME: Use it
-    })
+    contentView.displayGraphic(barModels: barModels, models: models)
+    contentView.insertTable(models: models)
   }
 
 }
@@ -115,6 +87,24 @@ private extension CashDetailViewController {
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
     navigationItem.title = viewType.title
     view.backgroundColor = .darkViolet
+
+    view.addSubview(noContentView)
+    view.addSubview(contentView)
+
+    noContentView.translatesAutoresizingMaskIntoConstraints = false
+    contentView.translatesAutoresizingMaskIntoConstraints = false
+
+    NSLayoutConstraint.activate([
+      noContentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+      noContentView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+      noContentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      noContentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+
+      contentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+      contentView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+      contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+    ])
   }
 
 }

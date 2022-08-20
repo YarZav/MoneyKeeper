@@ -164,10 +164,8 @@ private extension CashDetailPresenter {
     let barConfig = getBarConfig()
 
     let displayCodeBlock: (([CashModel], [YZBarModel]) -> Void) = { [weak self] (models, barModels) in
-      let viewModels = barModels.compactMap({ YZBarViewModel(config: barConfig, model: $0) })
-      self?.view?.showContentView()
-      self?.view?.displayGraphic(models: models, barModels: viewModels)
-      self?.view?.insertTable(models: models)
+      let barModels = barModels.compactMap({ YZBarViewModel(config: barConfig, model: $0) })
+      self?.view?.showContentView(models: models, barModels: barModels)
     }
 
     switch period {
@@ -190,11 +188,6 @@ private extension CashDetailPresenter {
         displayCodeBlock(models, barModels)
       }
     }
-  }
-
-  func displayTableContent(models: [CashModel]) {
-    view?.showContentView()
-    view?.insertTable(models: models)
   }
 
 }

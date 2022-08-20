@@ -17,7 +17,12 @@ public extension UITableView {
   ///     - dataSource: UITableViewDataSource, default is nil
   ///     - delegate: UITableViewDelegate, default is nil
   ///     - allowsSelection: allows selection cells of not, default is false
-  convenience init(cells: [AnyClass], dataSource: UITableViewDataSource? = nil, delegate: UITableViewDelegate? = nil, allowsSelection: Bool = false) {
+  convenience init(
+    cells: [AnyClass],
+    dataSource: UITableViewDataSource? = nil,
+    delegate: UITableViewDelegate? = nil,
+    allowsSelection: Bool = false
+  ) {
       self.init()
       self.allowsSelection = allowsSelection
       self.dataSource = dataSource
