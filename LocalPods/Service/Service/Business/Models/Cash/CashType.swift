@@ -5,7 +5,7 @@
 //  Created by Yaroslav Zavyalov on 8/4/22.
 //
 
-public enum CashType: Int {
+public enum CashType: String {
 
   // Расходы
   case outcome

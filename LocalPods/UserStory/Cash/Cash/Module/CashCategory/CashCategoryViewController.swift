@@ -120,7 +120,7 @@ extension CashCategoryViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: CashCategoryCell = collectionView.dequeueCell(indexPath: indexPath)
-    cell.categoryModel = presenter.displayedCategories[indexPath.row]
+    cell.cashCategoryType = presenter.displayedCategories[indexPath.row]
     return cell
   }
 

@@ -37,9 +37,9 @@ protocol CashCategoryViewProtocol: AnyObject {
 // VIEW -> PRESENTER
 protocol CashCategoryPresenterProtocol {
 
-  var displayedCategories: [CashCategoryModel] { get }
+  var displayedCategories: [CashCategoryType] { get }
   func searchCategory(by text: String)
-  func didSelectCategory(_ category: CashCategoryModel, for cashModel: CashModel?)
+  func didSelectCategory(_ categoryType: CashCategoryType, for cashModel: CashModel?)
 
 }
 

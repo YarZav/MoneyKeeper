@@ -37,12 +37,12 @@ extension CashDBModel: DBModelIdentifiable {
   @NSManaged public var price: Double
 
   /// Income OR outcome cash flow type
-  @NSManaged public var type: Int64
+  @NSManaged public var type: String
 
   /// Date of transaction
   @NSManaged public var date: Date
 
-  /// Category
-  @NSManaged public var cashCategory: CashCategoryDBModel
+  /// Category type
+  @NSManaged public var categoryType: String
 
 }

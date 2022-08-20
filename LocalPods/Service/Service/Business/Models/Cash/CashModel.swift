@@ -20,8 +20,9 @@ public struct CashModel {
   /// Date of transaction
   public let date: Date
 
+  // TODO: - Нужно править опционал
   /// Category
-  public var cashCategory: CashCategoryModel?
+  public var categoryType: CashCategoryType?
 
   // MARK: - Init
 
@@ -30,13 +31,13 @@ public struct CashModel {
     type: CashType,
     price: Decimal,
     date: Date,
-    cashCategory: CashCategoryModel?
+    categoryType: CashCategoryType?
   ) {
     self.identifier = identifier
     self.type = type
     self.price = price
     self.date = date
-    self.cashCategory = cashCategory
+    self.categoryType = categoryType
   }
 
   public init(

@@ -33,12 +33,12 @@ final class CashDetailTableCell: UITableViewCell {
 
   var cashModel: CashModel? {
     didSet {
-      if let imageName = cashModel?.cashCategory?.imageName {
+        if let imageName = cashModel?.categoryType?.rawValue {
         let image = UIImage.named(imageName)
         iconImageView.image = image?.maskWithColor(color: .plainGray)
       }
       priceLabel.text = cashModel?.price.toString(.currency)
-      categoryLabel.text = cashModel?.cashCategory?.title
+      categoryLabel.text = cashModel?.categoryType?.rawValue.localized()
     }
   }
 

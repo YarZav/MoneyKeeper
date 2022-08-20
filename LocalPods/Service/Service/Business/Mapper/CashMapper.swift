@@ -19,23 +19,23 @@ public extension CashMapper {
   func map(_ cashModel: CashModel?) -> CashDBModel? {
     guard
       let cashModel = cashModel,
-      let cashCategory = map(cashModel.cashCategory)
+      let categoryType = cashModel.categoryType
     else { return nil }
 
     let cashDBModel = CashDBModel()
     cashDBModel.identifier = cashModel.identifier
     cashDBModel.price = (cashModel.price as NSNumber).doubleValue
-    cashDBModel.type = Int64(cashModel.type.rawValue)
+    cashDBModel.type = cashModel.type.rawValue
     cashDBModel.date = cashModel.date
-    cashDBModel.cashCategory = cashCategory
+    cashDBModel.categoryType = categoryType.rawValue
     return cashDBModel
   }
 
   func map(_ cashDBModel: CashDBModel?) -> CashModel? {
     guard
       let cashDBModel = cashDBModel,
-      let type = CashType(rawValue: Int(cashDBModel.type)),
-      let cashCategory = map(cashDBModel.cashCategory)
+      let type = CashType(rawValue: cashDBModel.type),
+      let categoryType = CashCategoryType(rawValue: cashDBModel.categoryType)
     else { return nil }
 
     return CashModel(
@@ -43,26 +43,8 @@ public extension CashMapper {
       type: type,
       price: Decimal(cashDBModel.price),
       date: cashDBModel.date,
-      cashCategory: cashCategory
+      categoryType: categoryType
     )
-  }
-
-  func map(_ cashCategoryDBModel: CashCategoryDBModel?) -> CashCategoryModel? {
-    guard let cashCategoryDBModel = cashCategoryDBModel else { return nil }
-    return CashCategoryModel(
-      identifier: cashCategoryDBModel.identifier,
-      title: cashCategoryDBModel.title,
-      imageName: cashCategoryDBModel.imageName
-    )
-  }
-
-  func map(_ cashCategoryModel: CashCategoryModel?) -> CashCategoryDBModel? {
-    guard let cashCategoryModel = cashCategoryModel else { return nil }
-    let cashCategoryDBModel = CashCategoryDBModel()
-    cashCategoryDBModel.identifier = cashCategoryModel.identifier
-    cashCategoryDBModel.title = cashCategoryModel.title
-    cashCategoryDBModel.imageName = cashCategoryModel.imageName
-    return cashCategoryDBModel
   }
 
 }

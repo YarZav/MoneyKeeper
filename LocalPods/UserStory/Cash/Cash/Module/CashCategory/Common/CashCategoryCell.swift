@@ -34,10 +34,10 @@ final class CashCategoryCell: UICollectionViewCell {
 
   // MARK: - Internal property
 
-  var categoryModel: CashCategoryModel? {
+  var cashCategoryType: CashCategoryType? {
     didSet {
-      titleLabel.text = categoryModel?.title
-      if let imageName = categoryModel?.imageName {
+        titleLabel.text = cashCategoryType?.rawValue.localized()
+        if let imageName = cashCategoryType?.rawValue {
         let image = UIImage.named(imageName)
         iconImageView.image = image?.maskWithColor(color: .plainGray)
       }
