@@ -15,10 +15,10 @@ public enum CashCategoryType: String, CaseIterable {
   case book
   case business
   case children
-  case clothe
+  case clothes
   case coffee
   case education
-  case electronic
+  case electronics
   case furniture
   case gift
   case gym

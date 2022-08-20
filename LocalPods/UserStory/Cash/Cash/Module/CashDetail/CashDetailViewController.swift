@@ -85,7 +85,7 @@ private extension CashDetailViewController {
 
   func createUI() {
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
-    navigationItem.title = viewType.title
+      navigationItem.title = viewType.rawValue.lowercased()
     view.backgroundColor = .darkViolet
 
     view.addSubview(noContentView)
