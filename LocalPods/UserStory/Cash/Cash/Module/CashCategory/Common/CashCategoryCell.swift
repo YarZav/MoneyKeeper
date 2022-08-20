@@ -38,7 +38,7 @@ final class CashCategoryCell: UICollectionViewCell {
     didSet {
       titleLabel.text = categoryModel?.title
       if let imageName = categoryModel?.imageName {
-        let image = UIImage(named: imageName)
+        let image = UIImage.named(imageName)
         iconImageView.image = image?.maskWithColor(color: .plainGray)
       }
     }
@@ -72,14 +72,14 @@ private extension CashCategoryCell {
     iconImageView.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.margin),
-      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.margin),
-      iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -Constants.margin),
+      iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: DesignConstants.Margin.plain),
+      iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: DesignConstants.Margin.plain),
+      iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -DesignConstants.Margin.plain),
 
-      titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: Constants.margin),
-      titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: Constants.margin),
-      titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -Constants.margin),
-      titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.margin),
+      titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: DesignConstants.Margin.small),
+      titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: DesignConstants.Margin.small),
+      titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -DesignConstants.Margin.small),
+      titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -DesignConstants.Margin.plain),
     ])
   }
 

@@ -7,6 +7,7 @@
 //
 
 import DesignSystem
+import Service
 
 final class CashDetailTableCell: UITableViewCell {
 
@@ -28,6 +29,19 @@ final class CashDetailTableCell: UITableViewCell {
   private var priceLabel = UILabel(font: UIFont.systemFont(ofSize: 17), textColor: .white)
   private var categoryLabel = UILabel(font: UIFont.systemFont(ofSize: 15), textColor: .lightGray)
 
+  // MARK: - Internal property
+
+  var cashModel: CashModel? {
+    didSet {
+      if let imageName = cashModel?.cashCategory?.imageName {
+        let image = UIImage.named(imageName)
+        iconImageView.image = image?.maskWithColor(color: .plainGray)
+      }
+      priceLabel.text = cashModel?.price.toString(.currency)
+      categoryLabel.text = cashModel?.cashCategory?.title
+    }
+  }
+
   // MARK: - Init
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -38,18 +52,6 @@ final class CashDetailTableCell: UITableViewCell {
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-  }
-
-}
-
-// MARK: - Internal
-
-extension CashDetailTableCell {
-
-  func display(imageName: String, price: String, category: String) {
-    iconImageView.image = UIImage(named: imageName)
-    priceLabel.text = price
-    categoryLabel.text = category
   }
 
 }

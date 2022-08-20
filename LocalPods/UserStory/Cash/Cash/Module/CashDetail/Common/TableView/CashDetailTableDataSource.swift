@@ -72,11 +72,8 @@ extension CashDetailTableDataSource {
   func cellForRowAt(_ indexPath: IndexPath, tableView: UITableView) -> CashDetailTableCell {
     let cell: CashDetailTableCell = tableView.dequeueCell(indexPath: indexPath)
     let model = sections[indexPath.section].models[indexPath.row]
-    let imageName = model.cashCategory?.imageName ?? ""
-    let price = model.price.toString(.currency) ?? ""
-    let cateogry = model.cashCategory?.title ?? ""
+    cell.cashModel = model
     cell.contentView.backgroundColor = .darkViolet
-    cell.display(imageName: imageName, price: price, category: cateogry)
     return cell
   }
 
