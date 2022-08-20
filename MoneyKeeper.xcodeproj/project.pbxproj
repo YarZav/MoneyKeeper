@@ -8,33 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		506E2104F05CE173CFDB9F64 /* MoneyKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DD36C58C136AA72C6AB3794 /* MoneyKeeper.xcdatamodeld */; };
+		6A9E04D8B68CAAFC3D7FAEF0 /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A11C8FCECCA368C71E0A33 /* Pods_MoneyKeeper.framework */; };
 		80569D2C648715D9CA92D445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C793A0F4FD37941BBE3022B3 /* Assets.xcassets */; };
 		88B389AA7D1B0B030E01171A /* AppCoordinatorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47DD19EFFA52A16B1E037D3 /* AppCoordinatorFlow.swift */; };
 		954E05950B9AC1BAB92DF603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43C4487AC16BBE066223A15 /* LaunchScreen.storyboard */; };
-		AE6C2C576B47030FABF34E7B /* Pods_MoneyKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E149973521EE8890205502 /* Pods_MoneyKeeper.framework */; };
 		CEAD53AE839C2AD9FF77677D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66105F2CF73DFC1EE056664C /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23B9D8B5C272431D2D9BEAEA /* Pods-MoneyKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.debug.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		2A53AB9A7EBFA8D966DC2100 /* MoneyKeeper.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MoneyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30DB7E112C0AEEF09FA9D83D /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		3C93DAF9A5B14F5DB9B45A88 /* MoneyKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneyKeeper.xcdatamodel; sourceTree = "<group>"; };
-		65E149973521EE8890205502 /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66105F2CF73DFC1EE056664C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9DAACFDAC4CB34C77F72415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BFF656F5058D091DE2606B1C /* Pods-MoneyKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.release.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.release.xcconfig"; sourceTree = "<group>"; };
+		C1A11C8FCECCA368C71E0A33 /* Pods_MoneyKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47DD19EFFA52A16B1E037D3 /* AppCoordinatorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFlow.swift; sourceTree = "<group>"; };
 		C793A0F4FD37941BBE3022B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC37252D9C5681506B4C17FB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		DDE35BADF6EB2890E50C1133 /* Pods-MoneyKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyKeeper.debug.xcconfig"; path = "Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		DFD073770CAA57522E00AA89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3EABC88A008A8F6BCA258333 /* Frameworks */ = {
+		7A99AEFB551AD8755C662906 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6C2C576B47030FABF34E7B /* Pods_MoneyKeeper.framework in Frameworks */,
+				6A9E04D8B68CAAFC3D7FAEF0 /* Pods_MoneyKeeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +51,16 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		1A8DA9834734F0C1B7E3A398 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23B9D8B5C272431D2D9BEAEA /* Pods-MoneyKeeper.debug.xcconfig */,
+				30DB7E112C0AEEF09FA9D83D /* Pods-MoneyKeeper.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4958458DC87E5CC88654142F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,22 +69,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		580828DDCA8F1A51A875FC86 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DDE35BADF6EB2890E50C1133 /* Pods-MoneyKeeper.debug.xcconfig */,
-				BFF656F5058D091DE2606B1C /* Pods-MoneyKeeper.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		6839E772C7359667588B2357 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				E43C4487AC16BBE066223A15 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		70C658E7E27448EEA86BBDA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1A11C8FCECCA368C71E0A33 /* Pods_MoneyKeeper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7E2B4972D29939C6E58A2828 /* MoneyKeeper */ = {
@@ -86,14 +94,6 @@
 				0549493F907895AF19C60A1E /* SupportingFiles */,
 			);
 			path = MoneyKeeper;
-			sourceTree = "<group>";
-		};
-		92A061B5D60679A20053A528 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				65E149973521EE8890205502 /* Pods_MoneyKeeper.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C6D90E846B4489542D576219 /* CoordinatorFlow */ = {
@@ -109,8 +109,8 @@
 			children = (
 				7E2B4972D29939C6E58A2828 /* MoneyKeeper */,
 				4958458DC87E5CC88654142F /* Products */,
-				580828DDCA8F1A51A875FC86 /* Pods */,
-				92A061B5D60679A20053A528 /* Frameworks */,
+				1A8DA9834734F0C1B7E3A398 /* Pods */,
+				70C658E7E27448EEA86BBDA7 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -123,11 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DE9C6778DDF8AAA3F70D65E /* Build configuration list for PBXNativeTarget "MoneyKeeper" */;
 			buildPhases = (
-				694473B4EEFA16A4D8CB7533 /* [CP] Check Pods Manifest.lock */,
+				2387840617B94293EF86FF6F /* [CP] Check Pods Manifest.lock */,
 				4C5B87BD958F3FFFFCA33CC6 /* Sources */,
 				9B2738B84C86E20EC4288291 /* Resources */,
-				3EABC88A008A8F6BCA258333 /* Frameworks */,
-				3B6221D5EC424E8F7D7F3342 /* [CP] Embed Pods Frameworks */,
+				7A99AEFB551AD8755C662906 /* Frameworks */,
+				4B1E69CB4E6FD17687F3FAAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,24 +184,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3B6221D5EC424E8F7D7F3342 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		694473B4EEFA16A4D8CB7533 /* [CP] Check Pods Manifest.lock */ = {
+		2387840617B94293EF86FF6F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,6 +204,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B1E69CB4E6FD17687F3FAAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyKeeper/Pods-MoneyKeeper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -383,7 +383,7 @@
 		};
 		9C1091540E647B0955BEEE41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFF656F5058D091DE2606B1C /* Pods-MoneyKeeper.release.xcconfig */;
+			baseConfigurationReference = 30DB7E112C0AEEF09FA9D83D /* Pods-MoneyKeeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -403,7 +403,7 @@
 		};
 		C4215AB47D36032DC1B11D86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDE35BADF6EB2890E50C1133 /* Pods-MoneyKeeper.debug.xcconfig */;
+			baseConfigurationReference = 23B9D8B5C272431D2D9BEAEA /* Pods-MoneyKeeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

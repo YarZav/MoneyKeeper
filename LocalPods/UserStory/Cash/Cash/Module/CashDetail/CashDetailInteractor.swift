@@ -26,7 +26,7 @@ final class CashDetailInteractor {
 
 extension CashDetailInteractor: CashDetailInteractorProtocol {
 
-  func getCashFlowDetails(type: CashType) -> [CashModel] {
+  func getCashDetails(type: CashType) -> [CashModel] {
     cashDAO.getAll() ?? []
   }
 

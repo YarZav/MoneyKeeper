@@ -62,7 +62,7 @@ final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
   }()
 
   private lazy var collectionView: GradientCollectionView = {
-      let collectionView = GradientCollectionView(cells: [CashFlowCategoryCell.self], dataSource: self, delegate: self)
+      let collectionView = GradientCollectionView(cells: [CashCategoryCell.self], dataSource: self, delegate: self)
       collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
       collectionView.backgroundColor = .anthracite
       return collectionView
@@ -119,7 +119,7 @@ extension CashCategoryViewController: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell: CashFlowCategoryCell = collectionView.dequeueCell(indexPath: indexPath)
+    let cell: CashCategoryCell = collectionView.dequeueCell(indexPath: indexPath)
     cell.categoryModel = presenter.displayedCategories[indexPath.row]
     return cell
   }

@@ -1,5 +1,5 @@
 //
-//  CashFlowDetailGraphicView.swift
+//  CashDetailGraphicView.swift
 //  MoneyKeeper
 //
 //  Created by admin on 08.04.2019.
@@ -9,7 +9,7 @@
 import YZBarChart
 import DesignSystem
 
-final class CashFlowDetailGraphicView: UIView {
+final class CashDetailGraphicView: UIView {
 
   // MARK: - Properties
 
@@ -30,7 +30,7 @@ final class CashFlowDetailGraphicView: UIView {
 }
 
 // MARK: - Internal
-extension CashFlowDetailGraphicView {
+extension CashDetailGraphicView {
 
   func displayBarViewModels(_ viewModels: [YZBarViewModel]) {
       barChartView.displayViewModels(viewModels, animated: true)
@@ -40,7 +40,7 @@ extension CashFlowDetailGraphicView {
 
 // MARK: - Private
 
-private extension CashFlowDetailGraphicView {
+private extension CashDetailGraphicView {
 
   func createUI() {
     var configuration = YZBarChartViewConfiguration()

@@ -39,6 +39,6 @@ protocol CashDetailPresenterProtocol {
 // PRESENTER - INTERACTOR
 protocol CashDetailInteractorProtocol {
 
-  func getCashFlowDetails(type: CashType) -> [CashModel]
+  func getCashDetails(type: CashType) -> [CashModel]
 
 }

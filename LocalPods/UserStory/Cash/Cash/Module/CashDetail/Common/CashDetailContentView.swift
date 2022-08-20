@@ -1,5 +1,5 @@
 //
-//  CashFlowDetailContentView.swift
+//  CashDetailContentView.swift
 //  MoneyKeeper
 //
 //  Created by admin on 08.04.2019.
@@ -16,14 +16,14 @@ protocol CashDetailContentViewDelegate: AnyObject {
 
 }
 
-enum CashFlowDetailViewType: Int {
+enum CashDetailViewType: Int {
 
   case graphic = 0        //Show graphic
   case table = 1          //Show table
 
 }
 
-final class CashFlowDetailContentView: UIView {
+final class CashDetailContentView: UIView {
 
   // MARK: - Contants
 
@@ -39,9 +39,9 @@ final class CashFlowDetailContentView: UIView {
     return view
   }()
 
-  private let graphicView = CashFlowDetailGraphicView()
+  private let graphicView = CashDetailGraphicView()
   private let tableView = CashDetailTableView()
-  private var viewType: CashFlowDetailViewType = .graphic
+  private var viewType: CashDetailViewType = .graphic
 
   // MARK: - Internal property
 
@@ -69,7 +69,7 @@ final class CashFlowDetailContentView: UIView {
 
 // MARK: - Internal
 
-extension CashFlowDetailContentView {
+extension CashDetailContentView {
 
   func displayGraphic(barModels: [YZBarViewModel], models: [CashModel]) {
     graphicView.displayBarViewModels(barModels)
@@ -83,7 +83,7 @@ extension CashFlowDetailContentView {
 
 // MARK: - Private
 
-private extension CashFlowDetailContentView {
+private extension CashDetailContentView {
 
   func createUI() {
     addSubview(periodView)
@@ -117,10 +117,10 @@ private extension CashFlowDetailContentView {
 
 // MARK: - CashDetailContentViewDelegate
 
-extension CashFlowDetailContentView: CashDetailPeriodsViewDelegate {
+extension CashDetailContentView: CashDetailPeriodsViewDelegate {
 
   func didSelectPeriod(_ period: CashDetailPeriodType) {
-    let newViewType: CashFlowDetailViewType = (period == .all) ? .table : .graphic
+    let newViewType: CashDetailViewType = (period == .all) ? .table : .graphic
     if newViewType == viewType {
       delegate?.didChangePeriod(by: period)
     } else {

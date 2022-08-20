@@ -1,5 +1,5 @@
 //
-//  CashFlowDetailViewController.swift
+//  CashDetailViewController.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 05/02/2019.
@@ -30,8 +30,8 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
     return view
   }()
 
-  private lazy var contentView: CashFlowDetailContentView = {
-    let view = CashFlowDetailContentView(periodType: periodType)
+  private lazy var contentView: CashDetailContentView = {
+    let view = CashDetailContentView(periodType: periodType)
     view.isHidden = true
     view.delegate = self
     return view

@@ -9,7 +9,7 @@
 import Service
 import DesignSystem
 
-final class CashFlowCategoryCell: UICollectionViewCell {
+final class CashCategoryCell: UICollectionViewCell {
 
   // MARK: - Constants
 
@@ -60,7 +60,7 @@ final class CashFlowCategoryCell: UICollectionViewCell {
 
 // MARK: - Private
 
-private extension CashFlowCategoryCell {
+private extension CashCategoryCell {
 
   func createUI(){
     contentView.cornerRadius(DesignConstants.Radius.plain, color: .darkViolet)

@@ -1,5 +1,5 @@
 //
-//  CashFlowDetailPresenter.swift
+//  CashDetailPresenter.swift
 //  MoneyKeeper
 //
 //  Created by Yaroslav Zavyalov on 05/02/2019.
@@ -40,7 +40,7 @@ final class CashDetailPresenter {
 extension CashDetailPresenter: CashDetailPresenterProtocol {
 
   func viewDidLoad(by period: CashDetailPeriodType, type: CashType) {
-    cashModels = interactor.getCashFlowDetails(type: type)
+    cashModels = interactor.getCashDetails(type: type)
     prepareForDisplay(by: period, type: type)
   }
 
