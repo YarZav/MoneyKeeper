@@ -28,7 +28,7 @@ targets:
         TARGETED_DEVICE_FAMILY: 1
         GCC_TREAT_WARNINGS_AS_ERRORS: YES
     postCompileScripts:
-      - script: "${PODS_ROOT}/FirebaseCrashlytics/run"
+      - script: "chmod +x Scripts/Firebase.sh"
         name: Firebase
 
 schemes:
