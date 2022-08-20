@@ -1,6 +1,0 @@
-framework module DI {
-  umbrella header "DI-umbrella.h"
-
-  export *
-  module * { export * }
-}

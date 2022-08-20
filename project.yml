@@ -27,6 +27,9 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: ru.ZYG.MoneyKeeperApp
         TARGETED_DEVICE_FAMILY: 1
         GCC_TREAT_WARNINGS_AS_ERRORS: YES
+    postCompileScripts:
+      - script: "${PODS_ROOT}/FirebaseCrashlytics/run"
+        name: Firebase
 
 schemes:
   MoneyKeeper:

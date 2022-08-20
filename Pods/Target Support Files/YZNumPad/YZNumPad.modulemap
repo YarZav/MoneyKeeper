@@ -1,6 +1,0 @@
-framework module YZNumPad {
-  umbrella header "YZNumPad-umbrella.h"
-
-  export *
-  module * { export * }
-}

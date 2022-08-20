@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
@@ -20,9 +21,23 @@ final class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    setUpAnalytics()
+    setUpWindow()
+    return true
+  }
+}
+
+// MARK: - Private
+
+private extension AppDelegate {
+
+  func setUpAnalytics() {
+    FirebaseApp.configure()
+  }
+
+  func setUpWindow() {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = coordinatorFlow.rootViewController
     window?.makeKeyAndVisible()
-    return true
   }
 }

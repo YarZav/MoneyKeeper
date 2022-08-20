@@ -1,6 +1,0 @@
-framework module Cash {
-  umbrella header "Cash-umbrella.h"
-
-  export *
-  module * { export * }
-}
