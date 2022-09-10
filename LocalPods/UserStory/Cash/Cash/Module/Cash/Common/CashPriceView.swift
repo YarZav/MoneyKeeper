@@ -16,7 +16,7 @@ final class CashPriceView: UIView {
   // MARK: - Constants
 
   private enum Constants {
-    static let titleText = "COIN\nWALLET"
+    static let titleText = "Money\nKeeper"
     static let titleWidth: CGFloat = 218
     static let threeCircleHeight: CGFloat = 191
     static let priceRightOffset: CGFloat = -40

@@ -75,8 +75,8 @@ extension CashDetailContentView {
     graphicView.displayBarViewModels(barModels)
   }
   
-  func insertTable(models: [CashModel]) {
-    tableView.insertModels(models)
+  func reloadData(models: [CashModel]) {
+    tableView.reloadData(models)
   }
 
 }

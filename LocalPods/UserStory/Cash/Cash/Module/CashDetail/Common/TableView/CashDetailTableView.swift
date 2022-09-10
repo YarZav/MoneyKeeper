@@ -38,16 +38,16 @@ final class CashDetailTableView: UIView {
 
 }
 
-// MARK: - Internal
+// MARK: - Reload data
 
 extension CashDetailTableView {
 
-  func insertModels(_ models: [CashModel]) {
-      dataSource.insertModels(models, completion: { [weak self] in
-        guard let self = self else { return }
-        self.tableView.setTopGradientPoint(self.tableView)
-        self.tableView.setBottomGradientPoint(self.tableView)
-      })
+  func reloadData(_ models: [CashModel]) {
+    dataSource.reloadModels(models) { [weak self] in
+      guard let self = self else { return }
+      self.tableView.setTopGradientPoint(self.tableView)
+      self.tableView.setBottomGradientPoint(self.tableView)
+    }
   }
 
 }

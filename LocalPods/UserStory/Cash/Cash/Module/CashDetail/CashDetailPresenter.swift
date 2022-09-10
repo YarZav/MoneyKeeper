@@ -53,7 +53,7 @@ extension CashDetailPresenter: CashDetailPresenterProtocol {
     if typeCashModels.isEmpty {
       view?.showNoContentView()
     } else {
-      displayGraphicContent(models: cashModels, period: period)
+      displayGraphicContent(models: periodCashModels, period: period)
     }
   }
 
@@ -180,7 +180,7 @@ private extension CashDetailPresenter {
         displayCodeBlock(models, barModels)
       }
     case .all:
-      let sortedModels = cashModels.sorted { $0.date < $1.date }
+      let sortedModels = models.sorted { $0.date < $1.date }
       let fromDate = sortedModels.first?.date ?? Date()
       let toDate = sortedModels.last?.date ?? Date()
       let dates = Date.dates(from: fromDate, to: toDate, component: .year)

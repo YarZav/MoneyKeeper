@@ -20,7 +20,7 @@ public final class GradientTableView: UITableView {
     delegate: UITableViewDelegate? = nil
   ) {
     super.init(frame: .zero, style: .plain)
-    self.allowsSelection = allowsSelection
+    self.allowsSelection = false
     self.dataSource = dataSource
     self.delegate = delegate
     cells.forEach { cellClass in

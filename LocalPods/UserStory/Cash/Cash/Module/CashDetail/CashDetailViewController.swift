@@ -57,6 +57,12 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
     presenter.viewDidLoad(by: periodType, type: viewType)
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    presenter.prepareForDisplay(by: periodType, type: viewType)
+  }
+
 }
 
 // MARK: - CashDetailViewProtocol
@@ -74,7 +80,7 @@ extension CashDetailViewController: CashDetailViewProtocol {
     noContentView.isHidden = true
 
     contentView.displayGraphic(barModels: barModels, models: models)
-    contentView.insertTable(models: models)
+    contentView.reloadData(models: models)
   }
 
 }
@@ -85,7 +91,7 @@ private extension CashDetailViewController {
 
   func createUI() {
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
-      navigationItem.title = viewType.rawValue.lowercased()
+    navigationItem.title = viewType.rawValue.lowercased()
     view.backgroundColor = .darkViolet
 
     view.addSubview(noContentView)
@@ -98,7 +104,7 @@ private extension CashDetailViewController {
       noContentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       noContentView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
       noContentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      noContentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      noContentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
       contentView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       contentView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),

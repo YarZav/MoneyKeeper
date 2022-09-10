@@ -48,6 +48,8 @@ final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
     let searchBar = SearchBar(backgroundColor: .anthracite)
     searchBar.backgroundColor = .anthracite
     searchBar.barTintColor = .anthracite
+    searchBar.tintColor = .white
+    searchBar.searchTextField.textColor = .white
     searchBar.searchDelegate = self
     return searchBar
   }()
@@ -67,6 +69,8 @@ final class CashCategoryViewController: UIViewController, CashCategoryProtocol {
       collectionView.backgroundColor = .anthracite
       return collectionView
   }()
+
+  private var keyboardManager: KeyboardManagerProtocol = KeyboardManager()
 
   // MARK: - Init
 
@@ -166,6 +170,11 @@ private extension CashCategoryViewController {
       collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
       collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
     ])
+
+    keyboardManager.keyboardShiftConstraintsBlock = { [weak self] isKeyboardShown in
+      guard let self = self else { return }
+      self.parent?.view.frame.origin.y = isKeyboardShown ? -self.keyboardManager.keyboardSize.size.height : 0
+    }
   }
 
   var contentHeight: CGFloat {

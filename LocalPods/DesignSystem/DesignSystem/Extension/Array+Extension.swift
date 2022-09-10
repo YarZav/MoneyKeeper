@@ -6,7 +6,7 @@
 //  Copyright © 2019 ZYG. All rights reserved.
 //
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
     
   /// Remove duplicate items for array
   func removeDuplicates() -> [Element] {

@@ -79,90 +79,23 @@ extension CashDetailTableDataSource {
 
 }
 
-//MARK: - Insert
+// MARK: - Reload
 
 extension CashDetailTableDataSource {
 
-  func insertModels(_ models: [CashModel], completion: @escaping () -> Void) {
-    //FIXME: In Queue
-    if models.isEmpty {
-        completion()
-        return
-    }
-
+  func reloadModels(_ models: [CashModel], completion: @escaping () -> Void) {
     let sortedModels = models.sorted { $0.date > $1.date }
-    let newModels = sortedModels.filter { sortedModel in
-      !allModels.contains(where: { sortedModel.identifier == $0.identifier })
+    let sortedDates = sortedModels.compactMap { $0.date.startOfDay }.removeDuplicates()
+    sections = sortedDates.compactMap { date in
+      CashDetailTableSection(
+        date: date,
+        models: models.filter { $0.date.startOfDay == date }
+      )
     }
 
-    if newModels.isEmpty {
-        completion()
-        return
-    }
-
-    var insertedRows = [IndexPath]()
-    let insertedSection = NSMutableIndexSet()
-    var newRowModels = [CashModel]()
-    var newSectionModels = [CashModel]()
-
-    for model in newModels {
-      let sectionIndex = sections.firstIndex(where: { $0.date.startOfDay == model.date.startOfDay })
-      if let sectionIndex = sectionIndex {
-        //Add model in created section
-        let rowIndex = sections[sectionIndex].models.lastIndex(where: { $0.date > model.date })
-        if let rowIndex = rowIndex {
-          sections[sectionIndex].models.insert(model, at: rowIndex)
-          newRowModels.append(model)
-        } else {
-          sections[sectionIndex].models.append(model)
-          newRowModels.append(model)
-        }
-      } else {
-        // Creatse new section with date before
-        let newSectionIndex = sections.lastIndex(where: { $0.date.startOfDay > model.date.startOfDay })
-        if let newSectionIndex = newSectionIndex {
-          let newSection = CashDetailTableSection(date: model.date.startOfDay, models: [model])
-          sections.insert(newSection, at: newSectionIndex)
-          newSectionModels.append(model)
-        } else {
-          let newSection = CashDetailTableSection(date: model.date.startOfDay, models: [model])
-          sections.insert(newSection, at: 0)
-          newSectionModels.append(model)
-        }
-      }
-    }
-
-    for newRowModel in newRowModels {
-      for (sectionIndex, section) in sections.enumerated() {
-        for (rowIndex, model) in section.models.enumerated() {
-          if newRowModel.identifier == model.identifier {
-            insertedRows.append(IndexPath(row: rowIndex, section: sectionIndex))
-          }
-        }
-      }
-    }
-
-    for newSectionModel in newSectionModels {
-      for (sectionIndex, section) in sections.enumerated() {
-        for (rowIndex, model) in section.models.enumerated() {
-          if newSectionModel.identifier == model.identifier {
-            insertedRows.append(IndexPath(row: rowIndex, section: sectionIndex))
-            insertedSection.add(sectionIndex)
-          }
-        }
-      }
-    }
-
-    //FIXME: Reuse in method
     CATransaction.begin()
-    tableView.beginUpdates()
-    CATransaction.setCompletionBlock {
-      completion()
-    }
-    tableView.insertSections(insertedSection as IndexSet, with: .automatic)
-    tableView.insertRows(at: insertedRows, with: .automatic)
-    tableView.endUpdates()
+    CATransaction.setCompletionBlock { completion() }
+    tableView.reloadData()
     CATransaction.commit()
   }
-
 }
