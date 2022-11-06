@@ -26,7 +26,7 @@ enum CashDetailPeriodType: Int, CaseIterable {
   }
 
   var startDate: Date {
-    let today = Date()
+    let today = Date().startOfDay
     var timeOffset = 0
       
     switch self {
@@ -45,7 +45,7 @@ enum CashDetailPeriodType: Int, CaseIterable {
   }
 
   var endDate: Date {
-    Date()
+    Date().endOfDay
   }
 
 }

@@ -32,6 +32,8 @@ extension CashAssembly: Assembly {
     registerCashDetailView(container: container)
     registerCashDetailInteractor(container: container)
     registerCashDetailPresenter(container: container)
+
+    registerCashDetailMenuView(container: container)
   }
 
 }
@@ -148,6 +150,18 @@ private extension CashAssembly {
       return CashDetailPresenter(interactor: interactor)
     }.initCompleted { resolver, presenter in
       (presenter as? CashDetailPresenter)?.view = resolver.resolve(CashDetailViewProtocol.self)
+    }.inObjectScope(.container)
+  }
+
+}
+
+// MARK: - Cash detail menu
+
+private extension CashAssembly {
+
+  func registerCashDetailMenuView(container: Container) {
+    container.register(CashDetailMenuViewProtocol.self) { _ in
+      CashDetailMenuViewController()
     }.inObjectScope(.container)
   }
 

@@ -17,16 +17,20 @@ public final class LabelView: UIView {
     return label
   }()
 
+  private let labelInsets: UIEdgeInsets
+
   // MARK: - Init
 
-  public init() {
+  public init(labelInsets: UIEdgeInsets = .zero) {
+    self.labelInsets = labelInsets
+
     super.init(frame: .zero)
 
     createUI()
   }
 
-  required init?(coder aDecoder: NSCoder) {
-      super.init(coder: aDecoder)
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
 }
@@ -39,6 +43,9 @@ public extension LabelView {
     label.text = text
   }
 
+  func setTextColor(_ color: UIColor) {
+    label.textColor = color
+  }
 }
 
 // MARK: - Private
@@ -51,10 +58,10 @@ private extension LabelView {
     label.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      label.topAnchor.constraint(equalTo: topAnchor),
-      label.leftAnchor.constraint(equalTo: leftAnchor),
-      label.rightAnchor.constraint(equalTo: rightAnchor),
-      label.bottomAnchor.constraint(equalTo: bottomAnchor),
+      label.topAnchor.constraint(equalTo: topAnchor, constant: labelInsets.top),
+      label.leftAnchor.constraint(equalTo: leftAnchor, constant: labelInsets.left),
+      label.rightAnchor.constraint(equalTo: rightAnchor, constant: -labelInsets.right),
+      label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -labelInsets.bottom),
     ])
   }
 

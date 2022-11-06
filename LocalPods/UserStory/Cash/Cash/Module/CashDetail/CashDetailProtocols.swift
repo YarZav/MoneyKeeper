@@ -18,7 +18,10 @@ public protocol CashDetailInputProtocol { }
 
 // OUTPUT
 
-public protocol CashDetailOutputProtocol { }
+public protocol CashDetailOutputProtocol {
+
+  var onMenu: (() -> Void)? { get set }
+}
 
 // PRESENTER -> VIEW
 protocol CashDetailViewProtocol: AnyObject {

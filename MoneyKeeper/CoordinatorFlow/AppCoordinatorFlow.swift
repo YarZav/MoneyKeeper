@@ -63,9 +63,20 @@ private extension AppCoordinatorFlow {
   }
 
   func getCashDetailViewController() -> UIViewController? {
-    let cashDetail = swinjectAssembly.assembler.getCashDetail()
+    var cashDetail = swinjectAssembly.assembler.getCashDetail()
     let cashDetailViewController = cashDetail as? UIViewController
+
+    cashDetail.onMenu = { [weak cashDetailViewController, weak self] in
+      let cashDetailMenuViewController = self?.getCashDetailMenuViewController()
+      self?.presentOverlayController(cashDetailViewController, toViewController: cashDetailMenuViewController)
+    }
     return cashDetailViewController
+  }
+
+  func getCashDetailMenuViewController() -> UIViewController? {
+    let cashDetailMenu = swinjectAssembly.assembler.getCashDetailMenu()
+    let cashDetailMenuViewController = cashDetailMenu as? UIViewController
+    return cashDetailMenuViewController
   }
 
   func getCashCategoryViewController(_ cashModel: CashModel, completion: (() -> Void)?) -> UIViewController? {

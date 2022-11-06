@@ -41,4 +41,14 @@ extension Assembler {
     return cashDetailCategory
   }
 
+  public func getCashDetailMenu() -> CashDetailMenuProtocol {
+    guard let cashDetailMenuView = resolver.resolve(CashDetailMenuViewProtocol.self) else {
+      fatalError("Fatal Error (Swinject): CashDetailMenuViewProtocol is not in container")
+    }
+    guard let cashDetailMenu = cashDetailMenuView as? CashDetailMenuProtocol else {
+      fatalError("Fatal Error (Swinject): CashDetailMenuProtocol is not in container")
+    }
+    return cashDetailMenu
+  }
+
 }

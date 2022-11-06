@@ -19,4 +19,8 @@ public extension UIImage {
     UIImage(systemName: "delete.left")
   }
 
+  static var sliderHorizontal3: UIImage? {
+    UIImage(systemName: "slider.horizontal.3")
+  }
+
 }

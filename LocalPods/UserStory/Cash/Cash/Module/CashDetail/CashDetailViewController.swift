@@ -15,7 +15,8 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
   // MARK: - Constants
 
   private enum Constants {
-      static let emptyDataText = "EmptyDataKey".localized()
+    static let emptyDataText = "EmptyDataKey".localized()
+    static let titleInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
   }
 
   // MARK: - Private property
@@ -36,6 +37,10 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
     view.delegate = self
     return view
   }()
+
+  // MARK: - Internal property
+
+  var onMenu: (() -> Void)?
 
   // MARK: - Init
 
@@ -61,6 +66,14 @@ final class CashDetailViewController: UIViewController, CashDetailProtocol {
     super.viewWillAppear(animated)
 
     presenter.prepareForDisplay(by: periodType, type: viewType)
+  }
+
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+
+    if let titleView = navigationItem.titleView {
+      navigationItem.titleView?.cornerRadius(titleView.bounds.size.height / 2, color: .darkRed)
+    }
   }
 
 }
@@ -90,8 +103,8 @@ extension CashDetailViewController: CashDetailViewProtocol {
 private extension CashDetailViewController {
 
   func createUI() {
-    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkRed]
-    navigationItem.title = viewType.rawValue.lowercased()
+    createNavigationItem()
+
     view.backgroundColor = .darkViolet
 
     view.addSubview(noContentView)
@@ -111,6 +124,29 @@ private extension CashDetailViewController {
       contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
     ])
+  }
+
+  func createNavigationItem() {
+    let labelView = LabelView(labelInsets: Constants.titleInsets)
+    labelView.setText(viewType.rawValue.lowercased())
+    labelView.setTextColor(.white)
+    navigationItem.titleView = labelView
+
+    let menuImage = UIImage.sliderHorizontal3
+    let menuBarButtonItem = UIBarButtonItem(image: menuImage, style: .plain, target: self, action: #selector(onMenuTapped))
+    menuBarButtonItem.tintColor = .white
+    navigationItem.rightBarButtonItem = menuBarButtonItem
+  }
+
+}
+
+// MARK: - Action
+
+private extension CashDetailViewController {
+
+  @objc
+  func onMenuTapped() {
+    onMenu?()
   }
 
 }
